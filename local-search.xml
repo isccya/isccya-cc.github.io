@@ -4,24 +4,38 @@
   
   
   <entry>
-    <title>测试文章</title>
-    <link href="/2025/04/02/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
-    <url>/2025/04/02/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <title>页面调度算法</title>
+    <link href="/2025/04/02/%E9%A1%B5%E9%9D%A2%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/"/>
+    <url>/2025/04/02/%E9%A1%B5%E9%9D%A2%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="内存页面置换算法"><a href="#内存页面置换算法" class="headerlink" title="内存页面置换算法"></a>内存页面置换算法</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul><li>缺页中断：CPU访问的页面不在物理内存中的时候,便会产生缺页中断，会请求操作系统将所缺页调入到物理内存中。</li><li>具体流程：<br><img src="/image.png" alt="图片引用方法二"><br>注意：有空闲页先调度到空闲页，没有空闲页则才需要使用页面置换算法。</li></ul><h2 id="最佳页面置换算法"><a href="#最佳页面置换算法" class="headerlink" title="最佳页面置换算法"></a>最佳页面置换算法</h2><ul><li>置换未来最长时间不访问的页面。</li><li>理想算法，实际中无法预知每个页面下次被访问的时间。</li></ul><h2 id="先进先出置换算法"><a href="#先进先出置换算法" class="headerlink" title="先进先出置换算法"></a>先进先出置换算法</h2><ul><li>选择在内存中滞留时间很长的页面进行置换。</li></ul><h2 id="最近最久未使用LRU置换算法"><a href="#最近最久未使用LRU置换算法" class="headerlink" title="最近最久未使用LRU置换算法"></a>最近最久未使用LRU置换算法</h2><ul><li>选择最长时间没有被访问的页面进行置换。</li><li>很少使用，需要维护一个链表，最近使用的放链表头部，每次访问页面都需要更新链表。</li></ul><h2 id="时钟页面置换算法"><a href="#时钟页面置换算法" class="headerlink" title="时钟页面置换算法"></a>时钟页面置换算法</h2><ul><li>所有页面在一个链表中，一个表针指向最老的页面。</li><li>如果访问位是0：置换该页面，并把表针指向前一位。<br>  访问位是1：改为0，并把表针前移一位。</li></ul><h2 id="最不常用算法"><a href="#最不常用算法" class="headerlink" title="最不常用算法"></a>最不常用算法</h2><ul><li>选择访问次数最少的页面进行置换。</li></ul>]]></content>
     
     
+    <categories>
+      
+      <category>操作系统</category>
+      
+      <category>磁盘调度算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>操作系统</tag>
+      
+    </tags>
     
   </entry>
   
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2025/04/02/hello-world/"/>
-    <url>/2025/04/02/hello-world/</url>
+    <title>测试文章</title>
+    <link href="/2025/04/02/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
+    <url>/2025/04/02/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[]]></content>
     
     
     
