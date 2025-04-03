@@ -4,6 +4,123 @@
   
   
   <entry>
+    <title>浏览器进程</title>
+    <link href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/"/>
+    <url>/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<h1 id="浏览器进程"><a href="#浏览器进程" class="headerlink" title="浏览器进程"></a>浏览器进程</h1><h2 id="四种进程"><a href="#四种进程" class="headerlink" title="四种进程"></a>四种进程</h2><ol><li>浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。</li><li>渲染进程：负责页面渲染工作。包括<em><strong>渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）</strong></em>。</li><li>插件进程：处理插件的运行。</li><li>GPU进程：处理图形渲染。</li></ol><h2 id="浏览器为什么要限制请求并发数？"><a href="#浏览器为什么要限制请求并发数？" class="headerlink" title="浏览器为什么要限制请求并发数？"></a>浏览器为什么要限制请求并发数？</h2><ol><li>对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;tcp请求占据一个端口，防止端口资源消耗殆尽。</li><li>避免频繁的线程切换：线程和http请求相对应，如果并发数量过大会导致频繁切换线程。</li><li>避免同一客户端发送大量请求超过服务端并发</li><li>客户端良知机制：防止两个应用抢占资源时候强势一方导致弱势一方永远阻塞。</li><li>http队头阻塞：tcp队头阻塞。</li></ol><h2 id="如何解决浏览器请求次数限制？"><a href="#如何解决浏览器请求次数限制？" class="headerlink" title="如何解决浏览器请求次数限制？"></a>如何解决浏览器请求次数限制？</h2><ul><li><a href="https://segmentfault.com/a/1190000039157302">https://segmentfault.com/a/1190000039157302</a></li></ul><ol><li>http2.0，http3.0 解决队头阻塞，并发请求。</li><li>使用缓存，减少请求量。</li><li>合并请求，减少请求次数。</li><li>按需加载。</li><li>域名分散。</li></ol><h2 id="浏览器组成"><a href="#浏览器组成" class="headerlink" title="浏览器组成"></a>浏览器组成</h2><ol><li>用户界面：地址栏、书签栏、前进、后退等等。</li><li>浏览器主引擎：渲染引擎和用户界面的桥梁，处理用户交互，传递信息给渲染引擎。</li><li>渲染引擎：浏览器渲染过程。</li><li>js引擎：解析和执行js。</li><li>网络模块：发送请求和加载资源。</li><li>数据存储：cookie、localStorage、SessionStorage、indexedDB等等</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>操作系统</category>
+      
+      <category>进程管理</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>锁</title>
+    <link href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E9%94%81/"/>
+    <url>/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E9%94%81/</url>
+    
+    <content type="html"><![CDATA[<h1 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h1><ul><li>互斥锁和自旋锁是最基本的锁,读写锁可以基于这两个锁进行实现,前面这些锁都是悲观锁.</li></ul><h2 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h2><ol><li>互斥锁加锁失败,当前进程进入阻塞队列,不占据CPU资源</li><li>适合等待时间长</li></ol><h2 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h2><ol><li>自旋锁加锁失败会占据CPU资源,循环等待资源的释放.</li><li>适合等待时间短,减少上下文切换的成本</li></ol><h2 id="读写锁"><a href="#读写锁" class="headerlink" title="读写锁"></a>读写锁</h2><ol><li>读优先锁:尽可能多的读锁,挺高并发性,读锁会阻塞写锁.能继续加读锁.</li><li>写优先锁:如果有写锁,则不能继续加读锁.</li></ol><h2 id="悲观锁"><a href="#悲观锁" class="headerlink" title="悲观锁"></a>悲观锁</h2><ol><li>多线程同时修改共享资源的概率比较高，于是很容易出现冲突，所以访问共享资源前，先要上锁。</li></ol><h2 id="乐观锁"><a href="#乐观锁" class="headerlink" title="乐观锁"></a>乐观锁</h2><ol><li>先修改完共享资源，再验证这段时间内有没有发生冲突，如果没有其他线程在修改资源，那么操作完成，如果发现有其他线程已经修改过这个资源，就放弃本次操作。</li><li>服务端返回版本号,修改完之后发送旧版本号,相同则操作成功,否则失败.</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>操作系统</category>
+      
+      <category>进程管理</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>死锁</title>
+    <link href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%AD%BB%E9%94%81/"/>
+    <url>/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%AD%BB%E9%94%81/</url>
+    
+    <content type="html"><![CDATA[<h1 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul><li>两个共有资源两把锁,两个线程各持有一个锁,都在等另一把锁释放,就造成了死锁.</li></ul><h2 id="四个条件"><a href="#四个条件" class="headerlink" title="四个条件"></a>四个条件</h2><ol><li>互斥条件:这个资源不能被多个线程同时访问.</li><li>持有并等待条件:线程在等待资源时候不会释放自己已有的资源.</li><li>不可剥夺条件:自己已有的资源不会被其他线程剥夺.</li><li>环路等待条件:两个线程获取资源顺序形成环路.</li></ol><h2 id="避免死锁问题"><a href="#避免死锁问题" class="headerlink" title="避免死锁问题"></a>避免死锁问题</h2><ul><li>破坏其中一个条件,一般是资源有序分配 &#x3D;&gt; 破坏环路条件.</li><li>A、B两个资源，线程获取A，再获取B。另一个线程也要先获取A才能获取B。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>操作系统</category>
+      
+      <category>进程管理</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>进程的通信</title>
+    <link href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%9A%84%E9%80%9A%E4%BF%A1/"/>
+    <url>/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%9A%84%E9%80%9A%E4%BF%A1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h1><ol><li>半双工,管道传输数据是单向的，双向进程通信需要两个管道</li><li>管道是内核中的一段缓存,写入后必须等被读完才能退出(写进程被空占据)</li></ol><h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><ul><li>进程把消息放到内核的消息队列中既可以退出.缺点是读取不及时,大小有限制.拷贝内核数据要从用户态切换为内核态.</li></ul><h1 id="共享内存"><a href="#共享内存" class="headerlink" title="共享内存"></a>共享内存</h1><ol><li>进程有自己的虚拟空间,映射到一个物理空间</li><li>两个进程的<em><strong>虚拟空间映射到同一个物理空间</strong></em>既可以实现通信</li></ol><h1 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h1><ul><li>实现进程的互斥和异步,防止多个进程修改同一个共享内存</li><li>P操作-1,V操作+1</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>操作系统</category>
+      
+      <category>进程管理</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>操作系统</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>进程线程</title>
+    <link href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/"/>
+    <url>/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ol><li>运行中的程序就是进程,包括数据段,程序段,PCB(进程控制块:描述进程的信息,比如程序存放的位置);</li><li>资源分配的单位</li></ol><ul><li>cpu如果只执行一个进程，这个进程读硬盘时候就会很慢，cpu在傻等。所以有了cpu并发执行管理多个进程，提高cpul利用率。就有了<strong>进程状态、进程管理</strong>的概念。</li></ul><h2 id="进程状态"><a href="#进程状态" class="headerlink" title="进程状态"></a>进程状态</h2><ul><li><strong>创建态,就绪态,运行态,阻塞态,结束态</strong>.</li><li><strong>就绪挂起态,阻塞挂起态</strong>.大量阻塞态会占据有限的内存,可以将这些进程放到外存(磁盘中)<br><img src="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/image-1.png" alt="alt text"></li></ul><h2 id="进程的控制和管理"><a href="#进程的控制和管理" class="headerlink" title="进程的控制和管理"></a>进程的控制和管理</h2><ol><li>PCB(进程的唯一标识):进程的状态,进程的优先级,CPU上下文信息</li><li><em><strong>链表存储</strong></em>：相同状态存放在一起,比如:就绪队列,阻塞队列.更适应进程<strong>创建、销毁多</strong>的场景.</li></ol><h2 id="线程-并发-共享资源"><a href="#线程-并发-共享资源" class="headerlink" title="线程:并发 共享资源"></a>线程:并发 共享资源</h2><ol><li><strong>进程下的一条执行流程</strong></li><li><strong>可以并发且共享资源的执行</strong></li><li>CPU调度的基本单位</li></ol><h2 id="进程和线程的区别-10024"><a href="#进程和线程的区别-10024" class="headerlink" title="进程和线程的区别 &#10024;"></a>进程和线程的区别 &#10024;</h2><ol><li>根本区别:进程是操作系统资源分配的基本单位,线程是CPU任务调度和执行的基本单位.</li><li>关系:进程包含一个或多个线程</li><li>资源开销:进程有独立的数据段和程序段,程序之间切换成本大;线程是轻量级的进程,同一进程下的线程共享程序段和数据段,线程有自己独立的PC(程序计数器:记录下一条指令的位置)和执行栈,创建速度快，销毁速度快，线程切换成本低速度快.适合并发执行。</li></ol><h2 id="进程调度算法"><a href="#进程调度算法" class="headerlink" title="进程调度算法"></a>进程调度算法</h2><ul><li>进程状态改变时候比如：运行态到终止、运行到阻塞、就绪到运行，都会使用到调度算法。CPU更换新的进程来执行。</li></ul><ol><li>先来先服务算法：对短作业不利，要等长作业很久。</li><li>短作业优先算法：对长作业不利，可能一直等。</li><li>最高响应比算法：理想型算法，无法实现。<br>(等待时间 + 要求服务时间)&#x2F; 要求服务时间</li><li>时间片轮转算法：每个进程分配一个时间片，允许进程在该时间片执行。</li><li>最高优先级算法：CPU选择优先级最高的进程执行代码。静态优先级、动态优先级；抢占式、非抢占式。抢占式可能导致优先级低的永远无法执行。</li><li>多级反馈队列算法：多个队列，每个队列优先级从高到低排列，同时优先级越高时间片越短。  先进入最高优先级队列，没执行完进入下一级优先队列。对于短作业来说，很可能在最高优先级队列的时间片就执行完毕；对于长作业来说，进入到后面优先级更低的队列，但是执行时间变长了。<strong>短作业优先级高，执行时间短；长作业优先级低，执行时间长。</strong></li></ol><!-- 如果执行低优先级的长作业时候有短作业进入，则会先去执行短作业。 -->]]></content>
+    
+    
+    <categories>
+      
+      <category>操作系统</category>
+      
+      <category>进程管理</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>操作系统</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>虚拟内存</title>
     <link href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/"/>
     <url>/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</url>

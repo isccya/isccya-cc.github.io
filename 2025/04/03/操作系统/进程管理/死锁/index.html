@@ -19,24 +19,21 @@
   <meta name="author" content="Wayne Chen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="虚拟内存 程序使用的内存是虚拟内存，操作系统内部将其与物理内存映射。避免各个程序物理地址冲突。操作系统通过 内存分段、内存分页两种方式实现虚拟内存到物理内存的映射。   内存扩展：物理内存有限，虚拟内存可以先把程序部分数据暂存到硬盘中，需要时候再调度进来。 进程隔离：各个进程运行在自己的虚拟内存中，操作系统内实现虚拟内存到物理内存的映射，避免进程访问错误。 内存管理：通过分页分段管理内存，更加有效">
+    <meta name="description" content="死锁基本概念 两个共有资源两把锁,两个线程各持有一个锁,都在等另一把锁释放,就造成了死锁.  四个条件 互斥条件:这个资源不能被多个线程同时访问. 持有并等待条件:线程在等待资源时候不会释放自己已有的资源. 不可剥夺条件:自己已有的资源不会被其他线程剥夺. 环路等待条件:两个线程获取资源顺序形成环路.  避免死锁问题 破坏其中一个条件,一般是资源有序分配 &#x3D;&gt; 破坏环路条件. A、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="虚拟内存">
-<meta property="og:url" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/">
+<meta property="og:title" content="死锁">
+<meta property="og:url" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%AD%BB%E9%94%81/">
 <meta property="og:site_name" content="谈沉潜">
-<meta property="og:description" content="虚拟内存 程序使用的内存是虚拟内存，操作系统内部将其与物理内存映射。避免各个程序物理地址冲突。操作系统通过 内存分段、内存分页两种方式实现虚拟内存到物理内存的映射。   内存扩展：物理内存有限，虚拟内存可以先把程序部分数据暂存到硬盘中，需要时候再调度进来。 进程隔离：各个进程运行在自己的虚拟内存中，操作系统内实现虚拟内存到物理内存的映射，避免进程访问错误。 内存管理：通过分页分段管理内存，更加有效">
+<meta property="og:description" content="死锁基本概念 两个共有资源两把锁,两个线程各持有一个锁,都在等另一把锁释放,就造成了死锁.  四个条件 互斥条件:这个资源不能被多个线程同时访问. 持有并等待条件:线程在等待资源时候不会释放自己已有的资源. 不可剥夺条件:自己已有的资源不会被其他线程剥夺. 环路等待条件:两个线程获取资源顺序形成环路.  避免死锁问题 破坏其中一个条件,一般是资源有序分配 &#x3D;&gt; 破坏环路条件. A、">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/image.png">
-<meta property="article:published_time" content="2025-04-03T05:00:24.000Z">
-<meta property="article:modified_time" content="2025-04-03T05:01:07.289Z">
+<meta property="article:published_time" content="2025-04-03T08:00:11.000Z">
+<meta property="article:modified_time" content="2025-04-03T08:02:45.236Z">
 <meta property="article:author" content="Wayne Chen">
-<meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/image.png">
   
   
   
-  <title>虚拟内存 - 谈沉潜</title>
+  <title>死锁 - 谈沉潜</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -219,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="虚拟内存"></span>
+            <span id="subtitle" data-typed-text="死锁"></span>
           
         </div>
 
@@ -230,7 +227,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-03 13:00" pubdate>
+        <time datetime="2025-04-03 16:00" pubdate>
           2025年4月3日 下午
         </time>
       </span>
@@ -242,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          193 字
         
       </span>
     
@@ -253,7 +250,7 @@
         
         
         
-          9 分钟
+          2 分钟
         
       </span>
     
@@ -299,71 +296,23 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">虚拟内存</h1>
+            <h1 id="seo-header">死锁</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h2><ul>
-<li>程序使用的内存是虚拟内存，操作系统内部将其与物理内存映射。避免各个程序物理地址冲突。操作系统通过 <strong>内存分段、内存分页</strong>两种方式实现虚拟内存到物理内存的映射。</li>
+                <h1 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li>两个共有资源两把锁,两个线程各持有一个锁,都在等另一把锁释放,就造成了死锁.</li>
 </ul>
-<ol>
-<li>内存扩展：物理内存有限，虚拟内存可以先把程序部分数据暂存到硬盘中，需要时候再调度进来。</li>
-<li>进程隔离：各个进程运行在自己的虚拟内存中，操作系统内实现虚拟内存到物理内存的映射，避免进程访问错误。</li>
-<li>内存管理：通过分页分段管理内存，更加有效的分配和回收内存，减少内存碎片化。</li>
+<h2 id="四个条件"><a href="#四个条件" class="headerlink" title="四个条件"></a>四个条件</h2><ol>
+<li>互斥条件:这个资源不能被多个线程同时访问.</li>
+<li>持有并等待条件:线程在等待资源时候不会释放自己已有的资源.</li>
+<li>不可剥夺条件:自己已有的资源不会被其他线程剥夺.</li>
+<li>环路等待条件:两个线程获取资源顺序形成环路.</li>
 </ol>
-<!-- 操作系统是如何管理虚拟地址与物理地址之间的关系？
-主要有两种方式，分别是内存分段和内存分页 -->
-<h2 id="内存分段"><a href="#内存分段" class="headerlink" title="内存分段"></a>内存分段</h2><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ul>
-<li>程序由若干个逻辑段组成，比如程序段、数据段，分段就是把这些段分离开来。分段的虚拟内存由<em><strong>段选择因子</strong></em>和<em><strong>段内偏移量</strong></em>。</li>
-</ul>
-<ol>
-<li><em><strong>段选择因子</strong></em>：核心是<em><strong>段号</strong></em>，段号索引到段表的一个条目，这个条目有<strong>段基地址和段边界</strong></li>
-<li><em><strong>段内偏移量</strong></em>：位于0和段边界之间，段基地址 + 段偏移量 &#x3D; 物理地址</li>
-</ol>
-<h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><ol>
-<li><em><strong>外部内存碎片</strong></em>：每个段大小长度不固定，会产生多个不连续的小段内存（外部内存碎片），导致新程序无法加载。</li>
-</ol>
-<h3 id="解决方方案"><a href="#解决方方案" class="headerlink" title="解决方方案"></a>解决方方案</h3><ol>
-<li><em><strong>内存交换</strong></em>：将内存中的应用写到硬盘上，再写回内存中，但写回的位置不再是原来的位置，而是紧跟前面的内存。</li>
-</ol>
-<h2 id="内存分页"><a href="#内存分页" class="headerlink" title="内存分页"></a>内存分页</h2><h3 id="基础-1"><a href="#基础-1" class="headerlink" title="基础"></a>基础</h3><ul>
-<li>分页是把物理内存提前划分好为一个个固定大小的空间，页与页之间紧密排列，虚拟地址和物理地址通过页表映射。</li>
-<li>分页机制下，虚拟地址分为<em><strong>页号</strong></em>和<em><strong>页内偏移量</strong></em>，页号是页表的索引，页表包含物理页每页的基地址，再加上偏移量就得到物理地址。</li>
-</ul>
-<h3 id="存在的问题-1"><a href="#存在的问题-1" class="headerlink" title="存在的问题"></a>存在的问题</h3><ul>
-<li><em><strong>内存分页机制会有内部内存碎片</strong></em>：采用了分页，页与页之间是紧密排列的，所以不会有外部内存碎片；但内存分配最小是一页，即使程序不足一页也会分配一个页，所以页面内会出现内存浪费。</li>
-<li><em><strong>页表占据大量内存空间</strong></em>：每一页内存大小不大的话，大量内存会对应<strong>很多个</strong>页表项，每个进程又有自己的页表；（段的话因为一个程序只对应五六个段，段表不会占特别大空间）。</li>
-</ul>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ol>
-<li><em><strong>多级页表</strong></em>：程序用不到那么多内存，不需要真正创建所有的页号和页的映射。一级页表可以覆盖全部的虚拟内存，记录二级页表目录；二级列表记录真正的映射关系，只有一级页表项用到的部分才创建二级部分。</li>
-</ol>
-<h2 id="TLB页表缓存"><a href="#TLB页表缓存" class="headerlink" title="TLB页表缓存"></a>TLB页表缓存</h2><ul>
-<li>最常用的页表进行缓存，常用的页不多，TLB命中率很高。</li>
-</ul>
-<!-- - 缓存思想，速度慢了就缓存常用的。 -->
-
-<h2 id="分段和分页相同处和不同处"><a href="#分段和分页相同处和不同处" class="headerlink" title="分段和分页相同处和不同处"></a>分段和分页相同处和不同处</h2><ul>
-<li>相同处：</li>
-</ul>
-<ol>
-<li>地址转换过程：都是从段表页表中获取基地址，再加上偏移量获取物理地址。</li>
-<li>记录表：分段或者分页都使用了表来记录段或页的映射关系。</li>
-</ol>
-<ul>
-<li>不同处：</li>
-</ul>
-<ol>
-<li>大小：段的大小是根据逻辑需求而定的，且是动态变化的；页的大小是固定的，解决了内存碎片问题。</li>
-<li>碎片：分段产生外部碎片，分页产生内部碎片。</li>
-<li>表结构：段表记录的是段基地址和段边界，页表记录的是页号对应的页框。</li>
-</ol>
-<h2 id="段页式内存管理"><a href="#段页式内存管理" class="headerlink" title="段页式内存管理"></a>段页式内存管理</h2><!-- 现在更多是纯分页 -->
-<ul>
-<li>优点：<strong>逻辑分段+无外部碎片。</strong></li>
-<li>先将程序按逻辑分成多个逻辑段。</li>
-<li>每个段再分成固定大小的页，对段划出连续空间。</li>
-<li>虚拟地址由：<em><strong>段号，段内页号，页面偏移量</strong></em>组成。<br><img src="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/image.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+<h2 id="避免死锁问题"><a href="#避免死锁问题" class="headerlink" title="避免死锁问题"></a>避免死锁问题</h2><ul>
+<li>破坏其中一个条件,一般是资源有序分配 &#x3D;&gt; 破坏环路条件.</li>
+<li>A、B两个资源，线程获取A，再获取B。另一个线程也要先获取A才能获取B。</li>
 </ul>
 
                 
@@ -388,7 +337,7 @@
   
     <span>></span>
     
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="category-chain-item">内存管理</a>
+  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="category-chain-item">进程管理</a>
   
   
 
@@ -402,13 +351,6 @@
     </div>
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="print-no-link">#操作系统</a>
-      
-    </div>
-  
 </div>
 
 
@@ -417,8 +359,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>虚拟内存</div>
-      <div>http://example.com/2025/04/03/操作系统/内存管理/虚拟内存/</div>
+      <div>死锁</div>
+      <div>http://example.com/2025/04/03/操作系统/进程管理/死锁/</div>
     </div>
     <div class="license-meta">
       
@@ -462,9 +404,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/" title="进程线程">
+                      <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E9%94%81/" title="锁">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">进程线程</span>
+                        <span class="hidden-mobile">锁</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -472,8 +414,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/vite/" title="vite">
-                        <span class="hidden-mobile">vite</span>
+                      <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%9A%84%E9%80%9A%E4%BF%A1/" title="进程的通信">
+                        <span class="hidden-mobile">进程的通信</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

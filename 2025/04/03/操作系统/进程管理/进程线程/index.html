@@ -19,24 +19,24 @@
   <meta name="author" content="Wayne Chen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="虚拟内存 程序使用的内存是虚拟内存，操作系统内部将其与物理内存映射。避免各个程序物理地址冲突。操作系统通过 内存分段、内存分页两种方式实现虚拟内存到物理内存的映射。   内存扩展：物理内存有限，虚拟内存可以先把程序部分数据暂存到硬盘中，需要时候再调度进来。 进程隔离：各个进程运行在自己的虚拟内存中，操作系统内实现虚拟内存到物理内存的映射，避免进程访问错误。 内存管理：通过分页分段管理内存，更加有效">
+    <meta name="description" content="进程 运行中的程序就是进程,包括数据段,程序段,PCB(进程控制块:描述进程的信息,比如程序存放的位置); 资源分配的单位   cpu如果只执行一个进程，这个进程读硬盘时候就会很慢，cpu在傻等。所以有了cpu并发执行管理多个进程，提高cpul利用率。就有了进程状态、进程管理的概念。  进程状态 创建态,就绪态,运行态,阻塞态,结束态. 就绪挂起态,阻塞挂起态.大量阻塞态会占据有限的内存,可以将这">
 <meta property="og:type" content="article">
-<meta property="og:title" content="虚拟内存">
-<meta property="og:url" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/">
+<meta property="og:title" content="进程线程">
+<meta property="og:url" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/">
 <meta property="og:site_name" content="谈沉潜">
-<meta property="og:description" content="虚拟内存 程序使用的内存是虚拟内存，操作系统内部将其与物理内存映射。避免各个程序物理地址冲突。操作系统通过 内存分段、内存分页两种方式实现虚拟内存到物理内存的映射。   内存扩展：物理内存有限，虚拟内存可以先把程序部分数据暂存到硬盘中，需要时候再调度进来。 进程隔离：各个进程运行在自己的虚拟内存中，操作系统内实现虚拟内存到物理内存的映射，避免进程访问错误。 内存管理：通过分页分段管理内存，更加有效">
+<meta property="og:description" content="进程 运行中的程序就是进程,包括数据段,程序段,PCB(进程控制块:描述进程的信息,比如程序存放的位置); 资源分配的单位   cpu如果只执行一个进程，这个进程读硬盘时候就会很慢，cpu在傻等。所以有了cpu并发执行管理多个进程，提高cpul利用率。就有了进程状态、进程管理的概念。  进程状态 创建态,就绪态,运行态,阻塞态,结束态. 就绪挂起态,阻塞挂起态.大量阻塞态会占据有限的内存,可以将这">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/image.png">
-<meta property="article:published_time" content="2025-04-03T05:00:24.000Z">
-<meta property="article:modified_time" content="2025-04-03T05:01:07.289Z">
+<meta property="og:image" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/image-1.png">
+<meta property="article:published_time" content="2025-04-03T07:59:39.000Z">
+<meta property="article:modified_time" content="2025-04-03T08:02:45.236Z">
 <meta property="article:author" content="Wayne Chen">
 <meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/image.png">
+<meta name="twitter:image" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/image-1.png">
   
   
   
-  <title>虚拟内存 - 谈沉潜</title>
+  <title>进程线程 - 谈沉潜</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -219,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="虚拟内存"></span>
+            <span id="subtitle" data-typed-text="进程线程"></span>
           
         </div>
 
@@ -230,7 +230,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-03 13:00" pubdate>
+        <time datetime="2025-04-03 15:59" pubdate>
           2025年4月3日 下午
         </time>
       </span>
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          786 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          9 分钟
+          7 分钟
         
       </span>
     
@@ -299,73 +299,48 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">虚拟内存</h1>
+            <h1 id="seo-header">进程线程</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h2><ul>
-<li>程序使用的内存是虚拟内存，操作系统内部将其与物理内存映射。避免各个程序物理地址冲突。操作系统通过 <strong>内存分段、内存分页</strong>两种方式实现虚拟内存到物理内存的映射。</li>
-</ul>
-<ol>
-<li>内存扩展：物理内存有限，虚拟内存可以先把程序部分数据暂存到硬盘中，需要时候再调度进来。</li>
-<li>进程隔离：各个进程运行在自己的虚拟内存中，操作系统内实现虚拟内存到物理内存的映射，避免进程访问错误。</li>
-<li>内存管理：通过分页分段管理内存，更加有效的分配和回收内存，减少内存碎片化。</li>
-</ol>
-<!-- 操作系统是如何管理虚拟地址与物理地址之间的关系？
-主要有两种方式，分别是内存分段和内存分页 -->
-<h2 id="内存分段"><a href="#内存分段" class="headerlink" title="内存分段"></a>内存分段</h2><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ul>
-<li>程序由若干个逻辑段组成，比如程序段、数据段，分段就是把这些段分离开来。分段的虚拟内存由<em><strong>段选择因子</strong></em>和<em><strong>段内偏移量</strong></em>。</li>
-</ul>
-<ol>
-<li><em><strong>段选择因子</strong></em>：核心是<em><strong>段号</strong></em>，段号索引到段表的一个条目，这个条目有<strong>段基地址和段边界</strong></li>
-<li><em><strong>段内偏移量</strong></em>：位于0和段边界之间，段基地址 + 段偏移量 &#x3D; 物理地址</li>
-</ol>
-<h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h3><ol>
-<li><em><strong>外部内存碎片</strong></em>：每个段大小长度不固定，会产生多个不连续的小段内存（外部内存碎片），导致新程序无法加载。</li>
-</ol>
-<h3 id="解决方方案"><a href="#解决方方案" class="headerlink" title="解决方方案"></a>解决方方案</h3><ol>
-<li><em><strong>内存交换</strong></em>：将内存中的应用写到硬盘上，再写回内存中，但写回的位置不再是原来的位置，而是紧跟前面的内存。</li>
-</ol>
-<h2 id="内存分页"><a href="#内存分页" class="headerlink" title="内存分页"></a>内存分页</h2><h3 id="基础-1"><a href="#基础-1" class="headerlink" title="基础"></a>基础</h3><ul>
-<li>分页是把物理内存提前划分好为一个个固定大小的空间，页与页之间紧密排列，虚拟地址和物理地址通过页表映射。</li>
-<li>分页机制下，虚拟地址分为<em><strong>页号</strong></em>和<em><strong>页内偏移量</strong></em>，页号是页表的索引，页表包含物理页每页的基地址，再加上偏移量就得到物理地址。</li>
-</ul>
-<h3 id="存在的问题-1"><a href="#存在的问题-1" class="headerlink" title="存在的问题"></a>存在的问题</h3><ul>
-<li><em><strong>内存分页机制会有内部内存碎片</strong></em>：采用了分页，页与页之间是紧密排列的，所以不会有外部内存碎片；但内存分配最小是一页，即使程序不足一页也会分配一个页，所以页面内会出现内存浪费。</li>
-<li><em><strong>页表占据大量内存空间</strong></em>：每一页内存大小不大的话，大量内存会对应<strong>很多个</strong>页表项，每个进程又有自己的页表；（段的话因为一个程序只对应五六个段，段表不会占特别大空间）。</li>
-</ul>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ol>
-<li><em><strong>多级页表</strong></em>：程序用不到那么多内存，不需要真正创建所有的页号和页的映射。一级页表可以覆盖全部的虚拟内存，记录二级页表目录；二级列表记录真正的映射关系，只有一级页表项用到的部分才创建二级部分。</li>
-</ol>
-<h2 id="TLB页表缓存"><a href="#TLB页表缓存" class="headerlink" title="TLB页表缓存"></a>TLB页表缓存</h2><ul>
-<li>最常用的页表进行缓存，常用的页不多，TLB命中率很高。</li>
-</ul>
-<!-- - 缓存思想，速度慢了就缓存常用的。 -->
-
-<h2 id="分段和分页相同处和不同处"><a href="#分段和分页相同处和不同处" class="headerlink" title="分段和分页相同处和不同处"></a>分段和分页相同处和不同处</h2><ul>
-<li>相同处：</li>
-</ul>
-<ol>
-<li>地址转换过程：都是从段表页表中获取基地址，再加上偏移量获取物理地址。</li>
-<li>记录表：分段或者分页都使用了表来记录段或页的映射关系。</li>
+                <h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ol>
+<li>运行中的程序就是进程,包括数据段,程序段,PCB(进程控制块:描述进程的信息,比如程序存放的位置);</li>
+<li>资源分配的单位</li>
 </ol>
 <ul>
-<li>不同处：</li>
+<li>cpu如果只执行一个进程，这个进程读硬盘时候就会很慢，cpu在傻等。所以有了cpu并发执行管理多个进程，提高cpul利用率。就有了<strong>进程状态、进程管理</strong>的概念。</li>
+</ul>
+<h2 id="进程状态"><a href="#进程状态" class="headerlink" title="进程状态"></a>进程状态</h2><ul>
+<li><strong>创建态,就绪态,运行态,阻塞态,结束态</strong>.</li>
+<li><strong>就绪挂起态,阻塞挂起态</strong>.大量阻塞态会占据有限的内存,可以将这些进程放到外存(磁盘中)<br><img src="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/image-1.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+</ul>
+<h2 id="进程的控制和管理"><a href="#进程的控制和管理" class="headerlink" title="进程的控制和管理"></a>进程的控制和管理</h2><ol>
+<li>PCB(进程的唯一标识):进程的状态,进程的优先级,CPU上下文信息</li>
+<li><em><strong>链表存储</strong></em>：相同状态存放在一起,比如:就绪队列,阻塞队列.更适应进程<strong>创建、销毁多</strong>的场景.</li>
+</ol>
+<h2 id="线程-并发-共享资源"><a href="#线程-并发-共享资源" class="headerlink" title="线程:并发 共享资源"></a>线程:并发 共享资源</h2><ol>
+<li><strong>进程下的一条执行流程</strong></li>
+<li><strong>可以并发且共享资源的执行</strong></li>
+<li>CPU调度的基本单位</li>
+</ol>
+<h2 id="进程和线程的区别-10024"><a href="#进程和线程的区别-10024" class="headerlink" title="进程和线程的区别 &#10024;"></a>进程和线程的区别 &#10024;</h2><ol>
+<li>根本区别:进程是操作系统资源分配的基本单位,线程是CPU任务调度和执行的基本单位.</li>
+<li>关系:进程包含一个或多个线程</li>
+<li>资源开销:进程有独立的数据段和程序段,程序之间切换成本大;线程是轻量级的进程,同一进程下的线程共享程序段和数据段,线程有自己独立的PC(程序计数器:记录下一条指令的位置)和执行栈,创建速度快，销毁速度快，线程切换成本低速度快.适合并发执行。</li>
+</ol>
+<h2 id="进程调度算法"><a href="#进程调度算法" class="headerlink" title="进程调度算法"></a>进程调度算法</h2><ul>
+<li>进程状态改变时候比如：运行态到终止、运行到阻塞、就绪到运行，都会使用到调度算法。CPU更换新的进程来执行。</li>
 </ul>
 <ol>
-<li>大小：段的大小是根据逻辑需求而定的，且是动态变化的；页的大小是固定的，解决了内存碎片问题。</li>
-<li>碎片：分段产生外部碎片，分页产生内部碎片。</li>
-<li>表结构：段表记录的是段基地址和段边界，页表记录的是页号对应的页框。</li>
+<li>先来先服务算法：对短作业不利，要等长作业很久。</li>
+<li>短作业优先算法：对长作业不利，可能一直等。</li>
+<li>最高响应比算法：理想型算法，无法实现。<br>(等待时间 + 要求服务时间)&#x2F; 要求服务时间</li>
+<li>时间片轮转算法：每个进程分配一个时间片，允许进程在该时间片执行。</li>
+<li>最高优先级算法：CPU选择优先级最高的进程执行代码。静态优先级、动态优先级；抢占式、非抢占式。抢占式可能导致优先级低的永远无法执行。</li>
+<li>多级反馈队列算法：多个队列，每个队列优先级从高到低排列，同时优先级越高时间片越短。  先进入最高优先级队列，没执行完进入下一级优先队列。对于短作业来说，很可能在最高优先级队列的时间片就执行完毕；对于长作业来说，进入到后面优先级更低的队列，但是执行时间变长了。<strong>短作业优先级高，执行时间短；长作业优先级低，执行时间长。</strong></li>
 </ol>
-<h2 id="段页式内存管理"><a href="#段页式内存管理" class="headerlink" title="段页式内存管理"></a>段页式内存管理</h2><!-- 现在更多是纯分页 -->
-<ul>
-<li>优点：<strong>逻辑分段+无外部碎片。</strong></li>
-<li>先将程序按逻辑分成多个逻辑段。</li>
-<li>每个段再分成固定大小的页，对段划出连续空间。</li>
-<li>虚拟地址由：<em><strong>段号，段内页号，页面偏移量</strong></em>组成。<br><img src="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/image.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
-</ul>
-
+<!-- 如果执行低优先级的长作业时候有短作业进入，则会先去执行短作业。 -->
                 
               </div>
             
@@ -388,7 +363,7 @@
   
     <span>></span>
     
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="category-chain-item">内存管理</a>
+  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="category-chain-item">进程管理</a>
   
   
 
@@ -417,8 +392,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>虚拟内存</div>
-      <div>http://example.com/2025/04/03/操作系统/内存管理/虚拟内存/</div>
+      <div>进程线程</div>
+      <div>http://example.com/2025/04/03/操作系统/进程管理/进程线程/</div>
     </div>
     <div class="license-meta">
       
@@ -462,9 +437,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/" title="进程线程">
+                      <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%9A%84%E9%80%9A%E4%BF%A1/" title="进程的通信">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">进程线程</span>
+                        <span class="hidden-mobile">进程的通信</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -472,8 +447,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/vite/" title="vite">
-                        <span class="hidden-mobile">vite</span>
+                      <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/" title="虚拟内存">
+                        <span class="hidden-mobile">虚拟内存</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
