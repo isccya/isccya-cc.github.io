@@ -26,23 +26,23 @@
 <meta property="og:site_name" content="谈沉潜">
 <meta property="og:description" content="https:&#x2F;&#x2F;vue3js.cn&#x2F;interview&#x2F;webpack&#x2F;webpack.html#%E4%B8%80%E3%80%81%E8%83%8C%E6%99%AF https:&#x2F;&#x2F;juejin.cn&#x2F;post&#x2F;6844904094281236487?searchId&#x3D;20241027155907A6653545D1F9EE98EE4D loader loader本质是一个函数，翻译官，对接">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/image-1.png">
-<meta property="og:image" content="http://example.com/cache-loader.png">
-<meta property="og:image" content="http://example.com/image-2.png">
-<meta property="og:image" content="http://example.com/image-3.png">
-<meta property="og:image" content="http://example.com/image-4.png">
-<meta property="og:image" content="http://example.com/image-8.png">
-<meta property="og:image" content="http://example.com/image-9.png">
-<meta property="og:image" content="http://example.com/image-10.png">
-<meta property="og:image" content="http://example.com/image-5.png">
-<meta property="og:image" content="http://example.com/image-6.png">
-<meta property="og:image" content="http://example.com/image-7.png">
-<meta property="og:image" content="http://example.com/image.png">
+<meta property="og:image" content="http://example.com/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-1.png">
+<meta property="og:image" content="http://example.com/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/cache-loader.png">
+<meta property="og:image" content="http://example.com/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-2.png">
+<meta property="og:image" content="http://example.com/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-3.png">
+<meta property="og:image" content="http://example.com/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-4.png">
+<meta property="og:image" content="http://example.com/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-8.png">
+<meta property="og:image" content="http://example.com/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-9.png">
+<meta property="og:image" content="http://example.com/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-10.png">
+<meta property="og:image" content="http://example.com/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-5.png">
+<meta property="og:image" content="http://example.com/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-6.png">
+<meta property="og:image" content="http://example.com/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-7.png">
+<meta property="og:image" content="http://example.com/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image.png">
 <meta property="article:published_time" content="2025-04-03T02:07:56.000Z">
-<meta property="article:modified_time" content="2025-04-03T02:08:18.690Z">
+<meta property="article:modified_time" content="2025-04-03T04:59:19.861Z">
 <meta property="article:author" content="Wayne Chen">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/image-1.png">
+<meta name="twitter:image" content="http://example.com/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-1.png">
   
   
   
@@ -358,18 +358,18 @@
 <li>plugin：在上述过程中，webpack在特定时间暴露特定事件，插件监听到会执行特定的逻辑，改变输出的结果。</li>
 </ol>
 <h2 id="如何提高构建速度？"><a href="#如何提高构建速度？" class="headerlink" title="如何提高构建速度？"></a>如何提高构建速度？</h2><ol>
-<li>cache-loader：（对loader缓存）将性能开销大的loader输出结果缓存到磁盘，后续使用到该loader的文件先交给cache-loader处理，计算hash值，如果发现有缓存直接复用。<br><img src="/image-1.png" srcset="/img/loading.gif" lazyload alt="alt text"><br><img src="/cache-loader.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
-<li>thread-loader：许多loader比如babel-loader支持并行处理，利用多核CPU加速构建。<br><img src="/image-2.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
-<li>缩小构建作用域：合理配置 loader 的 exclude 和 include 选项，避免不必要的文件被处理<br><img src="/image-3.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
-<li>dllplugin：可以帮助将一些第三方依赖（如 React、Vue、Lodash 等）提前打包生成动态链接库（DLL），并且让 Webpack 跳过这些库的重新编译。<br><img src="/image-4.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+<li>cache-loader：（对loader缓存）将性能开销大的loader输出结果缓存到磁盘，后续使用到该loader的文件先交给cache-loader处理，计算hash值，如果发现有缓存直接复用。<br><img src="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-1.png" srcset="/img/loading.gif" lazyload alt="alt text"><br><img src="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/cache-loader.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+<li>thread-loader：许多loader比如babel-loader支持并行处理，利用多核CPU加速构建。<br><img src="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-2.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+<li>缩小构建作用域：合理配置 loader 的 exclude 和 include 选项，避免不必要的文件被处理<br><img src="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-3.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+<li>dllplugin：可以帮助将一些第三方依赖（如 React、Vue、Lodash 等）提前打包生成动态链接库（DLL），并且让 Webpack 跳过这些库的重新编译。<br><img src="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-4.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
 <li>代码分割：将模块依赖原本的大文件拆分为多个文件，加载页面更快。</li>
 </ol>
 <ul>
 <li>入口分割：指定多个入口点，每个入口点生成独立的chunk</li>
-<li>基于模块的分割：动态调用import，按需加载模块。webpack会把该模块分割成独立的chunk，在路由配置component时候可以用箭头函数调用import引入组件，webpackChunkName申明chunk名，因为每个路由一般是单独的模块。<br><img src="/image-8.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+<li>基于模块的分割：动态调用import，按需加载模块。webpack会把该模块分割成独立的chunk，在路由配置component时候可以用箭头函数调用import引入组件，webpackChunkName申明chunk名，因为每个路由一般是单独的模块。<br><img src="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-8.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
 </ul>
 <ol start="6">
-<li>extrenals，避免打包的资源，通过cdn引入。<br><img src="/image-9.png" srcset="/img/loading.gif" lazyload alt="alt text"><br><img src="/image-10.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+<li>extrenals，避免打包的资源，通过cdn引入。<br><img src="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-9.png" srcset="/img/loading.gif" lazyload alt="alt text"><br><img src="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-10.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
 </ol>
 <h2 id="如何减少打包体积？"><a href="#如何减少打包体积？" class="headerlink" title="如何减少打包体积？"></a>如何减少打包体积？</h2><ol>
 <li>启动tree-shaking：剔除没使用到的模块。</li>
@@ -387,7 +387,7 @@
 <li>webpack开发服务器会与浏览器建立websocket连接，允许客户端和服务端实时通信。</li>
 <li>当webpack检测到有模块变化时，重新编译模块。</li>
 <li>通过socket将hash传送给客户端，客户端对比hash区别，请求更改的文件。</li>
-<li>在客户端进行模块更新。<br><img src="/image-5.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+<li>在客户端进行模块更新。<br><img src="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-5.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
 </ol>
 <h2 id="vite和webpack区别"><a href="#vite和webpack区别" class="headerlink" title="vite和webpack区别"></a>vite和webpack区别</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7283682738497765413">https://juejin.cn/post/7283682738497765413</a></li>
@@ -399,7 +399,7 @@
 <li>热模块更新：vite检测到变更后通知浏览器重新请求，浏览器重新请求后再进行编译，并做了强制缓存（依赖模块）和协商缓存（自己的源码模块）；webpack需要将对应的依赖关系重新打包，再进行模块更新。</li>
 </ol>
 <ul>
-<li>webpack适合大型复杂的项目,生态更稳定，vite更适合小型应用开发.<br><img src="/image-6.png" srcset="/img/loading.gif" lazyload alt="alt text"><br><img src="/image-7.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+<li>webpack适合大型复杂的项目,生态更稳定，vite更适合小型应用开发.<br><img src="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-6.png" srcset="/img/loading.gif" lazyload alt="alt text"><br><img src="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image-7.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
 </ul>
 <h2 id="externals优化"><a href="#externals优化" class="headerlink" title="externals优化"></a>externals优化</h2><!-- 穹顶有使用 -->
 <ul>
@@ -408,7 +408,7 @@
 </ul>
 <h2 id="chunk是什么-bundle是什么"><a href="#chunk是什么-bundle是什么" class="headerlink" title="chunk是什么 bundle是什么"></a>chunk是什么 bundle是什么</h2><ul>
 <li>chunk：根据模块之间的依赖，将多个模块组成的代码块。</li>
-<li>bundle：最后输出的文件，浏览器可以直接加载。<br><img src="/image.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+<li>bundle：最后输出的文件，浏览器可以直接加载。<br><img src="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/image.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
 </ul>
 <h2 id="npm-和pnpm区别"><a href="#npm-和pnpm区别" class="headerlink" title="npm 和pnpm区别"></a>npm 和pnpm区别</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/683757720">https://zhuanlan.zhihu.com/p/683757720</a></li>
@@ -418,7 +418,6 @@
 <li><em><strong>硬链接</strong></em>:依赖项不会被复制到项目中,使用硬链接从全局引入到项目中.提高下载速度.npm将依赖项复制到项目目录中.</li>
 <li><em><strong>扁平化依赖树</strong></em>:将依赖树扁平化,避免幽灵依赖的下载.npm保持项目树的原来结构.</li>
 </ol>
-<p>webpack</p>
 
                 
               </div>
@@ -502,9 +501,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/2.%20vite/" title="">
+                      <a href="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/vite/" title="vite">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
+                        <span class="hidden-mobile">vite</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
