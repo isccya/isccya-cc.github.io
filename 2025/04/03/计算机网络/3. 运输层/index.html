@@ -19,21 +19,24 @@
   <meta name="author" content="Wayne Chen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="浏览器进程四种进程 浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。 渲染进程：负责页面渲染工作。包括渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）。 插件进程：处理插件的运行。 GPU进程：处理图形渲染。  浏览器为什么要限制请求并发数？ 对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;t">
+    <meta name="description" content="一台主机的应用进程和另一台主机的应用进程通信，网络层负责主机与主机之间的通信。  TCP与UDP区别 可靠：可靠，不可靠 连接：建立连接，不建立连接 控制：tcp有流量控制拥塞控制，udp没有 服务：tcp一对一，udp一对多 传输：字节流：tcp的数据包可以按字节大小拆分成多个数据包，udp每次一个包一个包完整的发送。  TCP滑动窗口前置基础 停止-等待协议：发送数据包后，等对方确认才能发送">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器进程">
-<meta property="og:url" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/">
+<meta property="og:title" content="运输层">
+<meta property="og:url" content="http://example.com/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3.%20%E8%BF%90%E8%BE%93%E5%B1%82/">
 <meta property="og:site_name" content="谈沉潜">
-<meta property="og:description" content="浏览器进程四种进程 浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。 渲染进程：负责页面渲染工作。包括渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）。 插件进程：处理插件的运行。 GPU进程：处理图形渲染。  浏览器为什么要限制请求并发数？ 对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;t">
+<meta property="og:description" content="一台主机的应用进程和另一台主机的应用进程通信，网络层负责主机与主机之间的通信。  TCP与UDP区别 可靠：可靠，不可靠 连接：建立连接，不建立连接 控制：tcp有流量控制拥塞控制，udp没有 服务：tcp一对一，udp一对多 传输：字节流：tcp的数据包可以按字节大小拆分成多个数据包，udp每次一个包一个包完整的发送。  TCP滑动窗口前置基础 停止-等待协议：发送数据包后，等对方确认才能发送">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-04-03T08:00:30.000Z">
-<meta property="article:modified_time" content="2025-04-03T08:02:45.235Z">
+<meta property="og:image" content="http://example.com/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3.%20%E8%BF%90%E8%BE%93%E5%B1%82/image-5.png">
+<meta property="og:image" content="http://example.com/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3.%20%E8%BF%90%E8%BE%93%E5%B1%82/image-4.png">
+<meta property="article:published_time" content="2025-04-03T09:27:01.000Z">
+<meta property="article:modified_time" content="2025-04-03T09:32:14.075Z">
 <meta property="article:author" content="Wayne Chen">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3.%20%E8%BF%90%E8%BE%93%E5%B1%82/image-5.png">
   
   
   
-  <title>浏览器进程 - 谈沉潜</title>
+  <title>运输层 - 谈沉潜</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="浏览器进程"></span>
+            <span id="subtitle" data-typed-text="运输层"></span>
           
         </div>
 
@@ -227,7 +230,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-03 16:00" pubdate>
+        <time datetime="2025-04-03 17:27" pubdate>
           2025年4月3日 下午
         </time>
       </span>
@@ -239,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          429 字
+          1.8k 字
         
       </span>
     
@@ -250,7 +253,7 @@
         
         
         
-          4 分钟
+          16 分钟
         
       </span>
     
@@ -296,41 +299,108 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">浏览器进程</h1>
+            <h1 id="seo-header">运输层</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="浏览器进程"><a href="#浏览器进程" class="headerlink" title="浏览器进程"></a>浏览器进程</h1><h2 id="四种进程"><a href="#四种进程" class="headerlink" title="四种进程"></a>四种进程</h2><ol>
-<li>浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。</li>
-<li>渲染进程：负责页面渲染工作。包括<em><strong>渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）</strong></em>。</li>
-<li>插件进程：处理插件的运行。</li>
-<li>GPU进程：处理图形渲染。</li>
+                <ul>
+<li>一台主机的应用进程和另一台主机的应用进程通信，网络层负责主机与主机之间的通信。</li>
+</ul>
+<h1 id="TCP与UDP区别"><a href="#TCP与UDP区别" class="headerlink" title="TCP与UDP区别"></a>TCP与UDP区别</h1><ol>
+<li><em><strong>可靠</strong></em>：可靠，不可靠</li>
+<li><em><strong>连接</strong></em>：建立连接，不建立连接</li>
+<li><em><strong>控制</strong></em>：tcp有流量控制拥塞控制，udp没有</li>
+<li><em><strong>服务</strong></em>：tcp一对一，udp一对多</li>
+<li><em><strong>传输</strong></em>：字节流：tcp的数据包可以按字节大小拆分成多个数据包，udp每次一个包一个包完整的发送。</li>
 </ol>
-<h2 id="浏览器为什么要限制请求并发数？"><a href="#浏览器为什么要限制请求并发数？" class="headerlink" title="浏览器为什么要限制请求并发数？"></a>浏览器为什么要限制请求并发数？</h2><ol>
-<li>对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;tcp请求占据一个端口，防止端口资源消耗殆尽。</li>
-<li>避免频繁的线程切换：线程和http请求相对应，如果并发数量过大会导致频繁切换线程。</li>
-<li>避免同一客户端发送大量请求超过服务端并发</li>
-<li>客户端良知机制：防止两个应用抢占资源时候强势一方导致弱势一方永远阻塞。</li>
-<li>http队头阻塞：tcp队头阻塞。</li>
+<h1 id="TCP滑动窗口"><a href="#TCP滑动窗口" class="headerlink" title="TCP滑动窗口"></a>TCP滑动窗口</h1><h2 id="前置基础"><a href="#前置基础" class="headerlink" title="前置基础"></a>前置基础</h2><ol>
+<li>停止-等待协议：发送数据包后，等对方确认才能发送下一个数据包。</li>
+<li>超时重传：如果长时间未收到应答，发送方重新发送数据。</li>
+<li>回退N帧协议：一个窗口内的数据一同发送，提高信道利用率。</li>
 </ol>
-<h2 id="如何解决浏览器请求次数限制？"><a href="#如何解决浏览器请求次数限制？" class="headerlink" title="如何解决浏览器请求次数限制？"></a>如何解决浏览器请求次数限制？</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000039157302">https://segmentfault.com/a/1190000039157302</a></li>
+<h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2><ol>
+<li><strong>是什么</strong>：TCP采用的是请求-应答的机制，确保数据传输的可靠性。如果请求一次，等待应答再发送下一次就导致效率很低。所以引入了窗口概念，无需等待应答，窗口内的数据都能够发送.</li>
+<li><strong>工作流程</strong>：发送方：收到应答后，滑动窗口就往后移动，后面的数据就可以继续发送。接收方：收到数据并确认后往后移动，可以接受更多的数据发送。</li>
+</ol>
+<h1 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h1><ul>
+<li>让发送方发送速率不要过快，要让接收方来得及接受。</li>
 </ul>
 <ol>
-<li>http2.0，http3.0 解决队头阻塞，并发请求。</li>
-<li>使用缓存，减少请求量。</li>
-<li>合并请求，减少请求次数。</li>
-<li>按需加载。</li>
-<li>域名分散。</li>
+<li>接收窗口：接收方在tcp头部告诉发送方自己的接收窗口大小，接收方的发送窗口大小不能超过接收窗口大小。</li>
+<li>零窗口探测：接收窗口是零；接收方发送更改接收窗口大小不为0情况，但丢失。&#x3D;&gt; 持续计时器，收到零窗口通知后开启，到达时间后发送零窗口探测报文。</li>
 </ol>
-<h2 id="浏览器组成"><a href="#浏览器组成" class="headerlink" title="浏览器组成"></a>浏览器组成</h2><ol>
-<li>用户界面：地址栏、书签栏、前进、后退等等。</li>
-<li>浏览器主引擎：渲染引擎和用户界面的桥梁，处理用户交互，传递信息给渲染引擎。</li>
-<li>渲染引擎：浏览器渲染过程。</li>
-<li>js引擎：解析和执行js。</li>
-<li>网络模块：发送请求和加载资源。</li>
-<li>数据存储：cookie、localStorage、SessionStorage、indexedDB等等</li>
+<h1 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h1><ul>
+<li>防止过多数据注入网络，避免路由器或链路过载。</li>
+</ul>
+<ol>
+<li><em><strong>慢开始算法</strong></em>：呈<em><strong>指数增长</strong></em>往网络中注入字节数据，同时有个慢开始门限，避免增长过快。</li>
+<li><em><strong>拥塞避免算法</strong></em>：当拥塞窗口大于慢开始门限后进行拥塞避免算法，线性增长窗口大小.</li>
+<li><em><strong>超时重传</strong></em>：拥塞窗口设置为1，慢开始门限设置为滑动窗口大小的一半，重新开始慢开始算法和拥塞避免算法。</li>
+<li><em><strong>快重传</strong></em>：对已收到的报文立即确认，重复的报文也发送确认，发送方收到三次确认后立即发送。</li>
+<li><em><strong>快恢复</strong></em>：快重传后执行，将慢开始门限调整到滑动窗口大小的一半，再将窗口大小设置和慢开始门限一样，后续进行拥塞避免算法。</li>
+</ol>
+<p><img src="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3.%20%E8%BF%90%E8%BE%93%E5%B1%82/image-5.png" srcset="/img/loading.gif" lazyload alt="alt text"><br><img src="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3.%20%E8%BF%90%E8%BE%93%E5%B1%82/image-4.png" srcset="/img/loading.gif" lazyload alt="alt text"></p>
+<blockquote>
+<p>流量控制和拥塞控制区别：流量控制是端到端问题，控制发送方速率，让接收方来得及接收；拥塞控制是一个全局性的过程。</p>
+</blockquote>
+<h1 id="tcp三次握手流程"><a href="#tcp三次握手流程" class="headerlink" title="tcp三次握手流程"></a>tcp三次握手流程</h1><ol>
+<li>开始双方都处于close状态，服务端主动进入listen状态。</li>
+<li><em><strong>第一次握手</strong></em>：客户端发送SYN同步位为1，把初始化序号放到序号中。进入SYN-sent。</li>
+<li><em><strong>第二次握手</strong></em>：服务端收到后发送SYN同步位、ACK确认位为1，确认号为客户端序号下一位，初始化序号放到序号中。进入SYN-REC状态。</li>
+<li><em><strong>第三次握手</strong></em>：客户端最后应答,ACK&#x3D;1,确认号为服务端序号下一位,这时可以携带数据发送.客户端进入ESTABLISHED状态</li>
+<li>服务端收到后也进入ESTABLISHED(既定)状态.</li>
+</ol>
+<h1 id="tcp不能两次握手的原因"><a href="#tcp不能两次握手的原因" class="headerlink" title="tcp不能两次握手的原因"></a>tcp不能两次握手的原因</h1><ol>
+<li><em><strong>避免历史连接和资源浪费</strong></em>：上一次握手失败后建立新的握手，如果旧的SYN信号此时到达，服务端会与其建立连接导致资源的浪费，<strong>服务端没有中间状态给客户端来阻止历史连接</strong>。如果是三次握手，客户端在收到第二次握手后发送RST报文中止连接。</li>
+<li><em><strong>同步双方序列号</strong></em>：两次握手只能服务端初始化序列号，客户端无法得知服务端的初始序号。</li>
+</ol>
+<h1 id="tcp可以四次握手的原因"><a href="#tcp可以四次握手的原因" class="headerlink" title="tcp可以四次握手的原因"></a>tcp可以四次握手的原因</h1><ul>
+<li>三次握手中的第二个部分分为：确认序列号，同步序列号，可以合成一次握手发送。</li>
+</ul>
+<h1 id="每次建立tcp的初始化序列号不一致"><a href="#每次建立tcp的初始化序列号不一致" class="headerlink" title="每次建立tcp的初始化序列号不一致"></a>每次建立tcp的初始化序列号不一致</h1><ol>
+<li>避免历史报文被下一个相同的连接接收。</li>
+<li>防止攻击者伪造相同的序列号被接收。</li>
+</ol>
+<h1 id="第一二三次握手丢失发生什么"><a href="#第一二三次握手丢失发生什么" class="headerlink" title="第一二三次握手丢失发生什么"></a>第一二三次握手丢失发生什么</h1><ol>
+<li>第一次: 客户端重传(没得到服务端响应),达到最大次数断开连接.</li>
+<li>第二次: 客户端重传(没得到服务端响应),服务端重传(没得到客户端响应),达到最大次数断开连接.</li>
+<li>第三次: 服务端重传,客户端收到后再重传第三次握手.(ACK应答不会主动传)</li>
+</ol>
+<h1 id="SYN攻击"><a href="#SYN攻击" class="headerlink" title="SYN攻击"></a>SYN攻击</h1><ul>
+<li>攻击者用不同ip向服务端发送第一次握手连接，服务端每接收一个SYN就进入SYN-REC状态，服务端发送的第二次握手SYN+ACK不会被应答，这样服务端半连接队列被占满。</li>
+<li>解决方法：</li>
+</ul>
+<ol>
+<li>增大半连接队列。</li>
+<li>减少SYN-ACK重传次数。</li>
+</ol>
+<h1 id="tcp四次挥手流程"><a href="#tcp四次挥手流程" class="headerlink" title="tcp四次挥手流程"></a>tcp四次挥手流程</h1><ol>
+<li>客户端发送FIN &#x3D; 1标志位的第一次挥手请求，进入FIN-wait1状态。</li>
+<li>服务端接收后返回ACK &#x3D; 1的第二次挥手请求，进入close-wait状态。</li>
+<li>客户端进入FIN-wait2状态。</li>
+<li>服务端如果有数据继续进行发送。</li>
+<li>服务端发送 FIN &#x3D; 1的第三次挥手请求，进入last-ack状态。</li>
+<li>客户端发送ACK &#x3D; 1的第四次挥手请求，进入time-wait状态。</li>
+<li>服务端收到后进入close状态。</li>
+<li>客户端等待2MSL（报文最大生存时间）后关闭。</li>
+</ol>
+<h1 id="tcp可以三次挥手的原因"><a href="#tcp可以三次挥手的原因" class="headerlink" title="tcp可以三次挥手的原因"></a>tcp可以三次挥手的原因</h1><ol>
+<li>服务端没有数据需要发送且开启了tcp延迟确认机制，则可以将第二、三次挥手合为一次挥手。</li>
+<li>tcp延迟确认机制：解决ack传输效率低的问题：ack延迟一段时间，等待是否有数据一起发送。</li>
+</ol>
+<h1 id="第一二三四次挥手丢失发生什么"><a href="#第一二三四次挥手丢失发生什么" class="headerlink" title="第一二三四次挥手丢失发生什么"></a>第一二三四次挥手丢失发生什么</h1><ol>
+<li>第一次:客户端重传,达到最大次数后进入close状态</li>
+<li>第二次:(ACK不会主动超时重传)客户端重传,服务端收到后再发送ACK.客户端达到最大次数后进入close状态.</li>
+<li>第三次:服务端重传,达到最大次数后服务端close,客户端<em><strong>FIN_WAIT2状态等60s</strong></em>后进入close.</li>
+<li>第四次:服务端重传,达到最大次数后close,客户端收到fin会重置TIME_WAIT时间(这里要原本等2MSL)</li>
+</ol>
+<h1 id="等待时间是2MSL原因"><a href="#等待时间是2MSL原因" class="headerlink" title="等待时间是2MSL原因"></a>等待时间是2MSL原因</h1><ul>
+<li>2MSL（报文最大生存时间）允许ACK丢失一次，服务端进行FIN重传可在2MSL内到达。</li>
+</ul>
+<h1 id="time-wait状态的意义"><a href="#time-wait状态的意义" class="headerlink" title="time-wait状态的意义"></a>time-wait状态的意义</h1><ol>
+<li>因为序号和确认号是循环的,防止历史连接的数据被错误的接受.2MSL可以让这次网络的数据都会丢失或者接受完毕.</li>
+<li>确保被动关闭的一方能正确关闭.被动关闭方没收到ACK信号可以重传.</li>
 </ol>
 
                 
@@ -350,15 +420,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="category-chain-item">计算机网络</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="category-chain-item">进程管理</a>
-  
-  
-
   
 
       </span>
@@ -377,8 +440,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>浏览器进程</div>
-      <div>http://example.com/2025/04/03/操作系统/进程管理/浏览器进程/</div>
+      <div>运输层</div>
+      <div>http://example.com/2025/04/03/计算机网络/3. 运输层/</div>
     </div>
     <div class="license-meta">
       
@@ -422,9 +485,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/1.%20%E5%9F%BA%E7%A1%80/" title="基础">
+                      <a href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/4.%20%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" title="加密算法">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">基础</span>
+                        <span class="hidden-mobile">加密算法</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -432,8 +495,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E9%94%81/" title="锁">
-                        <span class="hidden-mobile">锁</span>
+                      <a href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/2.%20http/" title="http">
+                        <span class="hidden-mobile">http</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -19,21 +19,21 @@
   <meta name="author" content="Wayne Chen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="浏览器进程四种进程 浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。 渲染进程：负责页面渲染工作。包括渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）。 插件进程：处理插件的运行。 GPU进程：处理图形渲染。  浏览器为什么要限制请求并发数？ 对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;t">
+    <meta name="description" content="定位position 定位基础 偏移量left、top：元素开启定位后可以用偏移量offset设置元素的位置.top越大越往下(类似margin-top),left越大越往右(类似margin-left),一般水平或垂直方向只用一个属性.偏移量只移动自己,不影响其他元素.top bottom left right z-index元素层级：开启定位的元素可通过z-index属性来指定元素的层级,z-">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器进程">
-<meta property="og:url" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/">
+<meta property="og:title" content="定位">
+<meta property="og:url" content="http://example.com/2025/04/03/CSS/3.%20%E5%AE%9A%E4%BD%8D/">
 <meta property="og:site_name" content="谈沉潜">
-<meta property="og:description" content="浏览器进程四种进程 浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。 渲染进程：负责页面渲染工作。包括渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）。 插件进程：处理插件的运行。 GPU进程：处理图形渲染。  浏览器为什么要限制请求并发数？ 对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;t">
+<meta property="og:description" content="定位position 定位基础 偏移量left、top：元素开启定位后可以用偏移量offset设置元素的位置.top越大越往下(类似margin-top),left越大越往右(类似margin-left),一般水平或垂直方向只用一个属性.偏移量只移动自己,不影响其他元素.top bottom left right z-index元素层级：开启定位的元素可通过z-index属性来指定元素的层级,z-">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-04-03T08:00:30.000Z">
-<meta property="article:modified_time" content="2025-04-03T08:02:45.235Z">
+<meta property="article:published_time" content="2025-04-03T10:54:08.000Z">
+<meta property="article:modified_time" content="2025-04-03T11:01:42.654Z">
 <meta property="article:author" content="Wayne Chen">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>浏览器进程 - 谈沉潜</title>
+  <title>定位 - 谈沉潜</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="浏览器进程"></span>
+            <span id="subtitle" data-typed-text="定位"></span>
           
         </div>
 
@@ -227,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-03 16:00" pubdate>
-          2025年4月3日 下午
+        <time datetime="2025-04-03 18:54" pubdate>
+          2025年4月3日 晚上
         </time>
       </span>
     
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          429 字
+          548 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          4 分钟
+          5 分钟
         
       </span>
     
@@ -296,42 +296,56 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">浏览器进程</h1>
+            <h1 id="seo-header">定位</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="浏览器进程"><a href="#浏览器进程" class="headerlink" title="浏览器进程"></a>浏览器进程</h1><h2 id="四种进程"><a href="#四种进程" class="headerlink" title="四种进程"></a>四种进程</h2><ol>
-<li>浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。</li>
-<li>渲染进程：负责页面渲染工作。包括<em><strong>渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）</strong></em>。</li>
-<li>插件进程：处理插件的运行。</li>
-<li>GPU进程：处理图形渲染。</li>
+                <h1 id="定位position"><a href="#定位position" class="headerlink" title="定位position"></a>定位position</h1><!-- position:static // 未开启定位 -->
+<h2 id="定位基础"><a href="#定位基础" class="headerlink" title="定位基础"></a>定位基础</h2><ol>
+<li><strong>偏移量left、top</strong>：元素开启定位后可以用偏移量offset设置元素的位置.top越大越往下(类似margin-top),left越大越往右(类似margin-left),一般水平或垂直方向只用一个属性.<br>偏移量只移动自己,不影响其他元素.top bottom left right</li>
+<li><strong>z-index元素层级</strong>：开启定位的元素可通过z-index属性来指定元素的层级,z-index值越大层级越高越优先展示.相同则优先显示后面的元素,祖先元素不会盖住后代.</li>
 </ol>
-<h2 id="浏览器为什么要限制请求并发数？"><a href="#浏览器为什么要限制请求并发数？" class="headerlink" title="浏览器为什么要限制请求并发数？"></a>浏览器为什么要限制请求并发数？</h2><ol>
-<li>对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;tcp请求占据一个端口，防止端口资源消耗殆尽。</li>
-<li>避免频繁的线程切换：线程和http请求相对应，如果并发数量过大会导致频繁切换线程。</li>
-<li>避免同一客户端发送大量请求超过服务端并发</li>
-<li>客户端良知机制：防止两个应用抢占资源时候强势一方导致弱势一方永远阻塞。</li>
-<li>http队头阻塞：tcp队头阻塞。</li>
-</ol>
-<h2 id="如何解决浏览器请求次数限制？"><a href="#如何解决浏览器请求次数限制？" class="headerlink" title="如何解决浏览器请求次数限制？"></a>如何解决浏览器请求次数限制？</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000039157302">https://segmentfault.com/a/1190000039157302</a></li>
-</ul>
+<h2 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h2><!-- 灵魂出窍,肉体占原来位置 -->
+<p>position:<em><strong>relative</strong></em></p>
 <ol>
-<li>http2.0，http3.0 解决队头阻塞，并发请求。</li>
-<li>使用缓存，减少请求量。</li>
-<li>合并请求，减少请求次数。</li>
-<li>按需加载。</li>
-<li>域名分散。</li>
+<li>相对定位偏移量使相对他<em><strong>原本在文档流</strong></em>中的位置。</li>
+<li>相对定位会提升元素的层级,但不会脱离文档流。</li>
 </ol>
-<h2 id="浏览器组成"><a href="#浏览器组成" class="headerlink" title="浏览器组成"></a>浏览器组成</h2><ol>
-<li>用户界面：地址栏、书签栏、前进、后退等等。</li>
-<li>浏览器主引擎：渲染引擎和用户界面的桥梁，处理用户交互，传递信息给渲染引擎。</li>
-<li>渲染引擎：浏览器渲染过程。</li>
-<li>js引擎：解析和执行js。</li>
-<li>网络模块：发送请求和加载资源。</li>
-<li>数据存储：cookie、localStorage、SessionStorage、indexedDB等等</li>
+<h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2><p>position:<em><strong>absolute</strong></em></p>
+<ol>
+<li>绝对定位偏移量是相对其包含块(离他最近的开启定位的祖先元素,都没则相当于根元素html)的位置</li>
+<li>绝对定位会使元素从文档流中脱离.会改变元素性质:行内变为块.块由宽高撑开</li>
+<li>绝对定位会提升元素的层级</li>
 </ol>
+<h2 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h2><p>position:<em><strong>fixed</strong></em></p>
+<!-- 绝对定位特殊情况 -->
+<ol>
+<li>也会脱离文档流,也会提升元素层级</li>
+<li>区别就是:偏移量永远相当于浏览器视口(可见范围)</li>
+</ol>
+<h2 id="粘滞定位"><a href="#粘滞定位" class="headerlink" title="粘滞定位"></a>粘滞定位</h2><p>position:sticky</p>
+<ol>
+<li>粘性定位的元素是依赖于用户的滚动，在 position:relative 与 position:fixed 定位之间切换。它的行为就像 position:relative; 而当页面滚动超出目标区域时，它的表现就像 position:fixed;</li>
+<li>必须设置left、right、top、bottom才会生效。</li>
+</ol>
+<h1 id="层叠"><a href="#层叠" class="headerlink" title="层叠"></a>层叠</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903667175260174?searchId=20250120195441FF6C0F5FBC8B925AC516#heading-0">https://juejin.cn/post/6844903667175260174?searchId=20250120195441FF6C0F5FBC8B925AC516#heading-0</a></li>
+</ul>
+<h2 id="元素的层叠顺序"><a href="#元素的层叠顺序" class="headerlink" title="元素的层叠顺序"></a>元素的层叠顺序</h2><ul>
+<li>background、z-index负数、块级、浮动元素、inline、z-index为0、z-index为正。</li>
+</ul>
+<h2 id="层叠上下文"><a href="#层叠上下文" class="headerlink" title="层叠上下文"></a>层叠上下文</h2><ol>
+<li>根层叠上下文（html）</li>
+<li>定位属性的元素，设置了z-index可以设置层叠上下文</li>
+<li>css3新属性设置层叠上下文</li>
+</ol>
+<h2 id="比较两个元素谁在上谁在下？"><a href="#比较两个元素谁在上谁在下？" class="headerlink" title="比较两个元素谁在上谁在下？"></a>比较两个元素谁在上谁在下？</h2><ol>
+<li>先比较层叠上下文，层叠上下文高的在上。</li>
+<li>如果在同一个层叠上下文，才考虑元素的层叠顺序规则。</li>
+<li>都相等的情况下，后面的元素层叠更高。</li>
+</ol>
+<!-- 如果不在同一个层叠上下文，一个z-index为9999也不一定有另一个元素层叠级别高 -->
 
                 
               </div>
@@ -350,15 +364,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  <a href="/categories/CSS/" class="category-chain-item">CSS</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="category-chain-item">进程管理</a>
-  
-  
-
   
 
       </span>
@@ -377,8 +384,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>浏览器进程</div>
-      <div>http://example.com/2025/04/03/操作系统/进程管理/浏览器进程/</div>
+      <div>定位</div>
+      <div>http://example.com/2025/04/03/CSS/3. 定位/</div>
     </div>
     <div class="license-meta">
       
@@ -422,9 +429,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/1.%20%E5%9F%BA%E7%A1%80/" title="基础">
+                      <a href="/2025/04/03/CSS/4.%20flex/" title="flex">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">基础</span>
+                        <span class="hidden-mobile">flex</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -432,8 +439,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E9%94%81/" title="锁">
-                        <span class="hidden-mobile">锁</span>
+                      <a href="/2025/04/03/CSS/2.%20%E6%B5%AE%E5%8A%A8/" title="浮动">
+                        <span class="hidden-mobile">浮动</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

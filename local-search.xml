@@ -4,6 +4,202 @@
   
   
   <entry>
+    <title>flex</title>
+    <link href="/2025/04/03/CSS/4.%20flex/"/>
+    <url>/2025/04/03/CSS/4.%20flex/</url>
+    
+    <content type="html"><![CDATA[<h1 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h1><ul><li><a href="https://blog.csdn.net/MaNqo/article/details/119155041">https://blog.csdn.net/MaNqo/article/details/119155041</a></li><li><a href="https://juejin.cn/post/6844904016439148551">https://juejin.cn/post/6844904016439148551</a></li></ul><h2 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h2><ol><li><strong>flex-direction</strong> :row column</li><li><strong>flex-wrap</strong>:nowrap wrap换行</li><li><strong>flex-flow</strong>:是flex-direction flex-wrap简写</li><li><em><strong>justify-content</strong></em>:<br>flex-start<br>flex-end<br>center<br>space-between：两端对齐，项目之间的间隔都相等。<br>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</li><li><em><strong>align-items</strong></em> 一个轴：前中后、stretch。</li><li><em><strong>align-content</strong></em> 多个轴 stretch轴线占满整个交叉轴</li></ol><h2 id="项目属性"><a href="#项目属性" class="headerlink" title="项目属性"></a>项目属性</h2><ol><li>flex-grow</li><li>flex-shrink</li><li>flex-basis:min-width、max-width &gt; flex-basis &gt; width. </li><li>flex</li><li>order</li></ol><h2 id="flex-1-10024"><a href="#flex-1-10024" class="headerlink" title="flex:1 &#10024;"></a>flex:1 &#10024;</h2><ol><li>flex是flex-grow,flex-shrink,flex-basis的缩写</li></ol><ul><li>flex-grow:定义放大的比例,<strong>默认为0</strong>,计算方式是多余的空间 * 自己的grow占所有grow的比例。</li><li>flex-shrink:定义项目缩小的比例.<strong>默认为1</strong>,大于1时候自己宽度 - 溢出空间 * （自己的宽度 &#x2F; 总压缩宽度）。</li><li>flex-basis:项目占据主轴多少的空间.<strong>默认为auto</strong>,即自身宽度.</li></ul><ol start="2"><li>flex：1 就是 flex-grow:1,flex-shrink:1,flex-basis: 0;如果每个子元素都设置了flex：1，则各个元素平分父元素剩下的区域。</li></ol><h3 id="display-flex后发生什么"><a href="#display-flex后发生什么" class="headerlink" title="display:flex后发生什么"></a>display:flex后发生什么</h3><ul><li>justify-content默认值是flex-start，align-items默认值是stretch。</li></ul><ol><li>水平排列</li><li>默认不换行</li><li>默认高度会拉伸</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>CSS</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>定位</title>
+    <link href="/2025/04/03/CSS/3.%20%E5%AE%9A%E4%BD%8D/"/>
+    <url>/2025/04/03/CSS/3.%20%E5%AE%9A%E4%BD%8D/</url>
+    
+    <content type="html"><![CDATA[<h1 id="定位position"><a href="#定位position" class="headerlink" title="定位position"></a>定位position</h1><!-- position:static // 未开启定位 --><h2 id="定位基础"><a href="#定位基础" class="headerlink" title="定位基础"></a>定位基础</h2><ol><li><strong>偏移量left、top</strong>：元素开启定位后可以用偏移量offset设置元素的位置.top越大越往下(类似margin-top),left越大越往右(类似margin-left),一般水平或垂直方向只用一个属性.<br>偏移量只移动自己,不影响其他元素.top bottom left right</li><li><strong>z-index元素层级</strong>：开启定位的元素可通过z-index属性来指定元素的层级,z-index值越大层级越高越优先展示.相同则优先显示后面的元素,祖先元素不会盖住后代.</li></ol><h2 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h2><!-- 灵魂出窍,肉体占原来位置 --><p>position:<em><strong>relative</strong></em></p><ol><li>相对定位偏移量使相对他<em><strong>原本在文档流</strong></em>中的位置。</li><li>相对定位会提升元素的层级,但不会脱离文档流。</li></ol><h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2><p>position:<em><strong>absolute</strong></em></p><ol><li>绝对定位偏移量是相对其包含块(离他最近的开启定位的祖先元素,都没则相当于根元素html)的位置</li><li>绝对定位会使元素从文档流中脱离.会改变元素性质:行内变为块.块由宽高撑开</li><li>绝对定位会提升元素的层级</li></ol><h2 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h2><p>position:<em><strong>fixed</strong></em></p><!-- 绝对定位特殊情况 --><ol><li>也会脱离文档流,也会提升元素层级</li><li>区别就是:偏移量永远相当于浏览器视口(可见范围)</li></ol><h2 id="粘滞定位"><a href="#粘滞定位" class="headerlink" title="粘滞定位"></a>粘滞定位</h2><p>position:sticky</p><ol><li>粘性定位的元素是依赖于用户的滚动，在 position:relative 与 position:fixed 定位之间切换。它的行为就像 position:relative; 而当页面滚动超出目标区域时，它的表现就像 position:fixed;</li><li>必须设置left、right、top、bottom才会生效。</li></ol><h1 id="层叠"><a href="#层叠" class="headerlink" title="层叠"></a>层叠</h1><ul><li><a href="https://juejin.cn/post/6844903667175260174?searchId=20250120195441FF6C0F5FBC8B925AC516#heading-0">https://juejin.cn/post/6844903667175260174?searchId=20250120195441FF6C0F5FBC8B925AC516#heading-0</a></li></ul><h2 id="元素的层叠顺序"><a href="#元素的层叠顺序" class="headerlink" title="元素的层叠顺序"></a>元素的层叠顺序</h2><ul><li>background、z-index负数、块级、浮动元素、inline、z-index为0、z-index为正。</li></ul><h2 id="层叠上下文"><a href="#层叠上下文" class="headerlink" title="层叠上下文"></a>层叠上下文</h2><ol><li>根层叠上下文（html）</li><li>定位属性的元素，设置了z-index可以设置层叠上下文</li><li>css3新属性设置层叠上下文</li></ol><h2 id="比较两个元素谁在上谁在下？"><a href="#比较两个元素谁在上谁在下？" class="headerlink" title="比较两个元素谁在上谁在下？"></a>比较两个元素谁在上谁在下？</h2><ol><li>先比较层叠上下文，层叠上下文高的在上。</li><li>如果在同一个层叠上下文，才考虑元素的层叠顺序规则。</li><li>都相等的情况下，后面的元素层叠更高。</li></ol><!-- 如果不在同一个层叠上下文，一个z-index为9999也不一定有另一个元素层叠级别高 -->]]></content>
+    
+    
+    <categories>
+      
+      <category>CSS</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>浮动</title>
+    <link href="/2025/04/03/CSS/2.%20%E6%B5%AE%E5%8A%A8/"/>
+    <url>/2025/04/03/CSS/2.%20%E6%B5%AE%E5%8A%A8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h1><h2 id="浮动后元素特点"><a href="#浮动后元素特点" class="headerlink" title="浮动后元素特点"></a>浮动后元素特点</h2><ol><li>脱离文档流,不影响其他块元素布局，后面的元素往前补</li><li>不再独占一行（宽度不会占一行）,可以水平方向布局,往<strong>父元素</strong>左侧或右侧移动(不会超出父元素).直到遇到另一个浮动元素或者遇到它外边缘的包含框.</li><li>文字不会覆盖浮动,围绕浮动周围</li></ol><h2 id="浮动缺点"><a href="#浮动缺点" class="headerlink" title="浮动缺点"></a>浮动缺点</h2><ol><li>子元素需要水平排列,  开启浮动,父元素高度默认由子元素撑开,因为脱离文档流,<em><strong>父元素高度塌陷</strong></em>.<br>解决方法: 直接给父元素加固定高度,父元素开启BFC,伪元素方法(clearfix)</li><li>前面的元素浮动脱离文档流，后面的元素往前<em><strong>被浮动的元素覆盖</strong></em>。<br>解决办法：clear,BFC，被覆盖的是父元素（用clearfix）。</li></ol><h2 id="BFC块级格式化上下文"><a href="#BFC块级格式化上下文" class="headerlink" title="BFC块级格式化上下文"></a>BFC块级格式化上下文</h2><ol><li>BFC是隐藏的属性,可以给一个元素开启BFC,该元素就会变成一个独立的块级区域,不受外部影响.</li><li>开启BFC后特点:</li></ol><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 开启BFC元素不会被浮动元素覆盖,不会发生重叠.<br>(浮动元素还是浮动的,所以后面元素会直接往上,但又不覆盖,所以在浮动元素旁边,可用于双栏布局,相反clear是类似&quot;清除&quot;了浮动的影响,相当于是个块元素,后面元素不能往上)<br><span class="hljs-bullet">2.</span> 开启BFC的父元素和子元素垂直方向外边距不会重叠<br>(父元素变一个独立的区域)<br><span class="hljs-bullet">3.</span> 开启BFC的元素可以包含浮动的子元素(解决高度塌陷)<br></code></pre></td></tr></table></figure><ol start="3"><li>开启BFC方式</li></ol><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-number">1.</span> <span class="hljs-type">float</span>:left,但会从文档流中脱离,宽度没了.<br><span class="hljs-number">2.</span> position：absolute<br><span class="hljs-number">2.</span> display设置属性,行内块元素,但也是宽度没了<br><span class="hljs-number">3.</span> overflow:hidden <span class="hljs-comment">// 之前推荐这种开启BFC.</span><br><span class="hljs-number">4.</span> **display: flow-root**, 设置为块级元素，并开启这个元素的BFC。 <span class="hljs-comment">//推荐！</span><br></code></pre></td></tr></table></figure><h2 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h2><ul><li>可以通过clear属性清除左边或者右边浮动元素对当前元素所产生的影响.<br>clear: left || right || both(清除较大影响的)</li><li>原理:为元素添加外边距.</li></ul><h2 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h2><ol><li>在高度塌陷的父元素添加伪元素</li></ol><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-pseudo">::after</span>&#123;<br>    <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;&#x27;</span>,<br>    clear:both, // 清除浮动的影响,这样after会放到浮动元素之后.<br>    display: block, // after元素他是行内元素不会独占一行,需要转换为块元素<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="clearfix"><a href="#clearfix" class="headerlink" title="clearfix"></a>clearfix</h2><ol><li>after,content,display,clear解决高度塌陷<br> before content display解决外边距重叠</li></ol><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.clearfix</span><span class="hljs-selector-pseudo">::after</span>,<br><span class="hljs-selector-class">.clearfix</span><span class="hljs-selector-pseudo">::before</span>&#123;<br>    <span class="hljs-attribute">content</span>:<span class="hljs-string">&#x27;&#x27;</span>,<br>    display:table, //block会独占一行<br>    clear:both<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>CSS</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>基础</title>
+    <link href="/2025/04/03/CSS/1.%20%E5%9F%BA%E7%A1%80/"/>
+    <url>/2025/04/03/CSS/1.%20%E5%9F%BA%E7%A1%80/</url>
+    
+    <content type="html"><![CDATA[<h1 id="选择器优先级"><a href="#选择器优先级" class="headerlink" title="选择器优先级"></a>选择器优先级</h1><ol><li>！important</li><li>内联样式：style&#x3D; “color: red”</li><li>id选择器：#</li><li>类、伪类、属性选择器</li><li>元素（标签）、伪元素选择器。</li><li>通配符、子代后代选择器</li></ol><ul><li>额外点：</li></ul><ol><li>优先级高的生效，优先级相同时候，后定义的生效。</li><li>内联样式 》 内部样式 》 外部样式 》 浏览器默认样式</li></ol><h1 id="可继承和不可继承属性"><a href="#可继承和不可继承属性" class="headerlink" title="可继承和不可继承属性"></a>可继承和不可继承属性</h1><ol><li>可：font-size、font-weight、font-family、文本color、visibility</li><li>不可：盒子模型、display、background、定位。</li></ol><h1 id="display"><a href="#display" class="headerlink" title="display"></a>display</h1><ul><li>none：元素不显示，从文档流移除。</li><li>block：块元素，默认宽为父元素宽，可以设置宽高，换行显示。</li><li>inline：行内元素，宽默认为元素宽。不换行。</li><li>inline-block：行内块元素，宽默认为元素宽，可以设置宽高。</li><li>inherit：从父元素继承。</li></ul><h1 id="隐藏元素方法"><a href="#隐藏元素方法" class="headerlink" title="隐藏元素方法"></a>隐藏元素方法</h1><ol><li>display：none。</li><li>visibility：hidden。</li><li>opacity：0。</li><li>z-index：被覆盖</li></ol><h1 id="伪元素和伪类的区别"><a href="#伪元素和伪类的区别" class="headerlink" title="伪元素和伪类的区别"></a>伪元素和伪类的区别</h1><!-- - 伪类一个：，伪元素两个：：。 --><ul><li>伪元素：元素的特定一部分，<strong>这部分不是元素，不存在</strong>，比如：某一个元素的前面后面插入内容、第一行。</li><li>伪类：作用于特定状态的<strong>元素</strong>，比如：鼠标悬停、结构状态第一个孩子。</li></ul><!-- # requestAnimationframe请求动画帧 --><!-- -  --><h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><ul><li>margin，border，padding，content</li><li>box-sizing改变盒子类型</li></ul><ol><li>标准盒子模型</li></ol><ul><li>width、height只包括content</li></ul><ol start="2"><li>IE盒子模型</li></ol><ul><li>width、height包括border，padding，content</li></ul><h1 id="用transform：translate改变位置而不是position？"><a href="#用transform：translate改变位置而不是position？" class="headerlink" title="用transform：translate改变位置而不是position？"></a>用transform：translate改变位置而不是position？</h1><ul><li>transform和opcity不会触发回流重绘，只会触发复合。这两个属性会为元素单独抽离一个GPU合成层，利用GPU加速渲染。position还是利用CPU。</li></ul><h1 id="css3新特性"><a href="#css3新特性" class="headerlink" title="css3新特性"></a>css3新特性</h1><ol><li>媒体查询</li><li>伪元素、伪类</li><li>transition、animation</li><li>flex弹性布局、em、rem</li><li>box-shadow盒子阴影、border-radius圆角</li></ol><h1 id="Less预处理器"><a href="#Less预处理器" class="headerlink" title="Less预处理器"></a>Less预处理器</h1><ul><li>是css的预处理器，在css上抽象出一层，是一种特殊的语法便于开发，最终会通过比如webpack的工具转换为css。</li></ul><ol><li>变量：给颜色，字体，背景色等设置名称，达到复用的作用。</li><li>嵌套：支持css选择器的嵌套，方便读取和维护。</li><li>函数和运算：支持运算比如：变量*2，提供内置函数执行。</li><li>导入：模块化管理</li></ol><h1 id="单行，多行溢出情况？"><a href="#单行，多行溢出情况？" class="headerlink" title="单行，多行溢出情况？"></a>单行，多行溢出情况？</h1><p>单行</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">overflow</span>:hidden; // 元素溢出如何处理：隐藏<br><span class="hljs-attribute">text-overflow</span>:ellipsis; // 如何隐藏溢出的内容：省略号<br><span class="hljs-attribute">white-space</span>:nowrap; // 空白字符是否合并，是否换行：不换行<br></code></pre></td></tr></table></figure><p>多行</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">overflow</span>:hidden;<br><span class="hljs-attribute">text-overflow</span>:ellipsis;<br><span class="hljs-attribute">display</span>:-webkit-box;<br>-webkit-<span class="hljs-attribute">box-orient</span>:vertical;<br>-webkit-<span class="hljs-selector-tag">line</span>-clamp:<span class="hljs-number">2</span>;<br></code></pre></td></tr></table></figure><h1 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h1><ul><li>@media 媒体类型 and{条件} and {条件}，针对不同屏幕尺寸应用不同的样式，因此可以用来设计响应式页面。</li></ul><!-- 媒体类型：all，screen，print --><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arduino">常用例子：<br>@media screen <span class="hljs-keyword">and</span>&#123;max—width：<span class="hljs-number">400</span>px&#125; <span class="hljs-keyword">and</span> &#123;min-width：<span class="hljs-number">200</span>px&#125;<br></code></pre></td></tr></table></figure><h1 id="如何判断元素是否到达可视区域？"><a href="#如何判断元素是否到达可视区域？" class="headerlink" title="如何判断元素是否到达可视区域？"></a>如何判断元素是否到达可视区域？</h1><ul><li>scrollTop滚过的高度，innerHeight浏览器可视区域高度，offsetTop元素到文档顶部的距离。</li></ul><h1 id="z-index失效？"><a href="#z-index失效？" class="headerlink" title="z-index失效？"></a>z-index失效？</h1><ol><li>父元素是relative定位</li><li>元素position属性为static属性</li><li>元素设置z-index时候还设置了浮动float</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>CSS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CSS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>基础</title>
+    <link href="/2025/04/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%9F%BA%E7%A1%80/"/>
+    <url>/2025/04/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%9F%BA%E7%A1%80/</url>
+    
+    <content type="html"><![CDATA[<p>设计模式：大量的项目实践总结出来的对某种业务场景下的程序编写最佳实践。</p><h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>保证一个类只有一个实例，全局提供一个访问点，解决一个频繁使用的类创建和销毁。</p><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ol><li>登录窗口（全局唯一，频繁使用），vuex，qiankun的start启动，jquery。</li></ol><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol><li>减少内存消耗</li><li>避免资源多重占用</li></ol><h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1><h2 id="基础-1"><a href="#基础-1" class="headerlink" title="基础"></a>基础</h2><ul><li>由两部分组成，利用<em><strong>组合-委托</strong></em>思想避免冗余的if-else。</li></ul><ol><li>策略类：策略类负责封装不同策略，提高代码复用性、可扩展性、可维护性。</li><li>环境类：根据参数委托对应的策略执行。</li></ol><h2 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h2><ol><li>确认策略规则对象,编写好对应的函数,比如表单检验时候的长度判断函数,不为空函数.</li><li>提交表单时候，校验参数通过环境类委托对应的策略执行。</li></ol><h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><h2 id="基础-2"><a href="#基础-2" class="headerlink" title="基础"></a>基础</h2><ul><li>给对象添加了一个代理层，由代理对象控制对原对象的引用。处理和过滤之后再交给原对象，以减轻本体对象的负担。</li></ul><h2 id="应用场景-2"><a href="#应用场景-2" class="headerlink" title="应用场景"></a>应用场景</h2><ol><li>axios封装：添加通用请求头、身份认证信息等等；异常状态码（跳转到统一认证登录）。</li><li>Vue中数据代理： 定义为响应式的数据会被代理到组件实例上，在生成渲染函数的时候通过with添加了组件实例作用域，需要从组件实例上获取数据，触发get函数。</li><li>cache-loader代理</li></ol><h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><h2 id="基础-3"><a href="#基础-3" class="headerlink" title="基础"></a>基础</h2><ul><li>观察者模式由具体目标调度，没有信道中介。</li></ul><h2 id="应用场景-3"><a href="#应用场景-3" class="headerlink" title="应用场景"></a>应用场景</h2><ul><li>DOM事件监听机制：DOM（目标）触发特定事件后监听器执行。</li></ul><h1 id="发布-订阅模式"><a href="#发布-订阅模式" class="headerlink" title="发布-订阅模式"></a>发布-订阅模式</h1><h2 id="基础-4"><a href="#基础-4" class="headerlink" title="基础"></a>基础</h2><ul><li>定义程序对象之间一种一对多的关系，当一个对象的状态变化时，所有依赖的对象都会都会得到通知并执行对应的操作。基于观察者模式进行<em><strong>通用化设计，松散耦合，灵活度更高</strong></em></li><li><em><strong>发布者</strong></em>：事件发布者将发布的事件传递给信道中介。<br> <em><strong>信道中介</strong></em>：缓存事件对应的订阅者，发布者发布时候遍历订阅者列表进行通知。<br> <em><strong>订阅者</strong></em>：定义事件发布后的操作，向信道中介发起订阅。</li></ul><h2 id="应用场景-4"><a href="#应用场景-4" class="headerlink" title="应用场景"></a>应用场景</h2><ul><li>vue响应式原理：数据（发布者）发布，订阅者（watcher）调用虚拟DOM更新组件视图。</li></ul><h1 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>设计模式</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>基础</title>
+    <link href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E5%9F%BA%E7%A1%80/"/>
+    <url>/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E5%9F%BA%E7%A1%80/</url>
+    
+    <content type="html"><![CDATA[<h1 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h1><h2 id="冯诺依曼体系结构-10024"><a href="#冯诺依曼体系结构-10024" class="headerlink" title="冯诺依曼体系结构 &#10024;"></a>冯诺依曼体系结构 &#10024;</h2><ol><li>以<em><strong>运算器</strong></em>为中心。现代计算机以<em><strong>存储器</strong></em>为中心。</li><li>五种结构：运算器，控制器，存储器，输入设备，输出设备。</li></ol><h3 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h3><ul><li>由地址寄存器（MAR），数据寄存器（MDR），存储体组成。</li><li>分为内存和外存，cpu处理数据只能处理内存，外存的数据被处理要先放到内存中。</li></ul><!-- 读取：读取的地址放到地址寄存器，存储体找到后放到数据寄存器，然后CPU读取。     写入：写入的地址放到地址寄存器，写入的数据放到数据寄存器，然后写入到存储体。 --><h3 id="运算器"><a href="#运算器" class="headerlink" title="运算器"></a>运算器</h3><ul><li>进行算术运算和逻辑运算，核心是通过ALU算术逻辑但愿进行运算。</li></ul><h3 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h3><ul><li>取指令、翻译指令、分析指令，然后向有关部件发送命令，协调指挥整个计算机操作。控制器和运算器共同共同组成CPU。</li></ul><h3 id="输入设备，输出设备"><a href="#输入设备，输出设备" class="headerlink" title="输入设备，输出设备"></a>输入设备，输出设备</h3><ul><li>入：键盘，鼠标。</li><li>出：显示屏，打印机。</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机组成原理</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>加密算法</title>
+    <link href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/4.%20%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/"/>
+    <url>/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/4.%20%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="RSA加密算法：公钥加密算法"><a href="#RSA加密算法：公钥加密算法" class="headerlink" title="RSA加密算法：公钥加密算法"></a>RSA加密算法：公钥加密算法</h1><h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><ul><li><strong>定义</strong>：小于n的正整数中，与n互质的数的个数。</li><li>如果n为质数，欧拉n &#x3D; n - 1；</li><li>如果n可以分解为两个<strong>互质</strong>的整数之积，那么n的欧拉函数等于这两个因子的欧拉函数之积。n &#x3D; p * q，且p、q互质，则n的欧拉函数  &#x3D; （p - 1）*（q - 1）。</li></ul><!-- 互质：公约数只有1的两个整数质数：除了1和本身不再有其他因数的自然数。 --><h2 id="模反元素"><a href="#模反元素" class="headerlink" title="模反元素"></a>模反元素</h2><ul><li>如果两个正整数e和m互质，那么一定能找到一个整数d，使得ed - 1被 m 整除，或者说ed 除以 m 所得余数为1.</li><li>此时，d就叫做e的模反元素。</li></ul><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul><li>RSA算法与三个随机数的关系是：RSA确保预主密钥（也就是第三个随机数）的安全传输，而三个随机数共同参与会话密钥的生成。</li><li><strong>基于大整数分解</strong>的复杂难题：计算私钥靠模反函数，模反函数依赖欧拉函数m，m是一个大整数，很难分解为两个质数。<br>（攻击者知道p、q的乘积，不知道怎么拆分成p、q，也就无法计算这个大整数的欧拉函数）</li></ul><ol><li>选择两个不相等且足够大的质数p、q。</li><li>计算p、q的乘积，n &#x3D; p * q。</li><li>计算n的欧拉函数m &#x3D; （p - 1）*（q - 1）。</li><li>选一个与m互质的整数e。1 &lt; e &lt; m。 <strong>公钥（e,n）</strong></li><li>计算出e对于m的模反元素d：<strong>私钥(d,n)</strong>。</li></ol><p><img src="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/4.%20%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/image.png" alt="alt text"></p><h2 id="RSA密钥协商算法的缺点"><a href="#RSA密钥协商算法的缺点" class="headerlink" title="RSA密钥协商算法的缺点"></a>RSA密钥协商算法的缺点</h2><ul><li>RSA密钥协商算法的最大缺点是不支持前向加密。客户端第三次握手是使用公钥加密传输第三个随机数，如果服务端的私钥被拿到，则可以计算出会话密钥，之前通信的数据都可以破解。</li></ul><h1 id="ECDHE算法"><a href="#ECDHE算法" class="headerlink" title="ECDHE算法"></a>ECDHE算法</h1><h2 id="基础-1"><a href="#基础-1" class="headerlink" title="基础"></a>基础</h2><ol><li>ECDHE算法支持前向保密。</li><li>不用等四次握手，可以提前发送加密数据。<!--减少了1RTT--></li></ol><h2 id="离散对数"><a href="#离散对数" class="headerlink" title="离散对数"></a>离散对数</h2><ul><li>（离散）对数：幂数</li><li>底数：幂数下的数</li><li>模数：mod 后的数</li><li>真数：运算后右边的数<br><img src="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/4.%20%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/image-1.png" alt="alt text"></li></ul><h2 id="DH算法"><a href="#DH算法" class="headerlink" title="DH算法"></a>DH算法</h2><ul><li>知道真数，很难推出对数；知道对数，正常运算就能推出真数。</li></ul><ol><li>双方确定 <strong>模数</strong> 和 <strong>底数</strong>，各自选一个数作为<strong>私钥</strong>。</li><li>计算出各自的公钥。<br>小红的公钥记作 A，A &#x3D; G ^ a ( mod P )；<br>小明的公钥记作 B，B &#x3D; G ^ b ( mod P )；<br><img src="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/4.%20%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/image-2.png" alt="alt text"></li><li>协商出来的K作为<strong>会话密钥</strong>。</li></ol><h2 id="DHE算法"><a href="#DHE算法" class="headerlink" title="DHE算法"></a>DHE算法</h2><ol><li>每次我生成的私钥不同，生成的K也不同，就可以支持前向保密了。每个通信的私钥都是不一样的。</li></ol><!-- DH、DHE算法看了，ECDHE算法是用椭圆曲线做了优化，具体算法没看懂 --><h2 id="ECDHE算法-1"><a href="#ECDHE算法-1" class="headerlink" title="ECDHE算法"></a>ECDHE算法</h2><ol><li>ECDHE 算法是在 DHE 算法的基础上利用了 ECC 椭圆曲线特性，可以用更少的计算量计算出公钥，以及最终的会话密钥。</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机网络</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>运输层</title>
+    <link href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3.%20%E8%BF%90%E8%BE%93%E5%B1%82/"/>
+    <url>/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3.%20%E8%BF%90%E8%BE%93%E5%B1%82/</url>
+    
+    <content type="html"><![CDATA[<ul><li>一台主机的应用进程和另一台主机的应用进程通信，网络层负责主机与主机之间的通信。</li></ul><h1 id="TCP与UDP区别"><a href="#TCP与UDP区别" class="headerlink" title="TCP与UDP区别"></a>TCP与UDP区别</h1><ol><li><em><strong>可靠</strong></em>：可靠，不可靠</li><li><em><strong>连接</strong></em>：建立连接，不建立连接</li><li><em><strong>控制</strong></em>：tcp有流量控制拥塞控制，udp没有</li><li><em><strong>服务</strong></em>：tcp一对一，udp一对多</li><li><em><strong>传输</strong></em>：字节流：tcp的数据包可以按字节大小拆分成多个数据包，udp每次一个包一个包完整的发送。</li></ol><h1 id="TCP滑动窗口"><a href="#TCP滑动窗口" class="headerlink" title="TCP滑动窗口"></a>TCP滑动窗口</h1><h2 id="前置基础"><a href="#前置基础" class="headerlink" title="前置基础"></a>前置基础</h2><ol><li>停止-等待协议：发送数据包后，等对方确认才能发送下一个数据包。</li><li>超时重传：如果长时间未收到应答，发送方重新发送数据。</li><li>回退N帧协议：一个窗口内的数据一同发送，提高信道利用率。</li></ol><h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2><ol><li><strong>是什么</strong>：TCP采用的是请求-应答的机制，确保数据传输的可靠性。如果请求一次，等待应答再发送下一次就导致效率很低。所以引入了窗口概念，无需等待应答，窗口内的数据都能够发送.</li><li><strong>工作流程</strong>：发送方：收到应答后，滑动窗口就往后移动，后面的数据就可以继续发送。接收方：收到数据并确认后往后移动，可以接受更多的数据发送。</li></ol><h1 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h1><ul><li>让发送方发送速率不要过快，要让接收方来得及接受。</li></ul><ol><li>接收窗口：接收方在tcp头部告诉发送方自己的接收窗口大小，接收方的发送窗口大小不能超过接收窗口大小。</li><li>零窗口探测：接收窗口是零；接收方发送更改接收窗口大小不为0情况，但丢失。&#x3D;&gt; 持续计时器，收到零窗口通知后开启，到达时间后发送零窗口探测报文。</li></ol><h1 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h1><ul><li>防止过多数据注入网络，避免路由器或链路过载。</li></ul><ol><li><em><strong>慢开始算法</strong></em>：呈<em><strong>指数增长</strong></em>往网络中注入字节数据，同时有个慢开始门限，避免增长过快。</li><li><em><strong>拥塞避免算法</strong></em>：当拥塞窗口大于慢开始门限后进行拥塞避免算法，线性增长窗口大小.</li><li><em><strong>超时重传</strong></em>：拥塞窗口设置为1，慢开始门限设置为滑动窗口大小的一半，重新开始慢开始算法和拥塞避免算法。</li><li><em><strong>快重传</strong></em>：对已收到的报文立即确认，重复的报文也发送确认，发送方收到三次确认后立即发送。</li><li><em><strong>快恢复</strong></em>：快重传后执行，将慢开始门限调整到滑动窗口大小的一半，再将窗口大小设置和慢开始门限一样，后续进行拥塞避免算法。</li></ol><p><img src="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3.%20%E8%BF%90%E8%BE%93%E5%B1%82/image-5.png" alt="alt text"><br><img src="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3.%20%E8%BF%90%E8%BE%93%E5%B1%82/image-4.png" alt="alt text"></p><blockquote><p>流量控制和拥塞控制区别：流量控制是端到端问题，控制发送方速率，让接收方来得及接收；拥塞控制是一个全局性的过程。</p></blockquote><h1 id="tcp三次握手流程"><a href="#tcp三次握手流程" class="headerlink" title="tcp三次握手流程"></a>tcp三次握手流程</h1><ol><li>开始双方都处于close状态，服务端主动进入listen状态。</li><li><em><strong>第一次握手</strong></em>：客户端发送SYN同步位为1，把初始化序号放到序号中。进入SYN-sent。</li><li><em><strong>第二次握手</strong></em>：服务端收到后发送SYN同步位、ACK确认位为1，确认号为客户端序号下一位，初始化序号放到序号中。进入SYN-REC状态。</li><li><em><strong>第三次握手</strong></em>：客户端最后应答,ACK&#x3D;1,确认号为服务端序号下一位,这时可以携带数据发送.客户端进入ESTABLISHED状态</li><li>服务端收到后也进入ESTABLISHED(既定)状态.</li></ol><h1 id="tcp不能两次握手的原因"><a href="#tcp不能两次握手的原因" class="headerlink" title="tcp不能两次握手的原因"></a>tcp不能两次握手的原因</h1><ol><li><em><strong>避免历史连接和资源浪费</strong></em>：上一次握手失败后建立新的握手，如果旧的SYN信号此时到达，服务端会与其建立连接导致资源的浪费，<strong>服务端没有中间状态给客户端来阻止历史连接</strong>。如果是三次握手，客户端在收到第二次握手后发送RST报文中止连接。</li><li><em><strong>同步双方序列号</strong></em>：两次握手只能服务端初始化序列号，客户端无法得知服务端的初始序号。</li></ol><h1 id="tcp可以四次握手的原因"><a href="#tcp可以四次握手的原因" class="headerlink" title="tcp可以四次握手的原因"></a>tcp可以四次握手的原因</h1><ul><li>三次握手中的第二个部分分为：确认序列号，同步序列号，可以合成一次握手发送。</li></ul><h1 id="每次建立tcp的初始化序列号不一致"><a href="#每次建立tcp的初始化序列号不一致" class="headerlink" title="每次建立tcp的初始化序列号不一致"></a>每次建立tcp的初始化序列号不一致</h1><ol><li>避免历史报文被下一个相同的连接接收。</li><li>防止攻击者伪造相同的序列号被接收。</li></ol><h1 id="第一二三次握手丢失发生什么"><a href="#第一二三次握手丢失发生什么" class="headerlink" title="第一二三次握手丢失发生什么"></a>第一二三次握手丢失发生什么</h1><ol><li>第一次: 客户端重传(没得到服务端响应),达到最大次数断开连接.</li><li>第二次: 客户端重传(没得到服务端响应),服务端重传(没得到客户端响应),达到最大次数断开连接.</li><li>第三次: 服务端重传,客户端收到后再重传第三次握手.(ACK应答不会主动传)</li></ol><h1 id="SYN攻击"><a href="#SYN攻击" class="headerlink" title="SYN攻击"></a>SYN攻击</h1><ul><li>攻击者用不同ip向服务端发送第一次握手连接，服务端每接收一个SYN就进入SYN-REC状态，服务端发送的第二次握手SYN+ACK不会被应答，这样服务端半连接队列被占满。</li><li>解决方法：</li></ul><ol><li>增大半连接队列。</li><li>减少SYN-ACK重传次数。</li></ol><h1 id="tcp四次挥手流程"><a href="#tcp四次挥手流程" class="headerlink" title="tcp四次挥手流程"></a>tcp四次挥手流程</h1><ol><li>客户端发送FIN &#x3D; 1标志位的第一次挥手请求，进入FIN-wait1状态。</li><li>服务端接收后返回ACK &#x3D; 1的第二次挥手请求，进入close-wait状态。</li><li>客户端进入FIN-wait2状态。</li><li>服务端如果有数据继续进行发送。</li><li>服务端发送 FIN &#x3D; 1的第三次挥手请求，进入last-ack状态。</li><li>客户端发送ACK &#x3D; 1的第四次挥手请求，进入time-wait状态。</li><li>服务端收到后进入close状态。</li><li>客户端等待2MSL（报文最大生存时间）后关闭。</li></ol><h1 id="tcp可以三次挥手的原因"><a href="#tcp可以三次挥手的原因" class="headerlink" title="tcp可以三次挥手的原因"></a>tcp可以三次挥手的原因</h1><ol><li>服务端没有数据需要发送且开启了tcp延迟确认机制，则可以将第二、三次挥手合为一次挥手。</li><li>tcp延迟确认机制：解决ack传输效率低的问题：ack延迟一段时间，等待是否有数据一起发送。</li></ol><h1 id="第一二三四次挥手丢失发生什么"><a href="#第一二三四次挥手丢失发生什么" class="headerlink" title="第一二三四次挥手丢失发生什么"></a>第一二三四次挥手丢失发生什么</h1><ol><li>第一次:客户端重传,达到最大次数后进入close状态</li><li>第二次:(ACK不会主动超时重传)客户端重传,服务端收到后再发送ACK.客户端达到最大次数后进入close状态.</li><li>第三次:服务端重传,达到最大次数后服务端close,客户端<em><strong>FIN_WAIT2状态等60s</strong></em>后进入close.</li><li>第四次:服务端重传,达到最大次数后close,客户端收到fin会重置TIME_WAIT时间(这里要原本等2MSL)</li></ol><h1 id="等待时间是2MSL原因"><a href="#等待时间是2MSL原因" class="headerlink" title="等待时间是2MSL原因"></a>等待时间是2MSL原因</h1><ul><li>2MSL（报文最大生存时间）允许ACK丢失一次，服务端进行FIN重传可在2MSL内到达。</li></ul><h1 id="time-wait状态的意义"><a href="#time-wait状态的意义" class="headerlink" title="time-wait状态的意义"></a>time-wait状态的意义</h1><ol><li>因为序号和确认号是循环的,防止历史连接的数据被错误的接受.2MSL可以让这次网络的数据都会丢失或者接受完毕.</li><li>确保被动关闭的一方能正确关闭.被动关闭方没收到ACK信号可以重传.</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机网络</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>http</title>
+    <link href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/2.%20http/"/>
+    <url>/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/2.%20http/</url>
+    
+    <content type="html"><![CDATA[<h1 id="http1-1"><a href="#http1-1" class="headerlink" title="http1.1"></a>http1.1</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ol><li>强制缓存,协商缓存</li><li>长连接,短链接</li><li>Host头部字段(解决一个ip对应到多个域名的问题,指明域名)</li><li>增加了http状态码</li><li>可以局部请求</li><li>(管道传输)</li></ol><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ol><li>无状态 &#x3D;&gt; cookie解决</li><li>明文传输 &#x3D;&gt; https</li></ol><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol><li><strong>避免http请求的发送</strong>：强制缓存协商缓存</li><li><strong>减少http请求的发送</strong>：减少重定向(代理服务器处理重定向),按需请求</li><li><strong>减少http请求量体</strong>：压缩减少请求体量</li></ol><h1 id="https"><a href="#https" class="headerlink" title="https"></a>https</h1><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ol><li>非对称加密和对称加密结合:tls握手非对称加密传输第三个随机数.</li><li>防止内容篡改:私钥加密内容的hash值,公钥解密hash值,并计算内容的hash值进行对比,相同则内容未篡改.</li><li>身份认证:数字证书,CA私钥加密,浏览器内置的公钥解密,验证服务器身份.</li></ol><h2 id="tls握手"><a href="#tls握手" class="headerlink" title="tls握手"></a>tls握手</h2><ol><li>客户端发送三个参数：<em><strong>随机数,支持的tls版本号,密码套件</strong></em>给服务端</li><li>服务端返回四个：<em><strong>随机数,选择一个atls版本号,选择一个密码套件,数字证书</strong></em></li><li>客户端<em><strong>验证数字证书后取出公钥,生成第三个随机数,用服务端公钥加密传输第三个随机数,并通知后续采用加密传输.</strong></em></li><li>服务端获取<em><strong>第三个随机数生成会话密钥,通知后续采用加密传输</strong></em></li></ol><h2 id="数字证书验证"><a href="#数字证书验证" class="headerlink" title="数字证书验证"></a>数字证书验证</h2><ul><li>CA对公钥、有效时间、颁发者等信息进行hash运算，通过私钥签名生成数字证书。客户端拿到数字证书后用内置的公钥解密，计算hash值对比，相同则说明身份是正确的。</li></ul><h2 id="证书信任链"><a href="#证书信任链" class="headerlink" title="证书信任链"></a>证书信任链</h2><ul><li>根证书信任了某些中间证书用私钥加密，中间证书给服务器公钥颁发数字证书。</li><li>我们可以先用根证书的公钥验证中间证书 &#x3D;》 获取中间证书的公钥；再去验证服务器的数字证书。</li></ul><h2 id="https一定安全-中间人攻击"><a href="#https一定安全-中间人攻击" class="headerlink" title="https一定安全?中间人攻击"></a>https一定安全?中间人攻击</h2><ul><li>tls第二次握手服务端返回数字证书时候中间人服务器获取,中间人获取服务端公钥,把自己伪造的公钥数字证书给客户端.(客户端如果信任非法的数字证书就会导致https不安全),第三次握手用自己伪造的私钥解密客户端信息获取第三个随机数中间人根据三个随机数和密码套件生成会话密钥.</li><li>解决方案：http双向认证，客户端也有自己的公私钥，把自己的证书发送给服务端，服务端用根证书验证后获取客户端公钥，后续用客户端公钥加密通信。</li></ul><h2 id="https的缺点"><a href="#https的缺点" class="headerlink" title="https的缺点"></a>https的缺点</h2><ol><li>性能开销：https需要tls四次握手协商会话密钥；每次通信都需要经过会话密钥加解密。</li><li>断开重连：https连接断开后重新握手成本更高。</li><li>成本问题：购买证书，证书需要定期更新和维护。</li><li>隐藏问题：中间人攻击。</li></ol><h2 id="优化-1"><a href="#优化-1" class="headerlink" title="优化"></a>优化</h2><ol><li>tls1.2升级到1.3,RSA算法&#x3D;&gt;ECDHE算法,1RTT后即可通信</li><li>证书有效期验证:服务器请求CA(CA私钥加密,防止服务器篡改)证书有效期,客户端请求服务器时候顺带返回证书有效期,避免让客户端请求CA.</li><li>会话复用:类似token,session机制</li></ol><h1 id="http2-0"><a href="#http2-0" class="headerlink" title="http2.0"></a>http2.0</h1><h2 id="头部压缩"><a href="#头部压缩" class="headerlink" title="头部压缩"></a>头部压缩</h2><ol><li>静态表,哈夫曼编码,动态表</li></ol><h2 id="二进制帧-为并发传输服务"><a href="#二进制帧-为并发传输服务" class="headerlink" title="二进制帧(为并发传输服务)"></a>二进制帧(为并发传输服务)</h2><h2 id="并发传输"><a href="#并发传输" class="headerlink" title="并发传输"></a>并发传输</h2><ul><li>每个TCP连接下有多个stream流,每个stream流里面对应一个http请求和响应,每个请求或响应由一个或多个二进制帧组成.各个stream之间可以并发传递数据.(但注意,tcp层只能按顺序接收,可能出现后续数据到达但tcp无法向上交付的问题)</li></ul><h2 id="主动推送"><a href="#主动推送" class="headerlink" title="主动推送"></a>主动推送</h2><ul><li>客户端请求html文件,服务器主动推送css文件.</li></ul><h1 id="http3-0"><a href="#http3-0" class="headerlink" title="http3.0"></a>http3.0</h1><h2 id="http层"><a href="#http层" class="headerlink" title="http层"></a>http层</h2><ul><li>扩充了静态表</li></ul><h2 id="无队头阻塞"><a href="#无队头阻塞" class="headerlink" title="无队头阻塞"></a>无队头阻塞</h2><ul><li>各个stream流数据只要完整到达就可被接受,各个stream流之间无影响.因为采用了UDP协议</li><li>UDP协议也会保证可靠性,一个流中的数据包有唯一id,一个流中数据包丢失,即使其他数据包到达也无法读取.</li></ul><h2 id="更快建立连接"><a href="#更快建立连接" class="headerlink" title="更快建立连接"></a>更快建立连接</h2><ul><li>quic协议和tls协议没有分层,在自己帧中携带tls的记录.并且采用tls1.3,仅需1RTT即可完成连接和密钥协商.</li></ul><h2 id="连接迁移"><a href="#连接迁移" class="headerlink" title="连接迁移"></a>连接迁移</h2><ul><li>基于tcp的http协议采用的是四元组确定tcp连接,quic协议通过连接id来标记两个端点.</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机网络</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>基础</title>
+    <link href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/1.%20%E5%9F%BA%E7%A1%80/"/>
+    <url>/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/1.%20%E5%9F%BA%E7%A1%80/</url>
+    
+    <content type="html"><![CDATA[<h1 id="http状态码"><a href="#http状态码" class="headerlink" title="http状态码"></a>http状态码</h1><ol><li>200,204,206</li><li>301,302,304</li><li>400,403,404</li><li>500,502</li></ol><h1 id="http头部字段"><a href="#http头部字段" class="headerlink" title="http头部字段"></a>http头部字段</h1><ol><li><strong>host</strong>:请求服务器的域名</li><li><strong>connection</strong>:keep-alive, http1.1,长连接</li><li><strong>expires&#x2F;cache-control</strong>:强制缓存</li><li><strong>last-modified&#x2F;if-modified-since  if-none-match&#x2F;etag</strong>:协商缓存</li><li><strong>accept，content-type</strong>:服务端返回数据类型。</li><li><strong>accept-encoding，content-encoding</strong>：数据压缩方法。</li></ol><h2 id="http1-1与http1-0区别"><a href="#http1-1与http1-0区别" class="headerlink" title="http1.1与http1.0区别"></a>http1.1与http1.0区别</h2><ol><li>强制缓存,协商缓存</li><li>host字段：解决一个ip地址对应多个域名。</li><li>增加更多状态码</li><li>允许局部请求</li><li>短连接,长连接</li></ol><h1 id="get和post请求区别"><a href="#get和post请求区别" class="headerlink" title="get和post请求区别"></a>get和post请求区别</h1><ol><li>获取数据,修改数据</li><li>get请求是在url后面长度和编码都有限制，post请求没有，post请求有请求体。</li><li>get是幂等安全的,post不是</li><li>get可以做强制缓存和协商缓存</li></ol><h1 id="TCP-IP网络模型四层模型"><a href="#TCP-IP网络模型四层模型" class="headerlink" title="TCP&#x2F;IP网络模型四层模型"></a>TCP&#x2F;IP网络模型四层模型</h1><ol><li><strong>应用层</strong>:定义通信的规则和数据格式（HTTP、http数据格式），身份认证（HTTPS），错误处理（HTTP状态码）。</li><li><strong>传输层</strong>:TCPUDP,将应用层报文作为数据部分,添加TCP头部(IP地址,端口信息,SYN,FIN标志位)流量控制,拥塞控制,可靠传输,有端口号信息,负责把数据交付给对应的应用程序.</li><li><strong>网络层</strong>:IP协议,将传输层报文作为数据部分,添加IP头部,每一个设备对应一个ip地址:网络号+主机号,各个局域网通过路由器连接起来,路由器作用就是找到目的地址的子网,找到后把数据包发送到对应的子网了. </li><li><strong>数据链路(网络接口)层</strong>:在ip数据基础上再加MAC头部尾部,封装成数据帧.ARP地址解析协议(ip与mac地址的映射表)通过mac地址找到对应的主机.</li></ol><h1 id="ARP地址解析协议"><a href="#ARP地址解析协议" class="headerlink" title="ARP地址解析协议"></a>ARP地址解析协议</h1><ol><li>源主机在自己的ARP缓存表查找是否存在ip对应的mac地址，若存在，则封装mac帧发送；若不存在，则发送arp请求广播帧。</li><li>目的主机收到广播帧后，将源主机的ip地址和mac地址记录到自己的ARP缓存表中，并发送ARP响应单播帧返回给源主机，arp响应里包含目的主机的ip地址和mac地址。</li></ol><h1 id="输入url后会发生什么"><a href="#输入url后会发生什么" class="headerlink" title="输入url后会发生什么?"></a>输入url后会发生什么?</h1><ol><li><em><strong>解析URL</strong></em>:生成对应的HTTP请求</li><li><em><strong>缓存</strong></em>:浏览器本地是否有缓存</li><li><em><strong>DNS解析</strong></em>:查询域名对应的ip地址,先从本地域名服务器查看是否有缓存,无缓存本地域名服务器向根域名服务器请求,根域名服务器给出顶级域名服务器(.com)的ip,本地域名服务器向顶级域名服务器请求,顶级域名服务器给出权威域名服务器ip,本地域名服务器向权威域名服务器请求,获取对应的ip.</li><li><em><strong>TCP三次握手</strong></em></li><li><em><strong>TLS四次握手(HTTPS)</strong></em></li><li><em><strong>路由器转发</strong></em></li><li><em><strong>交换机转发</strong></em></li><li><em><strong>数据返回到浏览器,浏览器渲染过程</strong></em></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>计算机网络</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>浏览器进程</title>
     <link href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/"/>
     <url>/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/</url>

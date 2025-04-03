@@ -19,21 +19,21 @@
   <meta name="author" content="Wayne Chen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="浏览器进程四种进程 浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。 渲染进程：负责页面渲染工作。包括渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）。 插件进程：处理插件的运行。 GPU进程：处理图形渲染。  浏览器为什么要限制请求并发数？ 对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;t">
+    <meta name="description" content="设计模式：大量的项目实践总结出来的对某种业务场景下的程序编写最佳实践。 单例模式基础保证一个类只有一个实例，全局提供一个访问点，解决一个频繁使用的类创建和销毁。 应用场景 登录窗口（全局唯一，频繁使用），vuex，qiankun的start启动，jquery。  优点 减少内存消耗 避免资源多重占用  策略模式基础 由两部分组成，利用组合-委托思想避免冗余的if-else。   策略类：策略类负责">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器进程">
-<meta property="og:url" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/">
+<meta property="og:title" content="基础">
+<meta property="og:url" content="http://example.com/2025/04/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%9F%BA%E7%A1%80/">
 <meta property="og:site_name" content="谈沉潜">
-<meta property="og:description" content="浏览器进程四种进程 浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。 渲染进程：负责页面渲染工作。包括渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）。 插件进程：处理插件的运行。 GPU进程：处理图形渲染。  浏览器为什么要限制请求并发数？ 对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;t">
+<meta property="og:description" content="设计模式：大量的项目实践总结出来的对某种业务场景下的程序编写最佳实践。 单例模式基础保证一个类只有一个实例，全局提供一个访问点，解决一个频繁使用的类创建和销毁。 应用场景 登录窗口（全局唯一，频繁使用），vuex，qiankun的start启动，jquery。  优点 减少内存消耗 避免资源多重占用  策略模式基础 由两部分组成，利用组合-委托思想避免冗余的if-else。   策略类：策略类负责">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-04-03T08:00:30.000Z">
-<meta property="article:modified_time" content="2025-04-03T08:02:45.235Z">
+<meta property="article:published_time" content="2025-04-03T09:35:59.000Z">
+<meta property="article:modified_time" content="2025-04-03T09:36:11.590Z">
 <meta property="article:author" content="Wayne Chen">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>浏览器进程 - 谈沉潜</title>
+  <title>基础 - 谈沉潜</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="浏览器进程"></span>
+            <span id="subtitle" data-typed-text="基础"></span>
           
         </div>
 
@@ -227,7 +227,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-03 16:00" pubdate>
+        <time datetime="2025-04-03 17:35" pubdate>
           2025年4月3日 下午
         </time>
       </span>
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          429 字
+          650 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          4 分钟
+          6 分钟
         
       </span>
     
@@ -296,43 +296,53 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">浏览器进程</h1>
+            <h1 id="seo-header">基础</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="浏览器进程"><a href="#浏览器进程" class="headerlink" title="浏览器进程"></a>浏览器进程</h1><h2 id="四种进程"><a href="#四种进程" class="headerlink" title="四种进程"></a>四种进程</h2><ol>
-<li>浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。</li>
-<li>渲染进程：负责页面渲染工作。包括<em><strong>渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）</strong></em>。</li>
-<li>插件进程：处理插件的运行。</li>
-<li>GPU进程：处理图形渲染。</li>
+                <p>设计模式：大量的项目实践总结出来的对某种业务场景下的程序编写最佳实践。</p>
+<h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>保证一个类只有一个实例，全局提供一个访问点，解决一个频繁使用的类创建和销毁。</p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ol>
+<li>登录窗口（全局唯一，频繁使用），vuex，qiankun的start启动，jquery。</li>
 </ol>
-<h2 id="浏览器为什么要限制请求并发数？"><a href="#浏览器为什么要限制请求并发数？" class="headerlink" title="浏览器为什么要限制请求并发数？"></a>浏览器为什么要限制请求并发数？</h2><ol>
-<li>对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;tcp请求占据一个端口，防止端口资源消耗殆尽。</li>
-<li>避免频繁的线程切换：线程和http请求相对应，如果并发数量过大会导致频繁切换线程。</li>
-<li>避免同一客户端发送大量请求超过服务端并发</li>
-<li>客户端良知机制：防止两个应用抢占资源时候强势一方导致弱势一方永远阻塞。</li>
-<li>http队头阻塞：tcp队头阻塞。</li>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>减少内存消耗</li>
+<li>避免资源多重占用</li>
 </ol>
-<h2 id="如何解决浏览器请求次数限制？"><a href="#如何解决浏览器请求次数限制？" class="headerlink" title="如何解决浏览器请求次数限制？"></a>如何解决浏览器请求次数限制？</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000039157302">https://segmentfault.com/a/1190000039157302</a></li>
+<h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1><h2 id="基础-1"><a href="#基础-1" class="headerlink" title="基础"></a>基础</h2><ul>
+<li>由两部分组成，利用<em><strong>组合-委托</strong></em>思想避免冗余的if-else。</li>
 </ul>
 <ol>
-<li>http2.0，http3.0 解决队头阻塞，并发请求。</li>
-<li>使用缓存，减少请求量。</li>
-<li>合并请求，减少请求次数。</li>
-<li>按需加载。</li>
-<li>域名分散。</li>
+<li>策略类：策略类负责封装不同策略，提高代码复用性、可扩展性、可维护性。</li>
+<li>环境类：根据参数委托对应的策略执行。</li>
 </ol>
-<h2 id="浏览器组成"><a href="#浏览器组成" class="headerlink" title="浏览器组成"></a>浏览器组成</h2><ol>
-<li>用户界面：地址栏、书签栏、前进、后退等等。</li>
-<li>浏览器主引擎：渲染引擎和用户界面的桥梁，处理用户交互，传递信息给渲染引擎。</li>
-<li>渲染引擎：浏览器渲染过程。</li>
-<li>js引擎：解析和执行js。</li>
-<li>网络模块：发送请求和加载资源。</li>
-<li>数据存储：cookie、localStorage、SessionStorage、indexedDB等等</li>
+<h2 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h2><ol>
+<li>确认策略规则对象,编写好对应的函数,比如表单检验时候的长度判断函数,不为空函数.</li>
+<li>提交表单时候，校验参数通过环境类委托对应的策略执行。</li>
 </ol>
-
+<h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><h2 id="基础-2"><a href="#基础-2" class="headerlink" title="基础"></a>基础</h2><ul>
+<li>给对象添加了一个代理层，由代理对象控制对原对象的引用。处理和过滤之后再交给原对象，以减轻本体对象的负担。</li>
+</ul>
+<h2 id="应用场景-2"><a href="#应用场景-2" class="headerlink" title="应用场景"></a>应用场景</h2><ol>
+<li>axios封装：添加通用请求头、身份认证信息等等；异常状态码（跳转到统一认证登录）。</li>
+<li>Vue中数据代理： 定义为响应式的数据会被代理到组件实例上，在生成渲染函数的时候通过with添加了组件实例作用域，需要从组件实例上获取数据，触发get函数。</li>
+<li>cache-loader代理</li>
+</ol>
+<h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><h2 id="基础-3"><a href="#基础-3" class="headerlink" title="基础"></a>基础</h2><ul>
+<li>观察者模式由具体目标调度，没有信道中介。</li>
+</ul>
+<h2 id="应用场景-3"><a href="#应用场景-3" class="headerlink" title="应用场景"></a>应用场景</h2><ul>
+<li>DOM事件监听机制：DOM（目标）触发特定事件后监听器执行。</li>
+</ul>
+<h1 id="发布-订阅模式"><a href="#发布-订阅模式" class="headerlink" title="发布-订阅模式"></a>发布-订阅模式</h1><h2 id="基础-4"><a href="#基础-4" class="headerlink" title="基础"></a>基础</h2><ul>
+<li>定义程序对象之间一种一对多的关系，当一个对象的状态变化时，所有依赖的对象都会都会得到通知并执行对应的操作。基于观察者模式进行<em><strong>通用化设计，松散耦合，灵活度更高</strong></em></li>
+<li><em><strong>发布者</strong></em>：事件发布者将发布的事件传递给信道中介。<br> <em><strong>信道中介</strong></em>：缓存事件对应的订阅者，发布者发布时候遍历订阅者列表进行通知。<br> <em><strong>订阅者</strong></em>：定义事件发布后的操作，向信道中介发起订阅。</li>
+</ul>
+<h2 id="应用场景-4"><a href="#应用场景-4" class="headerlink" title="应用场景"></a>应用场景</h2><ul>
+<li>vue响应式原理：数据（发布者）发布，订阅者（watcher）调用虚拟DOM更新组件视图。</li>
+</ul>
+<h1 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h1>
                 
               </div>
             
@@ -350,15 +360,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="category-chain-item">设计模式</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="category-chain-item">进程管理</a>
-  
-  
-
   
 
       </span>
@@ -377,8 +380,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>浏览器进程</div>
-      <div>http://example.com/2025/04/03/操作系统/进程管理/浏览器进程/</div>
+      <div>基础</div>
+      <div>http://example.com/2025/04/03/设计模式/基础/</div>
     </div>
     <div class="license-meta">
       
@@ -422,7 +425,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/1.%20%E5%9F%BA%E7%A1%80/" title="基础">
+                      <a href="/2025/04/03/CSS/1.%20%E5%9F%BA%E7%A1%80/" title="基础">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">基础</span>
                         <span class="visible-mobile">上一篇</span>
@@ -432,8 +435,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E9%94%81/" title="锁">
-                        <span class="hidden-mobile">锁</span>
+                      <a href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E5%9F%BA%E7%A1%80/" title="基础">
+                        <span class="hidden-mobile">基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

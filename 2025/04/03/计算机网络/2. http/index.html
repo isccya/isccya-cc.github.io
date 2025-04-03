@@ -19,21 +19,21 @@
   <meta name="author" content="Wayne Chen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="浏览器进程四种进程 浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。 渲染进程：负责页面渲染工作。包括渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）。 插件进程：处理插件的运行。 GPU进程：处理图形渲染。  浏览器为什么要限制请求并发数？ 对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;t">
+    <meta name="description" content="http1.1优点 强制缓存,协商缓存 长连接,短链接 Host头部字段(解决一个ip对应到多个域名的问题,指明域名) 增加了http状态码 可以局部请求 (管道传输)  缺点 无状态 &#x3D;&gt; cookie解决 明文传输 &#x3D;&gt; https  优化 避免http请求的发送：强制缓存协商缓存 减少http请求的发送：减少重定向(代理服务器处理重定向),按需请求 减少htt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器进程">
-<meta property="og:url" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/">
+<meta property="og:title" content="http">
+<meta property="og:url" content="http://example.com/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/2.%20http/">
 <meta property="og:site_name" content="谈沉潜">
-<meta property="og:description" content="浏览器进程四种进程 浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。 渲染进程：负责页面渲染工作。包括渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）。 插件进程：处理插件的运行。 GPU进程：处理图形渲染。  浏览器为什么要限制请求并发数？ 对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;t">
+<meta property="og:description" content="http1.1优点 强制缓存,协商缓存 长连接,短链接 Host头部字段(解决一个ip对应到多个域名的问题,指明域名) 增加了http状态码 可以局部请求 (管道传输)  缺点 无状态 &#x3D;&gt; cookie解决 明文传输 &#x3D;&gt; https  优化 避免http请求的发送：强制缓存协商缓存 减少http请求的发送：减少重定向(代理服务器处理重定向),按需请求 减少htt">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-04-03T08:00:30.000Z">
-<meta property="article:modified_time" content="2025-04-03T08:02:45.235Z">
+<meta property="article:published_time" content="2025-04-03T09:26:50.000Z">
+<meta property="article:modified_time" content="2025-04-03T09:31:44.302Z">
 <meta property="article:author" content="Wayne Chen">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>浏览器进程 - 谈沉潜</title>
+  <title>http - 谈沉潜</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="浏览器进程"></span>
+            <span id="subtitle" data-typed-text="http"></span>
           
         </div>
 
@@ -227,7 +227,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-03 16:00" pubdate>
+        <time datetime="2025-04-03 17:26" pubdate>
           2025年4月3日 下午
         </time>
       </span>
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          429 字
+          1.2k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          4 分钟
+          11 分钟
         
       </span>
     
@@ -296,42 +296,83 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">浏览器进程</h1>
+            <h1 id="seo-header">http</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="浏览器进程"><a href="#浏览器进程" class="headerlink" title="浏览器进程"></a>浏览器进程</h1><h2 id="四种进程"><a href="#四种进程" class="headerlink" title="四种进程"></a>四种进程</h2><ol>
-<li>浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。</li>
-<li>渲染进程：负责页面渲染工作。包括<em><strong>渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）</strong></em>。</li>
-<li>插件进程：处理插件的运行。</li>
-<li>GPU进程：处理图形渲染。</li>
+                <h1 id="http1-1"><a href="#http1-1" class="headerlink" title="http1.1"></a>http1.1</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ol>
+<li>强制缓存,协商缓存</li>
+<li>长连接,短链接</li>
+<li>Host头部字段(解决一个ip对应到多个域名的问题,指明域名)</li>
+<li>增加了http状态码</li>
+<li>可以局部请求</li>
+<li>(管道传输)</li>
 </ol>
-<h2 id="浏览器为什么要限制请求并发数？"><a href="#浏览器为什么要限制请求并发数？" class="headerlink" title="浏览器为什么要限制请求并发数？"></a>浏览器为什么要限制请求并发数？</h2><ol>
-<li>对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;tcp请求占据一个端口，防止端口资源消耗殆尽。</li>
-<li>避免频繁的线程切换：线程和http请求相对应，如果并发数量过大会导致频繁切换线程。</li>
-<li>避免同一客户端发送大量请求超过服务端并发</li>
-<li>客户端良知机制：防止两个应用抢占资源时候强势一方导致弱势一方永远阻塞。</li>
-<li>http队头阻塞：tcp队头阻塞。</li>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ol>
+<li>无状态 &#x3D;&gt; cookie解决</li>
+<li>明文传输 &#x3D;&gt; https</li>
 </ol>
-<h2 id="如何解决浏览器请求次数限制？"><a href="#如何解决浏览器请求次数限制？" class="headerlink" title="如何解决浏览器请求次数限制？"></a>如何解决浏览器请求次数限制？</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000039157302">https://segmentfault.com/a/1190000039157302</a></li>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><ol>
+<li><strong>避免http请求的发送</strong>：强制缓存协商缓存</li>
+<li><strong>减少http请求的发送</strong>：减少重定向(代理服务器处理重定向),按需请求</li>
+<li><strong>减少http请求量体</strong>：压缩减少请求体量</li>
+</ol>
+<h1 id="https"><a href="#https" class="headerlink" title="https"></a>https</h1><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ol>
+<li>非对称加密和对称加密结合:tls握手非对称加密传输第三个随机数.</li>
+<li>防止内容篡改:私钥加密内容的hash值,公钥解密hash值,并计算内容的hash值进行对比,相同则内容未篡改.</li>
+<li>身份认证:数字证书,CA私钥加密,浏览器内置的公钥解密,验证服务器身份.</li>
+</ol>
+<h2 id="tls握手"><a href="#tls握手" class="headerlink" title="tls握手"></a>tls握手</h2><ol>
+<li>客户端发送三个参数：<em><strong>随机数,支持的tls版本号,密码套件</strong></em>给服务端</li>
+<li>服务端返回四个：<em><strong>随机数,选择一个atls版本号,选择一个密码套件,数字证书</strong></em></li>
+<li>客户端<em><strong>验证数字证书后取出公钥,生成第三个随机数,用服务端公钥加密传输第三个随机数,并通知后续采用加密传输.</strong></em></li>
+<li>服务端获取<em><strong>第三个随机数生成会话密钥,通知后续采用加密传输</strong></em></li>
+</ol>
+<h2 id="数字证书验证"><a href="#数字证书验证" class="headerlink" title="数字证书验证"></a>数字证书验证</h2><ul>
+<li>CA对公钥、有效时间、颁发者等信息进行hash运算，通过私钥签名生成数字证书。客户端拿到数字证书后用内置的公钥解密，计算hash值对比，相同则说明身份是正确的。</li>
 </ul>
-<ol>
-<li>http2.0，http3.0 解决队头阻塞，并发请求。</li>
-<li>使用缓存，减少请求量。</li>
-<li>合并请求，减少请求次数。</li>
-<li>按需加载。</li>
-<li>域名分散。</li>
+<h2 id="证书信任链"><a href="#证书信任链" class="headerlink" title="证书信任链"></a>证书信任链</h2><ul>
+<li>根证书信任了某些中间证书用私钥加密，中间证书给服务器公钥颁发数字证书。</li>
+<li>我们可以先用根证书的公钥验证中间证书 &#x3D;》 获取中间证书的公钥；再去验证服务器的数字证书。</li>
+</ul>
+<h2 id="https一定安全-中间人攻击"><a href="#https一定安全-中间人攻击" class="headerlink" title="https一定安全?中间人攻击"></a>https一定安全?中间人攻击</h2><ul>
+<li>tls第二次握手服务端返回数字证书时候中间人服务器获取,中间人获取服务端公钥,把自己伪造的公钥数字证书给客户端.(客户端如果信任非法的数字证书就会导致https不安全),第三次握手用自己伪造的私钥解密客户端信息获取第三个随机数中间人根据三个随机数和密码套件生成会话密钥.</li>
+<li>解决方案：http双向认证，客户端也有自己的公私钥，把自己的证书发送给服务端，服务端用根证书验证后获取客户端公钥，后续用客户端公钥加密通信。</li>
+</ul>
+<h2 id="https的缺点"><a href="#https的缺点" class="headerlink" title="https的缺点"></a>https的缺点</h2><ol>
+<li>性能开销：https需要tls四次握手协商会话密钥；每次通信都需要经过会话密钥加解密。</li>
+<li>断开重连：https连接断开后重新握手成本更高。</li>
+<li>成本问题：购买证书，证书需要定期更新和维护。</li>
+<li>隐藏问题：中间人攻击。</li>
 </ol>
-<h2 id="浏览器组成"><a href="#浏览器组成" class="headerlink" title="浏览器组成"></a>浏览器组成</h2><ol>
-<li>用户界面：地址栏、书签栏、前进、后退等等。</li>
-<li>浏览器主引擎：渲染引擎和用户界面的桥梁，处理用户交互，传递信息给渲染引擎。</li>
-<li>渲染引擎：浏览器渲染过程。</li>
-<li>js引擎：解析和执行js。</li>
-<li>网络模块：发送请求和加载资源。</li>
-<li>数据存储：cookie、localStorage、SessionStorage、indexedDB等等</li>
+<h2 id="优化-1"><a href="#优化-1" class="headerlink" title="优化"></a>优化</h2><ol>
+<li>tls1.2升级到1.3,RSA算法&#x3D;&gt;ECDHE算法,1RTT后即可通信</li>
+<li>证书有效期验证:服务器请求CA(CA私钥加密,防止服务器篡改)证书有效期,客户端请求服务器时候顺带返回证书有效期,避免让客户端请求CA.</li>
+<li>会话复用:类似token,session机制</li>
 </ol>
+<h1 id="http2-0"><a href="#http2-0" class="headerlink" title="http2.0"></a>http2.0</h1><h2 id="头部压缩"><a href="#头部压缩" class="headerlink" title="头部压缩"></a>头部压缩</h2><ol>
+<li>静态表,哈夫曼编码,动态表</li>
+</ol>
+<h2 id="二进制帧-为并发传输服务"><a href="#二进制帧-为并发传输服务" class="headerlink" title="二进制帧(为并发传输服务)"></a>二进制帧(为并发传输服务)</h2><h2 id="并发传输"><a href="#并发传输" class="headerlink" title="并发传输"></a>并发传输</h2><ul>
+<li>每个TCP连接下有多个stream流,每个stream流里面对应一个http请求和响应,每个请求或响应由一个或多个二进制帧组成.各个stream之间可以并发传递数据.(但注意,tcp层只能按顺序接收,可能出现后续数据到达但tcp无法向上交付的问题)</li>
+</ul>
+<h2 id="主动推送"><a href="#主动推送" class="headerlink" title="主动推送"></a>主动推送</h2><ul>
+<li>客户端请求html文件,服务器主动推送css文件.</li>
+</ul>
+<h1 id="http3-0"><a href="#http3-0" class="headerlink" title="http3.0"></a>http3.0</h1><h2 id="http层"><a href="#http层" class="headerlink" title="http层"></a>http层</h2><ul>
+<li>扩充了静态表</li>
+</ul>
+<h2 id="无队头阻塞"><a href="#无队头阻塞" class="headerlink" title="无队头阻塞"></a>无队头阻塞</h2><ul>
+<li>各个stream流数据只要完整到达就可被接受,各个stream流之间无影响.因为采用了UDP协议</li>
+<li>UDP协议也会保证可靠性,一个流中的数据包有唯一id,一个流中数据包丢失,即使其他数据包到达也无法读取.</li>
+</ul>
+<h2 id="更快建立连接"><a href="#更快建立连接" class="headerlink" title="更快建立连接"></a>更快建立连接</h2><ul>
+<li>quic协议和tls协议没有分层,在自己帧中携带tls的记录.并且采用tls1.3,仅需1RTT即可完成连接和密钥协商.</li>
+</ul>
+<h2 id="连接迁移"><a href="#连接迁移" class="headerlink" title="连接迁移"></a>连接迁移</h2><ul>
+<li>基于tcp的http协议采用的是四元组确定tcp连接,quic协议通过连接id来标记两个端点.</li>
+</ul>
 
                 
               </div>
@@ -350,15 +391,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="category-chain-item">计算机网络</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="category-chain-item">进程管理</a>
-  
-  
-
   
 
       </span>
@@ -377,8 +411,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>浏览器进程</div>
-      <div>http://example.com/2025/04/03/操作系统/进程管理/浏览器进程/</div>
+      <div>http</div>
+      <div>http://example.com/2025/04/03/计算机网络/2. http/</div>
     </div>
     <div class="license-meta">
       
@@ -422,9 +456,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/1.%20%E5%9F%BA%E7%A1%80/" title="基础">
+                      <a href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3.%20%E8%BF%90%E8%BE%93%E5%B1%82/" title="运输层">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">基础</span>
+                        <span class="hidden-mobile">运输层</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -432,8 +466,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E9%94%81/" title="锁">
-                        <span class="hidden-mobile">锁</span>
+                      <a href="/2025/04/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/1.%20%E5%9F%BA%E7%A1%80/" title="基础">
+                        <span class="hidden-mobile">基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
