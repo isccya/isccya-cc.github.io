@@ -16,27 +16,24 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
+  <meta name="author" content="Wayne Chen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="内存页面置换算法基础 缺页中断：CPU访问的页面不在物理内存中的时候,便会产生缺页中断，会请求操作系统将所缺页调入到物理内存中。 具体流程：注意：有空闲页先调度到空闲页，没有空闲页则才需要使用页面置换算法。  最佳页面置换算法 置换未来最长时间不访问的页面。 理想算法，实际中无法预知每个页面下次被访问的时间。  先进先出置换算法 选择在内存中滞留时间很长的页面进行置换。  最近最久未使用LRU置换">
+    <meta name="description" content="磁盘调度算法基础 磁盘调度算法的目的很简单，就是为了提高磁盘的访问性能，一般是通过优化磁盘的访问请求顺序来做到的。寻道的时间是磁盘访问最耗时的部分，如果请求顺序优化的得当，必然可以节省一些不必要的寻道时间，从而提高磁盘的访问性能。  先来先服务 先到来的请求先被服务。  最短寻道算法 优先选择从当前磁头位置所需寻道时间最短的请求。 饥饿：产生饥饿的原因是磁头在一小块区域来回移动。  扫描算法（电梯">
 <meta property="og:type" content="article">
-<meta property="og:title" content="页面调度算法">
-<meta property="og:url" content="http://example.com/2025/04/02/%E9%A1%B5%E9%9D%A2%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="磁盘调度算法">
+<meta property="og:url" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/">
 <meta property="og:site_name" content="谈沉潜">
-<meta property="og:description" content="内存页面置换算法基础 缺页中断：CPU访问的页面不在物理内存中的时候,便会产生缺页中断，会请求操作系统将所缺页调入到物理内存中。 具体流程：注意：有空闲页先调度到空闲页，没有空闲页则才需要使用页面置换算法。  最佳页面置换算法 置换未来最长时间不访问的页面。 理想算法，实际中无法预知每个页面下次被访问的时间。  先进先出置换算法 选择在内存中滞留时间很长的页面进行置换。  最近最久未使用LRU置换">
+<meta property="og:description" content="磁盘调度算法基础 磁盘调度算法的目的很简单，就是为了提高磁盘的访问性能，一般是通过优化磁盘的访问请求顺序来做到的。寻道的时间是磁盘访问最耗时的部分，如果请求顺序优化的得当，必然可以节省一些不必要的寻道时间，从而提高磁盘的访问性能。  先来先服务 先到来的请求先被服务。  最短寻道算法 优先选择从当前磁头位置所需寻道时间最短的请求。 饥饿：产生饥饿的原因是磁头在一小块区域来回移动。  扫描算法（电梯">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/image.png">
-<meta property="article:published_time" content="2025-04-02T14:02:28.000Z">
-<meta property="article:modified_time" content="2025-04-02T14:08:27.475Z">
-<meta property="article:author" content="John Doe">
-<meta property="article:tag" content="操作系统">
+<meta property="article:published_time" content="2025-04-03T02:06:38.000Z">
+<meta property="article:modified_time" content="2025-04-03T02:06:48.136Z">
+<meta property="article:author" content="Wayne Chen">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/image.png">
   
   
   
-  <title>页面调度算法 - 谈沉潜</title>
+  <title>磁盘调度算法 - 谈沉潜</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="页面调度算法"></span>
+            <span id="subtitle" data-typed-text="磁盘调度算法"></span>
           
         </div>
 
@@ -226,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-02 22:02" pubdate>
-          2025年4月2日 晚上
+        <time datetime="2025-04-03 10:06" pubdate>
+          2025年4月3日 上午
         </time>
       </span>
     
@@ -238,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          315 字
+          303 字
         
       </span>
     
@@ -295,32 +292,31 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">页面调度算法</h1>
+            <h1 id="seo-header">磁盘调度算法</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="内存页面置换算法"><a href="#内存页面置换算法" class="headerlink" title="内存页面置换算法"></a>内存页面置换算法</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
-<li>缺页中断：CPU访问的页面不在物理内存中的时候,便会产生缺页中断，会请求操作系统将所缺页调入到物理内存中。</li>
-<li>具体流程：<br><img src="/image.png" srcset="/img/loading.gif" lazyload alt="图片引用方法二"><br>注意：有空闲页先调度到空闲页，没有空闲页则才需要使用页面置换算法。</li>
+                <h1 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
+<li>磁盘调度算法的目的很简单，就是为了提高磁盘的访问性能，一般是通过<strong>优化磁盘的访问请求顺序</strong>来做到的。<br><strong>寻道的时间</strong>是磁盘访问最耗时的部分，如果请求顺序优化的得当，必然可以节省一些不必要的寻道时间，从而提高磁盘的访问性能。</li>
 </ul>
-<h2 id="最佳页面置换算法"><a href="#最佳页面置换算法" class="headerlink" title="最佳页面置换算法"></a>最佳页面置换算法</h2><ul>
-<li>置换未来最长时间不访问的页面。</li>
-<li>理想算法，实际中无法预知每个页面下次被访问的时间。</li>
+<h2 id="先来先服务"><a href="#先来先服务" class="headerlink" title="先来先服务"></a>先来先服务</h2><ul>
+<li>先到来的请求先被服务。</li>
 </ul>
-<h2 id="先进先出置换算法"><a href="#先进先出置换算法" class="headerlink" title="先进先出置换算法"></a>先进先出置换算法</h2><ul>
-<li>选择在内存中滞留时间很长的页面进行置换。</li>
+<h2 id="最短寻道算法"><a href="#最短寻道算法" class="headerlink" title="最短寻道算法"></a>最短寻道算法</h2><ul>
+<li>优先选择从当前磁头位置所需寻道时间最短的请求。</li>
+<li>饥饿：产生饥饿的原因是磁头在一小块区域来回移动。</li>
 </ul>
-<h2 id="最近最久未使用LRU置换算法"><a href="#最近最久未使用LRU置换算法" class="headerlink" title="最近最久未使用LRU置换算法"></a>最近最久未使用LRU置换算法</h2><ul>
-<li>选择最长时间没有被访问的页面进行置换。</li>
-<li>很少使用，需要维护一个链表，最近使用的放链表头部，每次访问页面都需要更新链表。</li>
+<h2 id="扫描算法（电梯算法）"><a href="#扫描算法（电梯算法）" class="headerlink" title="扫描算法（电梯算法）"></a>扫描算法（电梯算法）</h2><ul>
+<li>往左扫描到没有请求为止，再往右。</li>
+<li>中间的磁道占优势。</li>
 </ul>
-<h2 id="时钟页面置换算法"><a href="#时钟页面置换算法" class="headerlink" title="时钟页面置换算法"></a>时钟页面置换算法</h2><ul>
-<li>所有页面在一个链表中，一个表针指向最老的页面。</li>
-<li>如果访问位是0：置换该页面，并把表针指向前一位。<br>  访问位是1：改为0，并把表针前移一位。</li>
+<h2 id="循环扫描"><a href="#循环扫描" class="headerlink" title="循环扫描"></a>循环扫描</h2><ul>
+<li>往左扫描完后，立即磁头回到<strong>最右边0</strong>，又开始往左扫描。</li>
+<li>响应频率更平均。</li>
 </ul>
-<h2 id="最不常用算法"><a href="#最不常用算法" class="headerlink" title="最不常用算法"></a>最不常用算法</h2><ul>
-<li>选择访问次数最少的页面进行置换。</li>
+<h2 id="LOOK-与-C-LOOK算法"><a href="#LOOK-与-C-LOOK算法" class="headerlink" title="LOOK 与 C-LOOK算法"></a>LOOK 与 C-LOOK算法</h2><ul>
+<li>扫描算法和循环扫描算法，都是磁头移动到磁盘「最始端或最末端」才开始调换方向。优化的思路就是磁头在移动到「最远的请求」位置，然后立即反向移动。</li>
 </ul>
 
                 
@@ -345,7 +341,7 @@
   
     <span>></span>
     
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/" class="category-chain-item">磁盘调度算法</a>
+  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/" class="category-chain-item">调度算法</a>
   
   
 
@@ -359,13 +355,6 @@
     </div>
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="print-no-link">#操作系统</a>
-      
-    </div>
-  
 </div>
 
 
@@ -374,20 +363,20 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>页面调度算法</div>
-      <div>http://example.com/2025/04/02/页面调度算法/</div>
+      <div>磁盘调度算法</div>
+      <div>http://example.com/2025/04/03/操作系统/调度算法/磁盘调度算法/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>John Doe</div>
+          <div>Wayne Chen</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年4月2日</div>
+          <div>2025年4月3日</div>
         </div>
       
       
@@ -419,12 +408,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/" title="webpack">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">webpack</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/04/02/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/" title="测试文章">
-                        <span class="hidden-mobile">测试文章</span>
+                      <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/%E9%A1%B5%E9%9D%A2%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/" title="页面调度算法">
+                        <span class="hidden-mobile">页面调度算法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
