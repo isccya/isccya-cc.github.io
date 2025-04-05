@@ -1,0 +1,868 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/batman4.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Wayne Chen">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="蚂蚁qiankun核心贡献者对qiankun讲解：https:&#x2F;&#x2F;juejin.cn&#x2F;post&#x2F;6846687602439897101?searchId&#x3D;20241020100002E607ECE10FA25EDC88EF 阮一峰的Web Components 入门实例教程：https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;2019&#x2F;08&#x2F;web_components.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基础">
+<meta property="og:url" content="http://example.com/2025/04/04/%E5%BE%AE%E5%89%8D%E7%AB%AF/1.%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">
+<meta property="og:site_name" content="谈沉潜">
+<meta property="og:description" content="蚂蚁qiankun核心贡献者对qiankun讲解：https:&#x2F;&#x2F;juejin.cn&#x2F;post&#x2F;6846687602439897101?searchId&#x3D;20241020100002E607ECE10FA25EDC88EF 阮一峰的Web Components 入门实例教程：https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;2019&#x2F;08&#x2F;web_components.html">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/04/04/%E5%BE%AE%E5%89%8D%E7%AB%AF/1.%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/image-11.png">
+<meta property="og:image" content="http://example.com/2025/04/04/%E5%BE%AE%E5%89%8D%E7%AB%AF/1.%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/image-5.png">
+<meta property="og:image" content="http://example.com/2025/04/04/%E5%BE%AE%E5%89%8D%E7%AB%AF/1.%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/image-6.png">
+<meta property="article:published_time" content="2025-04-04T14:11:50.000Z">
+<meta property="article:modified_time" content="2025-04-04T14:23:06.764Z">
+<meta property="article:author" content="Wayne Chen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2025/04/04/%E5%BE%AE%E5%89%8D%E7%AB%AF/1.%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/image-11.png">
+  
+  
+  
+  <title>基础 - 谈沉潜</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"ohWadpEWlT0Q54ERBAkcKH6S-MdYXbMMI","app_key":"vCuFIlABwAvv2H6Ambf1u5e4","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>谈沉潜</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/batman3.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="基础"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-04 22:11" pubdate>
+          2025年4月4日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          21 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">基础</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <ul>
+<li>蚂蚁qiankun核心贡献者对qiankun讲解：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6846687602439897101?searchId=20241020100002E607ECE10FA25EDC88EF">https://juejin.cn/post/6846687602439897101?searchId=20241020100002E607ECE10FA25EDC88EF</a></li>
+<li>阮一峰的Web Components 入门实例教程：<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2019/08/web_components.html">https://www.ruanyifeng.com/blog/2019/08/web_components.html</a></li>
+</ul>
+<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="微前端实现"><a href="#微前端实现" class="headerlink" title="微前端实现"></a>微前端实现</h2><ol>
+<li>将多个项目域名合并处理，不需要前端改任何代码。比如：a.com b.com c.com合成tencent&#x2F;a tencent&#x2F;b tencent&#x2F;c.(刷新页面)</li>
+<li>qiankun、single-spa、wujie 有个框架基座，来回切换。</li>
+<li>模块联邦：运行时动态加载彼此的模块，从而实现 应用拆分、独立部署、依赖共享。 也是有一个主应用动态加载子应用，公共依赖也可以共享。</li>
+</ol>
+<h2 id="解决的问题"><a href="#解决的问题" class="headerlink" title="解决的问题"></a>解决的问题</h2><ol>
+<li>应用可维护：将一个大应用拆分成多个独立、松耦合的小应用，每个模块可以独立的开发测试，每个模块有自己的版本管理，如果出现问题不会影响其他模块运行。</li>
+<li>团队独立性：复杂应用涉及多个团队开发，采用微前端架构可以让各个团队维护自己的部分。</li>
+<li>技术灵活性：每个子应用可以使用不同的技术栈，避免了技术栈不一致的问题。</li>
+<li>增量升级：在原有基础上添加新的子应用。</li>
+</ol>
+<h2 id="带来的新问题"><a href="#带来的新问题" class="headerlink" title="带来的新问题"></a>带来的新问题</h2><ol>
+<li>接入协议：改造项目接入微前端框架。single-spa、qiankun。</li>
+<li>模块拆分困难：如何根据业务去拆分不同的应用，确保后续系统开发可执行性。</li>
+</ol>
+<h2 id="qiankun和iframe区别（为什么不用wujie）"><a href="#qiankun和iframe区别（为什么不用wujie）" class="headerlink" title="qiankun和iframe区别（为什么不用wujie）"></a>qiankun和iframe区别（为什么不用wujie）</h2><ol>
+<li>实现方式：</li>
+</ol>
+<ul>
+<li>iframe每个应用有自己独立的浏览器上下文、window对象，完全隔离了父子应用；</li>
+<li>qiankun父子应用共享父应用的上下文环境和window对象，通过沙箱机制软隔离；</li>
+</ul>
+<ol start="2">
+<li>数据通信：</li>
+</ol>
+<ul>
+<li>iframe通过postmessage API进行跨域通信</li>
+<li>qiankun通过全局状态管理或者全局事件总线进行通信</li>
+</ul>
+<ol start="3">
+<li>样式隔离：</li>
+</ol>
+<ul>
+<li>iframe天生就有样式隔离的效果，因为它加载的是单独的页面。</li>
+<li>qiankun提供css模块化、shadowDOM去避免子应用之间的样式污染。</li>
+</ul>
+<ol start="4">
+<li>使用场景：</li>
+</ol>
+<ul>
+<li>iframe用于强隔离，嵌入第三方系统的场景，适合广告嵌入。</li>
+<li>qiankun适合多个团队开发复杂系统的不同模块时候使用。</li>
+</ul>
+<h2 id="子应用如何接入qiankun框架？"><a href="#子应用如何接入qiankun框架？" class="headerlink" title="子应用如何接入qiankun框架？"></a>子应用如何接入qiankun框架？</h2><ol>
+<li><strong>主应用注册子应用</strong>，包括：<br>name；<br>挂载的元素；<br>激活该应用的路由：有全局监听器去监听hashchange和popstate事件；<br>加载的路径：监听器发现路由匹配后会import-html-entry去加载对应的入口文件。</li>
+<li><strong>子应用暴露接口协议</strong>：import-html-entry如何加载的，css样式隔离、js沙箱初始化、接入协议。</li>
+<li><strong>public-path.js</strong>：改变静态资源路径为子应用ip地址，默认会是父应用ip地址导致静态资源无法加载。<br><img src="/2025/04/04/%E5%BE%AE%E5%89%8D%E7%AB%AF/1.%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/image-11.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+<li><strong>挂载位置</strong>：子应用挂载到app，根应用也是app的div，这时候需要限制查找范围。props参数有个container属性是dom元素。主应用的html下面有一个container div，container div上挂载子应用的html，子应用html有app。</li>
+<li><strong>webpack打包格式</strong>：为umd格式。</li>
+<li><strong>全局变量</strong>：除了微前端启动，还有正常启动，qiankun会在window放个全局属性powerbyqiankun没有的话直接调render函数就好。</li>
+</ol>
+<h2 id="start时候qiankun做了什么？qiankun的原理？"><a href="#start时候qiankun做了什么？qiankun的原理？" class="headerlink" title="start时候qiankun做了什么？qiankun的原理？"></a>start时候qiankun做了什么？qiankun的原理？</h2><ul>
+<li>single-spa原理。</li>
+</ul>
+<h2 id="父子应用通信"><a href="#父子应用通信" class="headerlink" title="父子应用通信"></a>父子应用通信</h2><ul>
+<li>qiankun自己有数据通信的API,但是不好用、有学习成本，后续3.0会移除，调研时候就没用这个方法。</li>
+</ul>
+<ol>
+<li>父&#x3D;&gt;子：在注册子应用时候添加props字段，表示父应用会传递给子应用的数据。在子应用的生命周期mount接收这些数据。<br>子&#x3D;&gt;父：传递事件总线对象，子应用可以绑定事件，主应用触发事件。</li>
+<li>父传子：用户权限节点，用户基本信息，白名单列表等等，父应用集中管理所有子应用会用到的状态。<br>子传父：一个子应用的一个模板同时只能有一个人操作，在解锁这个业务需求下：子应用绑定解锁事件（调用当前子应用的API），在父应用的导航条触发解锁事件。</li>
+</ol>
+<h2 id="js沙箱机制"><a href="#js沙箱机制" class="headerlink" title="js沙箱机制"></a>js沙箱机制</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6920110573418086413#heading-0">https://juejin.cn/post/6920110573418086413#heading-0</a><br>沙箱sandbox：它是一种安全机制，在程序中创建一个独立的运行环境，用于严格控制访问资源，隔离对外部程序影响。<em><strong>qiankun：每个子应用对应一个沙箱，确保微应用之间 全局变量&#x2F;事件 不冲突。</strong></em><br>qiankun有三种沙箱实现机制，快照沙箱支持无proxy的浏览器；单例沙箱和多例沙箱基于proxy。</li>
+</ul>
+<h3 id="SnapshotSandbox"><a href="#SnapshotSandbox" class="headerlink" title="SnapshotSandbox"></a>SnapshotSandbox</h3><p>快照沙箱，基于 diff 方式实现的沙箱，用于不支持 Proxy 的低版本浏览器.将进入前的window的快照信息存到windowSnapshot中，如果modifyPropsMap有值，还需要还原上次的状态；激活期间，可能修改了window的数据；退出沙箱时，将修改过的信息存到modifyPropsMap里面，并且把window还原成初始进入的状态。</p>
+<!--
+windowSnapshot：存储window默认状态
+modifyPropsMap：存储每个子应用各自的全局信息
+  -->
+<blockquote>
+<p>激活时候将全局window缓存，把自己的全局状态放到window上；退出时候将全局window恢复，把window全局变化缓存到自己身上。<br>兼容不支持proxy的浏览器</p>
+</blockquote>
+<h3 id="LegacySandbox"><a href="#LegacySandbox" class="headerlink" title="LegacySandbox"></a>LegacySandbox</h3><p>单实例代理沙箱，对window对象进行proxy代理。legacySandbox设置了三个参数来记录全局变量,分别是: </p>
+<ol>
+<li>记录沙箱新增的全局变量addedPropsMapInSandbox、</li>
+<li>记录沙箱更新的全局变量<code>modifiedPropsOriginalValueMapInSandbox</code>、</li>
+<li>持续记录更新的(新增和修改的)全局变量，用于在任意时刻做snapshot的currentUpdatedPropsValueMap。<br>沙箱激活时，将快照映射（当前沙箱的全局变量和函数）添加到window上，通过代理拦截对window的set操作，新增的的变量记录，修改的变量记录初始化，再把变化统一记录在快照映射上；退出沙箱时，删除新增的变量记录，恢复修改的变量记录。</li>
+</ol>
+<blockquote>
+<p>核心是代理了window对象，记录新增的，记录修改的，有一个快照映射；退出时候去除新增的，恢复修改的。<br>相对快照沙箱优点是不用再遍历window对象，但相对于多实例沙箱缺点是依旧会污染全局window。</p>
+</blockquote>
+<h3 id="ProxySandbox"><a href="#ProxySandbox" class="headerlink" title="ProxySandbox"></a>ProxySandbox</h3><p>多实例代理沙箱，通过对window的拷贝建立多个副本，在沙箱中对建立的副本进行操作，如果副本上没有属性才去window对象上获取。</p>
+<blockquote>
+<p>对window代理建立多个副本，先在副本上获取属性，获取不到再去window对象上获取。<br>不会污染全局window，且能实现同时挂载多个子应用。是最完美的解决方案，但快照沙箱是解决不兼容proxy的浏览器，单实例是对旧版的兼容优化，新版可采用多实例沙箱。</p>
+</blockquote>
+<h3 id="子应用window-a怎么被代理呢？"><a href="#子应用window-a怎么被代理呢？" class="headerlink" title="子应用window.a怎么被代理呢？"></a>子应用window.a怎么被代理呢？</h3><ol>
+<li>子应用的js代码包装到一个函数，传入window参数；</li>
+<li>call改变里面默认this指向；</li>
+<li>with添加作用域改变默认变量的访问；</li>
+</ol>
+<ul>
+<li>子应用脚本会放到沙箱里去执行。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js">(<span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable language_">window</span></span>) &#123;<br>    <span class="hljs-title function_">with</span>(<span class="hljs-params"><span class="hljs-variable language_">window</span></span>) &#123;<br>        <span class="hljs-comment">// 子应用的脚本在这个沙箱内执行</span><br>        <span class="hljs-built_in">eval</span>(<span class="hljs-string">`console.log(a)`</span>); <span class="hljs-comment">// 访问的是沙箱中的 a</span><br>    &#125;<br>&#125;).<span class="hljs-title function_">call</span>(sandbox, sandbox);<br></code></pre></td></tr></table></figure>
+
+<h2 id="css样式隔离"><a href="#css样式隔离" class="headerlink" title="css样式隔离"></a>css样式隔离</h2><h3 id="动态样式表"><a href="#动态样式表" class="headerlink" title="动态样式表"></a>动态样式表</h3><ul>
+<li>应用A切换到B，卸载A应用样式，挂载B应用样式，<em><strong>以 style 标签的形式插入并做快照</strong></em>。未解决父子应用，只适用于单应用挂载。</li>
+</ul>
+<h3 id="工程化"><a href="#工程化" class="headerlink" title="工程化"></a>工程化</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38935512/article/details/130317408">https://blog.csdn.net/qq_38935512/article/details/130317408</a><br><a target="_blank" rel="noopener" href="https://codeteenager.github.io/Micro-Frontends/guide/qiankun-problem.html#css-%E9%9A%94%E7%A6%BB">https://codeteenager.github.io/Micro-Frontends/guide/qiankun-problem.html#css-%E9%9A%94%E7%A6%BB</a></p>
+<ul>
+<li>通过css预处理器处理，类似vue样式的scoped属性，qiankun会自动为子应用所有的样式选择器添加后缀名。给子应用最外层包一个div，div有个data-qiankun属性，然后style的样式都添加一个属性选择器。<br><img src="/2025/04/04/%E5%BE%AE%E5%89%8D%E7%AB%AF/1.%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/image-5.png" srcset="/img/loading.gif" lazyload alt=" "></li>
+<li>缺点：弹窗、抽屉因插入到主应用的body中，导致样式丢失或者应用了主应用样式。</li>
+<li>解决方法：antd指定弹窗渲染的范围&#x2F;重写appendChild方法：建立一个白名单比如：弹窗等等，如果添加的元素是白名单中的话，额外添加样式类使其在主应用正常展示，调用原来的appendChild方法。</li>
+</ul>
+<h3 id="shadow-DOM"><a href="#shadow-DOM" class="headerlink" title="shadow DOM"></a>shadow DOM</h3><ul>
+<li>qiankun2新增的严格样式隔离，采用shadow DOM方式。shadow DOM其实是web-component在使用时候希望与外部DOM，样式隔离采用的方案。<br><img src="/2025/04/04/%E5%BE%AE%E5%89%8D%E7%AB%AF/1.%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/image-6.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
+<li>shadow DOM也带来一些限制：一些全局样式无法渗透到shadow DOM中。</li>
+</ul>
+<blockquote>
+<p>样式表是开始的方案，但无法解决父子应用样式冲突问题。后续有工程化和shadow DOM解决方案。企业还是BEM规范。</p>
+</blockquote>
+<h2 id="父子应用路由"><a href="#父子应用路由" class="headerlink" title="父子应用路由"></a>父子应用路由</h2><ul>
+<li>全局监听器 &#x3D;&gt; 方法的重写 &#x3D;&gt; 主应用具体怎么写的 &#x3D;&gt; 子应用负责自己的路由。</li>
+</ul>
+<h3 id="主应用路由"><a href="#主应用路由" class="headerlink" title="主应用路由"></a>主应用路由</h3><ul>
+<li>主应用通过路由规则决定何时加载子应用：在主应用入口文件会注册激活子应用的url信息，这里各个子应用的url前缀要各不相同。通过动态路由参数匹配所有的子应用路径，将主应用切换到一个空壳容器组件，子应用都挂载到主应用这个空壳路由组件。</li>
+</ul>
+<h3 id="子应用路由"><a href="#子应用路由" class="headerlink" title="子应用路由"></a>子应用路由</h3><ul>
+<li>子应用加载后执行生命周期bootstrap，mount，unmount，负责子应用内部的路由切换。</li>
+</ul>
+<h3 id="如何同时加载多个子应用？"><a href="#如何同时加载多个子应用？" class="headerlink" title="如何同时加载多个子应用？"></a>如何同时加载多个子应用？</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/355419817">https://zhuanlan.zhihu.com/p/355419817</a></li>
+</ul>
+<ol>
+<li>qiankun 2.0 的发布带来一个全新的 API ：loadMicroApp。</li>
+</ol>
+<h2 id="qiankun和single-spa区别"><a href="#qiankun和single-spa区别" class="headerlink" title="qiankun和single-spa区别"></a>qiankun和single-spa区别</h2><ol>
+<li>预加载</li>
+<li>js沙箱</li>
+<li>css样式隔离</li>
+<li>systemjs、html-import-entry</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%BE%AE%E5%89%8D%E7%AB%AF/" class="category-chain-item">微前端</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>基础</div>
+      <div>http://example.com/2025/04/04/微前端/1.微前端基础/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Wayne Chen</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月4日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/04/04/%E5%BE%AE%E5%89%8D%E7%AB%AF/2.single-spa%E6%BA%90%E7%A0%81/" title="single-spa源码">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">single-spa源码</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/04/04/%E6%89%8B%E5%86%99%E9%A2%98/%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9/0.%E5%9F%BA%E7%A1%80/" title="基础">
+                        <span class="hidden-mobile">基础</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"ohWadpEWlT0Q54ERBAkcKH6S-MdYXbMMI","appKey":"vCuFIlABwAvv2H6Ambf1u5e4","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/custom.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

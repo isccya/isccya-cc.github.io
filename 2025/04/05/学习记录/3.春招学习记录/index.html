@@ -1,0 +1,2331 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/batman4.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Wayne Chen">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="春招计划 上午算法 下午刚开始js手写 下午晚上八股 + 项目 晚上回去看面经或者js手写   css &#9989; js：基础、代码输出题。&#9989; vue：源码、八股。 &#9989; ts：八股、手写。 &#9989; webpack、vite：八股。 &#9989; git：八股。 &#9989; 计算机网络 &#9989; 操作系统 &#9989; 算法 &#9989; &amp;#x2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="春招学习记录">
+<meta property="og:url" content="http://example.com/2025/04/05/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/3.%E6%98%A5%E6%8B%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+<meta property="og:site_name" content="谈沉潜">
+<meta property="og:description" content="春招计划 上午算法 下午刚开始js手写 下午晚上八股 + 项目 晚上回去看面经或者js手写   css &#9989; js：基础、代码输出题。&#9989; vue：源码、八股。 &#9989; ts：八股、手写。 &#9989; webpack、vite：八股。 &#9989; git：八股。 &#9989; 计算机网络 &#9989; 操作系统 &#9989; 算法 &#9989; &amp;#x2">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-05T07:58:51.000Z">
+<meta property="article:modified_time" content="2025-04-05T08:01:07.822Z">
+<meta property="article:author" content="Wayne Chen">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>春招学习记录 - 谈沉潜</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"ohWadpEWlT0Q54ERBAkcKH6S-MdYXbMMI","app_key":"vCuFIlABwAvv2H6Ambf1u5e4","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>谈沉潜</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/batman3.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="春招学习记录"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-05 15:58" pubdate>
+          2025年4月5日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          22k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          186 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">春招学习记录</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="春招计划"><a href="#春招计划" class="headerlink" title="春招计划"></a>春招计划</h1><ol>
+<li>上午算法</li>
+<li>下午刚开始js手写</li>
+<li>下午晚上八股 + 项目</li>
+<li>晚上回去看面经或者js手写</li>
+</ol>
+<hr>
+<p>css &#9989;</p>
+<p>js：基础、代码输出题。&#9989;</p>
+<p>vue：源码、八股。 &#9989;</p>
+<p>ts：八股、手写。 &#9989;</p>
+<p>webpack、vite：八股。 &#9989;</p>
+<p>git：八股。 &#9989;</p>
+<p>计算机网络 &#9989;</p>
+<p>操作系统 &#9989;</p>
+<p>算法 &#9989; &#x2F;&#x2F; 每天上午复习算法</p>
+<p>js手写 &#9989; &#x2F;&#x2F; 每天晚上回去搞一两道</p>
+<p>浏览器原理 &#9989;</p>
+<p>微前端 &#9989;</p>
+<p>项目 &#9989;</p>
+<hr>
+<h1 id="2-14"><a href="#2-14" class="headerlink" title="2.14"></a>2.14</h1><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="总结背包问题递推公式、遍历顺序（完全背包的组合和排列问题）"><a href="#总结背包问题递推公式、遍历顺序（完全背包的组合和排列问题）" class="headerlink" title="总结背包问题递推公式、遍历顺序（完全背包的组合和排列问题）"></a>总结背包问题递推公式、遍历顺序（完全背包的组合和排列问题）</h3><h3 id="零钱兑换"><a href="#零钱兑换" class="headerlink" title="零钱兑换"></a>零钱兑换</h3><h3 id="完全平方数"><a href="#完全平方数" class="headerlink" title="完全平方数"></a>完全平方数</h3><h3 id="单词拆分"><a href="#单词拆分" class="headerlink" title="单词拆分"></a>单词拆分</h3><h1 id="2-15"><a href="#2-15" class="headerlink" title="2.15"></a>2.15</h1><h2 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h2><h3 id="打家结舍1"><a href="#打家结舍1" class="headerlink" title="打家结舍1"></a>打家结舍1</h3><h3 id="打家结舍2"><a href="#打家结舍2" class="headerlink" title="打家结舍2"></a>打家结舍2</h3><h3 id="打家结舍3"><a href="#打家结舍3" class="headerlink" title="打家结舍3"></a>打家结舍3</h3><h3 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>二叉搜索树的插入：返回值是节点，要接受。<strong>二叉搜索树遍历特征：遍历是有顺序的，可以在遍历终止条件操作。</strong></li>
+<li>删除二叉搜索树的节点：考虑多种情况，两边都没子节点，一边有子节点，两边都有子节点。<br><strong>改变树，最后结果要返回树：返回值是节点，先用left &#x3D; root.left, right &#x3D; root.right保留一遍，再用root.left &#x3D; left,root.right &#x3D; right接受一遍值。</strong></li>
+</ul>
+<h2 id="八股"><a href="#八股" class="headerlink" title="八股"></a>八股</h2><h3 id="代码输出题：this"><a href="#代码输出题：this" class="headerlink" title="代码输出题：this"></a>代码输出题：this</h3><h3 id="代码输出题：作用域"><a href="#代码输出题：作用域" class="headerlink" title="代码输出题：作用域"></a>代码输出题：作用域</h3><h3 id="代码输出题：原型链"><a href="#代码输出题：原型链" class="headerlink" title="代码输出题：原型链"></a>代码输出题：原型链</h3><h3 id="xss，csrf"><a href="#xss，csrf" class="headerlink" title="xss，csrf"></a>xss，csrf</h3><ul>
+<li>xss：是什么？有什么危害？哪些类型？如何预防？</li>
+<li>csrf：是什么？分类？如何预防？</li>
+</ul>
+<h3 id="强制缓存，协商缓存"><a href="#强制缓存，协商缓存" class="headerlink" title="强制缓存，协商缓存"></a>强制缓存，协商缓存</h3><ul>
+<li>强制缓存三种，expires&#x2F;cache-control</li>
+<li>协商缓存两种，last-modified&#x2F;if-modified-since，etag&#x2F;if-none-match</li>
+</ul>
+<h3 id="浏览器组成"><a href="#浏览器组成" class="headerlink" title="浏览器组成"></a>浏览器组成</h3><ol>
+<li>用户界面：书签栏、前进后退、地址栏等等。</li>
+<li>浏览器主引擎：处理用户交互，传递信息给渲染引擎。</li>
+<li>渲染引擎：负责解析html、css，浏览器渲染的过程。</li>
+<li>js引擎：解析执行js。</li>
+<li>网络：发送请求，加载资源。</li>
+<li>数据存储：localstroge、cookie、indexedDB、历史记录、书签等等。</li>
+</ol>
+<h3 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000042909353">https://segmentfault.com/a/1190000042909353</a></li>
+</ul>
+<ol>
+<li>解析html文档,生成DOM树,由html元素和属性节点组成.</li>
+<li>解析css,生成css树.</li>
+<li>根据DOM树和CSS树构建渲染树</li>
+<li>布局(回流):渲染树进行布局计算每个渲染节点的位置和大小.</li>
+<li>绘制(重绘):将渲染树的节点绘制到页面上.</li>
+<li>复合: 浏览器的绘制是绘制到多层,每一层单独渲染,最后合成到一起形成页面.</li>
+<li>重绘:重绘不会带来重新布局,一般是修改背景颜色,边框阴影等属性.</li>
+<li>回流:消耗性能,改变元素位置,DOM结构发生变化.</li>
+</ol>
+<h1 id="2-16"><a href="#2-16" class="headerlink" title="2.16"></a>2.16</h1><h2 id="算法-2"><a href="#算法-2" class="headerlink" title="算法"></a>算法</h2><h3 id="买卖股票最佳时机1"><a href="#买卖股票最佳时机1" class="headerlink" title="买卖股票最佳时机1"></a>买卖股票最佳时机1</h3><ul>
+<li>动态规划：dp【i】【0】表示持有股票的最大现金，dp【i】【1】表示不持有股票的最大现金。</li>
+</ul>
+<h3 id="买卖股票最佳时机2"><a href="#买卖股票最佳时机2" class="headerlink" title="买卖股票最佳时机2"></a>买卖股票最佳时机2</h3><h3 id="摆动队列"><a href="#摆动队列" class="headerlink" title="摆动队列"></a>摆动队列</h3><ul>
+<li>动态规划</li>
+</ul>
+<h3 id="修剪二叉搜索树"><a href="#修剪二叉搜索树" class="headerlink" title="修剪二叉搜索树"></a>修剪二叉搜索树</h3><ul>
+<li>返回值是节点。</li>
+</ul>
+<h3 id="有序数组转换为平衡二叉搜索树"><a href="#有序数组转换为平衡二叉搜索树" class="headerlink" title="有序数组转换为平衡二叉搜索树"></a>有序数组转换为平衡二叉搜索树</h3><ul>
+<li>递归参数是数组，返回值是节点，要被接受。</li>
+</ul>
+<h3 id="把二叉搜索树转换为累加树"><a href="#把二叉搜索树转换为累加树" class="headerlink" title="把二叉搜索树转换为累加树"></a>把二叉搜索树转换为累加树</h3><ul>
+<li>遍历，修改值。不需要返回值，单独写一个函数。</li>
+</ul>
+<h2 id="八股-1"><a href="#八股-1" class="headerlink" title="八股"></a>八股</h2><ul>
+<li>浏览器事件机制，同源，本地存储。（记深一点）（计算机网络）</li>
+</ul>
+<h3 id="浏览器渲染优化"><a href="#浏览器渲染优化" class="headerlink" title="浏览器渲染优化"></a>浏览器渲染优化</h3><ol>
+<li>js: script标签写在body后面. 用async和defer.</li>
+<li>css:用link引入,开启一个线程去加载,不阻塞GUI渲染线程. @import:GUI线程会停止渲染去加载资源. css少的话就写在style标签中直接GUI渲染.</li>
+</ol>
+<!-- 3. html:减少嵌套层次,减少回流重绘操作 -->
+
+<h3 id="减少回流和重绘操作"><a href="#减少回流和重绘操作" class="headerlink" title="减少回流和重绘操作"></a>减少回流和重绘操作</h3><ol>
+<li>操作低层次的DOM.</li>
+<li>脱离文档流,减少对其他元素影响.</li>
+<li>将DOM读写操作分别放到一起,浏览器的渲染队列机制.</li>
+<li>一些css属性形成新的合成层: transform,opacity等等.浏览器把这些变化交给GPU处理(不是所有合成层都给GPU,只有动画视觉效果时候交给GPU),GPU直接在显存中更改元素显示位置,无需CPU进行布局绘制的计算.</li>
+<li>不要使用table布局，一个小的改动可能导致整个table重新布局。</li>
+<li><strong>documentFragment</strong>：避免频繁操作DOM，可以创建一个文档片段documentFragment，在它上面应用所有DOM操作，最后再把它添加到文档中</li>
+</ol>
+<h3 id="DocumentFragments-10024"><a href="#DocumentFragments-10024" class="headerlink" title="DocumentFragments &#10024;"></a>DocumentFragments &#10024;</h3><ul>
+<li>轻量级、批量操作DOM元素，临时存储的容器。</li>
+<li>DocumentFragments存在于内存中，不是主 DOM 树的一部分，将子元素插入到文档片段时不会引起页面回流。通常的用例是创建文档片段，元素附加到文档片段，然后将文档片段附加到 DOM 树。</li>
+</ul>
+<h3 id="cookie、localStorage、SessionStorage区别"><a href="#cookie、localStorage、SessionStorage区别" class="headerlink" title="cookie、localStorage、SessionStorage区别"></a>cookie、localStorage、SessionStorage区别</h3><ul>
+<li>cookie：内存小4KB；请求会携带发送，通常配合session。</li>
+<li>localStorage：内存更大5MB；请求不会携带；持久存储，不主动删除会一直存在；不同标签页能共享数据。</li>
+<li>sessionStorage：关闭页面就会清除；不同标签页之间不能共享数据。</li>
+</ul>
+<h3 id="cookie字段-10024"><a href="#cookie字段-10024" class="headerlink" title="cookie字段 &#10024;"></a>cookie字段 &#10024;</h3><ol>
+<li>name、value、size。</li>
+<li>domain、path。</li>
+<li>Secure，sameSite，http-only</li>
+<li>Expires&#x2F;Max-size</li>
+</ol>
+<h3 id="cookie特性-10024"><a href="#cookie特性-10024" class="headerlink" title="cookie特性 &#10024;"></a>cookie特性 &#10024;</h3><ol>
+<li>服务端响应头里面有set-cookie属性可以设置cookie；客户端document.cookie可以设置cookie。</li>
+<li>cookie发送条件：domain、path与发送的域名匹配；security只能通过https发送；cookie时间还有效。</li>
+<li>cookie安全性：http-only限制不被js读取；sameSite防止csrf攻击；Secure只允许https请求。</li>
+<li>cookie默认请求都会携带，除非配置不携带。</li>
+</ol>
+<h3 id="indexedDB"><a href="#indexedDB" class="headerlink" title="indexedDB"></a>indexedDB</h3><ul>
+<li>键值对、异步、内存大、事务。</li>
+</ul>
+<h3 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h3><ul>
+<li>协议、域名、端口号都要相等。</li>
+<li>限制：js不能访问其他源的cookie、localStorage；js不能访问dom；js不能跨域请求。</li>
+</ul>
+<h3 id="解决跨域"><a href="#解决跨域" class="headerlink" title="解决跨域"></a>解决跨域</h3><ol>
+<li>CORS跨域资源共享：浏览器允许某个域接受来自其他源的资源。由服务端配置响应头，浏览器自动处理。</li>
+<li>JSONP：利用script标签没有跨域限制。但只能发送get请求。请求携带一个全局回调函数，script标签里将返回数据拼凑到回调函数中，返回给浏览器。浏览器解析执行，从而前端拿到数据。</li>
+<li>postmessage：多个页面之间、iframe之间通信。父应用里面获取子应用iframe，然后用contentWindow.postmessage发送消息，子应用里面监听message事件获取数据。</li>
+<li>vue配置代理服务器，在开发时候解决跨域。</li>
+</ol>
+<h3 id="事件模型"><a href="#事件模型" class="headerlink" title="事件模型"></a>事件模型</h3><ol>
+<li>DOM0：没有事件流。</li>
+<li>IE事件模型：事件触发，事件冒泡。</li>
+<li>DOM2：事件捕获从外到里，事件触发，事件冒泡。</li>
+</ol>
+<p>stopPropagation</p>
+<h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><ol>
+<li>利用事件冒泡的机制，子元素的监听事件绑定到父元素上，父元素集中处理子元素的事件</li>
+<li>减少内存消耗、动态事件绑定</li>
+<li>缺点：focus事件没有冒泡机制、DOM层数深不建议消耗性能。</li>
+</ol>
+<h1 id="2-17"><a href="#2-17" class="headerlink" title="2.17"></a>2.17</h1><h2 id="算法-3"><a href="#算法-3" class="headerlink" title="算法"></a>算法</h2><h3 id="最长递增子序列"><a href="#最长递增子序列" class="headerlink" title="最长递增子序列"></a>最长递增子序列</h3><h3 id="最长连续递增子序列"><a href="#最长连续递增子序列" class="headerlink" title="最长连续递增子序列"></a>最长连续递增子序列</h3><h3 id="最长重复子数组"><a href="#最长重复子数组" class="headerlink" title="最长重复子数组"></a>最长重复子数组</h3><ul>
+<li>这三个题目dp数组都要以第i个元素为结尾来定义。</li>
+</ul>
+<h3 id="复习-1"><a href="#复习-1" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>分发饼干</li>
+<li>摆动队列</li>
+<li>最大子序列和：动态规划，前面的加上我和我自己独立开始哪个更大。</li>
+<li>跳跃游戏：每次跳最远的下标处，当下标超过数组长度-1时候返回true。</li>
+</ul>
+<h2 id="八股-2"><a href="#八股-2" class="headerlink" title="八股"></a>八股</h2><h3 id="事件委托-1"><a href="#事件委托-1" class="headerlink" title="事件委托"></a>事件委托</h3><ol>
+<li>利用事件冒泡的机制，子元素的监听事件绑定到父元素上，父元素集中处理子元素的事件</li>
+<li>减少内存消耗、动态事件绑定</li>
+<li>缺点：focus事件没有冒泡机制、DOM层数深不建议消耗性能。</li>
+</ol>
+<h3 id="同步，异步"><a href="#同步，异步" class="headerlink" title="同步，异步"></a>同步，异步</h3><ul>
+<li>举一个发送请求的例子，同步要等请求回来再执行后面的代码，异步是先去执行其他任务，异步任务执行完后再去执行对应的回调。</li>
+</ul>
+<h3 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h3><ul>
+<li>js代码执行，函数执行时候创建执行上下文，压入执行栈中执行。</li>
+</ul>
+<h3 id="宏任务，微任务"><a href="#宏任务，微任务" class="headerlink" title="宏任务，微任务"></a>宏任务，微任务</h3><ul>
+<li>宏任务：setTimeout、setInterval、script脚本。</li>
+<li>微任务：promise的回调、async回调、监听DOM的mutationObserver。</li>
+</ul>
+<h3 id="复习-2"><a href="#复习-2" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>csrf、xss。</li>
+<li>浏览器缓存</li>
+<li>浏览器组成</li>
+<li>浏览器渲染过程</li>
+<li>浏览器渲染优化，减少回流、重绘，文档碎片。</li>
+<li>cookie、localStorage、SessionStorage。</li>
+<li>同源策略</li>
+<li>跨域</li>
+</ul>
+<h3 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h3><ul>
+<li>TCP&#x2F;IP四层模型：应用层、传输层、网络层、网络接口层。</li>
+<li>OSI模型：七层。</li>
+</ul>
+<h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><ul>
+<li>200，204，206</li>
+<li>301，302，304</li>
+<li>400，403，404</li>
+<li>500</li>
+</ul>
+<h3 id="http常见字段"><a href="#http常见字段" class="headerlink" title="http常见字段"></a>http常见字段</h3><ul>
+<li>origin、host</li>
+<li>connection：keep-alive，长连接。</li>
+<li>accept、content-type</li>
+<li>accpet-encoding、content-encoding</li>
+<li>authorization</li>
+<li>cookie</li>
+</ul>
+<h3 id="请求和响应组成"><a href="#请求和响应组成" class="headerlink" title="请求和响应组成"></a>请求和响应组成</h3><ul>
+<li>请求行（方法，路径，http版本），请求头，空行，请求体（get请求一般没有）</li>
+<li>状态行（http版本，状态码，描述），响应头，空行，响应体</li>
+</ul>
+<h3 id="get、post区别"><a href="#get、post区别" class="headerlink" title="get、post区别"></a>get、post区别</h3><ol>
+<li>获取数据，新增、修改数据。</li>
+<li>get一般是幂等，post不是。</li>
+<li>get请求是在url后面长度和编码都有限制，post请求没有，post请求有请求体。</li>
+<li>get请求一般可以缓存。</li>
+</ol>
+<h3 id="http1-1"><a href="#http1-1" class="headerlink" title="http1.1"></a>http1.1</h3><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
+<li>长连接，无需重复建立TCP连接。在http1.0每次通信都要重新进行tcp三次握手。</li>
+<li>管道运输：第一个请求发送后，不用等其回来就能发送第二个请求。</li>
+</ol>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
+<li>无状态 &#x3D;》 cookie</li>
+<li>明文传输 &#x3D;》 https</li>
+<li>队头阻塞，后面排序的请求无法发出。（管道传输大部分浏览器不支持）</li>
+</ol>
+<h4 id="http1-0和http1-1"><a href="#http1-0和http1-1" class="headerlink" title="http1.0和http1.1"></a>http1.0和http1.1</h4><ol>
+<li><strong>长短连接</strong>：长连接短链接</li>
+<li><strong>缓存字段</strong>：强制缓存协商缓存字段区别，cache-control是1.1的。</li>
+<li><strong>状态码</strong>：新增了状态码，比如206.</li>
+<li><strong>范围请求</strong>：请求头加入range字段，请求部分数据，返回206。</li>
+<li><strong>管道运输</strong>：是否支持管道运输</li>
+<li><strong>Host头部字段</strong>：解决一个ip地址对应多个域名情况。</li>
+</ol>
+<h3 id="https"><a href="#https" class="headerlink" title="https"></a>https</h3><ul>
+<li>在tcp三次握手后还要进行tls握手</li>
+</ul>
+<ol>
+<li>明文传输：使用混合加密，非对称加密协商出会话密钥，后续通信采用会话密钥的对称加密进行加密通信。</li>
+<li>消息篡改：先进行哈希运算，再通过私钥加密哈希值生成数字签名。将数字签名和内容一同发送。客户端通过公钥解密，对内容进行hash运算，对比hash值是否相同。</li>
+<li>身份认证：防止公钥被替换，用数字证书给公钥加密。CA的私钥加密，CA的公钥在操作系统或者浏览器内部嵌入了。</li>
+</ol>
+<h3 id="TLS握手"><a href="#TLS握手" class="headerlink" title="TLS握手"></a>TLS握手</h3><ol>
+<li>随机数、密码套件、支持的tls版本号。</li>
+<li>选择密码、tls版本，生成随机数，数字证书。</li>
+<li>取出公钥，第三个随机数用公钥加密发送，三个随机数生成会话密钥，通知后续用会话密钥通信。</li>
+<li>服务端私钥解密获取第三个随机数，生成会话密钥，通知后续用会话密钥通信。</li>
+</ol>
+<h1 id="2-18"><a href="#2-18" class="headerlink" title="2.18"></a>2.18</h1><h2 id="算法-4"><a href="#算法-4" class="headerlink" title="算法"></a>算法</h2><!-- - 三四天搞完动态规划和贪心复习，然后开始链表刷题 + 复习回溯。 -->
+<h3 id="最长公共子序列"><a href="#最长公共子序列" class="headerlink" title="最长公共子序列"></a>最长公共子序列</h3><h3 id="不相交的线"><a href="#不相交的线" class="headerlink" title="不相交的线"></a>不相交的线</h3><ul>
+<li>就是最长公共子序列</li>
+</ul>
+<h3 id="最大子数组和"><a href="#最大子数组和" class="headerlink" title="最大子数组和"></a>最大子数组和</h3><h3 id="复习-3"><a href="#复习-3" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>子序列问题小总结</li>
+<li><strong>跳跃游戏II</strong>:while(最远范围下标 &lt; 数组长度)考虑每次能跳到的最远范围,然后次数加1.</li>
+<li>k次取反后的最大化的数组:按绝对值的从大到小排列,k先给大负数取反.剩余k给最小值反复取反.</li>
+</ul>
+<h2 id="八股-3"><a href="#八股-3" class="headerlink" title="八股"></a>八股</h2><h3 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h3><ul>
+<li>RSA是大整数分解困难的数学难题，ECDHE是离散对数的数学难题。</li>
+<li>RSA不支持前向保密：私钥被破解前面的通信都会被破解，ECDHE支持：私钥会不断变化，会话密钥也会变化。</li>
+</ul>
+<h3 id="https优化"><a href="#https优化" class="headerlink" title="https优化"></a>https优化</h3><ol>
+<li>tls1.2 &#x3D;》1.3，第三次握手后就可以通信，升级到ECDHE算法：支持前向保密。</li>
+<li>验证证书有效性：不要让客户端去轮询问CA有效性，由服务端请求证书有效性并且用CA加密，让服务端无法篡改，再发送给客户端。</li>
+<li>会话复用：类似sesstion、token的机制。</li>
+</ol>
+<h3 id="http2-0"><a href="#http2-0" class="headerlink" title="http2.0"></a>http2.0</h3><ol>
+<li><strong>头部压缩</strong>：静态表（在一张表中有常见的头部字段，对应下标1，2，3，4，5），动态表（双方通信过程中出现的字符，添加到hash表中，用更短下标表示字符），哈夫曼编码（高频出现的字符，用更短的编码编写）。</li>
+<li><strong>二进制帧</strong>：http2将请求响应分解为二进制帧，每个帧对应streamID，区分不同请求响应。</li>
+<li><strong>并发传输</strong>：多个stream流利用同一个TCP连接，一个stream流中有请求线和响应线，每个请求或响应对应多个frame帧，帧根据streamID重新组装。</li>
+<li><strong>服务端主动推送</strong>：比如用户请求html，服务端可以在当前流回应html数据，并通知另一个流中发送了css数据。</li>
+</ol>
+<h3 id="http3-0"><a href="#http3-0" class="headerlink" title="http3.0"></a>http3.0</h3><ul>
+<li>抛弃了TCP，采用了基于UDP的quic协议。速度更快，没有复杂的连接建立。</li>
+</ul>
+<ol>
+<li><strong>http层</strong>：静态表扩充：更多的字段可以用简短的下标表示；有单独的流去同步双方动态表信息，防止前面请求包丢失，后续请求到达无法解码的问题。</li>
+<li><strong>无队头阻塞</strong>：TCP的问题是：前面的包未接受，后面的也就无法接受。比如某第三个流数据全部到达，但第二个流数据未全部到达，就无法读取第三个流数据。而在3.0中各个流之间不会影响，当前流数据丢弃，其它流数据能正常接受，只会重传当前流数据。</li>
+<li>更快的连接建立：在以前tcp和tls握手是分层的（2.0，3.0都基于https），3.0中quic协议握手确认双方的连接id和tls协议能够一同发送。</li>
+<li><strong>连接迁移</strong>：以前是通过ip+端口确认连接，如果设备ip地址改变，则需要重新tcp三次握手、tls四次握手建立连接。</li>
+</ol>
+<h3 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h3><ol>
+<li>不断轮询</li>
+<li>长轮询</li>
+<li>websocket：tcp本就是全双工，可以双向通信。客户端需要先进行一次http请求，请求头携带upgrade，服务端返回101.</li>
+</ol>
+<h3 id="TCP、UDP区别"><a href="#TCP、UDP区别" class="headerlink" title="TCP、UDP区别"></a>TCP、UDP区别</h3><ol>
+<li>连接：TCP三次握手四次挥手，UDP直接发送数据。</li>
+<li>服务对象：TCP一对一，UDP一对多。</li>
+<li>可靠：TCP通过停止等待协议、超时重传等机制保证可靠性，UDP不可靠。</li>
+<li>拥塞控制、流量控制</li>
+<li>字节流、包</li>
+</ol>
+<h1 id="2-19"><a href="#2-19" class="headerlink" title="2.19"></a>2.19</h1><h2 id="算法-5"><a href="#算法-5" class="headerlink" title="算法"></a>算法</h2><h3 id="判断子序列"><a href="#判断子序列" class="headerlink" title="判断子序列"></a>判断子序列</h3><h3 id="两个字符串删除操作"><a href="#两个字符串删除操作" class="headerlink" title="两个字符串删除操作"></a>两个字符串删除操作</h3><h3 id="编辑距离"><a href="#编辑距离" class="headerlink" title="编辑距离"></a>编辑距离</h3><h3 id="复习-4"><a href="#复习-4" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>最长公共子序列：dp[i][j] &#x3D; dp[i - 1][j - 1] + 1；dp[i][j] &#x3D; Math.max(dp[i - 1][j], dp[i][j - 1]);</li>
+<li>判断子序列、两个字符串删除、编辑距离。</li>
+</ul>
+<!-- - 加油站、柠檬水找零、根据身高重建队列。晚上有空再看 -->
+
+<h2 id="八股-4"><a href="#八股-4" class="headerlink" title="八股"></a>八股</h2><h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><ul>
+<li>开始客户端和服务端都处于关闭状态，服务端主动进入监听。</li>
+</ul>
+<ol>
+<li>客户端发送SYN信号+序列号</li>
+<li>服务端返回ACK信号+ack（是客户端序列号加1），再发送自己的SYN信号+序列号。</li>
+<li>客户端返回ACK信号+ack（服务端序列号+1）.第三次握手还可以携带数据，前两次不可以。</li>
+</ol>
+<h3 id="四次握手，两次握手问题"><a href="#四次握手，两次握手问题" class="headerlink" title="四次握手，两次握手问题"></a>四次握手，两次握手问题</h3><ul>
+<li>四次握手也可以，但是服务端的ack和syn可以一同发送，所以合并成了一次握手。</li>
+<li>两次握手不行原因？</li>
+</ul>
+<ol>
+<li>避免历史连接。发送一个请求，但因为网络原因滞留在网络中，后面重新连接发送请求但之前的握手先到达，两次握手会直接建立连接，消耗性能。三次握手有中间状态，第二次握手请求过来后如果客户端发现不是自己的连接可以回复RST报文中止连接。</li>
+<li>同步双方序列号，服务端发送请求后，客户端要确认序列号，这样服务端才能保证客户端收到了同步信息。</li>
+</ol>
+<h3 id="握手丢失会发生什么？"><a href="#握手丢失会发生什么？" class="headerlink" title="握手丢失会发生什么？"></a>握手丢失会发生什么？</h3><ol>
+<li>第一次握手：因为没收到服务端应答超时重传，1s，2s，4s每次等待时间是上次两倍，到达最大次数后断开连接。</li>
+<li>第二次握手：第一次握手也会重传因为客户端没收到应答认为自己的消息丢失。服务端也会超时重传因为没收收到客户端应答，也是达到最大次数断开连接。</li>
+<li>第三次握手：服务端超时重传因为没有收到客户端应答，客户端ack信息有个特征：收到请求才会发送一次，不会多次发送。</li>
+</ol>
+<h3 id="TCP四次挥手"><a href="#TCP四次挥手" class="headerlink" title="TCP四次挥手"></a>TCP四次挥手</h3><ol>
+<li>第一次挥手：客户端发送FIN信号，请求断开连接。</li>
+<li>第二次握手：服务端收到FIN信号后，回复ACK确认信号。继续发送完自己的消息。</li>
+<li>第三次握手：等服务端消息发送完毕后，发送FIN信号请求断开连接。</li>
+<li>第四次握手：客户端回应ACK。等待2MSL时间后关闭。服务端收到ack后关闭。</li>
+</ol>
+<h3 id="三次挥手问题"><a href="#三次挥手问题" class="headerlink" title="三次挥手问题"></a>三次挥手问题</h3><ul>
+<li>如果服务端没有数据要发送，并且开启了TCP延迟确认机制，就可以变成三次握手。</li>
+<li>发送没有携带数据的ACK是效率比较低的，如果有数据要发送，ACK可以携带部分数据。如果没有数据发送ACK会等待一段时间后看是否有数据携带发送。</li>
+</ul>
+<h3 id="挥手丢失会发生什么？"><a href="#挥手丢失会发生什么？" class="headerlink" title="挥手丢失会发生什么？"></a>挥手丢失会发生什么？</h3><ol>
+<li>第一次挥手：客户端超时重传因为没有收到应答，达到最大次数后断开连接。</li>
+<li>第二次挥手：客户端超时重传因为没有收到应答，服务端收到一次就会回应一次ACK。</li>
+<li>第三次挥手：服务端超时重传因为没有收到应答，客户端达到最大时间会直接关闭。</li>
+<li>第四次挥手：服务端超时重传因为没有收到应答，客户端收到一次就会回应一次，然后重置2MSL时间。</li>
+</ol>
+<h3 id="为什么等待时间是2MSL"><a href="#为什么等待时间是2MSL" class="headerlink" title="为什么等待时间是2MSL"></a>为什么等待时间是2MSL</h3><ul>
+<li>MSL：报文最大生存时间。</li>
+<li>允许ACK丢失，服务端重传的FIN可以在2MSL内到达。最差情况就是ack快到达时候丢失，这时候损失一个MSL，服务端重传在一个MSL时间到达。</li>
+</ul>
+<h3 id="time-wait作用"><a href="#time-wait作用" class="headerlink" title="time-wait作用"></a>time-wait作用</h3><ul>
+<li>序列号是循环利用的，避免历史数据接受。确保这次通信的数据在2MSL内接受、发送、丢失完毕。</li>
+<li>确保主动关闭的一方可以正确关闭。被关闭一方没收到ack可以重传。</li>
+</ul>
+<h3 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h3><ol>
+<li><strong>是什么</strong>：TCP采用的是请求-应答的机制，确保数据传输的可靠性。如果请求一次，等待应答再发送下一次就导致效率很低。所以引入了窗口概念，无需等待应答，窗口内的数据都能够发送.</li>
+<li><strong>工作流程</strong>：发送方：收到应答后，滑动窗口就往后移动，后面的数据就可以继续发送。接收方：收到数据并确认后往后移动，可以接受更多的数据发送。</li>
+</ol>
+<h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><ul>
+<li>让发送方发送速率不要过快，要让接收方来得及接受。流量控制是端到端的问题，拥塞控制是中间网络带宽的问题。</li>
+</ul>
+<ol>
+<li>接收窗口：接收方在tcp头部告诉发送方自己的接收窗口大小，接收方的发送窗口大小不能超过接收窗口大小。</li>
+<li>零窗口探测：接收窗口是零；接收方发送更改接收窗口大小不为0情况，但丢失。&#x3D;&gt; 持续计时器，收到零窗口通知后开启，到达时间后发送零窗口探测报文。</li>
+</ol>
+<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><ul>
+<li>防止过多数据注入网络，避免路由器或链路过载。</li>
+</ul>
+<ol>
+<li><em><strong>慢开始算法</strong></em>：呈<em><strong>指数增长</strong></em>往网络中注入字节数据，同时有个慢开始门限，避免增长过快。</li>
+<li><em><strong>拥塞避免算法</strong></em>：当拥塞窗口大于慢开始门限后进行拥塞避免算法，线性增长窗口大小.</li>
+<li><em><strong>超时重传</strong></em>：拥塞窗口设置为1，慢开始门限设置为滑动窗口大小的一半，重新开始慢开始算法和拥塞避免算法。</li>
+<li><em><strong>快重传</strong></em>：对已收到的报文立即确认，重复的报文也发送确认，发送方收到三次确认后立即发送。</li>
+<li><em><strong>快恢复</strong></em>：快重传后执行，将慢开始门限调整到滑动窗口大小的一半，再将窗口大小设置和慢开始门限一样，后续进行拥塞避免算法。</li>
+</ol>
+<h1 id="2-20"><a href="#2-20" class="headerlink" title="2.20"></a>2.20</h1><h2 id="算法-6"><a href="#算法-6" class="headerlink" title="算法"></a>算法</h2><h3 id="回文子串"><a href="#回文子串" class="headerlink" title="回文子串"></a>回文子串</h3><h3 id="最长回文子序列"><a href="#最长回文子序列" class="headerlink" title="最长回文子序列"></a>最长回文子序列</h3><h3 id="复习-5"><a href="#复习-5" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>分割回文串（回溯）：把字符串拆分成多个子串，每个子串都是回文串，记录每次拆分后的结果。这个用回溯拆分所有情况去判断。</li>
+<li>加油站：两个变量</li>
+</ul>
+<h2 id="八股-5"><a href="#八股-5" class="headerlink" title="八股"></a>八股</h2><h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><ol>
+<li>状态码</li>
+<li>头部字段</li>
+<li>get、post区别</li>
+<li>http1.1和1.0区别</li>
+<li>https</li>
+<li>tls握手</li>
+<li>1.1如何优化</li>
+<li>https如何优化</li>
+<li>RSA、ECDHE</li>
+<li>http2.0</li>
+<li>http3.0</li>
+<li>tcp、udp</li>
+<li>三次握手</li>
+<li>握手丢失</li>
+<li>两次握手、四次握手问题</li>
+<li>四次挥手</li>
+<li>挥手丢失</li>
+<li>三次挥手问题</li>
+<li>滑动窗口</li>
+<li>流量控制</li>
+<li>拥塞控制</li>
+</ol>
+<h3 id="解释性语言（py，js）和编译性语言（c）"><a href="#解释性语言（py，js）和编译性语言（c）" class="headerlink" title="解释性语言（py，js）和编译性语言（c）"></a>解释性语言（py，js）和编译性语言（c）</h3><ol>
+<li>解释性是代码逐行解释执行，编译性语言是统一转换为机器码之后执行。</li>
+<li>解释性执行速度慢，编译性执行机器码快。</li>
+<li>解释性跨平台更好（解释器跨平台即可），编译性需要编译成不同的机器码。</li>
+</ol>
+<h3 id="axios比fetch、ajax的好处"><a href="#axios比fetch、ajax的好处" class="headerlink" title="axios比fetch、ajax的好处"></a>axios比fetch、ajax的好处</h3><ol>
+<li>json格式化处理</li>
+<li>兼容性：避免fetch不兼容</li>
+<li>api简洁：基于promise封装，避免xhr的回调</li>
+<li>超时配置、baseURL、拦截器功能</li>
+</ol>
+<h3 id="进程是什么"><a href="#进程是什么" class="headerlink" title="进程是什么"></a>进程是什么</h3><ul>
+<li>进程基本概念</li>
+<li>进程状态</li>
+<li>进程管理</li>
+</ul>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><ul>
+<li>线程基本概念</li>
+<li>线程与进程区别</li>
+</ul>
+<h1 id="2-21"><a href="#2-21" class="headerlink" title="2.21"></a>2.21</h1><h2 id="算法-7"><a href="#算法-7" class="headerlink" title="算法"></a>算法</h2><h3 id="用最少的箭引爆气球"><a href="#用最少的箭引爆气球" class="headerlink" title="用最少的箭引爆气球"></a>用最少的箭引爆气球</h3><ul>
+<li>各个区间合并：思路是将当前区间和前一个区间合并，合并完结果保留在当前区间，方便和下一个区间合并。</li>
+</ul>
+<h3 id="无重叠区间"><a href="#无重叠区间" class="headerlink" title="无重叠区间"></a>无重叠区间</h3><ul>
+<li>也是各个区间合并：思路是将当前区间和前一个区间对比保留对后面影响更短的，结果保留在当前区间，方便和下一个区间对比。</li>
+</ul>
+<h3 id="合并区间"><a href="#合并区间" class="headerlink" title="合并区间"></a>合并区间</h3><ul>
+<li>也是各个区间合并：思路是将当前区间和前一个区间合并，合并完结果保留在当前区间，如果当前区间不能和前一个区间合并则把前一个区间放到结果集中。</li>
+</ul>
+<h3 id="划分字母区间"><a href="#划分字母区间" class="headerlink" title="划分字母区间"></a>划分字母区间</h3><ul>
+<li>遍历一遍找到所有字符的最后下标，再遍历一遍找到遍历过的字符最远的下标。</li>
+</ul>
+<h2 id="八股-6"><a href="#八股-6" class="headerlink" title="八股"></a>八股</h2><h3 id="进程调度算法"><a href="#进程调度算法" class="headerlink" title="进程调度算法"></a>进程调度算法</h3><ul>
+<li>进程状态改变时候比如：运行态到终止、运行到阻塞、就绪到运行，都会使用到调度算法。CPU更换新的进程来执行。</li>
+</ul>
+<ol>
+<li>先来先服务算法：对短作业不利，要等长作业很久。</li>
+<li>短作业优先算法：对长作业不利，可能一直等。</li>
+<li>最高响应比算法：理想型算法，无法实现。<br>(等待时间 + 要求服务时间)&#x2F; 要求服务时间</li>
+<li>时间片轮转算法：每个进程分配一个时间片，允许进程在该时间片执行。</li>
+<li>最高优先级算法：CPU选择优先级最高的进程执行代码。静态优先级、动态优先级；抢占式、非抢占式。抢占式可能导致优先级低的永远无法执行。</li>
+<li>多级反馈队列算法：多个队列，每个队列优先级从高到低排列，同时优先级越高时间片越短。  先进入最高优先级队列，没执行完进入下一级优先队列。对于短作业来说，很可能在最高优先级队列的时间片就执行完毕；对于长作业来说，进入到后面优先级更低的队列，但是执行时间变长了。<strong>短作业优先级高，执行时间短；长作业优先级低，执行时间长。</strong></li>
+</ol>
+<!-- 如果执行低优先级的长作业时候有短作业进入，则会先去执行短作业。 -->
+<h3 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h3><ol>
+<li>管道</li>
+<li>消息队列</li>
+<li>共享内存</li>
+<li>信号量</li>
+<li>socket编程</li>
+</ol>
+<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><ul>
+<li>两个资源对应两把锁，两个线程各持有一把锁，都在等对方释放锁。</li>
+<li>四个条件</li>
+</ul>
+<ol>
+<li>互斥：资源不能被多个线程共享。</li>
+<li>持有并等待：线程拥有该资源后不会主动释放。</li>
+<li>不可剥夺：线程拥有的资源不会被其他线程抢走。</li>
+<li>环形链路：各个线程对资源的请求构造了一个环。</li>
+</ol>
+<ul>
+<li>避免死锁：资源有序分配。</li>
+</ul>
+<h3 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h3><ol>
+<li>互斥锁：</li>
+<li>自旋锁：</li>
+<li>读写锁：读锁是为了提供资源利用率</li>
+<li>乐观锁：</li>
+<li>悲观锁：</li>
+</ol>
+<h3 id="浏览器组成-1"><a href="#浏览器组成-1" class="headerlink" title="浏览器组成"></a>浏览器组成</h3><h3 id="浏览器限制最大请求数原因"><a href="#浏览器限制最大请求数原因" class="headerlink" title="浏览器限制最大请求数原因"></a>浏览器限制最大请求数原因</h3><ol>
+<li>防止服务端端口耗尽。</li>
+<li>防止客户端请求并发量过高超出服务端并发控制。</li>
+<li>客户端良性竞争机制</li>
+<li>防止网络带宽压力过大</li>
+</ol>
+<h3 id="浏览器进程"><a href="#浏览器进程" class="headerlink" title="浏览器进程"></a>浏览器进程</h3><ol>
+<li>浏览器主进程</li>
+<li>渲染进程</li>
+<li>插件进程</li>
+<li>GPU进程：</li>
+</ol>
+<h1 id="2-22"><a href="#2-22" class="headerlink" title="2.22"></a>2.22</h1><h2 id="算法-8"><a href="#算法-8" class="headerlink" title="算法"></a>算法</h2><h3 id="柠檬水找零"><a href="#柠檬水找零" class="headerlink" title="柠檬水找零"></a>柠檬水找零</h3><h3 id="根据身高重建队列"><a href="#根据身高重建队列" class="headerlink" title="根据身高重建队列"></a>根据身高重建队列</h3><h3 id="单调递增的数字"><a href="#单调递增的数字" class="headerlink" title="单调递增的数字"></a>单调递增的数字</h3><h3 id="复习-6"><a href="#复习-6" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>整个贪心过了一遍。</li>
+</ul>
+<h2 id="八股-7"><a href="#八股-7" class="headerlink" title="八股"></a>八股</h2><ul>
+<li>过一遍操作系统。看webpackvite。改好简历。</li>
+</ul>
+<h3 id="如何解决浏览器请求次数限制？"><a href="#如何解决浏览器请求次数限制？" class="headerlink" title="如何解决浏览器请求次数限制？"></a>如何解决浏览器请求次数限制？</h3><ol>
+<li>http2.0，http3.0 解决队头阻塞，并发请求。</li>
+<li>使用缓存，减少请求量。</li>
+<li>合并请求，减少请求次数。</li>
+<li>按需加载。</li>
+<li>域名分散</li>
+</ol>
+<h3 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h3><h3 id="内存分段"><a href="#内存分段" class="headerlink" title="内存分段"></a>内存分段</h3><h3 id="内存分页"><a href="#内存分页" class="headerlink" title="内存分页"></a>内存分页</h3><h3 id="TLB、段页式分页"><a href="#TLB、段页式分页" class="headerlink" title="TLB、段页式分页"></a>TLB、段页式分页</h3><h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><ol>
+<li>进程</li>
+<li>线程</li>
+<li>进程和线程区别</li>
+<li>进程调度算法</li>
+<li>进程通信方式</li>
+<li>死锁</li>
+<li>锁的分类</li>
+<li>浏览器进程</li>
+<li>浏览器为什么有请求次数限制</li>
+<li>如何解决浏览器请求限制</li>
+<li>虚拟内存</li>
+<li>内存分段</li>
+<li>TLB、段页式存储</li>
+</ol>
+<h3 id="cache-control字段"><a href="#cache-control字段" class="headerlink" title="cache-control字段"></a>cache-control字段</h3><ol>
+<li>max-age：缓存多少s。如果为0，既不协商缓存也不强制缓存。</li>
+<li>no-cache：使用协商缓存，强制缓存不适用。</li>
+<li>no-store：既不使用强制缓存也不使用协商缓存。</li>
+</ol>
+<h3 id="缓存在内存还是磁盘中"><a href="#缓存在内存还是磁盘中" class="headerlink" title="缓存在内存还是磁盘中"></a>缓存在内存还是磁盘中</h3><ul>
+<li>内存有时间限制，小，速度快；磁盘时间限制更宽，大，速度慢。</li>
+<li>如果是关闭标签页，再打开：都是从磁盘中拿出来。</li>
+<li>如果是刷新：js等其他资源通常在内存中，css文件较大，更新频率低通常存在磁盘中。</li>
+</ul>
+<h3 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h3><h3 id="plugin"><a href="#plugin" class="headerlink" title="plugin"></a>plugin</h3><h3 id="如何编写loader"><a href="#如何编写loader" class="headerlink" title="如何编写loader"></a>如何编写loader</h3><h3 id="如何编写plugin"><a href="#如何编写plugin" class="headerlink" title="如何编写plugin"></a>如何编写plugin</h3><ul>
+<li>对象，apply属性，传入compiler。</li>
+<li>complier对象有很多生命周期钩子，</li>
+<li>complication对象，每次编译相关的信息，可以生成文件、遍历模块操作。</li>
+</ul>
+<h1 id="2-23"><a href="#2-23" class="headerlink" title="2.23"></a>2.23</h1><h2 id="算法-9"><a href="#算法-9" class="headerlink" title="算法"></a>算法</h2><h3 id="复习-7"><a href="#复习-7" class="headerlink" title="复习"></a>复习</h3><ol>
+<li>组合：终止条件是path.length &#x3D;&#x3D; k</li>
+<li>组合总和：终止条件有两个，等于时候收集结果，大于时候不要再遍历了。</li>
+<li>组合总和II：used数组去重，前面值和当前值相等时候，前面用过，那我也可以用。前面没用，那我也不要再用了，因为前面的值把所有情况都填写一遍了。</li>
+<li>组合总和III：没什么特别的,注意细节。</li>
+<li>总结回溯：回溯终止条件；for循环遍历，递归；放入，弹出。</li>
+</ol>
+<h2 id="八股-8"><a href="#八股-8" class="headerlink" title="八股"></a>八股</h2><h3 id="webpack构建流程"><a href="#webpack构建流程" class="headerlink" title="webpack构建流程"></a>webpack构建流程</h3><ul>
+<li>shell语句和配置文件初始化参数，用参数初始化compiler对象，这个对象相当于整个编译过程的总指挥，上面有很多生命周期钩子，同时也初始化加载plugin插件，然后开始编译。</li>
+<li>从入口文件entry开始，循环递归解析模块之间的依赖关系，解析入口文件，然后解析入口文件依赖的模块文件。有需要也会借助loader进行解析。</li>
+<li>生成一个或多个chunk，每个chunk对应生成一个文件。</li>
+<li>在整个构建流程中，webpack会暴露事件钩子，plugin会监听这些事件然后执行改变输出结果。</li>
+</ul>
+<h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><h3 id="改好简历了，并开始投递。"><a href="#改好简历了，并开始投递。" class="headerlink" title="改好简历了，并开始投递。"></a>改好简历了，并开始投递。</h3><h1 id="2-24"><a href="#2-24" class="headerlink" title="2.24"></a>2.24</h1><h2 id="算法-10"><a href="#算法-10" class="headerlink" title="算法"></a>算法</h2><h3 id="电话号码的字母组合"><a href="#电话号码的字母组合" class="headerlink" title="电话号码的字母组合"></a>电话号码的字母组合</h3><h3 id="分割回文串"><a href="#分割回文串" class="headerlink" title="分割回文串"></a>分割回文串</h3><h3 id="复原IP地址"><a href="#复原IP地址" class="headerlink" title="复原IP地址"></a>复原IP地址</h3><ul>
+<li>两天搞完回溯，进入链表</li>
+</ul>
+<h2 id="八股-9"><a href="#八股-9" class="headerlink" title="八股"></a>八股</h2><h3 id="如何提高webpack构建速度"><a href="#如何提高webpack构建速度" class="headerlink" title="如何提高webpack构建速度"></a>如何提高webpack构建速度</h3><ol>
+<li>cache-loader：性能大的loader运算的结果进行缓存，当再次遇到该loader处理的文件时候会先给cache-loader处理，运算hash值，如果有缓存直接复用；没有的话记录该hash值和loader运算后的结果。</li>
+<li>thread-loader：有的loader比如babel-loader支持并行处理，利用多核cpu多线程处理。</li>
+<li>excludes、includes：指定loader的作用域范围，比如node-modules就不需要loader处理。</li>
+<li>dllplugin：常见的第三方库比如vue、react等等这些不会经常变换的，可以提前打包，后面webpack构建遇到这些模块动态引入即可。</li>
+<li>模块拆分：多个入口文件，或者是import引入组件时候申明webpackChunkName，单独打包成一个chunk，避免请求时候请求一个过大的包，请求一个小包比如路由组件时候可以提高加载速度。</li>
+<li>externals优化：将一些库通过script标签引入，不放在打包结果中。</li>
+</ol>
+<h3 id="如何减少webpack打包体积"><a href="#如何减少webpack打包体积" class="headerlink" title="如何减少webpack打包体积"></a>如何减少webpack打包体积</h3><ol>
+<li>tree-shaking，删除未使用的模块依赖。</li>
+<li>开发环境使用的依赖下载到开发环境，不要下载到生产环境。</li>
+<li>使用组件库时候局部引入，不要全局引入打包；也可以下载插件自动按需引入。</li>
+<li>图片压缩：image-webpack-loader</li>
+<li>js压缩：terser-plugin，对注释、空格、未使用的代码、变量整合等等压缩。</li>
+<li>css压缩：css-minier-webpack-plugin，压缩css</li>
+</ol>
+<h3 id="webpack热模块更新原理"><a href="#webpack热模块更新原理" class="headerlink" title="webpack热模块更新原理"></a>webpack热模块更新原理</h3><h1 id="2-25"><a href="#2-25" class="headerlink" title="2.25"></a>2.25</h1><h2 id="算法-11"><a href="#算法-11" class="headerlink" title="算法"></a>算法</h2><h3 id="子集"><a href="#子集" class="headerlink" title="子集"></a>子集</h3><h3 id="子集II"><a href="#子集II" class="headerlink" title="子集II"></a>子集II</h3><h3 id="非递减子序列"><a href="#非递减子序列" class="headerlink" title="非递减子序列"></a>非递减子序列</h3><h3 id="全排列"><a href="#全排列" class="headerlink" title="全排列"></a>全排列</h3><h2 id="八股-10"><a href="#八股-10" class="headerlink" title="八股"></a>八股</h2><h3 id="vite和webpack区别"><a href="#vite和webpack区别" class="headerlink" title="vite和webpack区别"></a>vite和webpack区别</h3><ol>
+<li>快速冷启动</li>
+<li>构建方式</li>
+<li>http2.0</li>
+<li>模块热更新</li>
+</ol>
+<h3 id="vite的构建原理"><a href="#vite的构建原理" class="headerlink" title="vite的构建原理"></a>vite的构建原理</h3><ul>
+<li>直接启动开发服务器，不会对整个项目进行模块依赖分析。利用浏览器对esm的支持，就是浏览器现在支持运行一些模块化语句比如import，遇到import语句再去发送http请求加载对应的模块，然后vite开发服务器再对模块进行编译。比如vue文件解析为浏览器可以识别的html、css、js文件。</li>
+</ul>
+<h3 id="vite开发使用esbuild、打包使用rollup。"><a href="#vite开发使用esbuild、打包使用rollup。" class="headerlink" title="vite开发使用esbuild、打包使用rollup。"></a>vite开发使用esbuild、打包使用rollup。</h3><h3 id="wepack、vite总结"><a href="#wepack、vite总结" class="headerlink" title="wepack、vite总结"></a>wepack、vite总结</h3><ol>
+<li>loader</li>
+<li>plugin</li>
+<li>如何编写loader、plugin</li>
+<li>webpack构建流程</li>
+<li>如何加快webpack构建速度</li>
+<li>如何减少webpack打包体积</li>
+<li>webpack热模块更新</li>
+<li>webpack和vite的区别</li>
+<li>vite的构建原理</li>
+<li>vite开始使用esbuild，打包使用rollup原因</li>
+</ol>
+<h3 id="pushstate、popstate、replacestate"><a href="#pushstate、popstate、replacestate" class="headerlink" title="pushstate、popstate、replacestate"></a>pushstate、popstate、replacestate</h3><ul>
+<li>只有postate是事件，其他两个只是方法不能被监听。</li>
+</ul>
+<ol>
+<li>pushstate：向浏览器历史记录栈添加新的条目，<strong>当前地址栏变成指定url</strong>，但不会刷新页面加载资源， 需要手动更新 &#x3D;》前端js实现路由切换</li>
+<li>replacestate：浏览器<strong>地址栏更新为指定 URL</strong>，但不加载页面，仅替换当前历史记录。</li>
+<li>popstate：<strong>只有</strong>浏览器的前进和后退会触发popstate（replace改变记录不会触发）</li>
+</ol>
+<h3 id="single-spa源码"><a href="#single-spa源码" class="headerlink" title="single-spa源码"></a>single-spa源码</h3><h3 id="微前端解决的问题"><a href="#微前端解决的问题" class="headerlink" title="微前端解决的问题"></a>微前端解决的问题</h3><ol>
+<li>可维护性</li>
+<li>团队独立性</li>
+<li>技术灵活性</li>
+<li>增量升级</li>
+</ol>
+<h3 id="带来的新问题"><a href="#带来的新问题" class="headerlink" title="带来的新问题"></a>带来的新问题</h3><ol>
+<li>项目拆分困难，要根据业务逻辑拆分，确保后续开发的可执行性。</li>
+<li>学习成本，要改变子应用的入口文件接入微前端。</li>
+</ol>
+<h2 id="qiankun相比single-spa多了什么"><a href="#qiankun相比single-spa多了什么" class="headerlink" title="qiankun相比single-spa多了什么"></a>qiankun相比single-spa多了什么</h2><ul>
+<li>预加载、js沙箱、css样式隔离、应用间通信（qiankun后续会删除）、生命周期增强（比如beforeMount，提供更多控制点）</li>
+</ul>
+<h1 id="2-26"><a href="#2-26" class="headerlink" title="2.26"></a>2.26</h1><ul>
+<li>简历投3-5家。美团、京东给它投了。</li>
+</ul>
+<h2 id="算法-12"><a href="#算法-12" class="headerlink" title="算法"></a>算法</h2><h3 id="全排列II"><a href="#全排列II" class="headerlink" title="全排列II"></a>全排列II</h3><h3 id="N皇后"><a href="#N皇后" class="headerlink" title="N皇后"></a>N皇后</h3><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><!-- 回溯问题都是自己直接写出来了！ -->
+
+<h2 id="八股-11"><a href="#八股-11" class="headerlink" title="八股"></a>八股</h2><h3 id="复习webpack、vite。"><a href="#复习webpack、vite。" class="headerlink" title="复习webpack、vite。"></a>复习webpack、vite。</h3><h3 id="减少回流和重绘操作-1"><a href="#减少回流和重绘操作-1" class="headerlink" title="减少回流和重绘操作"></a>减少回流和重绘操作</h3><ol>
+<li>操作低层次的DOM.</li>
+<li>脱离文档流,减少对其他元素影响.</li>
+<li>将DOM读写操作分别放到一起,浏览器的渲染队列机制.</li>
+<li>一些css属性形成新的合成层: transform,opacity等等.浏览器把这些变化交给GPU处理(不是所有合成层都给GPU,只有动画视觉效果时候交给GPU),GPU直接在显存中更改元素显示位置,无需CPU进行布局绘制的计算.</li>
+<li>不要使用table布局，一个小的改动可能导致整个table重新布局。</li>
+<li><strong>documentFragment</strong>：避免频繁操作DOM，可以创建一个文档片段documentFragment，在它上面应用所有DOM操作，最后再把它添加到文档中</li>
+</ol>
+<h3 id="requestAnimationframe-10024"><a href="#requestAnimationframe-10024" class="headerlink" title="requestAnimationframe &#10024;"></a>requestAnimationframe &#10024;</h3><ol>
+<li>接受一个回调函数，该函数会在下次回流前调用</li>
+<li>回流是根据浏览器刷新频率触发，60hz就是一秒刷新60次，一秒60次回流，也就调用该函数六十次。</li>
+<li>优点：<br>动画更流畅，不会掉帧、卡顿。<br>cpu节能，页面隐藏时候setTimeout会继续执行，requestAnimation会暂停动画。</li>
+</ol>
+<h3 id="DocumentFragments-10024-1"><a href="#DocumentFragments-10024-1" class="headerlink" title="DocumentFragments &#10024;"></a>DocumentFragments &#10024;</h3><ul>
+<li>轻量级、批量操作DOM元素，临时存储的容器。</li>
+<li>DocumentFragments存在于内存中，不是主 DOM 树的一部分，将子元素插入到文档片段时不会引起页面回流。通常的用例是创建文档片段，元素附加到文档片段，然后将文档片段附加到 DOM 树。</li>
+</ul>
+<h2 id="浏览器一帧做什么？"><a href="#浏览器一帧做什么？" class="headerlink" title="浏览器一帧做什么？"></a>浏览器一帧做什么？</h2><ol>
+<li>处理用户交互</li>
+<li>requestAnimationFrame</li>
+<li>回流重绘</li>
+<li>还有空闲时间：requestIdCallback</li>
+</ol>
+<h2 id="requestIdleCallback"><a href="#requestIdleCallback" class="headerlink" title="requestIdleCallback"></a>requestIdleCallback</h2><ul>
+<li>requestIdleCallback 是捡浏览器空闲来执行任务。假如浏览器一直处于非常忙碌的状态，requestIdleCallback 注册的任务有可能永远不会执行</li>
+</ul>
+<h2 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h2><ol>
+<li>加载当前匹配的应用，加载完之后会派发一个事件。</li>
+<li>预加载函数里会监听这个事件，如果触发了就会加载其他应用。</li>
+<li>通过requestIdCallback，在浏览器渲染一帧有空闲时间时候加载。</li>
+</ol>
+<h2 id="import-html-entry"><a href="#import-html-entry" class="headerlink" title="import-html-entry"></a>import-html-entry</h2><ul>
+<li>去加载入口文件。</li>
+</ul>
+<ol>
+<li>fetch拉取html，注释掉所有外联js、页面内js、外联css。保留起来。</li>
+<li>fetch拉取外联的css，通过style标签引入到html模板中。</li>
+<li>fetch拉取外联js、和页面内js直接返回，包裹在一个函数里面。通过沙箱机制隔离。</li>
+<li>返回html模板和包装js的函数。</li>
+<li>qiankun把html模板放到容器中，挂载完毕后执行包装js的函数。</li>
+</ol>
+<h2 id="子应用如何接入微前端？-10024"><a href="#子应用如何接入微前端？-10024" class="headerlink" title="子应用如何接入微前端？&#10024;"></a>子应用如何接入微前端？&#10024;</h2><ul>
+<li>重中之重，面试官上来问亮点要介绍的内容。</li>
+</ul>
+<ol>
+<li>父应用里面注册子应用相关信息。包括name、挂载的容器、激活子应用的路径（qiankun会去监听popstate、hashchange事件去加载对应的子应用）、加载子应用的路径。</li>
+<li>子应用对外暴露接口协议：import-html-entry加载、js沙箱、<br>css样式隔离。</li>
+<li>pubilc-path</li>
+<li>container容器</li>
+<li>webpack打包为umd格式</li>
+<li>全局变量</li>
+</ol>
+<h2 id="start时候，qiankun干了什么事情？"><a href="#start时候，qiankun干了什么事情？" class="headerlink" title="start时候，qiankun干了什么事情？"></a>start时候，qiankun干了什么事情？</h2><ul>
+<li>single-spa的源码</li>
+</ul>
+<h2 id="父子应用通信"><a href="#父子应用通信" class="headerlink" title="父子应用通信"></a>父子应用通信</h2><!-- ## 微前端 -->
+
+
+<h1 id="2-27"><a href="#2-27" class="headerlink" title="2.27"></a>2.27</h1><h2 id="算法-13"><a href="#算法-13" class="headerlink" title="算法"></a>算法</h2><h3 id="移除链表元素"><a href="#移除链表元素" class="headerlink" title="移除链表元素"></a>移除链表元素</h3><h3 id="翻转链表"><a href="#翻转链表" class="headerlink" title="翻转链表"></a>翻转链表</h3><h3 id="两两交换链表中的节点"><a href="#两两交换链表中的节点" class="headerlink" title="两两交换链表中的节点"></a>两两交换链表中的节点</h3><h3 id="删除链表倒数第N个元素"><a href="#删除链表倒数第N个元素" class="headerlink" title="删除链表倒数第N个元素"></a>删除链表倒数第N个元素</h3><h3 id="链表相交"><a href="#链表相交" class="headerlink" title="链表相交"></a>链表相交</h3><h2 id="八股-12"><a href="#八股-12" class="headerlink" title="八股"></a>八股</h2><h3 id="js沙箱机制"><a href="#js沙箱机制" class="headerlink" title="js沙箱机制"></a>js沙箱机制</h3><h3 id="css样式隔离"><a href="#css样式隔离" class="headerlink" title="css样式隔离"></a>css样式隔离</h3><ul>
+<li>最常用的还是BEM规范</li>
+</ul>
+<h3 id="BEM-CSS命名规范"><a href="#BEM-CSS命名规范" class="headerlink" title="BEM:CSS命名规范"></a>BEM:CSS命名规范</h3><ul>
+<li>B块：代表一个功能模块，E模块的一个元素，M修饰符。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button--primary&quot;</span>&gt;</span>Primary Button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button--secondary&quot;</span>&gt;</span>Secondary Button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+<h3 id="父子路由"><a href="#父子路由" class="headerlink" title="父子路由"></a>父子路由</h3><ul>
+<li>监听路由变化、方法重写 &#x3D;》父应用路由 &#x3D;》子应用挂载到容器，负责自己路由</li>
+</ul>
+<h3 id="微前端"><a href="#微前端" class="headerlink" title="微前端"></a>微前端</h3><ol>
+<li>微前端解决了什么问题</li>
+<li>微前端的缺点</li>
+<li>qiankun和iframe区别</li>
+<li>子应用如何接入qiankun框架？ &#10024;</li>
+<li>start时候qiankun干了什么？</li>
+<li>父子应用通信</li>
+<li>js沙箱机制 &#10024;</li>
+<li>css样式隔离</li>
+<li>父子应用路由</li>
+<li>qiankun和single-spa区别</li>
+<li>预加载</li>
+<li>import-html-entry</li>
+</ol>
+<h3 id="抽离公共组件"><a href="#抽离公共组件" class="headerlink" title="抽离公共组件"></a>抽离公共组件</h3><ul>
+<li>git submodule</li>
+</ul>
+<h3 id="封装成员选择器"><a href="#封装成员选择器" class="headerlink" title="封装成员选择器"></a>封装成员选择器</h3><ol>
+<li>定义props参数：搜索节流时间、要不要中文名、要不要英文名v-model绑定的值、是否可以多选等等。</li>
+<li>组件里面：组件挂载时候请求member成员数据，成员数据根据传入的参数过滤，v-model绑定选择的值。</li>
+</ol>
+<h1 id="2-28"><a href="#2-28" class="headerlink" title="2.28"></a>2.28</h1><h2 id="算法-14"><a href="#算法-14" class="headerlink" title="算法"></a>算法</h2><h3 id="环形链表I、II"><a href="#环形链表I、II" class="headerlink" title="环形链表I、II"></a>环形链表I、II</h3><h3 id="回文链表"><a href="#回文链表" class="headerlink" title="回文链表"></a>回文链表</h3><h3 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h3><ul>
+<li>上午写了开会用的资料</li>
+</ul>
+<h2 id="八股-13"><a href="#八股-13" class="headerlink" title="八股"></a>八股</h2><h3 id="睡前知识点"><a href="#睡前知识点" class="headerlink" title="睡前知识点"></a>睡前知识点</h3><ol>
+<li>url是Google.com，国内dns域名服务器无法找到对应的ip地址</li>
+<li>promise.retry的实现，到达最大次数前都可以继续执行异步任务</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">retry</span>(<span class="hljs-params">promiseFn, retries, delay</span>) &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">const</span> <span class="hljs-title function_">attempt</span> = (<span class="hljs-params">remainingRetries</span>) =&gt; &#123;<br>      <span class="hljs-title function_">promiseFn</span>()<br>        .<span class="hljs-title function_">then</span>(resolve)<br>        .<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> &#123;<br>          <span class="hljs-keyword">if</span> (remainingRetries === <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-title function_">reject</span>(error);<br>          &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">attempt</span>(remainingRetries - <span class="hljs-number">1</span>), delay);<br>          &#125;<br>        &#125;);<br>    &#125;;<br><br>    <span class="hljs-title function_">attempt</span>(retries);<br>  &#125;);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="微前端-1"><a href="#微前端-1" class="headerlink" title="微前端"></a>微前端</h3><ul>
+<li>非常牢固</li>
+</ul>
+<h1 id="2-29"><a href="#2-29" class="headerlink" title="2.29"></a>2.29</h1><h2 id="算法-15"><a href="#算法-15" class="headerlink" title="算法"></a>算法</h2><h3 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h3><h3 id="旋转链表"><a href="#旋转链表" class="headerlink" title="旋转链表"></a>旋转链表</h3><h3 id="重排链表"><a href="#重排链表" class="headerlink" title="重排链表"></a>重排链表</h3><h3 id="上午投了网易、科大讯飞"><a href="#上午投了网易、科大讯飞" class="headerlink" title="上午投了网易、科大讯飞"></a>上午投了网易、科大讯飞</h3><h2 id="八股-14"><a href="#八股-14" class="headerlink" title="八股"></a>八股</h2><h3 id="睡前知识点-1"><a href="#睡前知识点-1" class="headerlink" title="睡前知识点"></a>睡前知识点</h3><ol>
+<li>给定一个used数组[[1，20]，[23，40]…] ,一个checknum数组[-20，80],输出不被used所包含的元素<br>写了n*n复杂度的，让优化到n，说思路。遍历第一个数组，把里面值全部存到set里面。</li>
+<li>promise.all：返回promise，数组记录正确结果，放到对应位置。count记录成功个数。catch直接返回</li>
+</ol>
+<h3 id="auth登录"><a href="#auth登录" class="headerlink" title="auth登录"></a>auth登录</h3><h3 id="单点登录"><a href="#单点登录" class="headerlink" title="单点登录"></a>单点登录</h3><h3 id="双token、续期token解决无感刷新"><a href="#双token、续期token解决无感刷新" class="headerlink" title="双token、续期token解决无感刷新"></a>双token、续期token解决无感刷新</h3><h3 id="前端直传文件"><a href="#前端直传文件" class="headerlink" title="前端直传文件"></a>前端直传文件</h3><h3 id="后端存储的是密码吗？"><a href="#后端存储的是密码吗？" class="headerlink" title="后端存储的是密码吗？"></a>后端存储的是密码吗？</h3><ul>
+<li>不是的。后端只有请求过来时候看得到密码。实际存储在数据库里的是加盐然后用加密算法加密后的暗文。所以找回密码是找不到之前的密码的。</li>
+</ul>
+<h3 id="token解析不就会暴露信息吗？"><a href="#token解析不就会暴露信息吗？" class="headerlink" title="token解析不就会暴露信息吗？"></a>token解析不就会暴露信息吗？</h3><ul>
+<li>token组成是三个部分，第三个部分是对前两个部分的加密，前两个可以解析，第三个不能解析。</li>
+</ul>
+<h1 id="3-2"><a href="#3-2" class="headerlink" title="3.2"></a>3.2</h1><h2 id="算法-16"><a href="#算法-16" class="headerlink" title="算法"></a>算法</h2><h3 id="k个一组翻转链表"><a href="#k个一组翻转链表" class="headerlink" title="k个一组翻转链表"></a>k个一组翻转链表</h3><ul>
+<li>自己写出来了！hard</li>
+</ul>
+<h3 id="随机链表的复制"><a href="#随机链表的复制" class="headerlink" title="随机链表的复制"></a>随机链表的复制</h3><h3 id="双指针-删除有序数组重复项II"><a href="#双指针-删除有序数组重复项II" class="headerlink" title="(双指针)删除有序数组重复项II"></a>(双指针)删除有序数组重复项II</h3><h2 id="八股-15"><a href="#八股-15" class="headerlink" title="八股"></a>八股</h2><ul>
+<li>按钮级别权限控制、webworker</li>
+<li>响应式布局、虚拟列表、树形数据</li>
+</ul>
+<h3 id="vite的构建流程"><a href="#vite的构建流程" class="headerlink" title="vite的构建流程"></a>vite的构建流程</h3><ul>
+<li>vite直接启动开发服务器，不会对整个项目进行编译打包。</li>
+<li>会进行预处理把文件都转换为esm模块，利用浏览器对esm模块化的支持。浏览器现在支持运行一些模块语法比如import语句。遇到import语句再向开发服务器请求对应的模块，vite再对模块进行编译。比如vue文件转换为浏览器可识别的文件。</li>
+</ul>
+<h3 id="Promise-any"><a href="#Promise-any" class="headerlink" title="Promise.any"></a>Promise.any</h3><p>Promise.any() 静态方法将一个 Promise 可迭代对象作为输入，并返回一个 Promise。当输入的任何一个 Promise 兑现时，这个返回的 Promise 将会兑现，并返回第一个兑现的值。当所有输入 Promise 都被拒绝（包括传递了空的可迭代对象）时，它会以一个包含拒绝原因数组的 AggregateError 拒绝。</p>
+<h3 id="Promise-allSettled-iterable"><a href="#Promise-allSettled-iterable" class="headerlink" title="Promise.allSettled(iterable)"></a>Promise.allSettled(iterable)</h3><ul>
+<li>Promise.allSettled:当所有的promise状态都落定后才会返回结果，如果希望有拒绝promise立即返回拒绝promise的话就用promise.all.</li>
+</ul>
+<h3 id="实现自定义角色权限，支持路由级别和按钮级别的权限控制，并结合单点登录（SSO）统一认证，满足不同管理角色的需求"><a href="#实现自定义角色权限，支持路由级别和按钮级别的权限控制，并结合单点登录（SSO）统一认证，满足不同管理角色的需求" class="headerlink" title="实现自定义角色权限，支持路由级别和按钮级别的权限控制，并结合单点登录（SSO）统一认证，满足不同管理角色的需求"></a>实现自定义角色权限，支持路由级别和按钮级别的权限控制，并结合单点登录（SSO）统一认证，满足不同管理角色的需求</h3><ul>
+<li>为什么要按钮级别和路由级别的权限控制？ 处置配置人员和定性配置人员是两类人员，操作不同的页面；有时又需要查看权限。</li>
+</ul>
+<ol>
+<li>在子模块仓库封装了一个获取当前页面的权限节点函数。首先有一个配置中心，配置中心里有权限节点和权限id的映射。比如：新增策略对应id1，删除策略对应id2.请求配置中心获取对应的映射、还有一些白名单等信息。然后有一个权限中心，用户可以在权限中心申请对应的权限id，请求权限中心获取当前用户的权限id。这些请求会在主应用的入口文件main.ts获取，放到全局状态上，可以共享给子应用。获取到权限id和映射后获取用户对应的权限节点。然后在页面按钮通过v-if判断是否有当前按钮的权限。</li>
+<li>还封装了一个路由注入信息的函数。每个路由会配置对应的权限节点，然后也是根据用户权限id到权限节点映射查看是否有对应的权限，有的话会在路由元信息注入hasauth字段，有这个字段才可以跳转页面。当然如果是白名单的话也会注入对应的信息。</li>
+</ol>
+<h3 id="webwoker"><a href="#webwoker" class="headerlink" title="webwoker"></a>webwoker</h3><ul>
+<li>js是单线程，避免共同操作DOM导致渲染错误。worker可以单独开一个线程执行一些复杂的操作，不影响主线程的UI渲染和用户交互。</li>
+</ul>
+<ol>
+<li>主线程创建worker线程，postmessage传递表头数据和表格每一行数据给worker线程。</li>
+<li>worker线程监听message事件收到数据后对数据进行拼接，组成csv文件。用逗号隔开每一个数据，每一行换行隔开数据。拼接完成后postmessage传递字符串给主线程。</li>
+<li>主线程onmessage接受数据后，创建a标签，模拟点击a标签完成下载操作。</li>
+</ol>
+<h3 id="sharedWorker"><a href="#sharedWorker" class="headerlink" title="sharedWorker"></a>sharedWorker</h3><ul>
+<li>同源页面共同访问同一个线程。每个页面有个port对象接入到sharedworker线程，sharedworker线程有连接池（也就是一个数组）统一管理所有的port对象。</li>
+</ul>
+<ol>
+<li>聊天状态同步，sharedworker把消息推送到各个页面中；退出登录，各个页面同步退出状态。</li>
+</ol>
+<h2 id="视口"><a href="#视口" class="headerlink" title="视口"></a>视口</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/leman314/article/details/111936863">https://blog.csdn.net/leman314/article/details/111936863</a></li>
+</ul>
+<ol>
+<li>布局视口：文档对象的逻辑尺寸，pc端和浏览器窗口大小差不多。移动端远大于手机尺寸。</li>
+<li>理想视口：是布局视口的理想尺寸，和设备宽度相同。</li>
+<li>视觉视口：用户在网页看到的区域。理想视口尺寸&#x2F;缩放比例。</li>
+</ol>
+<h1 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h1><h2 id="算法-17"><a href="#算法-17" class="headerlink" title="算法"></a>算法</h2><h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><h3 id="LRU缓存"><a href="#LRU缓存" class="headerlink" title="LRU缓存"></a>LRU缓存</h3><ul>
+<li>手写出来了，20分钟左右。</li>
+</ul>
+<h2 id="八股-16"><a href="#八股-16" class="headerlink" title="八股"></a>八股</h2><ul>
+<li>下午就把项目复习完。</li>
+<li>开始vue和ts，下周搞完。</li>
+</ul>
+<h3 id="最长有效括号"><a href="#最长有效括号" class="headerlink" title="最长有效括号"></a>最长有效括号</h3><h3 id="渲染过程的两个生命周期钩子"><a href="#渲染过程的两个生命周期钩子" class="headerlink" title="渲染过程的两个生命周期钩子:"></a>渲染过程的两个生命周期钩子:</h3><p>domcontentloaded：html加载完后执行，<br>loaded：所有资源加载解析完后执行</p>
+<h3 id="防抖、节流"><a href="#防抖、节流" class="headerlink" title="防抖、节流"></a>防抖、节流</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">debounce</span>(<span class="hljs-params">fn,delay</span>)&#123;<br>  <span class="hljs-keyword">let</span> timer = <span class="hljs-literal">null</span>;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span>(<span class="hljs-params">...args</span>)&#123;<br>    <span class="hljs-keyword">let</span> context = <span class="hljs-variable language_">this</span>;<br>    <span class="hljs-keyword">if</span>(timer)&#123;<br>      <span class="hljs-built_in">clearTimeout</span>(timer);<br>      timer = <span class="hljs-literal">null</span>;<br>    &#125;<br>    timer = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">()=&gt;</span>&#123;<br>      fn.<span class="hljs-title function_">apply</span>(context, args);<br>    &#125;,delay);<br>  &#125;;<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">throttle</span>(<span class="hljs-params">fn,delay</span>)&#123;<br>  <span class="hljs-keyword">let</span> preTime = <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>();<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span>(<span class="hljs-params">...args</span>)&#123;<br>    <span class="hljs-keyword">let</span> curTime = <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>();<br>    <span class="hljs-keyword">let</span> context = <span class="hljs-variable language_">this</span>;<br>    <span class="hljs-keyword">if</span>(curTime - preTime &gt;= delay)&#123;<br>      fn.<span class="hljs-title function_">apply</span>(context, args);<br>      preTime = curTime;<br>    &#125;;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="输入url后会发生什么"><a href="#输入url后会发生什么" class="headerlink" title="输入url后会发生什么?"></a>输入url后会发生什么?</h3><ol>
+<li><em><strong>解析URL</strong></em>:生成对应的HTTP请求</li>
+<li><em><strong>缓存</strong></em>:浏览器本地是否有缓存</li>
+<li><em><strong>DNS解析</strong></em>:查询域名对应的ip地址,先从本地域名服务器查看是否有缓存,无缓存本地域名服务器向根域名服务器请求,根域名服务器给出顶级域名服务器(.com)的ip,本地域名服务器向顶级域名服务器请求,顶级域名服务器给出权威域名服务器ip,本地域名服务器向权威域名服务器请求,获取对应的ip.</li>
+<li><em><strong>TCP三次握手</strong></em></li>
+<li><em><strong>TLS四次握手(HTTPS)</strong></em></li>
+<li><em><strong>路由器转发</strong></em>：ip头部：包括ip地址。</li>
+<li><em><strong>交换机转发</strong></em>：mac头部</li>
+<li><em><strong>数据返回到浏览器,浏览器渲染过程</strong></em></li>
+</ol>
+<h3 id="meta元标签"><a href="#meta元标签" class="headerlink" title="meta元标签"></a>meta元标签</h3><ul>
+<li>元数据，提供网页相关的内容。</li>
+</ul>
+<ol>
+<li>charset：当前文档解析的编码格式。</li>
+<li>content：页面描述</li>
+<li>csp（内容策略）：内容策略常用来指定允许的服务器源和脚本端点。</li>
+</ol>
+<h3 id="移动端适配"><a href="#移动端适配" class="headerlink" title="移动端适配"></a>移动端适配</h3><ol>
+<li>meta信息配置：width &#x3D; device-width；</li>
+<li>@media sreen and min-width &#x3D; xxx and max-width &#x3D; xxx。</li>
+<li>单位使用rem、em、%响应式单位。</li>
+<li>flex布局。</li>
+<li>组件库 vant。</li>
+<li>设计稿。</li>
+</ol>
+<h3 id="如何计算font-size"><a href="#如何计算font-size" class="headerlink" title="如何计算font-size"></a>如何计算font-size</h3><ul>
+<li>方法一是不用媒体查询！</li>
+</ul>
+<ol>
+<li>基于屏幕宽度的动态计算：100vw &#x2F; 7.5。<br>在 750px 宽度的设备上，100vw &#x3D; 750px，因此 1rem &#x3D; 100px。<br>在 375px 宽度的设备上，100vw &#x3D; 375px，因此 1rem &#x3D; 50px。</li>
+<li>媒体查询，不同屏幕不同font-size直接写大小就好了。</li>
+</ol>
+<h3 id="树形数据"><a href="#树形数据" class="headerlink" title="树形数据"></a>树形数据</h3><ul>
+<li>ap出现在各个地方，数据层次不一样。比如教学区有一教、二教，宿舍区有一区二栋、一区三栋、二区，办公区有行政、教学。所以在数据表中是统一放到一张表里面。每行数据对应一个id，和一个parentid标明自己属于哪一分类下。</li>
+<li>根据id建立数据的映射表。再遍历一遍数据，根据映射表、parentId找到自己的父类并把自己添加到父数据下。如果没有parentId就是根数据。这样就构建出树形结构。</li>
+<li>叶子节点是没有孩子属性的，只有用户点击到级联最里层才会去请求对应的ap数据。</li>
+</ul>
+<h3 id="虚拟列表"><a href="#虚拟列表" class="headerlink" title="虚拟列表"></a>虚拟列表</h3><ul>
+<li>项目</li>
+<li>防抖</li>
+<li>占位元素</li>
+<li>缓存区优化</li>
+<li>不定高</li>
+</ul>
+<h1 id="3-4"><a href="#3-4" class="headerlink" title="3.4"></a>3.4</h1><h2 id="算法-18"><a href="#算法-18" class="headerlink" title="算法"></a>算法</h2><h3 id="二叉树最长交错路径"><a href="#二叉树最长交错路径" class="headerlink" title="二叉树最长交错路径"></a>二叉树最长交错路径</h3><h2 id="八股-17"><a href="#八股-17" class="headerlink" title="八股"></a>八股</h2><h3 id="最大子数组和-1"><a href="#最大子数组和-1" class="headerlink" title="最大子数组和"></a>最大子数组和</h3><ul>
+<li>动态规划，单独起或者加上前面的元素。</li>
+</ul>
+<h3 id="文本加粗和下划线"><a href="#文本加粗和下划线" class="headerlink" title="文本加粗和下划线"></a>文本加粗和下划线</h3><ol>
+<li>font-weight：blod</li>
+<li>text-decoration：underline</li>
+</ol>
+<h3 id="如何实现选中文本"><a href="#如何实现选中文本" class="headerlink" title="如何实现选中文本"></a>如何实现选中文本</h3><ul>
+<li>range，selection API实现。</li>
+</ul>
+<h3 id="小米测评"><a href="#小米测评" class="headerlink" title="小米测评"></a>小米测评</h3><h3 id="复习项目"><a href="#复习项目" class="headerlink" title="复习项目"></a>复习项目</h3><h3 id="进程是什么？"><a href="#进程是什么？" class="headerlink" title="进程是什么？"></a>进程是什么？</h3><ul>
+<li>资源分配基本单位，运行中的程序，三部分组成。磁盘读写进程阻塞&#x3D;》进程管理和进程状态。</li>
+</ul>
+<h3 id="线程是什么？"><a href="#线程是什么？" class="headerlink" title="线程是什么？"></a>线程是什么？</h3><ul>
+<li>CPU调度的基本单位，进程下的一个执行流程，可以共享并发的执行。</li>
+</ul>
+<h3 id="进程和线程区别？"><a href="#进程和线程区别？" class="headerlink" title="进程和线程区别？"></a>进程和线程区别？</h3><ol>
+<li>一个进程包含一或多个线程</li>
+<li>资源分配基本单位，cpu调度基本单位。</li>
+<li>进程有独立的程序段、数据段，切换成本高；线程是轻量级线程，共享进程的数据和程序，并有自己独立的程序计数器和执行栈，创建速度快，销毁速度快，适合并发执行，切换成本低。</li>
+</ol>
+<h3 id="模板编译原理，AST语法树的生成"><a href="#模板编译原理，AST语法树的生成" class="headerlink" title="模板编译原理，AST语法树的生成"></a>模板编译原理，AST语法树的生成</h3><ol>
+<li>获取模板字符串后从头到尾解析，获取开始标签包括其属性、标签名，结束标签，文本标签，直到字符串裁剪为空。</li>
+<li>裁剪过程中，根据开始标签、结束标签、文本标签创建AST节点对象，注意根标签和父子标签的关系。通过全局变量和栈结构判断。如果全局变量为空，当前标签就是根节点，开始标签进栈，结束标签出栈，栈尾就是当前创建节点的父标签。</li>
+<li>最后生成AST语法树，同时还会有一些优化，比如静态节点的标记，后续diff算法可以跳过对应部分。</li>
+</ol>
+<h3 id="纯文本内容修改vue能检测到变化吗？"><a href="#纯文本内容修改vue能检测到变化吗？" class="headerlink" title="纯文本内容修改vue能检测到变化吗？"></a>纯文本内容修改vue能检测到变化吗？</h3><h3 id="AST语法树代码拼接成字符串转换为渲染函数"><a href="#AST语法树代码拼接成字符串转换为渲染函数" class="headerlink" title="AST语法树代码拼接成字符串转换为渲染函数"></a>AST语法树代码拼接成字符串转换为渲染函数</h3><h3 id="ast语法树和虚拟DOM区别？"><a href="#ast语法树和虚拟DOM区别？" class="headerlink" title="ast语法树和虚拟DOM区别？"></a>ast语法树和虚拟DOM区别？</h3><h1 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h1><h2 id="算法-19"><a href="#算法-19" class="headerlink" title="算法"></a>算法</h2><h3 id="二叉树的最大路径和"><a href="#二叉树的最大路径和" class="headerlink" title="二叉树的最大路径和"></a>二叉树的最大路径和</h3><h3 id="二叉树的直径"><a href="#二叉树的直径" class="headerlink" title="二叉树的直径"></a>二叉树的直径</h3><h3 id="统计二叉树好节点个数"><a href="#统计二叉树好节点个数" class="headerlink" title="统计二叉树好节点个数"></a>统计二叉树好节点个数</h3><h3 id="三个数的最大乘积"><a href="#三个数的最大乘积" class="headerlink" title="三个数的最大乘积"></a>三个数的最大乘积</h3><ul>
+<li>O（n）复杂度，就是五个值记录。</li>
+</ul>
+<h2 id="八股-18"><a href="#八股-18" class="headerlink" title="八股"></a>八股</h2><h3 id="任务调度器"><a href="#任务调度器" class="headerlink" title="任务调度器"></a>任务调度器</h3><h3 id="loadash-get"><a href="#loadash-get" class="headerlink" title="loadash.get"></a>loadash.get</h3><h3 id="浏览器为什么限制请求次数"><a href="#浏览器为什么限制请求次数" class="headerlink" title="浏览器为什么限制请求次数"></a>浏览器为什么限制请求次数</h3><h3 id="如何解决限制"><a href="#如何解决限制" class="headerlink" title="如何解决限制"></a>如何解决限制</h3><h3 id="webpack热模块更新"><a href="#webpack热模块更新" class="headerlink" title="webpack热模块更新"></a>webpack热模块更新</h3><h3 id="拥塞避免"><a href="#拥塞避免" class="headerlink" title="拥塞避免"></a>拥塞避免</h3><h3 id="npm-run-build后发生什么？"><a href="#npm-run-build后发生什么？" class="headerlink" title="npm run build后发生什么？"></a>npm run build后发生什么？</h3><ol>
+<li>去package.json文件找到scripts字段，解析build命令。</li>
+<li>vue编译器将vue文件转换为浏览器可以识别的js、html、css。</li>
+<li>webpack执行打包流程，vue文件会用vue-loader处理里面编译的js、html、css。</li>
+<li>代码压缩，terserplugin、css压缩、treeshaking。</li>
+<li>生成输出文件到dist目录下。</li>
+</ol>
+<h3 id="vue2-diff算法"><a href="#vue2-diff算法" class="headerlink" title="vue2 diff算法"></a>vue2 diff算法</h3><h3 id="vue3-diff算法"><a href="#vue3-diff算法" class="headerlink" title="vue3 diff算法"></a>vue3 diff算法</h3><h3 id="响应式原理"><a href="#响应式原理" class="headerlink" title="响应式原理"></a>响应式原理</h3><h3 id="数组响应式原理"><a href="#数组响应式原理" class="headerlink" title="数组响应式原理"></a>数组响应式原理</h3><h3 id="vue3响应式原理"><a href="#vue3响应式原理" class="headerlink" title="vue3响应式原理"></a>vue3响应式原理</h3><ul>
+<li>讲define和proxy区别；set、map响应式。</li>
+</ul>
+<h3 id="Object-defineProperty、proxy区别"><a href="#Object-defineProperty、proxy区别" class="headerlink" title="Object.defineProperty、proxy区别"></a>Object.defineProperty、proxy区别</h3><ol>
+<li>功能范围：defineProperty只能代理属性，get、set，不能监听删除新增； proxy代理整个对象，增删改查都可以监听。</li>
+<li>性能：define需要遍历属性设置getter、setter；proxy只有访问对象时候才触发监听。</li>
+<li>vue中：vue2是define，不能监听数组的变化和新增的属性（通过补丁函数vue.set、修改数组方法）；vue3是采用proxy支持数组变化和新增属性的监听。</li>
+</ol>
+<h3 id="响应式为什么要用-reflect-这种-API"><a href="#响应式为什么要用-reflect-这种-API" class="headerlink" title="响应式为什么要用 reflect 这种 API"></a>响应式为什么要用 reflect 这种 API</h3><ul>
+<li>提供一种更一致和可靠的方式来执行底层的 JavaScript 操作（比如属性访问、赋值、删除等）,代码更简洁易读，13种proxy的捕获器和reflect静态方法一一对应。</li>
+<li>this指向问题。</li>
+</ul>
+<h1 id="3-6"><a href="#3-6" class="headerlink" title="3.6"></a>3.6</h1><h2 id="算法-20"><a href="#算法-20" class="headerlink" title="算法"></a>算法</h2><h3 id="最大层内元素和"><a href="#最大层内元素和" class="headerlink" title="最大层内元素和"></a>最大层内元素和</h3><ul>
+<li>层序遍历</li>
+</ul>
+<h3 id="删除链表中的重复元素II"><a href="#删除链表中的重复元素II" class="headerlink" title="删除链表中的重复元素II"></a>删除链表中的重复元素II</h3><ul>
+<li>模拟操作，要删掉相同的元素（一个不留）</li>
+</ul>
+<h3 id="复习链表"><a href="#复习链表" class="headerlink" title="复习链表"></a>复习链表</h3><ol>
+<li>删除链表中的节点（第一题）、删除链表中的重复元素II（第十七题）：虚拟头节点；一个前驱节点和一个当前节点，如果不用删除两个节点一起往后走。如果要删除，则找到删除后的下一个节点。</li>
+<li>翻转链表：虚拟头节点；三个节点，保留后一个节点，每次将当前节点指向前一个前驱节点，所以还要保留前驱节点。</li>
+<li>两两交换链表中的节点：虚拟头节点；保留后两个节点，然后交换即可。注意循环条件判断while(hair.next &amp;&amp; hair.next.next)</li>
+<li>删除链表倒数第N个节点：虚拟头节点；快慢指针。</li>
+<li>链表相交：一个节点遍历到末尾从另一个头节点开始跑。</li>
+<li>环形链表II：快慢指针。</li>
+<li>回文链表：快慢指针；翻转链表；<br>从第10到16</li>
+</ol>
+<h2 id="八股-19"><a href="#八股-19" class="headerlink" title="八股"></a>八股</h2><h3 id="安克测评"><a href="#安克测评" class="headerlink" title="安克测评"></a>安克测评</h3><h3 id="携程测评"><a href="#携程测评" class="headerlink" title="携程测评"></a>携程测评</h3><h1 id="3-7"><a href="#3-7" class="headerlink" title="3.7"></a>3.7</h1><h2 id="算法-21"><a href="#算法-21" class="headerlink" title="算法"></a>算法</h2><h3 id="叶子相似的节点"><a href="#叶子相似的节点" class="headerlink" title="叶子相似的节点"></a>叶子相似的节点</h3><ul>
+<li>深度搜索即可，顺序都是先左再右，遍历到叶子节点就进行收集。</li>
+</ul>
+<h3 id="找到最高海拔"><a href="#找到最高海拔" class="headerlink" title="找到最高海拔"></a>找到最高海拔</h3><ul>
+<li>前缀和</li>
+</ul>
+<h3 id="咒语和药水"><a href="#咒语和药水" class="headerlink" title="咒语和药水"></a>咒语和药水</h3><ul>
+<li>二分法。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> left = <span class="hljs-number">0</span>, right = nums.<span class="hljs-property">length</span>;<br><span class="hljs-keyword">while</span>(left &lt;= right)&#123;<br>  <span class="hljs-keyword">let</span> mid = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>((left + right) / <span class="hljs-number">2</span>);<br>  <span class="hljs-keyword">if</span>(nums[mid] &lt; value)&#123;<br>    left = mid + <span class="hljs-number">1</span>;<br>  &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &gt; value)&#123;<br>    right = mid - <span class="hljs-number">1</span>;<br>  &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> mid;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h2 id="八股-20"><a href="#八股-20" class="headerlink" title="八股"></a>八股</h2><h3 id="如何计算font-size-1"><a href="#如何计算font-size-1" class="headerlink" title="如何计算font-size"></a>如何计算font-size</h3><ul>
+<li>方法一是不用媒体查询！</li>
+</ul>
+<ol>
+<li>基于屏幕宽度的动态计算：100vw &#x2F; 7.5。<br>在 750px 宽度的设备上，100vw &#x3D; 750px，因此 1rem &#x3D; 100px。<br>在 375px 宽度的设备上，100vw &#x3D; 375px，因此 1rem &#x3D; 50px。</li>
+<li>媒体查询，不同屏幕不同font-size直接写大小就好了。</li>
+</ol>
+<h3 id="如何解决跨域"><a href="#如何解决跨域" class="headerlink" title="如何解决跨域"></a>如何解决跨域</h3><ol>
+<li>CORS</li>
+<li>JSONP</li>
+<li>postmessage</li>
+<li>开发过程中，启动代理服务器</li>
+</ol>
+<h3 id="为什么要使用reflect-API"><a href="#为什么要使用reflect-API" class="headerlink" title="为什么要使用reflect API"></a>为什么要使用reflect API</h3><ol>
+<li>更一致更可靠的方式实现js的底层操作（读取值，删除值，修改值），代码简洁易读，reflect 13种 api和proxy代理函数一一对应。</li>
+<li>修改this指向，比如一个对象有a、b属性，还有c属性，c属性是get函数写的return this.a + this.b，这里this默认指向对象本身</li>
+</ol>
+<h3 id="watch原理"><a href="#watch原理" class="headerlink" title="watch原理"></a>watch原理</h3><h3 id="computed原理"><a href="#computed原理" class="headerlink" title="computed原理"></a>computed原理</h3><ol>
+<li>数据代理</li>
+<li>lazy</li>
+<li>dirty</li>
+<li>计算属性依赖的数据通知计算属性为脏数据</li>
+</ol>
+<h3 id="nextTick"><a href="#nextTick" class="headerlink" title="nextTick"></a>nextTick</h3><ol>
+<li>js事件循环的应用</li>
+<li>队列缓冲事件循环的更新任务</li>
+<li>优雅降级</li>
+</ol>
+<h3 id="为什么data是一个函数"><a href="#为什么data是一个函数" class="headerlink" title="为什么data是一个函数"></a>为什么data是一个函数</h3><h3 id="组件加载流程"><a href="#组件加载流程" class="headerlink" title="组件加载流程"></a>组件加载流程</h3><ul>
+<li>子构造函数放到子组件的虚拟节点上</li>
+</ul>
+<h3 id="异步组件"><a href="#异步组件" class="headerlink" title="异步组件"></a>异步组件</h3><ul>
+<li><strong>动态引入</strong>：用import，返回的是一个promise。如果不需要使用组件，只是加载，比如路由配置时候，我们就不用defineAsyncComponent；<br><strong>defineAsyncComponent</strong>：如果页面需要使用这个组件但我们又要异步加载，就要用defineAsyncComponent定义一个异步组件，它相当于让我们先用组件；<br><strong>suspense</strong>：suspense是个组件，提供插槽展示异步组件，还提供备用插槽可以让我们展示组件加载完之前的画面。</li>
+</ul>
+<ol>
+<li><p>defineAsyncComponent:<br>用于定义异步组件。<br>它接受一个返回 Promise 的函数（通常是动态导入 import()）。<br>当组件加载完成后，Vue 会自动渲染它。</p>
+</li>
+<li><p><code>&lt;Suspense&gt;:</code><br>用于包裹异步组件。<br>提供 #default 插槽（放置异步组件）和 #fallback 插槽（加载中的备用内容）。</p>
+</li>
+<li><p>动态导入 (import()):<br>动态导入是 JavaScript 的标准语法，用于按需加载模块。<br>它会返回一个 Promise，当模块加载完成后，Promise 会被解析。</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;template&gt;<br>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Suspense</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">default</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">AsyncComponent</span> /&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">fallback</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Loading...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">Suspense</span>&gt;</span></span><br>&lt;/template&gt;<br><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">import</span> &#123; defineAsyncComponent &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>;</span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">const</span> <span class="hljs-title class_">AsyncComponent</span> = <span class="hljs-title function_">defineAsyncComponent</span>(<span class="hljs-function">() =&gt;</span></span></span><br><span class="language-javascript"><span class="language-xml">  <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;./AsyncComponent.vue&#x27;</span>)</span></span><br><span class="language-javascript"><span class="language-xml">);</span></span><br><span class="language-javascript"><span class="language-xml"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span></span><br><span class="language-javascript"><span class="language-xml">  <span class="hljs-attr">components</span>: &#123;</span></span><br><span class="language-javascript"><span class="language-xml">    <span class="hljs-title class_">AsyncComponent</span>,</span></span><br><span class="language-javascript"><span class="language-xml">  &#125;,</span></span><br><span class="language-javascript"><span class="language-xml">&#125;;</span></span><br><span class="language-javascript"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+<h3 id="v-if和v-for优先级"><a href="#v-if和v-for优先级" class="headerlink" title="v-if和v-for优先级"></a>v-if和v-for优先级</h3><h3 id="v-if、v-show区别"><a href="#v-if、v-show区别" class="headerlink" title="v-if、v-show区别"></a>v-if、v-show区别</h3><h3 id="组件props的原理"><a href="#组件props的原理" class="headerlink" title="组件props的原理"></a>组件props的原理</h3><ol>
+<li>创建子组件虚拟节点时候，会获取子组件声明的prop数据，把prop数据从属性中删除，单独放到虚拟节点的componentOptions上。</li>
+<li>创建子组件实例时候，把componentOptions转移到组件实例上。</li>
+<li>把prop数据定义为响应式数据放到组件实例上。</li>
+</ol>
+<h3 id="组件事件的原理"><a href="#组件事件的原理" class="headerlink" title="组件事件的原理"></a>组件事件的原理</h3><ol>
+<li>也是把事件放到虚拟节点的componentOptions上。</li>
+<li>转移到子组件实例上。</li>
+<li>$on把事件添加到实例的_event属性上，$emit从_event上取函数执行。</li>
+</ol>
+<h1 id="3-8"><a href="#3-8" class="headerlink" title="3.8"></a>3.8</h1><h2 id="算法-22"><a href="#算法-22" class="headerlink" title="算法"></a>算法</h2><h3 id="奇偶链表"><a href="#奇偶链表" class="headerlink" title="奇偶链表"></a>奇偶链表</h3><h3 id="删除链表的中间节点"><a href="#删除链表的中间节点" class="headerlink" title="删除链表的中间节点"></a>删除链表的中间节点</h3><ul>
+<li>快慢指针</li>
+</ul>
+<h3 id="寻找峰值"><a href="#寻找峰值" class="headerlink" title="寻找峰值"></a>寻找峰值</h3><ul>
+<li>二分法，往上坡走</li>
+</ul>
+<h2 id="八股-21"><a href="#八股-21" class="headerlink" title="八股"></a>八股</h2><h3 id="set原理"><a href="#set原理" class="headerlink" title="set原理"></a>set原理</h3><h3 id="异步组件-1"><a href="#异步组件-1" class="headerlink" title="异步组件"></a>异步组件</h3><h3 id="props、事件原理"><a href="#props、事件原理" class="headerlink" title="props、事件原理"></a>props、事件原理</h3><h3 id="插槽原理"><a href="#插槽原理" class="headerlink" title="插槽原理"></a>插槽原理</h3><ol>
+<li>具名插槽、默认插槽</li>
+<li>作用域插槽</li>
+</ol>
+<h3 id="keep-alive组件"><a href="#keep-alive组件" class="headerlink" title="keep-alive组件"></a>keep-alive组件</h3><ul>
+<li>也是插槽</li>
+</ul>
+<h3 id="provide、inject函数"><a href="#provide、inject函数" class="headerlink" title="provide、inject函数"></a>provide、inject函数</h3><h3 id="属性透传"><a href="#属性透传" class="headerlink" title="属性透传"></a>属性透传</h3><h3 id="v-if和v-for优先级-1"><a href="#v-if和v-for优先级-1" class="headerlink" title="v-if和v-for优先级"></a>v-if和v-for优先级</h3><h3 id="v-if和v-show区别"><a href="#v-if和v-show区别" class="headerlink" title="v-if和v-show区别"></a>v-if和v-show区别</h3><h1 id="3-9"><a href="#3-9" class="headerlink" title="3.9"></a>3.9</h1><h2 id="算法-23"><a href="#算法-23" class="headerlink" title="算法"></a>算法</h2><h3 id="用最少数量的箭引爆气球"><a href="#用最少数量的箭引爆气球" class="headerlink" title="用最少数量的箭引爆气球"></a>用最少数量的箭引爆气球</h3><h3 id="环形链表II"><a href="#环形链表II" class="headerlink" title="环形链表II"></a>环形链表II</h3><h3 id="重排链表-1"><a href="#重排链表-1" class="headerlink" title="重排链表"></a>重排链表</h3><h3 id="promise-any"><a href="#promise-any" class="headerlink" title="promise.any"></a>promise.any</h3><h3 id="最长公共子序列-1"><a href="#最长公共子序列-1" class="headerlink" title="最长公共子序列"></a>最长公共子序列</h3><h3 id="复习-8"><a href="#复习-8" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>把链表总结完</li>
+</ul>
+<h2 id="八股-22"><a href="#八股-22" class="headerlink" title="八股"></a>八股</h2><h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><ul>
+<li>content、padding、border、margin。</li>
+<li>ie盒子模型、标准盒子模型。</li>
+<li>box-sizing：content-box默认标准，border-boxIE模型。</li>
+</ul>
+<h3 id="tcp、udp区别"><a href="#tcp、udp区别" class="headerlink" title="tcp、udp区别"></a>tcp、udp区别</h3><h3 id="loader和plugin的编写"><a href="#loader和plugin的编写" class="headerlink" title="loader和plugin的编写"></a>loader和plugin的编写</h3><h3 id="loader、plugin"><a href="#loader、plugin" class="headerlink" title="loader、plugin"></a>loader、plugin</h3><h3 id="内存分段、分页"><a href="#内存分段、分页" class="headerlink" title="内存分段、分页"></a>内存分段、分页</h3><h3 id="v-model的原理"><a href="#v-model的原理" class="headerlink" title="v-model的原理"></a>v-model的原理</h3><h3 id="组件通信的方式"><a href="#组件通信的方式" class="headerlink" title="组件通信的方式"></a>组件通信的方式</h3><ol>
+<li>prop、emit</li>
+<li>provide、inject</li>
+<li>全局事件总线</li>
+<li>全局状态管理</li>
+<li>localStorage、sessionStorage</li>
+<li>属性透传</li>
+</ol>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><ol>
+<li>beforeCreate:调用组件init方法时候调用,此时无法访问初始化数据,创建页面watcher,计算属性等等.</li>
+<li>created:响应式数据,计算属性,监听器等初始化完成,但还未进入渲染阶段.</li>
+<li>beforeMount:模板编译,将模板转换为AST语法树,代码拼接成渲染函数,执行渲染函数生成虚拟DOM,diff对比后生成真实DOM.但未挂载到容器上.</li>
+<li>mounted:将生成的html挂载到容器上.</li>
+<li>beforeUpdate:响应式数据更新时调用,此时数据进行了更新,但页面还未渲染.</li>
+<li>updated:render函数重新执行,页面更新.</li>
+<li>beforeUnmount:组件实例销毁前调用,此时还保留了组件所有功能.</li>
+<li>unMounted: 组件卸载完后调用,清除定时器 DOM监听器等等.</li>
+</ol>
+<h3 id="keep-alive的生命周期"><a href="#keep-alive的生命周期" class="headerlink" title="keep-alive的生命周期"></a>keep-alive的生命周期</h3><ol>
+<li>组件会缓存不会真正的销毁，所以不会触发beforeUnmount和unmounted。</li>
+<li>组件被换掉是deactivated、组件切换来是activated。</li>
+</ol>
+<h3 id="后端路由和前端路由"><a href="#后端路由和前端路由" class="headerlink" title="后端路由和前端路由"></a>后端路由和前端路由</h3><ul>
+<li>后端路由：前端请求携带url，后端根据不同的url返回不同的页面。优点是seo优化好，是传统的多页面应用。缺点就是后端性能要求。</li>
+<li>前端路由：spa单页面应用不会因为用户的操作刷新页面，而是js动态的切换内容。但spa存在了问题，用户无法感知当前页面进展到哪，无法前进后退，无法保留当前页面状态。前端路由就基于spa产生了，每个url对应一个资源，监听url的变化，js动态加载不同的页面内容。</li>
+</ul>
+<h3 id="hash和history"><a href="#hash和history" class="headerlink" title="hash和history"></a>hash和history</h3><ol>
+<li>hash：#，刷新不会携带hash值给后端，监听hashchange事件加载不同的路由，浏览器前进后退可以记录。</li>
+<li>history：没有#，监听popstate事件。404问题</li>
+</ol>
+<h3 id="在vue-router里面，用pushState、replaceState而不是vue的push能触发页面路由切换吗"><a href="#在vue-router里面，用pushState、replaceState而不是vue的push能触发页面路由切换吗" class="headerlink" title="在vue-router里面，用pushState、replaceState而不是vue的push能触发页面路由切换吗"></a>在vue-router里面，用pushState、replaceState而不是vue的push能触发页面路由切换吗</h3><ul>
+<li>不能，vue的router.push(‘&#x2F;new-url’);router.replace(‘&#x2F;new-url’)方法会触发导航守卫、渲染组件，再调用pushstate、replacestate更改url，<strong>router.push方法相当于在pushstate做了一层封装</strong>，直接使用replace、push没有js切换页面的逻辑。</li>
+</ul>
+<h3 id="replacestate、popState、pushState"><a href="#replacestate、popState、pushState" class="headerlink" title="replacestate、popState、pushState"></a>replacestate、popState、pushState</h3><ul>
+<li>vue中、qiankun中的处理。</li>
+</ul>
+<h1 id="3-10"><a href="#3-10" class="headerlink" title="3.10"></a>3.10</h1><h2 id="算法-24"><a href="#算法-24" class="headerlink" title="算法"></a>算法</h2><h3 id="种花问题"><a href="#种花问题" class="headerlink" title="种花问题"></a>种花问题</h3><ul>
+<li>前插入0，后插入0.</li>
+</ul>
+<h3 id="搜索插入位置"><a href="#搜索插入位置" class="headerlink" title="搜索插入位置"></a>搜索插入位置</h3><ul>
+<li>排序的数组，时间复杂度为logn，二分法需求拉满了。</li>
+</ul>
+<h3 id="最长递增子序列-1"><a href="#最长递增子序列-1" class="headerlink" title="最长递增子序列"></a>最长递增子序列</h3><h3 id="最长连续递增序列"><a href="#最长连续递增序列" class="headerlink" title="最长连续递增序列"></a>最长连续递增序列</h3><h3 id="最长重复子数组-1"><a href="#最长重复子数组-1" class="headerlink" title="最长重复子数组"></a>最长重复子数组</h3><ul>
+<li>开始复习动态规划。</li>
+</ul>
+<h2 id="八股-23"><a href="#八股-23" class="headerlink" title="八股"></a>八股</h2><h3 id="TCL测评"><a href="#TCL测评" class="headerlink" title="TCL测评"></a>TCL测评</h3><h3 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h3><ul>
+<li>每次返回收集参数的函数，参数个数够了返回执行函数，不够继续返回收集参数的函数。this绑定。</li>
+</ul>
+<h3 id="vuex和localStorage区别"><a href="#vuex和localStorage区别" class="headerlink" title="vuex和localStorage区别"></a>vuex和localStorage区别</h3><ol>
+<li>vuex存在内存中，localStorage在本地磁盘里面。</li>
+<li>vuex数据是响应式的，localStorage只是字符串。</li>
+<li>vuex刷新数据会丢失，localStorage不会。</li>
+</ol>
+<h3 id="为什么vuex需要action，pinia不需要？"><a href="#为什么vuex需要action，pinia不需要？" class="headerlink" title="为什么vuex需要action，pinia不需要？"></a>为什么vuex需要action，pinia不需要？</h3><ol>
+<li>vuex是在action里处理异步操作、封装复杂的逻辑复用。mutations修改会被vue开发插件记录，方便调试。</li>
+<li>pinia是对其简化，更贴合组合式api的灵活和组合。</li>
+</ol>
+<h3 id="vuex和pinia区别？"><a href="#vuex和pinia区别？" class="headerlink" title="vuex和pinia区别？"></a>vuex和pinia区别？</h3><ol>
+<li>去除了mutations，保留actions、data、getters。</li>
+<li>pinia是ts编写，类型提示更友好。</li>
+<li>pinia支持组合式api和选项式api。</li>
+<li>vuex是单例模式，定义的是树结构，读取数据困难；在底层会把树扁平，命名冲突会出现覆盖情况；pinia是定义了多个store，扁平化结构，不会出现冲突。</li>
+</ol>
+<h3 id="vue3响应式原理-1"><a href="#vue3响应式原理-1" class="headerlink" title="vue3响应式原理"></a>vue3响应式原理</h3><ol>
+<li>proxy</li>
+<li>支持对set、map的响应式</li>
+</ol>
+<h3 id="attrs-组件上所有的属性-和-listeners-组件上所有的事件"><a href="#attrs-组件上所有的属性-和-listeners-组件上所有的事件" class="headerlink" title="$attrs(组件上所有的属性)和$listeners(组件上所有的事件)"></a><code>$attrs</code>(组件上所有的属性)和<code>$listeners</code>(组件上所有的事件)</h3><ul>
+<li>透传属性是传递给一个组件，并且没有被组件prop、事件声明的属性。最常见的是style、class、id。</li>
+<li>如果组件只有一个根元素，会直接放到根元素上，如果子组件也有class、style则会进行合并，事件也会合并；多个根元素的话会抛提醒，不会直接渲染，要手动。</li>
+<li>defineOptions宏定义禁止透传，一般用于attribute 需要应用在根节点以外的其他元素上。</li>
+</ul>
+<h3 id="vue复习"><a href="#vue复习" class="headerlink" title="vue复习"></a>vue复习</h3><ol>
+<li>AST语法树的生成过程</li>
+<li>AST语法树代码拼接成渲染函数</li>
+<li>AST语法树和虚拟DOM区别</li>
+<li>npm run build后发生什么</li>
+<li>vue2 和 vue3 diff算法</li>
+<li>Object.defineProperty 和 proxy的区别</li>
+<li>响应式原理</li>
+<li>数组响应式原理</li>
+<li>vue2响应式原理缺点</li>
+<li>vue3响应式原理优化</li>
+<li>响应式为什么用reflectAPI</li>
+<li>watch原理</li>
+<li>computed原理</li>
+<li>nextTick原理</li>
+<li>为什么data是函数</li>
+<li>组件渲染过程</li>
+<li>Vue.set原理</li>
+<li>异步组件</li>
+<li>props原理</li>
+<li>emit原理</li>
+<li>插槽原理</li>
+<li>keep-alive原理</li>
+<li>provide和inject原理</li>
+<li>属性透传</li>
+<li>v-if和v-for优先级哪个更高</li>
+<li>v-if和v-show区别</li>
+<li>v-model原理</li>
+<li>前端路由和后端路由</li>
+<li>hash模式和history模式</li>
+<li>vuex和localStorage区别</li>
+<li>vuex为什么有mutations而pinia没有</li>
+<li>vuex和pinia区别</li>
+</ol>
+<h1 id="3-11"><a href="#3-11" class="headerlink" title="3.11"></a>3.11</h1><h2 id="算法-25"><a href="#算法-25" class="headerlink" title="算法"></a>算法</h2><h3 id="爱吃香蕉的珂珂"><a href="#爱吃香蕉的珂珂" class="headerlink" title="爱吃香蕉的珂珂"></a>爱吃香蕉的珂珂</h3><ul>
+<li>二分法</li>
+</ul>
+<h3 id="排序数组中查找第一次出现和最后一次出现"><a href="#排序数组中查找第一次出现和最后一次出现" class="headerlink" title="排序数组中查找第一次出现和最后一次出现"></a>排序数组中查找第一次出现和最后一次出现</h3><ul>
+<li>找到后，继续向左或向右收缩。</li>
+</ul>
+<h3 id="最长公公子序列"><a href="#最长公公子序列" class="headerlink" title="最长公公子序列"></a>最长公公子序列</h3><h3 id="不相交的线-1"><a href="#不相交的线-1" class="headerlink" title="不相交的线"></a>不相交的线</h3><ul>
+<li>纯纯的最长公共子序列</li>
+</ul>
+<h3 id="寻找重复的子树"><a href="#寻找重复的子树" class="headerlink" title="寻找重复的子树"></a>寻找重复的子树</h3><h2 id="八股-24"><a href="#八股-24" class="headerlink" title="八股"></a>八股</h2><h3 id="并发promise"><a href="#并发promise" class="headerlink" title="并发promise"></a>并发promise</h3><ol>
+<li>for循环开启最大次数的请求，多个滚轮循环滚动。</li>
+<li>记录当前运行到的下标，记录完成的下标。</li>
+</ol>
+<h3 id="ts是什么，和js区别？"><a href="#ts是什么，和js区别？" class="headerlink" title="ts是什么，和js区别？"></a>ts是什么，和js区别？</h3><ol>
+<li>后缀是ts，后缀是js，js执行速度更快，ts需要编译成js再执行，是js的超集。</li>
+<li>ts可以在编译时发现错误，js只能在运行时发现错误。</li>
+<li>ts是强类型语言，有类型推断、类型断言。</li>
+<li>支持模块、接口、枚举</li>
+</ol>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><ol>
+<li>对数值常量赋予友好的名称；策略状态 空跑 0，上线 1，下线 1.</li>
+<li>原理：对象空跑属性赋值为1，属性1赋值为空跑。</li>
+<li>提高代码可读性。</li>
+</ol>
+<h3 id="接口、类"><a href="#接口、类" class="headerlink" title="接口、类"></a>接口、类</h3><ul>
+<li>接口是对对象方法和属性的抽象，是对属性和方法的描述，但不提供创建对象的方法。</li>
+<li>类：具体实现创建对象的方法。</li>
+</ul>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><ul>
+<li>具体实现对象的方法</li>
+<li>字段、构造函数、方法</li>
+<li>继承、修饰符、静态属性</li>
+</ul>
+<h3 id="interface和type区别"><a href="#interface和type区别" class="headerlink" title="interface和type区别"></a>interface和type区别</h3><ol>
+<li>interface一般用来定义对象、函数、类；type除了可以定义接口类型外，还可以定义常量类型、联合类型、交叉类型以及任何可以手写的类型。</li>
+<li>interface通过extends扩展接口，type通过联合类型 &amp; 扩展。</li>
+<li>interface：支持声明合并。如果多次定义同名接口，TypeScript 会自动合并它们。type：不支持声明合并。如果多次定义同名类型，会报错。</li>
+</ol>
+<h1 id="3-12"><a href="#3-12" class="headerlink" title="3.12"></a>3.12</h1><h2 id="算法-26"><a href="#算法-26" class="headerlink" title="算法"></a>算法</h2><h3 id="除自身以外的乘积"><a href="#除自身以外的乘积" class="headerlink" title="除自身以外的乘积"></a>除自身以外的乘积</h3><ul>
+<li>前缀乘，后缀乘积；优化空间复杂度。</li>
+</ul>
+<h3 id="最大子数组和-2"><a href="#最大子数组和-2" class="headerlink" title="最大子数组和"></a>最大子数组和</h3><h3 id="判断子序列-1"><a href="#判断子序列-1" class="headerlink" title="判断子序列"></a>判断子序列</h3><ul>
+<li>最长公共子序列、双指针。</li>
+</ul>
+<h2 id="八股-25"><a href="#八股-25" class="headerlink" title="八股"></a>八股</h2><h3 id="实现非负大整数相加"><a href="#实现非负大整数相加" class="headerlink" title="实现非负大整数相加"></a>实现非负大整数相加</h3><h3 id="DOM0、IE（DOM1）、DOM2事件"><a href="#DOM0、IE（DOM1）、DOM2事件" class="headerlink" title="DOM0、IE（DOM1）、DOM2事件"></a>DOM0、IE（DOM1）、DOM2事件</h3><ul>
+<li>0只有事件触发</li>
+<li>1是事件触发，事件冒泡</li>
+<li>2是事件捕获，触发，冒泡</li>
+</ul>
+<h3 id="手写构造函数继承"><a href="#手写构造函数继承" class="headerlink" title="手写构造函数继承"></a>手写构造函数继承</h3><h3 id="ts函数的理解"><a href="#ts函数的理解" class="headerlink" title="ts函数的理解"></a>ts函数的理解</h3><ul>
+<li>参数、返回值的个数类型是确定的</li>
+<li>可选值</li>
+<li>函数重载：允许重复声明函数名相同但是参数或者返回值个数、类型不同的函数，具体的函数实现还是一个要用 联合类型或可选值判断。</li>
+</ul>
+<h3 id="ts泛型的理解"><a href="#ts泛型的理解" class="headerlink" title="ts泛型的理解"></a>ts泛型的理解</h3><ol>
+<li>类型的变量，可以使用未来才能确定的类型。</li>
+<li>复用效果，比如一个函数入参是string，返回值是string；入参是数字，返回值是数字，就可以使用泛型。</li>
+<li>泛型的约束是extends。</li>
+</ol>
+<h3 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h3><ol>
+<li>交叉类型，多个类型合并成一个类型。 &amp;</li>
+<li>联合类型，多个类型中的一个类型。 |</li>
+<li>类型别名：type定义一个类型变量，除了可以定义接口、函数、类类型外，还可以定义联合类型、交叉类型、常量类型以及所有可以手写的类型。</li>
+<li>类型索引：keyof，获取接口类型的属性的常量联合类型。</li>
+<li>类型约束：extends。function add&lt;T, U extends keyof T&gt;(object : T, key : U)</li>
+<li>条件类型：K extends T ? X : Y</li>
+</ol>
+<h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h3><ol>
+<li>作用于定义好的变量的类型。</li>
+<li>配合ReturnType 和 Paramters</li>
+<li>typeof colors[keyof typeof obj]</li>
+</ol>
+<h3 id="returnType-parameters"><a href="#returnType-parameters" class="headerlink" title="returnType parameters"></a>returnType parameters</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">type</span> returnType&lt;T <span class="hljs-title function_">extends</span> (...<span class="hljs-attr">args</span>: <span class="hljs-built_in">any</span>[]) =&gt; <span class="hljs-built_in">any</span>&gt; = <br>T <span class="hljs-title function_">extends</span> (...<span class="hljs-attr">args</span>: <span class="hljs-built_in">any</span>[]) =&gt; infer K ? K : <span class="hljs-built_in">never</span>;<br><br><span class="hljs-keyword">type</span> parameters&lt;T <span class="hljs-title function_">extends</span> (...args : <span class="hljs-built_in">any</span>[]) =&gt; <span class="hljs-built_in">any</span>&gt; = <br>T <span class="hljs-title function_">extends</span> (...args : infer K) =&gt; <span class="hljs-built_in">any</span> ? K : <span class="hljs-built_in">never</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="patical、required、readonly"><a href="#patical、required、readonly" class="headerlink" title="patical、required、readonly"></a>patical、required、readonly</h3><h3 id="小米笔试"><a href="#小米笔试" class="headerlink" title="小米笔试"></a>小米笔试</h3><h3 id="TS"><a href="#TS" class="headerlink" title="TS"></a>TS</h3><ol>
+<li>ts和js区别</li>
+<li>枚举类型</li>
+<li>接口和类区别</li>
+<li>ts函数的理解</li>
+<li>泛型理解</li>
+<li>interface和type区别</li>
+<li>any和unkown区别</li>
+<li>高级类型：交叉类型、联合类型、类型别名、类型索引、typeof、infer</li>
+<li>returnType、parameters</li>
+<li>patical、required、readonly。</li>
+</ol>
+<h1 id="3-13"><a href="#3-13" class="headerlink" title="3.13"></a>3.13</h1><h2 id="算法-27"><a href="#算法-27" class="headerlink" title="算法"></a>算法</h2><h3 id="路径总和III"><a href="#路径总和III" class="headerlink" title="路径总和III"></a>路径总和III</h3><h3 id="找出两数组的不同"><a href="#找出两数组的不同" class="headerlink" title="找出两数组的不同"></a>找出两数组的不同</h3><h3 id="两个字符串的删除操作"><a href="#两个字符串的删除操作" class="headerlink" title="两个字符串的删除操作"></a>两个字符串的删除操作</h3><h3 id="交替合并字符串"><a href="#交替合并字符串" class="headerlink" title="交替合并字符串"></a>交替合并字符串</h3><h2 id="八股-26"><a href="#八股-26" class="headerlink" title="八股"></a>八股</h2><h3 id="手写发布订阅模式"><a href="#手写发布订阅模式" class="headerlink" title="手写发布订阅模式"></a>手写发布订阅模式</h3><h3 id="项目亮点"><a href="#项目亮点" class="headerlink" title="项目亮点"></a>项目亮点</h3><ul>
+<li>亮点：微前端的接入和路由级别按钮别的权限控制、包括接入单点登录。先说第一个微前端的接入。微前端其实是将一个巨石应用拆分成多个独立松耦合的应用，qiankun是有一个基座应用也叫父应用，其他子应用来回切换在父应用挂载展示。具体的改造流程我总结以下几点：</li>
+</ul>
+<ol>
+<li>在父应用注册子应用的信息，包括子应用的应用名、子应用挂载的容器、子应用激活的路径：qiankun会去监听url的变化，匹配到对应的路径时候会去加载对应的子应用、子应用加载的路径：路径匹配到后，qiankun会通过import-html-entry通过子应用路径加载对应的子应用。</li>
+<li>子应用对外暴露接口协议，qiankun通过import-html-entry加载子应用，具体加载流程是：xxxxxx，返回html模板和包括js代码的函数。加载完子应用后也会获取子应用对外暴露的协议，bootstrap、mount、unmount，分别在启动、挂载、卸载时候调用。挂载时候会把html模板放到容器上。</li>
+<li>public-path</li>
+<li>容器位置</li>
+<li>全局变量</li>
+</ol>
+<ul>
+<li>第二个是路由级别、按钮级别的权限控制，以及接入单点登录。策略运营平台分为定性策略和处置策略，定性策略是对数据性质判断，比如它是恶意数据还是非恶意数据，处置策略是对定性的数据进行处置，比如恶意的数据进行机审、人审、放过等等。配置定性和配置处置是两拨人，不同的配置页面是不同人操作，所以有路由权限控制的需求；同时定性的可能也可以查看处置策略，但不能增删改，所以有按钮级别权限的需求。<br>按钮级别的权限控制：请求配置中心，配置中心有权限节点和权限id的映射，当然还有其他白名单用户等等信息，映射比如id 1 对应新增，id 2对应删除等等；然后还有权限中心，是用户申请权限的位置，请求对应的后台获取当前用户的权限节点，比如 1 2 3 4，然后根据映射获取用户所拥有的权限节点。一个用户可能有新增策略、删除策略等等权限，在页面的新增按钮，v-if 权限节点包括新增节点，则可以操作，否则不能操作。<br>路由权限控制：在路由配置时候元信息配置进入当前路由需要的权限节点，如果用户有这个权限节点会在元信息注入一个hasAuth字段，如果有这个字段则可以跳转页面，否则不能跳转，当然白名单也可以跳转。</li>
+</ul>
+<h3 id="内存泄漏的原因"><a href="#内存泄漏的原因" class="headerlink" title="内存泄漏的原因"></a>内存泄漏的原因</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6984188410659340324?searchId=2025031315545535021E8FF05054738485#heading-2">https://juejin.cn/post/6984188410659340324?searchId=2025031315545535021E8FF05054738485#heading-2</a></li>
+</ul>
+<ol>
+<li>不恰当的闭包</li>
+<li>全局变量</li>
+<li>DOM引用：父元素删除了，但对子元素还有引用。</li>
+<li>未关闭的定时器</li>
+<li>事件监听：组件卸载要关闭。监听者模式：全局总线，组件绑定事件，组件卸载要解绑事件。</li>
+<li>未清理的console.log，如果log是打印对象，也不会垃圾回收。</li>
+<li>map、set：这两个是强引用，如果对象被这两个存储了，即使删除了对象，对象也还在。</li>
+</ol>
+<h3 id="如何查看是否有内存泄露"><a href="#如何查看是否有内存泄露" class="headerlink" title="如何查看是否有内存泄露"></a>如何查看是否有内存泄露</h3><ol>
+<li>性能performance面板，开始记录，开始时候清空一次垃圾。</li>
+<li>然后进行操作，操作到一半再清空一次垃圾（能回收就没有泄漏）。</li>
+<li>操作完，结束记录。如果查看中间清空的时候 js堆内存没有减少，就是有内存泄漏。</li>
+</ol>
+<h3 id="如何定位到泄露的位置"><a href="#如何定位到泄露的位置" class="headerlink" title="如何定位到泄露的位置"></a>如何定位到泄露的位置</h3><ol>
+<li>内存面板，可以生成堆快照。</li>
+<li>进行一次GC，操作，生成快照。</li>
+<li>进行一次GC，操作，生成快照。</li>
+<li>对比前后堆快照的区别，它会标明是代码执行到哪一行新增了堆，新增的就是泄露的内存。</li>
+</ol>
+<h1 id="3-14"><a href="#3-14" class="headerlink" title="3.14"></a>3.14</h1><h2 id="算法-28"><a href="#算法-28" class="headerlink" title="算法"></a>算法</h2><h3 id="压缩字符串"><a href="#压缩字符串" class="headerlink" title="压缩字符串"></a>压缩字符串</h3><h3 id="两个字符串的删除操作-1"><a href="#两个字符串的删除操作-1" class="headerlink" title="两个字符串的删除操作"></a>两个字符串的删除操作</h3><h3 id="编辑距离-1"><a href="#编辑距离-1" class="headerlink" title="编辑距离"></a>编辑距离</h3><h2 id="八股-27"><a href="#八股-27" class="headerlink" title="八股"></a>八股</h2><h3 id="从A页面跳转到B页面的优化"><a href="#从A页面跳转到B页面的优化" class="headerlink" title="从A页面跳转到B页面的优化"></a>从A页面跳转到B页面的优化</h3><ol>
+<li>A页面内：link标签，rel属性，pre-load、pre-fetch、dns-pre；B页面内 async、defer。</li>
+<li>http2.0主动推送</li>
+<li>webpack拆分模块，请求速度更快。</li>
+<li>单页面应用：全局状态管理，集中管理共享依赖。</li>
+<li>webworker</li>
+<li>浏览器缓存</li>
+</ol>
+<h3 id="如果接手一个项目，如何处理？"><a href="#如果接手一个项目，如何处理？" class="headerlink" title="如果接手一个项目，如何处理？"></a>如果接手一个项目，如何处理？</h3><ul>
+<li>需求分析、阅读文档、查看代码、环境配置、开发部署、团队沟通。</li>
+</ul>
+<ol>
+<li>需求分析：确认项目是干什么的，最好按操作流程走一遍。</li>
+<li>阅读文档：使用文档、开发文档。</li>
+<li>阅读代码结构：技术栈、组件、公共方法、公共样式类等等，确定到开发部分。</li>
+<li>环境配置：开发环境下开发，不要影响线上。</li>
+<li>开发发布：git提交规范；开发完后运行流水线，部署到对应的服务上；代码备份，了解回滚操作。</li>
+<li>团队沟通：需求排期；项目组长及时沟通实现方案；后端沟通具体实现；用户沟通需求；</li>
+</ol>
+<h3 id="BEM-CSS命名规范-1"><a href="#BEM-CSS命名规范-1" class="headerlink" title="BEM:CSS命名规范"></a>BEM:CSS命名规范</h3><ul>
+<li>B块：代表一个功能模块，E模块的一个元素，M修饰符。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button--primary&quot;</span>&gt;</span>Primary Button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button button--secondary&quot;</span>&gt;</span>Secondary Button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="类的写法"><a href="#类的写法" class="headerlink" title="类的写法"></a>类的写法</h3><ol>
+<li>类可以定义实例的变量，直接赋值。</li>
+<li>类的构造函数可以接受参数赋值。</li>
+<li>原型对象上的方法直接写。</li>
+<li>静态方法、静态属性加static。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Modal</span>&#123;<br>  a = <span class="hljs-number">10</span>;<br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">b,c</span>)&#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">b</span> = b;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">c</span> = c;<br>  &#125;;<br>  <span class="hljs-title function_">result</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">a</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">b</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">c</span>;<br>  &#125;;<br>  <span class="hljs-keyword">static</span> <span class="hljs-title function_">funInModal</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Modal.funInModal来调用我`</span>);<br>  &#125;;<br>  <span class="hljs-keyword">static</span> <span class="hljs-title class_">ModalValue</span> = <span class="hljs-number">100</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<h3 id="TCP、IP四层模型"><a href="#TCP、IP四层模型" class="headerlink" title="TCP、IP四层模型"></a>TCP、IP四层模型</h3><ol>
+<li>应用层：定义通信的规则和数据格式（HTTP、http数据格式），身份认证（HTTPS），错误处理（HTTP状态码）。</li>
+<li>传输层：TCP、UDP协议，TCP可靠传输：滑动窗口、拥塞控制、流量控制、先建立连接、一对一；UDP不可靠传输：发送数据，不用建立连接。</li>
+<li>网络层：IP协议，根据IP地址，通过路由器转发到对应的网络。</li>
+<li>数据链路层：在网络内，通过交换机将数据交付给对应的主机。</li>
+</ol>
+<h3 id="浏览器渲染过程中的两个生命周期钩子"><a href="#浏览器渲染过程中的两个生命周期钩子" class="headerlink" title="浏览器渲染过程中的两个生命周期钩子"></a>浏览器渲染过程中的两个生命周期钩子</h3><p>DOMContentLoaded事件<br>当HTML文档完全解析并构建完DOM树时，会触发DOMContentLoaded事件。</p>
+<p>此时，JS可以通过监听该事件来执行与DOM相关的操作。</p>
+<ol start="5">
+<li>load事件<br>当页面中的所有资源（如图片、样式表、JS文件等）都加载完成后，会触发load事件。</li>
+</ol>
+<p>此时，JS可以通过监听该事件来执行与页面完全加载相关的操作。</p>
+<h3 id="讲讲在浏览器渲染过程中JS是在什么时候执行的"><a href="#讲讲在浏览器渲染过程中JS是在什么时候执行的" class="headerlink" title="讲讲在浏览器渲染过程中JS是在什么时候执行的"></a>讲讲在浏览器渲染过程中JS是在什么时候执行的</h3><ul>
+<li>遇到script标签执行。因为js线程和渲染线程冲突只能有一个执行，遇到script标签就会停止解析html模板去加载执行js。如果是async、defer不一样。</li>
+</ul>
+<h1 id="3-15"><a href="#3-15" class="headerlink" title="3.15"></a>3.15</h1><h2 id="算法-29"><a href="#算法-29" class="headerlink" title="算法"></a>算法</h2><h3 id="有效的括号"><a href="#有效的括号" class="headerlink" title="有效的括号"></a>有效的括号</h3><h3 id="颜色交替的路径"><a href="#颜色交替的路径" class="headerlink" title="颜色交替的路径"></a>颜色交替的路径</h3><h2 id="八股-28"><a href="#八股-28" class="headerlink" title="八股"></a>八股</h2><h3 id="压缩css"><a href="#压缩css" class="headerlink" title="压缩css"></a>压缩css</h3><ul>
+<li>闭包思想，提取思想（先写一个版本，再提取）。</li>
+</ul>
+<h3 id="并发请求"><a href="#并发请求" class="headerlink" title="并发请求"></a>并发请求</h3><h3 id="Promise-retry-promise-count-time"><a href="#Promise-retry-promise-count-time" class="headerlink" title="Promise.retry(promise, count, time)"></a>Promise.retry(promise, count, time)</h3><ul>
+<li>请求失败后,每隔多少秒重新请求一次,直到上限</li>
+</ul>
+<h3 id="Promise-any-1"><a href="#Promise-any-1" class="headerlink" title="Promise.any"></a>Promise.any</h3><ul>
+<li>和Promise.all相反,有一个成功就返回,所有失败返回所有失败的数组.</li>
+</ul>
+<h3 id="Promise数组顺序执行"><a href="#Promise数组顺序执行" class="headerlink" title="Promise数组顺序执行"></a>Promise数组顺序执行</h3><h3 id="编写复杂的深拷贝"><a href="#编写复杂的深拷贝" class="headerlink" title="编写复杂的深拷贝"></a>编写复杂的深拷贝</h3><h3 id="数组扁平化五种方法"><a href="#数组扁平化五种方法" class="headerlink" title="数组扁平化五种方法"></a>数组扁平化五种方法</h3><h3 id="防抖节流"><a href="#防抖节流" class="headerlink" title="防抖节流"></a>防抖节流</h3><h3 id="选择器优先级"><a href="#选择器优先级" class="headerlink" title="选择器优先级"></a>选择器优先级</h3><ol>
+<li>！important</li>
+<li>内联样式：style&#x3D; “color: red”</li>
+<li>id选择器：#</li>
+<li>类、伪类、属性选择器</li>
+<li>元素（标签）、伪元素选择器。</li>
+<li>通配符、子代后代选择器</li>
+</ol>
+<ul>
+<li>额外点：</li>
+</ul>
+<ol>
+<li>优先级高的生效，优先级相同时候，后定义的生效。</li>
+<li>内联样式 》 内部样式 》 外部样式 》 浏览器默认样式</li>
+</ol>
+<h3 id="可-不可继承属性"><a href="#可-不可继承属性" class="headerlink" title="可&#x2F;不可继承属性"></a>可&#x2F;不可继承属性</h3><ol>
+<li>可：font-size、font-weight、font-family、文本color、visibility</li>
+<li>不可：盒子模型、display、background、定位。</li>
+</ol>
+<h3 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h3><ol>
+<li>none</li>
+<li>block：独占一行，可以设置宽高，宽默认为整个父元素高度由子元素撑开。</li>
+<li>inline：不独占一行，不可以设置宽高，都由子元素撑开。</li>
+<li>inherit</li>
+</ol>
+<h3 id="两栏布局"><a href="#两栏布局" class="headerlink" title="两栏布局"></a>两栏布局</h3><h1 id="3-16"><a href="#3-16" class="headerlink" title="3.16"></a>3.16</h1><h2 id="算法-30"><a href="#算法-30" class="headerlink" title="算法"></a>算法</h2><h3 id="回文子串-1"><a href="#回文子串-1" class="headerlink" title="回文子串"></a>回文子串</h3><h3 id="最长回文子串"><a href="#最长回文子串" class="headerlink" title="最长回文子串"></a>最长回文子串</h3><h2 id="八股-29"><a href="#八股-29" class="headerlink" title="八股"></a>八股</h2><h3 id="umd格式"><a href="#umd格式" class="headerlink" title="umd格式"></a>umd格式</h3><ul>
+<li>umd格式是一个通用的模块格式，兼容不同的模块系统，让ns可以运行在多个环境中。比如 浏览器 nodejs。</li>
+<li>写法是一个立即执行函数，把js代码包裹在函数中。</li>
+</ul>
+<h3 id="为什么qiankun要用umd格式"><a href="#为什么qiankun要用umd格式" class="headerlink" title="为什么qiankun要用umd格式"></a>为什么qiankun要用umd格式</h3><ol>
+<li>核心：通过闭包隔离模块代码，避免子应用变量与全局或者其他子应用冲突。<br>2.（<br>动态加载，script标签<br>qiankun需要子应用对外暴露生命周期钩子，umd格式可以方便对外暴露</li>
+</ol>
+<p>依赖共享）</p>
+<h3 id="写lodash-get"><a href="#写lodash-get" class="headerlink" title="写lodash.get"></a>写lodash.get</h3><h3 id="手写promise-all"><a href="#手写promise-all" class="headerlink" title="手写promise.all"></a>手写promise.all</h3><h3 id="transition、animation"><a href="#transition、animation" class="headerlink" title="transition、animation"></a>transition、animation</h3><ol>
+<li>transtion是过度，需要触发条件，只有一个开始帧和结束帧。</li>
+<li>animation功能更强大，不需要触发条件，多少秒后执行，有多个关键帧。</li>
+</ol>
+<h3 id="link和-import区别"><a href="#link和-import区别" class="headerlink" title="link和@import区别"></a>link和@import区别</h3><ol>
+<li>link单独开启线程去加载css资源，@import会阻塞GUI线程，让GUI线程去加载资源。</li>
+</ol>
+<h3 id="伪元素和伪类区别"><a href="#伪元素和伪类区别" class="headerlink" title="伪元素和伪类区别"></a>伪元素和伪类区别</h3><ul>
+<li>伪元素：元素的特定一部分，<strong>这部分不是元素，不存在</strong>，比如：某一个元素的前面后面插入内容、第一行。</li>
+<li>伪类：作用于特定状态的<strong>元素</strong>，比如：鼠标悬停、结构状态第一个孩子。</li>
+</ul>
+<h3 id="requestAnimationFrame"><a href="#requestAnimationFrame" class="headerlink" title="requestAnimationFrame"></a>requestAnimationFrame</h3><ol>
+<li>接受一个回调函数，该函数会在下次回流前调用</li>
+<li>回流是根据浏览器刷新频率触发，60hz就是一秒刷新60次，一秒60次回流，也就调用该函数六十次。</li>
+<li>优点：<br>动画更流畅，不会掉帧、卡顿。<br>cpu节能，页面隐藏时候setTimeout会继续执行，requestAnimation会暂停动画。</li>
+</ol>
+<h3 id="为什么用transition改变元素位置"><a href="#为什么用transition改变元素位置" class="headerlink" title="为什么用transition改变元素位置"></a>为什么用transition改变元素位置</h3><ul>
+<li>不会触发回流重绘，只会触发<strong>复合</strong>。可以单独抽离出合成层，利用GPU加速渲染。</li>
+</ul>
+<h2 id="css3新特性-9997"><a href="#css3新特性-9997" class="headerlink" title="css3新特性 &#9997;"></a>css3新特性 &#9997;</h2><ol>
+<li>属性选择器、伪类选择器、伪元素选择器</li>
+<li>flex弹性布局</li>
+<li>transition、animation</li>
+<li>媒体查询、em、rem</li>
+<li>border-radius圆角边框、box-shadow、</li>
+</ol>
+<h3 id="less预处理"><a href="#less预处理" class="headerlink" title="less预处理"></a>less预处理</h3><ul>
+<li>css上封装了一层</li>
+<li>函数运算、变量、嵌套、模块</li>
+</ul>
+<h3 id="单行文本溢出、多行文本溢出"><a href="#单行文本溢出、多行文本溢出" class="headerlink" title="单行文本溢出、多行文本溢出"></a>单行文本溢出、多行文本溢出</h3><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><h3 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h3><ul>
+<li>display：flow-root；</li>
+</ul>
+<h3 id="clearfix"><a href="#clearfix" class="headerlink" title="clearfix"></a>clearfix</h3><p>.clearfix::after,<br>.clearfix::before{<br>  content:””,<br>  display:table,<br>  clear:both,<br>}</p>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><h3 id="层叠顺序、层叠上下文"><a href="#层叠顺序、层叠上下文" class="headerlink" title="层叠顺序、层叠上下文"></a>层叠顺序、层叠上下文</h3><h3 id="判断元素在上还是在下"><a href="#判断元素在上还是在下" class="headerlink" title="判断元素在上还是在下"></a>判断元素在上还是在下</h3><h3 id="css单位"><a href="#css单位" class="headerlink" title="css单位"></a>css单位</h3><h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><ol>
+<li>选择器优先级</li>
+<li>可继承和不可继承的属性</li>
+<li>display属性</li>
+<li>隐藏元素的方法，三者区别</li>
+<li>link和@import区别</li>
+<li>transition和animation区别</li>
+<li>伪元素和伪类的区别</li>
+<li>requestAnimationFrame的理解</li>
+<li>对盒模型的理解（IE、标准盒子模型，如何设置）</li>
+<li>为什么用transition改变元素位置</li>
+<li>CSS3的新特性</li>
+<li>css处理器</li>
+<li>单行多行文本溢出</li>
+<li>媒体查询</li>
+<li>z-index什么时候失效</li>
+<li>浮动元素的特点和缺点</li>
+<li>BFC</li>
+<li>clearfix</li>
+<li>定位</li>
+<li>元素层叠顺序</li>
+<li>层叠上下文</li>
+<li>比较两个元素谁在上、谁在下</li>
+<li>css单位</li>
+<li>两栏布局</li>
+<li>三栏布局</li>
+<li>垂直居中</li>
+<li>flex布局</li>
+</ol>
+<h1 id="3-17"><a href="#3-17" class="headerlink" title="3.17"></a>3.17</h1><h2 id="算法-手写"><a href="#算法-手写" class="headerlink" title="算法 + 手写"></a>算法 + 手写</h2><h3 id="每隔五秒打印一个数字，可以控制中断"><a href="#每隔五秒打印一个数字，可以控制中断" class="headerlink" title="每隔五秒打印一个数字，可以控制中断"></a>每隔五秒打印一个数字，可以控制中断</h3><h3 id="每隔一秒打印一个数字1234"><a href="#每隔一秒打印一个数字1234" class="headerlink" title="每隔一秒打印一个数字1234"></a>每隔一秒打印一个数字1234</h3><h3 id="循环打印红绿灯"><a href="#循环打印红绿灯" class="headerlink" title="循环打印红绿灯"></a>循环打印红绿灯</h3><h3 id="递增三元组"><a href="#递增三元组" class="headerlink" title="递增三元组"></a>递增三元组</h3><h3 id="列表转换为树"><a href="#列表转换为树" class="headerlink" title="列表转换为树"></a>列表转换为树</h3><h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><h2 id="八股-30"><a href="#八股-30" class="headerlink" title="八股"></a>八股</h2><h3 id="三栏布局"><a href="#三栏布局" class="headerlink" title="三栏布局"></a>三栏布局</h3><ul>
+<li>display: flex;centercenter;</li>
+<li>float:left,right; overflow:hidden</li>
+<li>float,margin-left,margin-right.</li>
+<li>position relative; absolute left right 0</li>
+</ul>
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><ul>
+<li>display:flex, justify-content align-items</li>
+<li>position: relative absolute top bottom left right 0   margin auto</li>
+<li>position: 50% 50% transform translate</li>
+</ul>
+<h3 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h3><h3 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h3><h3 id="git如何解决冲突"><a href="#git如何解决冲突" class="headerlink" title="git如何解决冲突"></a>git如何解决冲突</h3><h3 id="常见git指令"><a href="#常见git指令" class="headerlink" title="常见git指令"></a>常见git指令</h3><h3 id="git如何回滚"><a href="#git如何回滚" class="headerlink" title="git如何回滚"></a>git如何回滚</h3><h3 id="git-rebase和git-merge区别"><a href="#git-rebase和git-merge区别" class="headerlink" title="git rebase和git merge区别"></a>git rebase和git merge区别</h3><h3 id="vue-config-js"><a href="#vue-config-js" class="headerlink" title="vue.config.js"></a>vue.config.js</h3><ul>
+<li>webpack的配置文件</li>
+</ul>
+<h3 id="微前端的接入"><a href="#微前端的接入" class="headerlink" title="微前端的接入"></a>微前端的接入</h3><h3 id="路由级别按钮级别的权限控制"><a href="#路由级别按钮级别的权限控制" class="headerlink" title="路由级别按钮级别的权限控制"></a>路由级别按钮级别的权限控制</h3><h3 id="复习项目亮点-微前端"><a href="#复习项目亮点-微前端" class="headerlink" title="复习项目亮点 + 微前端"></a>复习项目亮点 + 微前端</h3><h1 id="3-18"><a href="#3-18" class="headerlink" title="3.18"></a>3.18</h1><h2 id="算法-31"><a href="#算法-31" class="headerlink" title="算法"></a>算法</h2><h3 id="翻转字符串中的单词"><a href="#翻转字符串中的单词" class="headerlink" title="翻转字符串中的单词"></a>翻转字符串中的单词</h3><h3 id="字符串的最大公因子"><a href="#字符串的最大公因子" class="headerlink" title="字符串的最大公因子"></a>字符串的最大公因子</h3><ul>
+<li>let gcd &#x3D; (a,b) &#x3D;&gt; b &#x3D;&#x3D; 0 ? b : gcd(b, a % b);</li>
+</ul>
+<h3 id="deepCopy"><a href="#deepCopy" class="headerlink" title="deepCopy"></a>deepCopy</h3><h3 id="lodash-get"><a href="#lodash-get" class="headerlink" title="lodash.get"></a>lodash.get</h3><h3 id="字符串模板引擎"><a href="#字符串模板引擎" class="headerlink" title="字符串模板引擎"></a>字符串模板引擎</h3><h3 id="寄生式组合继承"><a href="#寄生式组合继承" class="headerlink" title="寄生式组合继承"></a>寄生式组合继承</h3><h3 id="岛屿数量"><a href="#岛屿数量" class="headerlink" title="岛屿数量"></a>岛屿数量</h3><h3 id="Lazyman"><a href="#Lazyman" class="headerlink" title="Lazyman"></a>Lazyman</h3><h3 id="请求五秒"><a href="#请求五秒" class="headerlink" title="请求五秒"></a>请求五秒</h3><h2 id="八股-31"><a href="#八股-31" class="headerlink" title="八股"></a>八股</h2><h3 id="subString和slice区别"><a href="#subString和slice区别" class="headerlink" title="subString和slice区别"></a>subString和slice区别</h3><p>1、slice：两个参数分别表示截取字符串的起始位置和结束位置，如果大于0，则从前面计数，如果小于0，则从后面计数，如果省略第二个参数，则会截取到字符串的尾部。<br>2. substring：两个参数分别表示字符串的起始位置和结束位置，所不同的是substring中如果结束位置在起始位置之前，则会自动将其调换后截取，当参数小于0 时按0处理，如果省略第二个参数，则会截取到字符串的尾部</p>
+<h3 id="string的replace方法-10024"><a href="#string的replace方法-10024" class="headerlink" title="string的replace方法 &#10024;"></a>string的replace方法 &#10024;</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46658751/article/details/123390095">https://blog.csdn.net/qq_46658751/article/details/123390095</a></li>
+</ul>
+<ol>
+<li>replace(字符串，字符串)，只能替换一次</li>
+<li>replace（正则&#x2F;g，字符串）多次替换</li>
+<li>replace（正则，函数）核心用法，函数第一个参数是匹配到的子串，第二个是起始索引，第三个是字符串本身。如果有捕获器的值则插入在第二个参数，起始索引变第三个参数，字符串本身变第四个参数。</li>
+</ol>
+<h3 id="微前端-项目准备滴滴二面"><a href="#微前端-项目准备滴滴二面" class="headerlink" title="微前端 项目准备滴滴二面"></a>微前端 项目准备滴滴二面</h3><h3 id="滴滴二面"><a href="#滴滴二面" class="headerlink" title="滴滴二面"></a>滴滴二面</h3><h1 id="3-19"><a href="#3-19" class="headerlink" title="3.19"></a>3.19</h1><h2 id="算法-32"><a href="#算法-32" class="headerlink" title="算法"></a>算法</h2><h3 id="最大二叉树"><a href="#最大二叉树" class="headerlink" title="最大二叉树"></a>最大二叉树</h3><h3 id="随机链表的复制-1"><a href="#随机链表的复制-1" class="headerlink" title="随机链表的复制"></a>随机链表的复制</h3><h3 id="第N个泰波那契"><a href="#第N个泰波那契" class="headerlink" title="第N个泰波那契"></a>第N个泰波那契</h3><h3 id="K和数对的最大数目"><a href="#K和数对的最大数目" class="headerlink" title="K和数对的最大数目"></a>K和数对的最大数目</h3><h3 id="盛最多水的容器"><a href="#盛最多水的容器" class="headerlink" title="盛最多水的容器"></a>盛最多水的容器</h3><h2 id="八股-32"><a href="#八股-32" class="headerlink" title="八股"></a>八股</h2><h3 id="回调函数改写成aysnc-await"><a href="#回调函数改写成aysnc-await" class="headerlink" title="回调函数改写成aysnc await"></a>回调函数改写成aysnc await</h3><h3 id="vue3的weakmap"><a href="#vue3的weakmap" class="headerlink" title="vue3的weakmap"></a>vue3的weakmap</h3><h3 id="从A页面到B页面的优化"><a href="#从A页面到B页面的优化" class="headerlink" title="从A页面到B页面的优化"></a>从A页面到B页面的优化</h3><ol>
+<li>link标签，preload预加载资源，当页面使用该资源时候可以更快响应，也避免了资源加载和解析html冲突；prefetch未来可能用到的资源，网络线程空闲时候可以加载；dns-prefetch，提前解析域名(一是B页面写，二三是A页面写)。B页面 script标签的async defer</li>
+<li>B页面http2.0，服务端主动推送</li>
+<li>浏览器缓存</li>
+<li>单页面应用，全局状态管理共享数据。</li>
+<li>webpack代码分割</li>
+<li>web worker 处理复杂操作</li>
+</ol>
+<h3 id="封装组件和正常写组件区别"><a href="#封装组件和正常写组件区别" class="headerlink" title="封装组件和正常写组件区别"></a>封装组件和正常写组件区别</h3><ol>
+<li>复用性</li>
+</ol>
+<ul>
+<li>props、事件、插槽实现复用，适合多个场景。</li>
+</ul>
+<ol start="2">
+<li>可维护性</li>
+</ol>
+<ul>
+<li>集中处理逻辑修改</li>
+</ul>
+<ol start="3">
+<li>抽象性</li>
+</ol>
+<ul>
+<li>封装的组件隐藏内部的细节，对外只提供接口功能。</li>
+</ul>
+<h3 id="如何封装一个组件"><a href="#如何封装一个组件" class="headerlink" title="如何封装一个组件"></a>如何封装一个组件</h3><ul>
+<li>以成员选择器为例子。</li>
+</ul>
+<ol>
+<li>确定组件的职责，展示的内容、交互的功能。</li>
+<li>组件的输入：定义props文件有哪些数据，插槽（插入图标），事件的绑定与父组件通信。</li>
+<li>提供默认值。</li>
+<li>组件内部，请求成员数据，根据传入的参数。如何输出：输出到页面的内容+样式+交互输出的数据。</li>
+<li>组件挂载是否要关闭定时器、关闭监听等等。</li>
+</ol>
+<h3 id="如何设计一个微前端框架"><a href="#如何设计一个微前端框架" class="headerlink" title="如何设计一个微前端框架"></a>如何设计一个微前端框架</h3><ul>
+<li>（qiankun源码思路）微前端面对的两个共性问题，应用的加载和切换，应用的通信和隔离。</li>
+</ul>
+<ol>
+<li>每个子应用有的挂载、卸载，首先可以定义他们的状态；</li>
+<li>收集子应用注册的信息，加载的位置，以及触发加载的条件。</li>
+<li>监听用户的操作、路由的变化每次去计算各个应用的状态，哪些要加载、哪些挂载、哪些卸载。</li>
+<li>通信：全局事件总线、全局状态库、借助localStorage、indexDB等等。</li>
+<li>隔离：js三种沙箱、css隔离。</li>
+</ol>
+<h3 id="滴滴三面"><a href="#滴滴三面" class="headerlink" title="滴滴三面"></a>滴滴三面</h3><h3 id="传音测评"><a href="#传音测评" class="headerlink" title="传音测评"></a>传音测评</h3><h1 id="3-20"><a href="#3-20" class="headerlink" title="3.20"></a>3.20</h1><h2 id="算法-33"><a href="#算法-33" class="headerlink" title="算法"></a>算法</h2><h3 id="拥有最多糖果的孩子"><a href="#拥有最多糖果的孩子" class="headerlink" title="拥有最多糖果的孩子"></a>拥有最多糖果的孩子</h3><h3 id="翻转元音字母"><a href="#翻转元音字母" class="headerlink" title="翻转元音字母"></a>翻转元音字母</h3><h3 id="爬楼梯"><a href="#爬楼梯" class="headerlink" title="爬楼梯"></a>爬楼梯</h3><h3 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h3><h3 id="二叉树的最小深度"><a href="#二叉树的最小深度" class="headerlink" title="二叉树的最小深度"></a>二叉树的最小深度</h3><h3 id="两数相加II"><a href="#两数相加II" class="headerlink" title="两数相加II"></a>两数相加II</h3><h3 id="链表翻转"><a href="#链表翻转" class="headerlink" title="链表翻转"></a>链表翻转</h3><h3 id="promisify"><a href="#promisify" class="headerlink" title="promisify"></a>promisify</h3><h2 id="八股-33"><a href="#八股-33" class="headerlink" title="八股"></a>八股</h2><h3 id="水滴笔试"><a href="#水滴笔试" class="headerlink" title="水滴笔试"></a>水滴笔试</h3><h1 id="3-21"><a href="#3-21" class="headerlink" title="3.21"></a>3.21</h1><h2 id="算法-34"><a href="#算法-34" class="headerlink" title="算法"></a>算法</h2><h3 id="用栈实现队列"><a href="#用栈实现队列" class="headerlink" title="用栈实现队列"></a>用栈实现队列</h3><h3 id="用队列实现栈"><a href="#用队列实现栈" class="headerlink" title="用队列实现栈"></a>用队列实现栈</h3><h3 id="解析URL"><a href="#解析URL" class="headerlink" title="解析URL"></a>解析URL</h3><h3 id="四数之和"><a href="#四数之和" class="headerlink" title="四数之和"></a>四数之和</h3><h3 id="重排链表-2"><a href="#重排链表-2" class="headerlink" title="重排链表"></a>重排链表</h3><ul>
+<li>快慢指针，翻转链表，模拟。</li>
+</ul>
+<h3 id="不同路径"><a href="#不同路径" class="headerlink" title="不同路径"></a>不同路径</h3><h3 id="最小路径和"><a href="#最小路径和" class="headerlink" title="最小路径和"></a>最小路径和</h3><h3 id="a请求到后立马赋值，b请求到要等a赋值后再赋值。"><a href="#a请求到后立马赋值，b请求到要等a赋值后再赋值。" class="headerlink" title="a请求到后立马赋值，b请求到要等a赋值后再赋值。"></a>a请求到后立马赋值，b请求到要等a赋值后再赋值。</h3><h2 id="八股-34"><a href="#八股-34" class="headerlink" title="八股"></a>八股</h2><h3 id="git常见指令"><a href="#git常见指令" class="headerlink" title="git常见指令"></a>git常见指令</h3><h3 id="git如何解决冲突-1"><a href="#git如何解决冲突-1" class="headerlink" title="git如何解决冲突"></a>git如何解决冲突</h3><h3 id="git如何回滚-1"><a href="#git如何回滚-1" class="headerlink" title="git如何回滚"></a>git如何回滚</h3><h3 id="git-merge、git-rebase区别"><a href="#git-merge、git-rebase区别" class="headerlink" title="git merge、git rebase区别"></a>git merge、git rebase区别</h3><h3 id="xss、csrf攻击"><a href="#xss、csrf攻击" class="headerlink" title="xss、csrf攻击"></a>xss、csrf攻击</h3><ul>
+<li>xss攻击：避免使用innerHTML。</li>
+</ul>
+<h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><ul>
+<li>缓存位置有内存和磁盘。页面刷新可以从内存和磁盘中获取，页面关闭再打开都从磁盘取。</li>
+<li>css文件一般不会变，会存到内存中。</li>
+</ul>
+<h3 id="cache-control缓存字段"><a href="#cache-control缓存字段" class="headerlink" title="cache-control缓存字段"></a>cache-control缓存字段</h3><h3 id="浏览器组成-2"><a href="#浏览器组成-2" class="headerlink" title="浏览器组成"></a>浏览器组成</h3><ol>
+<li>用户界面、浏览器主引擎、渲染引擎、js引擎、网络、数据存储。</li>
+</ol>
+<h3 id="浏览器渲染过程"><a href="#浏览器渲染过程" class="headerlink" title="浏览器渲染过程"></a>浏览器渲染过程</h3><ol>
+<li>渲染树只包括要展示的节点，像<code>&lt;head&gt;、&lt;script&gt;</code>不会在渲染树中。</li>
+</ol>
+<h1 id="3-22"><a href="#3-22" class="headerlink" title="3.22"></a>3.22</h1><h2 id="算法-35"><a href="#算法-35" class="headerlink" title="算法"></a>算法</h2><h3 id="LRU缓存-1"><a href="#LRU缓存-1" class="headerlink" title="LRU缓存"></a>LRU缓存</h3><h3 id="从前序遍历和中序遍历构建二叉树"><a href="#从前序遍历和中序遍历构建二叉树" class="headerlink" title="从前序遍历和中序遍历构建二叉树"></a>从前序遍历和中序遍历构建二叉树</h3><h3 id="使用最小花费爬楼梯"><a href="#使用最小花费爬楼梯" class="headerlink" title="使用最小花费爬楼梯"></a>使用最小花费爬楼梯</h3><h3 id="不同路径II"><a href="#不同路径II" class="headerlink" title="不同路径II"></a>不同路径II</h3><h3 id="删除字符串中的相邻重复项"><a href="#删除字符串中的相邻重复项" class="headerlink" title="删除字符串中的相邻重复项"></a>删除字符串中的相邻重复项</h3><h3 id="每隔千分位小数点"><a href="#每隔千分位小数点" class="headerlink" title="每隔千分位小数点"></a>每隔千分位小数点</h3><h3 id="删除一个元素后全为1的最长子数组"><a href="#删除一个元素后全为1的最长子数组" class="headerlink" title="删除一个元素后全为1的最长子数组"></a>删除一个元素后全为1的最长子数组</h3><h2 id="八股-35"><a href="#八股-35" class="headerlink" title="八股"></a>八股</h2><p>&#x2F;&#x2F; 复习，并把问题扔给deepseek看能不能学新东西，要活跃脑子。</p>
+<ul>
+<li>浏览器原理</li>
+<li>计算机网络、操作系统</li>
+<li>Ts</li>
+</ul>
+<h3 id="如何优化浏览器渲染过程"><a href="#如何优化浏览器渲染过程" class="headerlink" title="如何优化浏览器渲染过程"></a>如何优化浏览器渲染过程</h3><ol>
+<li>js: script标签写在body后面. 用async和defer.</li>
+<li>css:用link引入,开启一个线程去加载,不阻塞GUI渲染线程. @import:GUI线程会停止渲染去加载资源. css少的话就写在style标签中直接GUI渲染.</li>
+<li>vue，虚拟DOM，diff算法，减少对真实DOM的操作次数。</li>
+<li>事件委托：减少事件处理器的数量。</li>
+<li>网络：http2.0并发请求、主动推送、缓存。</li>
+<li>webpack：模块拆分、压缩代码。</li>
+<li>虚拟列表、按需加载。</li>
+</ol>
+<!-- 3. html:减少嵌套层次,减少回流重绘操作 -->
+
+<h3 id="如何减少回流重绘"><a href="#如何减少回流重绘" class="headerlink" title="如何减少回流重绘"></a>如何减少回流重绘</h3><ol>
+<li>操作低层次的DOM.</li>
+<li>脱离文档流,减少对其他元素影响.</li>
+<li>将DOM读写操作分别放到一起,浏览器的渲染队列机制.</li>
+<li>一些css属性形成新的合成层: transform,opacity等等.浏览器把这些变化交给GPU处理(不是所有合成层都给GPU,只有动画视觉效果时候交给GPU),GPU直接在显存中更改元素显示位置,无需CPU进行布局绘制的计算.</li>
+<li>不要使用table布局，一个小的改动可能导致整个table重新布局。</li>
+<li><strong>documentFragment</strong>：避免频繁操作DOM，可以创建一个文档片段documentFragment，在它上面应用所有DOM操作，最后再把它添加到文档中</li>
+</ol>
+<h3 id="DocumentFragments-10024-2"><a href="#DocumentFragments-10024-2" class="headerlink" title="DocumentFragments &#10024;"></a>DocumentFragments &#10024;</h3><ul>
+<li>轻量级、批量操作DOM元素，临时存储的容器。</li>
+<li>DocumentFragments存在于内存中，不是主 DOM 树的一部分，将子元素插入到文档片段时不会引起页面回流。通常的用例是创建文档片段，元素附加到文档片段，然后将文档片段附加到 DOM 树。</li>
+</ul>
+<h3 id="为什么有宏任务队列和微任务队列两个？"><a href="#为什么有宏任务队列和微任务队列两个？" class="headerlink" title="为什么有宏任务队列和微任务队列两个？"></a>为什么有宏任务队列和微任务队列两个？</h3><ul>
+<li>控制任务的优先级，微任务优先级别更高。</li>
+</ul>
+<h3 id="301、302状态码浏览器处理"><a href="#301、302状态码浏览器处理" class="headerlink" title="301、302状态码浏览器处理"></a>301、302状态码浏览器处理</h3><ul>
+<li>301永久重定向，浏览器会缓存重定向的url，后续请求直接请求新的url。</li>
+<li>302临时重定向，浏览器不会缓存结果，每次还是先请求原始URL，根据结果处理。</li>
+</ul>
+<h3 id="BFC-1"><a href="#BFC-1" class="headerlink" title="BFC"></a>BFC</h3><ul>
+<li>display：flow-root；</li>
+</ul>
+<h3 id="复习浏览器原理"><a href="#复习浏览器原理" class="headerlink" title="复习浏览器原理"></a>复习浏览器原理</h3><h3 id="复习Ts"><a href="#复习Ts" class="headerlink" title="复习Ts"></a>复习Ts</h3><h1 id="3-23"><a href="#3-23" class="headerlink" title="3.23"></a>3.23</h1><h2 id="算法-36"><a href="#算法-36" class="headerlink" title="算法"></a>算法</h2><h3 id="整数拆分"><a href="#整数拆分" class="headerlink" title="整数拆分"></a>整数拆分</h3><h3 id="不同的二叉搜索树"><a href="#不同的二叉搜索树" class="headerlink" title="不同的二叉搜索树"></a>不同的二叉搜索树</h3><h3 id="子数组最大平均数I"><a href="#子数组最大平均数I" class="headerlink" title="子数组最大平均数I"></a>子数组最大平均数I</h3><h3 id="定长子串元音的最大数目"><a href="#定长子串元音的最大数目" class="headerlink" title="定长子串元音的最大数目"></a>定长子串元音的最大数目</h3><h3 id="合并两个有序链表-1"><a href="#合并两个有序链表-1" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h3><h3 id="有序数组转换为二叉搜索树"><a href="#有序数组转换为二叉搜索树" class="headerlink" title="有序数组转换为二叉搜索树"></a>有序数组转换为二叉搜索树</h3><h3 id="数组扁平化五种"><a href="#数组扁平化五种" class="headerlink" title="数组扁平化五种"></a>数组扁平化五种</h3><h3 id="js手写全选"><a href="#js手写全选" class="headerlink" title="js手写全选"></a>js手写全选</h3><h3 id="js手写todos"><a href="#js手写todos" class="headerlink" title="js手写todos"></a>js手写todos</h3><h2 id="八股-36"><a href="#八股-36" class="headerlink" title="八股"></a>八股</h2><h3 id="http1-0和1-1区别"><a href="#http1-0和1-1区别" class="headerlink" title="http1.0和1.1区别"></a>http1.0和1.1区别</h3><ul>
+<li>更多状态码，可以处理更多错误</li>
+</ul>
+<h3 id="http1-1的优化"><a href="#http1-1的优化" class="headerlink" title="http1.1的优化"></a>http1.1的优化</h3><ol>
+<li>浏览器缓存</li>
+<li>按需请求</li>
+<li>请求压缩</li>
+</ol>
+<h3 id="https优化-1"><a href="#https优化-1" class="headerlink" title="https优化"></a>https优化</h3><ol>
+<li>tls1.2 &#x3D;》1.3，第三次握手后就可以通信，升级到ECDHE算法：支持前向保密。</li>
+<li>验证证书有效性：不要让客户端去轮询问CA有效性，由服务端请求证书有效性并且用CA加密，让服务端无法篡改，再发送给客户端。</li>
+<li>会话复用：类似sesstion、token的机制。</li>
+</ol>
+<h3 id="RSA算法"><a href="#RSA算法" class="headerlink" title="RSA算法"></a>RSA算法</h3><ul>
+<li>攻击者只能得到公钥（包括大整数和另一个随机数），无法得到欧拉函数，而计算私钥需要欧拉函数和公钥，我们很难将大整数拆成两个随机数去计算欧拉函数。</li>
+</ul>
+<h3 id="ECDHE算法"><a href="#ECDHE算法" class="headerlink" title="ECDHE算法"></a>ECDHE算法</h3><ul>
+<li>椭圆曲线可以是x轴对称，找到切线切点p，与椭圆曲线还有个交点（一般是三个交点，切线就两个交点）的x轴对称位置就是2p。</li>
+<li>我们很容易用p推出6p，但很难用6p推出p（相当于房间的皮球踢出去后很难复原他的轨迹路线）。</li>
+</ul>
+<h3 id="quic协议如何确保可靠性"><a href="#quic协议如何确保可靠性" class="headerlink" title="quic协议如何确保可靠性"></a>quic协议如何确保可靠性</h3><ol>
+<li><strong>递增、乱序确认</strong>：每个请求报文的id都是递增的，即使是重传的也是递增的（和之前的不一样），服务端可以<strong>乱序确认</strong>，滑动窗口后移，解决了队头阻塞。</li>
+<li><strong>streamID + 偏移量</strong>：确保数据的有序性，每个数据虽然重传后id不一样，但偏移量是不变的。</li>
+</ol>
+<h3 id="赛马问题"><a href="#赛马问题" class="headerlink" title="赛马问题"></a>赛马问题</h3><h3 id="8L水杯、6L水杯如何倒出4L水杯"><a href="#8L水杯、6L水杯如何倒出4L水杯" class="headerlink" title="8L水杯、6L水杯如何倒出4L水杯"></a>8L水杯、6L水杯如何倒出4L水杯</h3><h3 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h3><h1 id="3-24"><a href="#3-24" class="headerlink" title="3.24"></a>3.24</h1><h2 id="算法-37"><a href="#算法-37" class="headerlink" title="算法"></a>算法</h2><h3 id="最大连续1的个数"><a href="#最大连续1的个数" class="headerlink" title="最大连续1的个数"></a>最大连续1的个数</h3><h3 id="删除一个元素后全为1的最长子数组-1"><a href="#删除一个元素后全为1的最长子数组-1" class="headerlink" title="删除一个元素后全为1的最长子数组"></a>删除一个元素后全为1的最长子数组</h3><h3 id="二叉搜索树中第K大的数"><a href="#二叉搜索树中第K大的数" class="headerlink" title="二叉搜索树中第K大的数"></a>二叉搜索树中第K大的数</h3><h3 id="K个一组翻转链表"><a href="#K个一组翻转链表" class="headerlink" title="K个一组翻转链表"></a>K个一组翻转链表</h3><h3 id="01背包四个问题"><a href="#01背包四个问题" class="headerlink" title="01背包四个问题"></a>01背包四个问题</h3><h3 id="虚拟DOM转换为真实DOM"><a href="#虚拟DOM转换为真实DOM" class="headerlink" title="虚拟DOM转换为真实DOM"></a>虚拟DOM转换为真实DOM</h3><h2 id="八股-37"><a href="#八股-37" class="headerlink" title="八股"></a>八股</h2><ul>
+<li>webpack、vite，项目亮点，面经。</li>
+</ul>
+<h3 id="盒子模型-1"><a href="#盒子模型-1" class="headerlink" title="盒子模型"></a>盒子模型</h3><ul>
+<li>IE盒子模型的width、<strong>height</strong>都会包含三个。</li>
+</ul>
+<h3 id="粘性定位"><a href="#粘性定位" class="headerlink" title="粘性定位"></a>粘性定位</h3><ul>
+<li>必须设置偏移量才有效</li>
+</ul>
+<h3 id="虚拟内存-1"><a href="#虚拟内存-1" class="headerlink" title="虚拟内存"></a>虚拟内存</h3><h3 id="讲讲ts是怎么转化为js的？使用什么工具"><a href="#讲讲ts是怎么转化为js的？使用什么工具" class="headerlink" title="讲讲ts是怎么转化为js的？使用什么工具"></a>讲讲ts是怎么转化为js的？使用什么工具</h3><ol>
+<li>ts-loader：调用的tsc工具（TypeScript 编译器），完整编译流程，包括类型检查和语法转换。</li>
+<li>babel：Babel 仅移除类型注解并转换语法，不会进行类型检查。</li>
+</ol>
+<h3 id="babel原理是什么"><a href="#babel原理是什么" class="headerlink" title="babel原理是什么"></a>babel原理是什么</h3><ul>
+<li>babel原理：解析生成AST语法树，语法树进行转换，生成js的语法树，生成js代码。类型注释，接口，类型别名移出掉，枚举转换为立即执行函数生成的对象。<br>（ts类型检测是静态的，只在开发阶段有效，编译后的js不再有类型检测）</li>
+</ul>
+<h3 id="bundle、chunk"><a href="#bundle、chunk" class="headerlink" title="bundle、chunk"></a>bundle、chunk</h3><h3 id="css复习"><a href="#css复习" class="headerlink" title="css复习"></a>css复习</h3><h3 id="webpack、vite复习"><a href="#webpack、vite复习" class="headerlink" title="webpack、vite复习"></a>webpack、vite复习</h3><h3 id="如何封装一个组件-1"><a href="#如何封装一个组件-1" class="headerlink" title="如何封装一个组件"></a>如何封装一个组件</h3><h3 id="如何设计一个微前端"><a href="#如何设计一个微前端" class="headerlink" title="如何设计一个微前端"></a>如何设计一个微前端</h3><ul>
+<li>就说single-spa的源码</li>
+</ul>
+<h3 id="js字符占多少字节"><a href="#js字符占多少字节" class="headerlink" title="js字符占多少字节"></a>js字符占多少字节</h3><ul>
+<li>utf16编码，大部分是两个字节，小部分是四个字节。</li>
+<li>1B（字节）&#x3D; 8b（位）</li>
+<li>1KB &#x3D; 2的10次方B</li>
+</ul>
+<h3 id="如何快速判断几十个数中存在某个数"><a href="#如何快速判断几十个数中存在某个数" class="headerlink" title="如何快速判断几十个数中存在某个数"></a>如何快速判断几十个数中存在某个数</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1yvBKYoEnt/?spm_id_from=333.1007.tianma.1-2-2.click&vd_source=9b9c9c2844427b792423aada902b836b">https://www.bilibili.com/video/BV1yvBKYoEnt/?spm_id_from=333.1007.tianma.1-2-2.click&amp;vd_source=9b9c9c2844427b792423aada902b836b</a></p>
+<h1 id="3-25"><a href="#3-25" class="headerlink" title="3.25"></a>3.25</h1><h2 id="算法-38"><a href="#算法-38" class="headerlink" title="算法"></a>算法</h2><h3 id="零钱兑换II"><a href="#零钱兑换II" class="headerlink" title="零钱兑换II"></a>零钱兑换II</h3><ul>
+<li>求几种方法，dp[j] +&#x3D; dp[j - nums[i]]</li>
+</ul>
+<h3 id="组合总和IV"><a href="#组合总和IV" class="headerlink" title="组合总和IV"></a>组合总和IV</h3><ul>
+<li>求几种排列，dp[j] +&#x3D; dp[j - nums[i]]</li>
+<li>物品在里面遍历是排列数，在外面是组合数。</li>
+</ul>
+<h3 id="零钱兑换-1"><a href="#零钱兑换-1" class="headerlink" title="零钱兑换"></a>零钱兑换</h3><ul>
+<li>求几个钱，dp[j] &#x3D; Math.min(dp[j - nums[i]] + 1, dp[j]);</li>
+</ul>
+<h3 id="完全平方数-1"><a href="#完全平方数-1" class="headerlink" title="完全平方数"></a>完全平方数</h3><ul>
+<li>求几个数 dp[j] &#x3D; Math.min(dp[j], dp[j - i * i] + 1);</li>
+</ul>
+<h3 id="单词拆分-1"><a href="#单词拆分-1" class="headerlink" title="单词拆分"></a>单词拆分</h3><ul>
+<li>完全背包</li>
+</ul>
+<h2 id="八股-38"><a href="#八股-38" class="headerlink" title="八股"></a>八股</h2><h3 id="JWT鉴权机制，JWT和传统token有什么区别"><a href="#JWT鉴权机制，JWT和传统token有什么区别" class="headerlink" title="JWT鉴权机制，JWT和传统token有什么区别"></a>JWT鉴权机制，JWT和传统token有什么区别</h3><ul>
+<li>jwt三部分组成，第三部分会用密钥加密签名，因为签名不可破解，服务端不用存储额外用户信息而是存到jwt中，将用户信息存到客户端。服务端只需用密钥解密认证即可。</li>
+<li>传统token（就是session）是随机字符串，不能存放信息，用户信息存到服务端</li>
+</ul>
+<h3 id="传统token和session区别"><a href="#传统token和session区别" class="headerlink" title="传统token和session区别"></a>传统token和session区别</h3><ul>
+<li>sessionid对应一个用户信息</li>
+<li>传统token只是在后端有一个白名单列表（是轻量级session）</li>
+</ul>
+<h3 id="es新特性代替hasOwnProperty"><a href="#es新特性代替hasOwnProperty" class="headerlink" title="es新特性代替hasOwnProperty"></a>es新特性代替hasOwnProperty</h3><ul>
+<li>Object.hasOwn，防止hasOwnProperty被替代。</li>
+</ul>
+<h3 id="如果让你实现一个打包工具怎么实现"><a href="#如果让你实现一个打包工具怎么实现" class="headerlink" title="如果让你实现一个打包工具怎么实现"></a>如果让你实现一个打包工具怎么实现</h3><ul>
+<li>打包工具是什么？打包工具是把多个模块整合成一个或多个优化后的文件，解决模块化和浏览器兼容的问题。</li>
+</ul>
+<ol>
+<li>找到入口文件，生成AST语法树，识别模块导入语句。</li>
+<li>将模块转换，AST语法树转换成浏览器可以识别的文件。</li>
+<li>最后输出：做tree-shaking，代码压缩等优化。</li>
+</ol>
+<h3 id="i18n如何实现的国际化有了解吗？"><a href="#i18n如何实现的国际化有了解吗？" class="headerlink" title="i18n如何实现的国际化有了解吗？"></a>i18n如何实现的国际化有了解吗？</h3><ul>
+<li>根据入参：当前是哪个地区，有键值对映射关系转换。</li>
+<li>高级转换：复数、时间转换</li>
+</ul>
+<h3 id="JSON实现深拷贝的缺点，如何解决"><a href="#JSON实现深拷贝的缺点，如何解决" class="headerlink" title="JSON实现深拷贝的缺点，如何解决"></a>JSON实现深拷贝的缺点，如何解决</h3><ul>
+<li>循环引用、原型链不会转换</li>
+<li>函数、symbol、undefined、不可遍历属性不会转换，NaN转换为null。</li>
+<li>解决：自己实现，特判。</li>
+</ul>
+<h1 id="3-26"><a href="#3-26" class="headerlink" title="3.26"></a>3.26</h1><h2 id="算法-39"><a href="#算法-39" class="headerlink" title="算法"></a>算法</h2><h2 id="八股-39"><a href="#八股-39" class="headerlink" title="八股"></a>八股</h2><h3 id="属性选择器、元素选择器"><a href="#属性选择器、元素选择器" class="headerlink" title="属性选择器、元素选择器"></a>属性选择器、元素选择器</h3><ol>
+<li>[data-qiankun &#x3D; “xxx”]、<code>[data](所有有data属性都会被选)</code></li>
+<li>div（直接写元素名）</li>
+</ol>
+<h3 id="display-flex后发生什么"><a href="#display-flex后发生什么" class="headerlink" title="display:flex后发生什么"></a>display:flex后发生什么</h3><ul>
+<li>justify-content默认值是flex-start，align-items默认值是stretch。</li>
+</ul>
+<ol>
+<li>水平排列</li>
+<li>默认不换行</li>
+<li>默认高度会拉伸</li>
+</ol>
+<h3 id="Promise并发请求"><a href="#Promise并发请求" class="headerlink" title="Promise并发请求"></a>Promise并发请求</h3><ul>
+<li>Promise.all（要全成功）、Promise.any（有一个成功就返回）、Promise.allSettled（要全落定）</li>
+</ul>
+<h3 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h3><ol>
+<li>props、emits</li>
+<li>provide、inject</li>
+<li>全局事件总线</li>
+<li>全局状态管理</li>
+<li>Storage、cookie</li>
+<li>ref</li>
+</ol>
+<h3 id="commonjs和esm模块化循环依赖如何处理"><a href="#commonjs和esm模块化循环依赖如何处理" class="headerlink" title="commonjs和esm模块化循环依赖如何处理"></a>commonjs和esm模块化循环依赖如何处理</h3><ol>
+<li>commonjs是同步加载，模块加载后会缓存，遇到循环依赖时候 会返回已经执行部分的模块导出，未执行的就是undefined或初始值。</li>
+<li>esm模块化有编译时分析，提前给所有导出的变量创建空位，导入是动态绑定的，后续加载完后再补充之前的值。</li>
+</ol>
+<h3 id="vue优点"><a href="#vue优点" class="headerlink" title="vue优点"></a>vue优点</h3><ol>
+<li><em><strong>声明式框架</strong></em>：响应式原理</li>
+<li><em><strong>虚拟DOM</strong></em>：第一：diff算法。第二：支持跨平台，服务端渲染、浏览器渲染，将虚拟DOM转换为真实HTML元素。</li>
+<li><em><strong>区分编译时和运行时</strong></em>：<br>编译时：将<strong>模板</strong>变成js语法渲染函数生成的<strong>虚拟DOM</strong>；<br>运行时：上线时只走运行时。</li>
+<li><em><strong>拥抱Ts</strong></em></li>
+</ol>
+<h3 id="网易一面"><a href="#网易一面" class="headerlink" title="网易一面"></a>网易一面</h3><h3 id="滴滴oc"><a href="#滴滴oc" class="headerlink" title="滴滴oc"></a>滴滴oc</h3><h1 id="3-27"><a href="#3-27" class="headerlink" title="3.27"></a>3.27</h1><h2 id="算法-40"><a href="#算法-40" class="headerlink" title="算法"></a>算法</h2><h3 id="手写单例模式"><a href="#手写单例模式" class="headerlink" title="手写单例模式"></a>手写单例模式</h3><h3 id="寻找数组的中心下标"><a href="#寻找数组的中心下标" class="headerlink" title="寻找数组的中心下标"></a>寻找数组的中心下标</h3><h3 id="独一无二的出现次数"><a href="#独一无二的出现次数" class="headerlink" title="独一无二的出现次数"></a>独一无二的出现次数</h3><h2 id="八股-40"><a href="#八股-40" class="headerlink" title="八股"></a>八股</h2><h3 id="vuex-和pinia区别"><a href="#vuex-和pinia区别" class="headerlink" title="vuex 和pinia区别?"></a>vuex 和pinia区别?</h3><ol>
+<li>pinia是采用ts编写,类型提示友好.体积小,使用简单.</li>
+<li>去除mutations. state,getters,actions(包括同步和异步)</li>
+<li>pinia支持compositionApi,也支持optionsAPI</li>
+<li>核心: 一: vuex定义的模块为树结构,如果读取里层模块数据则操作不便.<br>二: 并且在底层会将所有模块定义到根模块,可能出现模块状态覆盖根状态.<br>三: 只能定义一个vuex,单例模式,pinia定义多个store.store之间可以调用,扁平化结构,不用担心命名冲突问题.</li>
+</ol>
+<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><h3 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h3><h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><h3 id="监听者模式"><a href="#监听者模式" class="headerlink" title="监听者模式"></a>监听者模式</h3><h3 id="发布订阅模式"><a href="#发布订阅模式" class="headerlink" title="发布订阅模式"></a>发布订阅模式</h3><h1 id="3-28"><a href="#3-28" class="headerlink" title="3.28"></a>3.28</h1><h2 id="算法-41"><a href="#算法-41" class="headerlink" title="算法"></a>算法</h2><h3 id="二叉树的右视图"><a href="#二叉树的右视图" class="headerlink" title="二叉树的右视图"></a>二叉树的右视图</h3><h3 id="组合总和III"><a href="#组合总和III" class="headerlink" title="组合总和III"></a>组合总和III</h3><h3 id="美团二面"><a href="#美团二面" class="headerlink" title="美团二面"></a>美团二面</h3><h2 id="八股-41"><a href="#八股-41" class="headerlink" title="八股"></a>八股</h2><h1 id="3-29"><a href="#3-29" class="headerlink" title="3.29"></a>3.29</h1><h2 id="算法确定两个字符串是否接近"><a href="#算法确定两个字符串是否接近" class="headerlink" title="算法确定两个字符串是否接近"></a>算法确定两个字符串是否接近</h2><ul>
+<li>hash</li>
+</ul>
+<h1 id="3-30"><a href="#3-30" class="headerlink" title="3.30"></a>3.30</h1><h2 id="算法-42"><a href="#算法-42" class="headerlink" title="算法"></a>算法</h2><h3 id="相等行列对"><a href="#相等行列对" class="headerlink" title="相等行列对"></a>相等行列对</h3><h3 id="从字符串中删除星号"><a href="#从字符串中删除星号" class="headerlink" title="从字符串中删除星号"></a>从字符串中删除星号</h3><ul>
+<li>栈：后进先出的特点。</li>
+</ul>
+<h3 id="小行星碰撞"><a href="#小行星碰撞" class="headerlink" title="小行星碰撞"></a>小行星碰撞</h3><ul>
+<li>栈：要思考特性。</li>
+</ul>
+<h3 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h3><h1 id="3-31"><a href="#3-31" class="headerlink" title="3.31"></a>3.31</h1><h2 id="算法-43"><a href="#算法-43" class="headerlink" title="算法"></a>算法</h2><h3 id="字符串解码"><a href="#字符串解码" class="headerlink" title="字符串解码"></a>字符串解码</h3><h3 id="逆波兰表达式求值"><a href="#逆波兰表达式求值" class="headerlink" title="逆波兰表达式求值"></a>逆波兰表达式求值</h3><ul>
+<li>switch语法</li>
+<li>Math.trunc， | 0，去掉小数不分。</li>
+</ul>
+<!--
+20万人同时直播间打赏前端有什么优化点（只说了两个）
+
+### 计时器，倒计时组件 
+
+ 如何快速判断几十亿个数中存在某个数
+https://www.bilibili.com/video/BV1yvBKYoEnt/?spm_id_from=333.1007.tianma.1-2-2.click&vd_source=9b9c9c2844427b792423aada902b836b
+
+// intersectionobserver
+https://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html
+
+requestIdCallback使用MDN例子
+https://developer.mozilla.org/zh-CN/docs/Web/API/Background_Tasks_API
+
+document.querySelector的时间复杂度
+
+Vue diff算法使用key的时间复杂度
+deepseek搜，问过了。
+
+延时队列、交互队列、微队列。宏任务拆分成了延时队列和交互队列。
+ -->
+
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="category-chain-item">学习记录</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>春招学习记录</div>
+      <div>http://example.com/2025/04/05/学习记录/3.春招学习记录/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Wayne Chen</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月5日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/04/05/%E5%85%B6%E5%AE%83%E7%9F%A5%E8%AF%86%E7%82%B9/%E5%9C%BA%E6%99%AF/" title="场景">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">场景</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/04/05/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/2.%E5%AF%92%E5%81%87%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="大四寒假学习记录">
+                        <span class="hidden-mobile">大四寒假学习记录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"ohWadpEWlT0Q54ERBAkcKH6S-MdYXbMMI","appKey":"vCuFIlABwAvv2H6Ambf1u5e4","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/custom.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

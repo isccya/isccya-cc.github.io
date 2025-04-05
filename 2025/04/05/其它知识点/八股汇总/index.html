@@ -1,0 +1,1033 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/batman4.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Wayne Chen">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="八股总结git &#9889; git常用的命令  发现之前提交的代码有问题，怎么实现回退  git如何处理冲突  git rebase和git merge区别  css &#9889; 选择器优先级 可继承和不可继承的属性 display属性 隐藏元素的方法，三者区别 link和@import区别 transition和animation区别 伪元素和伪类的区别 requestAnimation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="八股汇总">
+<meta property="og:url" content="http://example.com/2025/04/05/%E5%85%B6%E5%AE%83%E7%9F%A5%E8%AF%86%E7%82%B9/%E5%85%AB%E8%82%A1%E6%B1%87%E6%80%BB/">
+<meta property="og:site_name" content="谈沉潜">
+<meta property="og:description" content="八股总结git &#9889; git常用的命令  发现之前提交的代码有问题，怎么实现回退  git如何处理冲突  git rebase和git merge区别  css &#9889; 选择器优先级 可继承和不可继承的属性 display属性 隐藏元素的方法，三者区别 link和@import区别 transition和animation区别 伪元素和伪类的区别 requestAnimation">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-05T07:53:17.000Z">
+<meta property="article:modified_time" content="2025-04-05T07:53:33.037Z">
+<meta property="article:author" content="Wayne Chen">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>八股汇总 - 谈沉潜</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"ohWadpEWlT0Q54ERBAkcKH6S-MdYXbMMI","app_key":"vCuFIlABwAvv2H6Ambf1u5e4","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>谈沉潜</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/batman3.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="八股汇总"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-05 15:53" pubdate>
+          2025年4月5日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          24 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">八股汇总</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="八股总结"><a href="#八股总结" class="headerlink" title="八股总结"></a>八股总结</h1><h2 id="git-9889"><a href="#git-9889" class="headerlink" title="git &#9889;"></a>git &#9889;</h2><ol>
+<li>git常用的命令 </li>
+<li>发现之前提交的代码有问题，怎么实现回退 </li>
+<li>git如何处理冲突 </li>
+<li>git rebase和git merge区别</li>
+</ol>
+<h2 id="css-9889"><a href="#css-9889" class="headerlink" title="css &#9889;"></a>css &#9889;</h2><ol>
+<li>选择器优先级</li>
+<li>可继承和不可继承的属性</li>
+<li>display属性</li>
+<li>隐藏元素的方法，三者区别</li>
+<li>link和@import区别</li>
+<li>transition和animation区别</li>
+<li>伪元素和伪类的区别</li>
+<li>requestAnimationFrame的理解</li>
+<li>对盒模型的理解（IE、标准盒子模型，如何设置）</li>
+<li>为什么用transition改变元素位置</li>
+<li>CSS3的新特性</li>
+<li>css处理器</li>
+<li>单行多行文本溢出</li>
+<li>媒体查询</li>
+<li>z-index什么时候失效</li>
+<li>浮动元素的特点和缺点</li>
+<li>BFC</li>
+<li>clearfix</li>
+<li>定位</li>
+<li>元素层叠顺序</li>
+<li>层叠上下文</li>
+<li>比较两个元素谁在上、谁在下</li>
+<li>css单位</li>
+<li>两栏布局</li>
+<li>三栏布局</li>
+<li>垂直居中</li>
+<li>flex布局</li>
+</ol>
+<h2 id="TS-1天-9889"><a href="#TS-1天-9889" class="headerlink" title="TS 1天 &#9889;"></a>TS 1天 &#9889;</h2><ol>
+<li>ts和js区别 </li>
+<li>枚举类型 </li>
+<li>接口和类区别 </li>
+<li>ts函数的理解 </li>
+<li>泛型理解 </li>
+<li>interface和type区别 </li>
+<li>any和unkown区别 </li>
+<li>高级类型：交叉类型、联合类型、类型别名、类型索引、typeof、infer </li>
+<li>returnType、parameters </li>
+<li>patical、required、readonly。</li>
+<li>&#10024; Exclude、Include、Pick、Omit </li>
+<li>讲讲ts是怎么转化为js的？使用什么工具</li>
+</ol>
+<h2 id="vue-4-5天"><a href="#vue-4-5天" class="headerlink" title="vue 4-5天"></a>vue 4-5天</h2><ol>
+<li>AST语法树的生成过程 &#9889;</li>
+<li>AST语法树代码拼接成渲染函数 &#9889;</li>
+<li>AST语法树和虚拟DOM区别</li>
+<li>npm run build后发生什么</li>
+<li>vue2 和 vue3 diff算法 &#9889;</li>
+<li>Object.defineProperty 和 proxy的区别</li>
+<li>响应式原理 &#9889;</li>
+<li>数组响应式原理</li>
+<li>vue2响应式原理缺点</li>
+<li>vue3响应式原理优化</li>
+<li>响应式为什么用reflectAPI</li>
+<li>watch原理</li>
+<li>computed原理</li>
+<li>nextTick原理</li>
+<li>为什么data是函数</li>
+<li>组件渲染过程</li>
+<li>Vue.set原理</li>
+<li>异步组件</li>
+<li>props原理</li>
+<li>emit原理</li>
+<li>插槽原理</li>
+<li>keep-alive原理</li>
+<li>provide和inject原理</li>
+<li>属性透传</li>
+<li>v-if和v-for优先级哪个更高</li>
+<li>v-if和v-show区别</li>
+<li>v-model原理</li>
+<li>前端路由和后端路由</li>
+<li>hash模式和history模式</li>
+<li>vuex和localStorage区别</li>
+<li>vuex为什么有mutations而pinia没有</li>
+<li>vuex和pinia区别</li>
+</ol>
+<h2 id="微前端-2天-9889"><a href="#微前端-2天-9889" class="headerlink" title="微前端 2天 &#9889;"></a>微前端 2天 &#9889;</h2><ol>
+<li>微前端解决了什么问题</li>
+<li>微前端的缺点</li>
+<li>qiankun和iframe区别</li>
+<li>子应用如何接入qiankun框架？ &#9889;</li>
+<li>start时候qiankun干了什么？</li>
+<li>父子应用通信</li>
+<li>js沙箱机制</li>
+<li>css样式隔离</li>
+<li>父子应用路由</li>
+<li>qiankun和single-spa区别</li>
+<li>预加载</li>
+<li>import-html-entry</li>
+<li>为什么qiankun要用umd格式</li>
+</ol>
+<h2 id="wepack、vite-2天-9889"><a href="#wepack、vite-2天-9889" class="headerlink" title="wepack、vite 2天 &#9889;"></a>wepack、vite 2天 &#9889;</h2><ol>
+<li>loader</li>
+<li>plugin</li>
+<li>如何编写loader、plugin</li>
+<li>webpack构建流程</li>
+<li>如何加快webpack构建速度</li>
+<li>如何减少webpack打包体积</li>
+<li>webpack热模块更新</li>
+<li>webpack和vite的区别</li>
+<li>vite的构建原理 &#9889;</li>
+<li>vite开始使用esbuild，打包使用rollup原因</li>
+<li>babel原理是什么</li>
+</ol>
+<h2 id="计算机网络-3天-9889"><a href="#计算机网络-3天-9889" class="headerlink" title="计算机网络 3天 &#9889;"></a>计算机网络 3天 &#9889;</h2><ol>
+<li>状态码</li>
+<li>&#10024; 301、302状态码浏览器处理</li>
+<li>头部字段 </li>
+<li>get、post区别</li>
+<li>http1.1和1.0区别 </li>
+<li>https </li>
+<li>tls握手 </li>
+<li>1.1如何优化 </li>
+<li>https如何优化 </li>
+<li>&#10024; RSA、ECDHE </li>
+<li>http2.0 </li>
+<li>http3.0 </li>
+<li>&#10024; quic协议如何确保可靠性 </li>
+<li>tcp、udp区别 </li>
+<li>三次握手 </li>
+<li>握手丢失 </li>
+<li>两次握手、四次握手问题 </li>
+<li>四次挥手 </li>
+<li>挥手丢失 </li>
+<li>三次挥手问题 </li>
+<li>为什么要等待2MSL </li>
+<li>滑动窗口 </li>
+<li>流量控制 </li>
+<li>拥塞控制 </li>
+<li>&#10024; 输入url后发生什么 </li>
+<li>&#10024; TCP&#x2F;IP五层模型 </li>
+<li>quic协议 <a target="_blank" rel="noopener" href="https://xiaolincoding.com/network/3_tcp/quic.html#quic-%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93%E7%9A%84">https://xiaolincoding.com/network/3_tcp/quic.html#quic-%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93%E7%9A%84</a></li>
+<li>TCP协议一定不会丢包吗</li>
+</ol>
+<h2 id="操作系统-2天-9889"><a href="#操作系统-2天-9889" class="headerlink" title="操作系统 2天 &#9889;"></a>操作系统 2天 &#9889;</h2><ol>
+<li>进程 </li>
+<li>线程 </li>
+<li>进程和线程区别 </li>
+<li>进程调度算法 </li>
+<li>进程通信方式 </li>
+<li>死锁 </li>
+<li>锁的分类 </li>
+<li>浏览器进程 </li>
+<li>浏览器为什么有请求次数限制 </li>
+<li>如何解决浏览器请求限制 </li>
+<li>虚拟内存  </li>
+<li>内存分段、分页 </li>
+<li>TLB、段页式存储  </li>
+<li>&#10024; 磁盘调度算法</li>
+<li>页面置换算法</li>
+</ol>
+<h2 id="浏览器原理-2天-9889"><a href="#浏览器原理-2天-9889" class="headerlink" title="浏览器原理 2天 &#9889;"></a>浏览器原理 2天 &#9889;</h2><ol>
+<li>xss攻击和csrf攻击，以及如何解决 &#9889;</li>
+<li>浏览器缓存 &#9889;</li>
+<li>cache-control字段 &#9889;</li>
+<li>浏览器组成 &#9889;</li>
+<li>浏览器渲染过程 &#9889;</li>
+<li>浏览器渲染过程中的两个生命周期钩子 &#9889;</li>
+<li>如何优化浏览器渲染过程 &#9889;</li>
+<li>如何减少回流重绘 &#9889;</li>
+<li>DocumentFragments &#9889;</li>
+<li>cookie、localStorage、SessionStorage区别 &#9889;</li>
+<li>cookie字段 &#9889;</li>
+<li>cookie特性 &#9889;</li>
+<li>indexedDB &#9889;</li>
+<li>同源策略 &#9889;</li>
+<li>如何解决跨域 &#9889;</li>
+<li>事件模型 &#9889;</li>
+<li>阻止事件冒泡 &#9889;</li>
+<li>事件委托 &#9889;</li>
+<li>事件循环，宏任务，微任务 &#9889;</li>
+<li>&#10024; 为什么有宏任务队列和微任务队列两个？&#9889;</li>
+</ol>
+<h2 id="其他知识点"><a href="#其他知识点" class="headerlink" title="其他知识点"></a>其他知识点</h2><ol>
+<li>replaceState、popState、pushState</li>
+<li>纯文本内容修改，vue可以监督吗</li>
+<li>在vue-router里面，用pushState、replaceState而不是vue的push能触发页面路由切换吗</li>
+<li>内存泄露的原因</li>
+<li>如何查看是否内存泄漏</li>
+<li>如何定位到泄露的位置</li>
+<li>从A页面到B页面的优化</li>
+<li>如果接手一个项目，如何处理？</li>
+<li>前端如何debug？没有代码时候如何处理？</li>
+<li>封装组件和正常写组件区别</li>
+<li>如何封装一个组件</li>
+<li>如何设计一个微前端框架</li>
+<li>性能优化</li>
+<li>JWT鉴权机制，JWT和传统token有什么区别</li>
+<li>传统token和session区别</li>
+<li>如果让你实现一个打包工具怎么实现</li>
+<li>i18n如何实现的国际化有了解吗？</li>
+<li>JSON实现深拷贝的缺点，如何解决</li>
+<li>虚拟DOM相比真实DOM的优点？</li>
+<li>虚拟DOM一定比真实DOM更快吗？</li>
+<li>vue的优点</li>
+<li>webpack5模块联邦实现微前端</li>
+</ol>
+<h1 id="其它知识点"><a href="#其它知识点" class="headerlink" title="其它知识点"></a>其它知识点</h1><h2 id="pushstate、popstate、replacestate"><a href="#pushstate、popstate、replacestate" class="headerlink" title="pushstate、popstate、replacestate"></a>pushstate、popstate、replacestate</h2><ul>
+<li>只有postate是事件，其他两个只是方法不能被监听。</li>
+</ul>
+<ol>
+<li>pushstate：向浏览器历史记录栈添加新的条目，<strong>当前地址栏变成指定url</strong>，但不会刷新页面加载资源， 需要手动更新 &#x3D;》前端js实现路由切换</li>
+<li>replacestate：浏览器<strong>地址栏更新为指定 URL</strong>，但不加载页面，仅替换当前历史记录。</li>
+<li>popstate：<strong>只有</strong>浏览器的前进和后退和history.back、history.forward、history.go会触发popstate（push、replace改变记录不会触发）<br>前两个方法相等于只会更改历史记录（不会触发popstate事件），最后一个是事件一般用来监听实现路由或子应用切换。<br>那对于前两个事件，qiankun是对其进行了重写，vue-router是对其封装了一层用router.push。</li>
+</ol>
+<h2 id="在vue-router里面，用pushState、replaceState而不是vue的push能触发页面路由切换吗"><a href="#在vue-router里面，用pushState、replaceState而不是vue的push能触发页面路由切换吗" class="headerlink" title="在vue-router里面，用pushState、replaceState而不是vue的push能触发页面路由切换吗"></a>在vue-router里面，用pushState、replaceState而不是vue的push能触发页面路由切换吗</h2><ul>
+<li>不能，vue的router.push(‘&#x2F;new-url’);router.replace(‘&#x2F;new-url’)方法会触发导航守卫、渲染组件，再调用pushstate、replacestate更改url，<strong>router.push方法相当于在pushstate做了一层封装</strong>，直接使用replace、push没有js切换页面的逻辑。</li>
+</ul>
+<h2 id="内存泄漏的原因"><a href="#内存泄漏的原因" class="headerlink" title="内存泄漏的原因"></a>内存泄漏的原因</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6984188410659340324?searchId=2025031315545535021E8FF05054738485#heading-2">https://juejin.cn/post/6984188410659340324?searchId=2025031315545535021E8FF05054738485#heading-2</a></li>
+</ul>
+<ol>
+<li>不恰当的闭包</li>
+<li>全局变量</li>
+<li>DOM引用：父元素删除了，但对子元素还有引用。</li>
+<li>未关闭的定时器</li>
+<li>事件监听：组件卸载要关闭。监听者模式：全局总线，组件绑定事件，组件卸载要解绑事件。</li>
+<li>未清理的console.log，如果log是打印对象，也不会垃圾回收。</li>
+<li>map、set：这两个是强引用，如果对象被这两个存储了，即使删除了对象，对象也还在。</li>
+</ol>
+<h2 id="如何查看是否有内存泄露"><a href="#如何查看是否有内存泄露" class="headerlink" title="如何查看是否有内存泄露"></a>如何查看是否有内存泄露</h2><ol>
+<li>性能performance面板，开始记录，开始时候清空一次垃圾。</li>
+<li>然后进行操作，操作到一半再清空一次垃圾（能回收就没有泄漏）。</li>
+<li>操作完，结束记录。如果查看中间清空的时候 js堆内存没有减少，就是有内存泄漏。</li>
+</ol>
+<h2 id="如何定位到泄露的位置"><a href="#如何定位到泄露的位置" class="headerlink" title="如何定位到泄露的位置"></a>如何定位到泄露的位置</h2><ol>
+<li>内存面板，可以生成堆快照。</li>
+<li>进行一次GC，操作，生成快照。</li>
+<li>进行一次GC，操作，生成快照。</li>
+<li>对比前后堆快照的区别，它会标明是代码执行到哪一行新增了堆，新增的就是泄露的内存。</li>
+</ol>
+<h2 id="从A页面到B页面的优化"><a href="#从A页面到B页面的优化" class="headerlink" title="从A页面到B页面的优化"></a>从A页面到B页面的优化</h2><ol>
+<li>link标签，preload预加载资源，当页面使用该资源时候可以更快响应，也避免了资源加载和解析html冲突；prefetch未来可能用到的资源，网络线程空闲时候可以加载；dns-prefetch，提前解析域名(一是B页面写，二三是A页面写)。B页面 script标签的async defer</li>
+<li>B页面http2.0，服务端主动推送</li>
+<li>浏览器缓存</li>
+<li>单页面应用，全局状态管理共享数据。</li>
+<li>webpack代码分割</li>
+<li>web worker 处理复杂操作</li>
+</ol>
+<h2 id="性能优化（所有能想到的点）"><a href="#性能优化（所有能想到的点）" class="headerlink" title="性能优化（所有能想到的点）"></a>性能优化（所有能想到的点）</h2><ol>
+<li>html：减少回流重绘。</li>
+<li>css用link开启线程去加载外联css，@import会让GUI渲染线程停止当前渲染去加载。</li>
+<li>js：defer、async、写到脚本末尾。</li>
+<li>vue：虚拟DOM，diff对比，更快操作DOM。</li>
+<li>网络：http2.0主动推送、并发传输。</li>
+<li>浏览器：缓存。</li>
+<li>按需请求、虚拟列表。</li>
+<li>webpack：代码分割、代码压缩。</li>
+<li>事件委托。</li>
+</ol>
+<h2 id="JWT鉴权机制，JWT和传统token有什么区别"><a href="#JWT鉴权机制，JWT和传统token有什么区别" class="headerlink" title="JWT鉴权机制，JWT和传统token有什么区别"></a>JWT鉴权机制，JWT和传统token有什么区别</h2><ul>
+<li>jwt三部分组成，第三部分会用密钥加密签名，因为签名不可破解，服务端不用存储额外用户信息而是存到jwt中，将用户信息存到客户端。服务端只需用密钥解密认证即可。</li>
+<li>传统token（就是session）是随机字符串，不能存放信息，用户信息存到服务端</li>
+</ul>
+<h2 id="传统token和session区别"><a href="#传统token和session区别" class="headerlink" title="传统token和session区别"></a>传统token和session区别</h2><ul>
+<li>sessionid对应一个用户信息</li>
+<li>传统token只是在后端有一个白名单列表（是轻量级session）</li>
+</ul>
+<h2 id="如果让你实现一个打包工具怎么实现"><a href="#如果让你实现一个打包工具怎么实现" class="headerlink" title="如果让你实现一个打包工具怎么实现"></a>如果让你实现一个打包工具怎么实现</h2><ul>
+<li>打包工具是什么？打包工具是把多个模块整合成一个或多个优化后的文件，解决模块化和浏览器兼容的问题。</li>
+</ul>
+<ol>
+<li>找到入口文件，生成AST语法树，识别模块导入语句。</li>
+<li>将模块转换，AST语法树转换成浏览器可以识别的文件。</li>
+<li>最后输出：做tree-shaking，代码压缩等优化。</li>
+</ol>
+<h2 id="i18n如何实现的国际化有了解吗？"><a href="#i18n如何实现的国际化有了解吗？" class="headerlink" title="i18n如何实现的国际化有了解吗？"></a>i18n如何实现的国际化有了解吗？</h2><ul>
+<li>根据入参：当前是哪个地区，有键值对映射关系转换。</li>
+<li>高级转换：复数、时间转换</li>
+</ul>
+<h2 id="JSON实现深拷贝的缺点，如何解决"><a href="#JSON实现深拷贝的缺点，如何解决" class="headerlink" title="JSON实现深拷贝的缺点，如何解决"></a>JSON实现深拷贝的缺点，如何解决</h2><ul>
+<li>循环引用、原型链不会转换</li>
+<li>函数、symbol、undefined、不可遍历属性不会转换，NaN转换为null。</li>
+<li>解决：自己实现，特判。</li>
+</ul>
+<h2 id="虚拟DOM相比真实DOM的优点？"><a href="#虚拟DOM相比真实DOM的优点？" class="headerlink" title="虚拟DOM相比真实DOM的优点？"></a>虚拟DOM相比真实DOM的优点？</h2><ol>
+<li><strong>异步批量更新</strong>（watch队列，nextTick的缓冲队列），减少频繁的DOM操作。</li>
+<li><strong>最小化DOM操作</strong>：通过diff算法对比两次虚拟DOM树的区别，尽可能复用现有的真实DOM。</li>
+<li><strong>跨平台渲染</strong>：浏览器渲染，服务端渲染。</li>
+</ol>
+<h2 id="虚拟DOM一定比真实DOM更快吗？"><a href="#虚拟DOM一定比真实DOM更快吗？" class="headerlink" title="虚拟DOM一定比真实DOM更快吗？"></a>虚拟DOM一定比真实DOM更快吗？</h2><ol>
+<li>不一定。解析模板、ast语法树、渲染函数、虚拟DOM创建、diff对比、真实DOM创建都是要消耗性能的。如果是简单的页面，直接操作真实DOM效率更高。</li>
+<li>也增加了内存消耗。</li>
+</ol>
+<h2 id="vue优点"><a href="#vue优点" class="headerlink" title="vue优点"></a>vue优点</h2><ol>
+<li><em><strong>声明式框架</strong></em>：响应式原理</li>
+<li><em><strong>虚拟DOM</strong></em>697：第一：diff算法。第二：支持跨平台，服务端渲染、浏览器渲染，将虚拟DOM转换为真实HTML元素。</li>
+<li><em><strong>区分编译时和运行时</strong></em>：<br>编译时：将<strong>模板</strong>变成js语法渲染函数生成的<strong>虚拟DOM</strong>；<br>运行时：上线时只走运行时。</li>
+<li><em><strong>拥抱Ts</strong></em></li>
+</ol>
+<h2 id="webpack5模块联邦实现微前端"><a href="#webpack5模块联邦实现微前端" class="headerlink" title="webpack5模块联邦实现微前端"></a>webpack5模块联邦实现微前端</h2><ul>
+<li>跨应用之间的模块共享。</li>
+</ul>
+<h2 id="微前端实现"><a href="#微前端实现" class="headerlink" title="微前端实现"></a>微前端实现</h2><ol>
+<li>将多个项目域名合并处理，不需要前端改任何代码。比如：a.com b.com c.com合成tencent&#x2F;a tencent&#x2F;b tencent&#x2F;c.(刷新页面)</li>
+<li>qiankun、single-spa、wujie 有个框架基座，来回切换。</li>
+<li>模块联邦：运行时动态加载彼此的模块，从而实现 应用拆分、独立部署、依赖共享。 也是有一个主应用动态加载子应用，公共依赖也可以共享。</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%85%B6%E5%AE%83%E7%9F%A5%E8%AF%86%E7%82%B9/" class="category-chain-item">其它知识点</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>八股汇总</div>
+      <div>http://example.com/2025/04/05/其它知识点/八股汇总/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Wayne Chen</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月5日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/04/05/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/1.%E7%A7%8B%E6%8B%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="秋招学习记录">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">秋招学习记录</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/04/05/TS/3.%E5%85%AB%E8%82%A1/" title="TS八股">
+                        <span class="hidden-mobile">TS八股</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"ohWadpEWlT0Q54ERBAkcKH6S-MdYXbMMI","appKey":"vCuFIlABwAvv2H6Ambf1u5e4","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/custom.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

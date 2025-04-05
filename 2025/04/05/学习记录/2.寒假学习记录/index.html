@@ -1,0 +1,1329 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/batman4.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Wayne Chen">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="寒假目标 算法：leetcode刷到200+,代码随想录刷完二叉树、贪心。&#9989;加任务：leetcode刷到220+，代码随想录刷完二叉树贪心后刷回溯和动态规划。&#9989;调整任务：后面每天复习三十分钟-50分钟、刷四五道题目。&#9989;加任务：开学前刷完动态规划和回溯。回溯刷完了，动态规划到完全背包问题。 css、js、vue、webpackvite。 &#10060;   总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大四寒假学习记录">
+<meta property="og:url" content="http://example.com/2025/04/05/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/2.%E5%AF%92%E5%81%87%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+<meta property="og:site_name" content="谈沉潜">
+<meta property="og:description" content="寒假目标 算法：leetcode刷到200+,代码随想录刷完二叉树、贪心。&#9989;加任务：leetcode刷到220+，代码随想录刷完二叉树贪心后刷回溯和动态规划。&#9989;调整任务：后面每天复习三十分钟-50分钟、刷四五道题目。&#9989;加任务：开学前刷完动态规划和回溯。回溯刷完了，动态规划到完全背包问题。 css、js、vue、webpackvite。 &#10060;   总结">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-05T07:58:42.000Z">
+<meta property="article:modified_time" content="2025-04-05T08:00:44.012Z">
+<meta property="article:author" content="Wayne Chen">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>大四寒假学习记录 - 谈沉潜</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"ohWadpEWlT0Q54ERBAkcKH6S-MdYXbMMI","app_key":"vCuFIlABwAvv2H6Ambf1u5e4","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>谈沉潜</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/batman3.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="大四寒假学习记录"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-05 15:58" pubdate>
+          2025年4月5日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          63 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">大四寒假学习记录</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="寒假目标"><a href="#寒假目标" class="headerlink" title="寒假目标"></a>寒假目标</h1><ol>
+<li>算法：leetcode刷到200+,代码随想录刷完二叉树、贪心。&#9989;<br>加任务：leetcode刷到220+，代码随想录刷完二叉树贪心后刷回溯和动态规划。&#9989;<br>调整任务：后面每天复习三十分钟-50分钟、刷四五道题目。&#9989;<br>加任务：开学前刷完动态规划和回溯。<br>回溯刷完了，动态规划到完全背包问题。</li>
+<li>css、js、vue、webpackvite。 &#10060;</li>
+</ol>
+<ul>
+<li>总结：算法提升了很多，八股遗忘了。问题不大，开学后补八股，保持算法，加油。</li>
+</ul>
+<hr>
+<p>css  &#9989;</p>
+<p>js：基础、代码输出题、手写题。</p>
+<p>vue：源码、八股。</p>
+<p>ts：八股、手写。</p>
+<p>webpack、vite：八股。</p>
+<p>git：八股。</p>
+<p>计算机网络</p>
+<p>操作系统</p>
+<p>算法 + 手写 &#9989;</p>
+<p>浏览器原理</p>
+<p>微前端：准备看源码 &#9989;</p>
+<hr>
+<h1 id="2025-1-9"><a href="#2025-1-9" class="headerlink" title="2025.1.9"></a>2025.1.9</h1><h2 id="01背包问题基础"><a href="#01背包问题基础" class="headerlink" title="01背包问题基础"></a>01背包问题基础</h2><ol>
+<li>二维：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">dp[i][j] = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">max</span>(dp[i - <span class="hljs-number">1</span>][j], dp[i - <span class="hljs-number">1</span>][j - weight[i]] + weight[i]);<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>一维：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">dp[j] = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">max</span>(dp[j],dp[j - weight[i]] + weight[i]);<br></code></pre></td></tr></table></figure>
+<h2 id="数组翻译成字符串"><a href="#数组翻译成字符串" class="headerlink" title="数组翻译成字符串"></a>数组翻译成字符串</h2><h2 id="礼物得最大价值"><a href="#礼物得最大价值" class="headerlink" title="礼物得最大价值"></a>礼物得最大价值</h2><h2 id="丑数1"><a href="#丑数1" class="headerlink" title="丑数1"></a>丑数1</h2><h1 id="2025-1-10"><a href="#2025-1-10" class="headerlink" title="2025.1.10"></a>2025.1.10</h1><h2 id="丑数"><a href="#丑数" class="headerlink" title="丑数"></a>丑数</h2><h2 id="第一次只出现一次的数字"><a href="#第一次只出现一次的数字" class="headerlink" title="第一次只出现一次的数字"></a>第一次只出现一次的数字</h2><ul>
+<li>lastIndexOf、 indexOf</li>
+</ul>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h2 id="两个链表的公共节点"><a href="#两个链表的公共节点" class="headerlink" title="两个链表的公共节点"></a>两个链表的公共节点</h2><h2 id="二叉树的深度"><a href="#二叉树的深度" class="headerlink" title="二叉树的深度"></a>二叉树的深度</h2><h2 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h2><h2 id="single-spa进行了总结"><a href="#single-spa进行了总结" class="headerlink" title="single-spa进行了总结"></a>single-spa进行了总结</h2><h2 id="qiankun使用"><a href="#qiankun使用" class="headerlink" title="qiankun使用"></a>qiankun使用</h2><ol>
+<li>主应用注册子应用</li>
+<li>子应用暴露接口协议</li>
+<li>public-path.js：改变静态资源路径为子应用ip地址，默认会是父应用ip地址导致静态资源无法加载。</li>
+<li>挂载位置：子应用挂载到app，根应用也是app的div，这时候需要限制查找范围。props参数有个container属性是dom元素。主应用的html下面有一个container div，container div上挂载子应用的html，子应用html有app。</li>
+<li>webpack打包格式为umd格式</li>
+<li>除了微前端启动，还有正常启动，qiankun会在window放个全局属性powerbyqiankun没有的话直接调render函数就好。</li>
+</ol>
+<h2 id="js沙箱"><a href="#js沙箱" class="headerlink" title="js沙箱"></a>js沙箱</h2><ol>
+<li>快照沙箱</li>
+<li>单实例</li>
+<li>多实例沙箱</li>
+</ol>
+<h2 id="css样式隔离"><a href="#css样式隔离" class="headerlink" title="css样式隔离"></a>css样式隔离</h2><h1 id="1-11"><a href="#1-11" class="headerlink" title="1.11"></a>1.11</h1><h2 id="异或两道题"><a href="#异或两道题" class="headerlink" title="异或两道题"></a>异或两道题</h2><h2 id="和为s的两个数字"><a href="#和为s的两个数字" class="headerlink" title="和为s的两个数字"></a>和为s的两个数字</h2><h2 id="和为s的连续数字"><a href="#和为s的连续数字" class="headerlink" title="和为s的连续数字"></a>和为s的连续数字</h2><h2 id="双指针总结"><a href="#双指针总结" class="headerlink" title="双指针总结"></a>双指针总结</h2><ul>
+<li>双指针有两种类型，一种是left &#x3D; 0;right &#x3D; arr.length; while(left &lt; right)</li>
+<li>另一种是： left &#x3D; 0, right &#x3D; 1; while(right &lt; arr.length)</li>
+</ul>
+<h2 id="字符串trim方法"><a href="#字符串trim方法" class="headerlink" title="字符串trim方法"></a>字符串trim方法</h2><ul>
+<li>去除前后的空格</li>
+</ul>
+<h1 id="1-12"><a href="#1-12" class="headerlink" title="1.12"></a>1.12</h1><h2 id="左旋转字符串"><a href="#左旋转字符串" class="headerlink" title="左旋转字符串"></a>左旋转字符串</h2><h2 id="翻转字符串"><a href="#翻转字符串" class="headerlink" title="翻转字符串"></a>翻转字符串</h2><h2 id="在排序数组中查找数字I"><a href="#在排序数组中查找数字I" class="headerlink" title="在排序数组中查找数字I"></a>在排序数组中查找数字I</h2><h2 id="0-n-1-中缺失的数字"><a href="#0-n-1-中缺失的数字" class="headerlink" title="0 - (n-1) 中缺失的数字"></a>0 - (n-1) 中缺失的数字</h2><h2 id="二分法-9997"><a href="#二分法-9997" class="headerlink" title="二分法 &#9997;"></a>二分法 &#9997;</h2><ul>
+<li>二分法前提：有序的数组，将时间复杂度从n降到logn。</li>
+<li>左闭右闭：right初始化为length - 1，left &lt;&#x3D; right（因为<code>[1,1]</code>是合法的），right &#x3D; mid - 1，right是循环在内的，不应该再考虑。</li>
+<li>左闭右开：right初始化为length，left &lt; right（因为<code>[1,1)</code>是不合法的），right &#x3D; mid，right是循环不在内的。</li>
+</ul>
+<h2 id="import-html-entry"><a href="#import-html-entry" class="headerlink" title="import-html-entry"></a>import-html-entry</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41800366/article/details/122093720">https://blog.csdn.net/qq_41800366/article/details/122093720</a></li>
+</ul>
+<ol>
+<li><strong>fetch拉取html文件</strong>：通过fetch获取url对应的html内容。</li>
+<li><strong>html正则处理</strong>： html里面js（外联、页内）都被注释掉并保存起来；css页面内的style不动，外联css注释掉保存起来；</li>
+<li><strong>拉取css，style插入</strong>：fetch获取外联css，通过style标签加入到html中。</li>
+<li><strong>拉取js并在沙箱执行</strong>：拉取外联js、页面js直接返回，jscode包裹在一个函数中，做沙箱隔离。并且执行。</li>
+<li><strong>返回html和js</strong>：返回 <em>template：html模板</em> 和 <em>execScripts：执行所有js的函数</em></li>
+</ol>
+<h2 id="qiankun源码"><a href="#qiankun源码" class="headerlink" title="qiankun源码"></a>qiankun源码</h2><ol>
+<li>预加载，single-spa第一个应用加载完后派发事件；监听事件通过import-html-entry在浏览器每一帧的空闲时间执行。</li>
+<li>沙箱：真正加载时候，处理css模板，处理js沙箱。</li>
+</ol>
+<h1 id="1-13-1-14-休息"><a href="#1-13-1-14-休息" class="headerlink" title="1.13 1.14 休息"></a>1.13 1.14 休息</h1><h1 id="1-15"><a href="#1-15" class="headerlink" title="1.15"></a>1.15</h1><h2 id="队列的最大值"><a href="#队列的最大值" class="headerlink" title="队列的最大值"></a>队列的最大值</h2><ul>
+<li>维护一个单调递减的队列</li>
+<li>前面小的值不用留着了</li>
+</ul>
+<h2 id="n个骰子的点数"><a href="#n个骰子的点数" class="headerlink" title="n个骰子的点数"></a>n个骰子的点数</h2><ul>
+<li>回溯超时</li>
+<li>动态规划，二维dp，第一个下标表示第几个骰子，第二个下标表示<code>当前骰子</code>的点数</li>
+</ul>
+<h2 id="扑克牌中的顺子"><a href="#扑克牌中的顺子" class="headerlink" title="扑克牌中的顺子"></a>扑克牌中的顺子</h2><h2 id="圆圈中最后剩下的数字"><a href="#圆圈中最后剩下的数字" class="headerlink" title="圆圈中最后剩下的数字"></a>圆圈中最后剩下的数字</h2><h2 id="整理所有微前端"><a href="#整理所有微前端" class="headerlink" title="整理所有微前端"></a>整理所有微前端</h2><h3 id="single-spa源码"><a href="#single-spa源码" class="headerlink" title="single-spa源码"></a>single-spa源码</h3><h3 id="qiankun实战六点"><a href="#qiankun实战六点" class="headerlink" title="qiankun实战六点"></a>qiankun实战六点</h3><h3 id="qiankun源码：预加载、html-entry"><a href="#qiankun源码：预加载、html-entry" class="headerlink" title="qiankun源码：预加载、html-entry"></a>qiankun源码：预加载、html-entry</h3><h3 id="css样式隔离、js沙箱"><a href="#css样式隔离、js沙箱" class="headerlink" title="css样式隔离、js沙箱"></a>css样式隔离、js沙箱</h3><h2 id="找数组中的值find、findIndex、indexOf"><a href="#找数组中的值find、findIndex、indexOf" class="headerlink" title="找数组中的值find、findIndex、indexOf"></a>找数组中的值find、findIndex、indexOf</h2><ul>
+<li>前两个是要函数，后一个是元素</li>
+</ul>
+<ol>
+<li>find：arr.find((value)&#x3D;&gt; value &gt; 10) 返回第一个大于10的数</li>
+<li>findIndex，同find用法，但返回的是下标</li>
+<li><strong>indexOf</strong>：arr.indexOf(‘cc’)，数组中第一个出现给定元素的下标。</li>
+<li><strong>lastIndexOf</strong>:</li>
+</ol>
+<h2 id="贪心算法基础"><a href="#贪心算法基础" class="headerlink" title="贪心算法基础"></a>贪心算法基础</h2><ul>
+<li>局部最优可以推出全局最优</li>
+</ul>
+<h2 id="买卖股票最佳时机1、2"><a href="#买卖股票最佳时机1、2" class="headerlink" title="买卖股票最佳时机1、2"></a>买卖股票最佳时机1、2</h2><h1 id="1-16"><a href="#1-16" class="headerlink" title="1.16"></a>1.16</h1><h2 id="二叉搜索树的最近公共祖先"><a href="#二叉搜索树的最近公共祖先" class="headerlink" title="二叉搜索树的最近公共祖先"></a>二叉搜索树的最近公共祖先</h2><h2 id="二叉树的最近公共祖先"><a href="#二叉树的最近公共祖先" class="headerlink" title="二叉树的最近公共祖先"></a>二叉树的最近公共祖先</h2><h2 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h2><h2 id="短路运算"><a href="#短路运算" class="headerlink" title="短路运算"></a>短路运算</h2><h2 id="二分法-四道题"><a href="#二分法-四道题" class="headerlink" title="二分法 四道题"></a>二分法 四道题</h2><h2 id="移动元素"><a href="#移动元素" class="headerlink" title="移动元素"></a>移动元素</h2><h1 id="1-17"><a href="#1-17" class="headerlink" title="1.17"></a>1.17</h1><h2 id="有序数组的平方"><a href="#有序数组的平方" class="headerlink" title="有序数组的平方"></a>有序数组的平方</h2><h2 id="删除有序数组的重复项"><a href="#删除有序数组的重复项" class="headerlink" title="删除有序数组的重复项"></a>删除有序数组的重复项</h2><h2 id="选择器优先级-10024"><a href="#选择器优先级-10024" class="headerlink" title="选择器优先级 &#10024;"></a>选择器优先级 &#10024;</h2><ol>
+<li>！important</li>
+<li>内联样式：style&#x3D; “color: red”</li>
+<li>id选择器：#</li>
+<li>类、伪类、属性选择器</li>
+<li>元素（标签）、伪元素选择器。</li>
+<li>通配符、子代后代选择器</li>
+</ol>
+<ul>
+<li>额外点：</li>
+</ul>
+<ol>
+<li>优先级相同时候，后定义的生效。</li>
+<li>内联样式 》 内部样式 》 外部样式 》 浏览器默认样式</li>
+<li>优先级高的生效。</li>
+</ol>
+<h2 id="可-不可继承属性"><a href="#可-不可继承属性" class="headerlink" title="可&#x2F;不可继承属性"></a>可&#x2F;不可继承属性</h2><ol>
+<li>可：font-size、font-weight、font-family、文本color、visibility</li>
+<li>不可：盒子模型、display、background、定位。</li>
+</ol>
+<h2 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h2><ol>
+<li>none、block、inline、inline-block、inherit.</li>
+</ol>
+<h2 id="block、inline、inline-block区别"><a href="#block、inline、inline-block区别" class="headerlink" title="block、inline、inline-block区别"></a>block、inline、inline-block区别</h2><ul>
+<li>是否独占一行、是否可以设置宽高、宽度是否会充满父元素。</li>
+</ul>
+<h2 id="display、visibility、opacity区别"><a href="#display、visibility、opacity区别" class="headerlink" title="display、visibility、opacity区别"></a>display、visibility、opacity区别</h2><ol>
+<li>display：none：不会出现在渲染树中，不会触发事件，触发回流重绘。</li>
+<li>visibility：hidden：在页面中，不触发事件，重绘。</li>
+<li>opacity：0：透明度，在页面中，触发事件，单独抽离出合成层，利用GPU加速渲染。</li>
+</ol>
+<h2 id="link和-import区别"><a href="#link和-import区别" class="headerlink" title="link和@import区别"></a>link和@import区别</h2><ul>
+<li>用link引入,开启一个线程去加载,不阻塞GUI渲染线程. @import:GUI线程会停止渲染去加载资源. css少的话就写在style标签中直接GUI渲染.</li>
+</ul>
+<h1 id="1-18"><a href="#1-18" class="headerlink" title="1.18"></a>1.18</h1><h2 id="移动零"><a href="#移动零" class="headerlink" title="移动零"></a>移动零</h2><h2 id="长度最小的子数组"><a href="#长度最小的子数组" class="headerlink" title="长度最小的子数组"></a>长度最小的子数组</h2><h2 id="水果成篮"><a href="#水果成篮" class="headerlink" title="水果成篮"></a>水果成篮</h2><h2 id="螺旋矩阵2"><a href="#螺旋矩阵2" class="headerlink" title="螺旋矩阵2"></a>螺旋矩阵2</h2><ul>
+<li>为什么还要if？<br>如果是正方形，不需要；正方形上下左右收缩时候会重合到相当，然后从左到右，从上到下会超过边界。<br>如果是长方形，只有短的那边会超过，长的那边会重复遍历。</li>
+</ul>
+<h2 id="transition和animation区别"><a href="#transition和animation区别" class="headerlink" title="transition和animation区别"></a>transition和animation区别</h2><ul>
+<li>transition：过度动画，需要事件触发，只有开始帧和结束帧；property、during、timing-function、delay。</li>
+<li>animation：复杂动画，设定时间后触发不需要事件，多个帧。timing-function、delay、during、name、播放次数、方向等等。@keyframe去设置中间帧比如50%。</li>
+</ul>
+<h2 id="伪元素和伪类的区别"><a href="#伪元素和伪类的区别" class="headerlink" title="伪元素和伪类的区别"></a>伪元素和伪类的区别</h2><ul>
+<li>伪元素：元素的特定一部分，<strong>这部分不是元素，不存在</strong>，比如：某一个元素的前面后面插入内容、第一行。</li>
+<li>伪类：作用于特定状态的<strong>元素</strong>，比如：鼠标悬停、结构状态第一个孩子。</li>
+</ul>
+<h2 id="requestAnimationframe"><a href="#requestAnimationframe" class="headerlink" title="requestAnimationframe"></a>requestAnimationframe</h2><ol>
+<li>接受一个回调函数，该函数会在下次回流前调用</li>
+<li>回流是根据浏览器刷新频率触发，60hz就是一秒刷新60次，一秒60次回流，也就调用该函数六十次。</li>
+<li>优点：<br>动画更流畅，不会掉帧、卡顿。<br>cpu节能，页面隐藏时候setTimeout会继续执行，requestAnimation会暂停动画。</li>
+</ol>
+<h2 id="浏览器一帧做什么？"><a href="#浏览器一帧做什么？" class="headerlink" title="浏览器一帧做什么？"></a>浏览器一帧做什么？</h2><ol>
+<li>处理用户交互</li>
+<li>requestAnimationFrame</li>
+<li>回流重绘</li>
+<li>还有空闲时间：requestIdleCallback</li>
+</ol>
+<h2 id="requestIdleCallback"><a href="#requestIdleCallback" class="headerlink" title="requestIdleCallback"></a>requestIdleCallback</h2><ol>
+<li>requestIdleCallback 是捡浏览器空闲来执行任务。假如浏览器一直处于非常忙碌的状态，requestIdleCallback 注册的任务有可能永远不会执行</li>
+</ol>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><ol>
+<li>content、padding、border、margin</li>
+<li>标准盒子模型：width只包括content，ie盒子模型width包括content、padding、border。</li>
+<li>box-sizing设置不同盒子模型。</li>
+</ol>
+<h2 id="为什么用transform更改位置"><a href="#为什么用transform更改位置" class="headerlink" title="为什么用transform更改位置"></a>为什么用transform更改位置</h2><ul>
+<li>transform、opacity不会触发回流、重绘，只会触发复合。</li>
+</ul>
+<h2 id="css3新特性-9997"><a href="#css3新特性-9997" class="headerlink" title="css3新特性 &#9997;"></a>css3新特性 &#9997;</h2><ol>
+<li>属性选择器、伪类选择器、伪元素选择器</li>
+<li>flex弹性布局</li>
+<li>transition、animation</li>
+<li>媒体查询、em、rem</li>
+<li>border-radius圆角边框、box-shadow、</li>
+</ol>
+<h2 id="预处理器"><a href="#预处理器" class="headerlink" title="预处理器"></a>预处理器</h2><ol>
+<li>预处理器是css基础上抽象的一层，最终会转换为css。</li>
+<li>变量：定义颜色、字体常用值，实现复用。</li>
+<li>嵌套：更直观，方便维护。</li>
+<li>运算：加减乘除，函数。</li>
+<li>mixin、继承：复用选择器片段。</li>
+</ol>
+<h2 id="双冒号，单冒号"><a href="#双冒号，单冒号" class="headerlink" title="双冒号，单冒号"></a>双冒号，单冒号</h2><ul>
+<li>双：伪元素；单：伪类。</li>
+</ul>
+<h1 id="1-19"><a href="#1-19" class="headerlink" title="1.19"></a>1.19</h1><h2 id="数组总结"><a href="#数组总结" class="headerlink" title="数组总结"></a>数组总结</h2><h3 id="二分法（有序时候就可以考虑）"><a href="#二分法（有序时候就可以考虑）" class="headerlink" title="二分法（有序时候就可以考虑）"></a>二分法（有序时候就可以考虑）</h3><ol>
+<li>数组是有序的，时间复杂度降到logn；</li>
+<li></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> left = <span class="hljs-number">0</span>, right = nums.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>;<br><span class="hljs-keyword">while</span>(left &lt;= right)&#123;<br>    <span class="hljs-keyword">let</span> mid = ((left + right) / <span class="hljs-number">2</span>);<br>    <span class="hljs-keyword">if</span>(nums[mid] &gt; target)&#123;<br>        right = mid - <span class="hljs-number">1</span>;<br>    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &lt; target)&#123;<br>        left = mid + <span class="hljs-number">1</span>;<br>    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> mid;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="双指针（移除元素时候考虑：移除重复元素、移除零）"><a href="#双指针（移除元素时候考虑：移除重复元素、移除零）" class="headerlink" title="双指针（移除元素时候考虑：移除重复元素、移除零）"></a>双指针（移除元素时候考虑：移除重复元素、移除零）</h3><ol>
+<li>一个负责找新的元素，一个负责已经维护好的数组。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> left = <span class="hljs-number">0</span>, right = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">while</span>(right &lt; nums.<span class="hljs-property">length</span>)&#123;<br>    <span class="hljs-keyword">if</span>(nums[right] !== xxx)&#123;<br>        [nums[left], nums[right]] = <br>        [nums[right], nums[left]];<br>    &#125;<br>    right++;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>双向二分，根据实际情况，左右指针都可能动。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> left = <span class="hljs-number">0</span>, right = nums.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>;<br><span class="hljs-keyword">while</span>(left &lt;= right)&#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="滑动窗口（长度最长、最短的子数组、子串）"><a href="#滑动窗口（长度最长、最短的子数组、子串）" class="headerlink" title="滑动窗口（长度最长、最短的子数组、子串）"></a>滑动窗口（长度最长、最短的子数组、子串）</h3><h3 id="模拟行为"><a href="#模拟行为" class="headerlink" title="模拟行为"></a>模拟行为</h3><h3 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h3><h2 id="和为K的子数组"><a href="#和为K的子数组" class="headerlink" title="和为K的子数组"></a>和为K的子数组</h2><h2 id="移除链表元素"><a href="#移除链表元素" class="headerlink" title="移除链表元素"></a>移除链表元素</h2><h2 id="翻转链表"><a href="#翻转链表" class="headerlink" title="翻转链表"></a>翻转链表</h2><h2 id="两两交换链表的元素"><a href="#两两交换链表的元素" class="headerlink" title="两两交换链表的元素"></a>两两交换链表的元素</h2><h2 id="删除链表倒数第N个节点"><a href="#删除链表倒数第N个节点" class="headerlink" title="删除链表倒数第N个节点"></a>删除链表倒数第N个节点</h2><h2 id="文本溢出"><a href="#文本溢出" class="headerlink" title="文本溢出"></a>文本溢出</h2><ol>
+<li>单行文本</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">overflow</span>:hidden; // 溢出部门隐藏<br><span class="hljs-attribute">text-overflow</span>:ellipsis; // 省略号<br><span class="hljs-attribute">white-space</span>:no-wrap; //文本不换行<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>多行文本</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">overflow</span>:hidden;<br><span class="hljs-attribute">text-overflow</span>:ellipsis;<br><span class="hljs-attribute">display</span>:-webkit-box;<br>-webkit-<span class="hljs-selector-tag">line</span>-clamp:<span class="hljs-number">2</span>; // 设置展现为两行，这个属性必须webkit-box支持<br>-webkit-<span class="hljs-attribute">box-orient</span>:vertical;<br></code></pre></td></tr></table></figure>
+
+<h2 id="webkit-box-9997"><a href="#webkit-box-9997" class="headerlink" title="webkit-box &#9997;"></a>webkit-box &#9997;</h2><ul>
+<li>早期没有flexbox的弹性盒子模型，为了兼容旧版本浏览器和实现特定功能(多行文本溢出隐藏)而保留了下来。</li>
+</ul>
+<h2 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h2><ul>
+<li>根据不同的媒体类型使用不同的样式，适用于响应式设计的页面。包含多个表达式，表达式都为true就应用该样式。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>:<span class="hljs-number">768px</span>) <br><span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>:<span class="hljs-number">968px</span>)&#123;<br>    <span class="hljs-selector-tag">body</span>:&#123;<br>    <span class="hljs-attribute">font-size</span>:<span class="hljs-number">18px</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><h2 id="浮动缺点"><a href="#浮动缺点" class="headerlink" title="浮动缺点"></a>浮动缺点</h2><h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><h2 id="伪元素-clearfix"><a href="#伪元素-clearfix" class="headerlink" title="伪元素 + clearfix"></a>伪元素 + clearfix</h2><h2 id="脱离文档流后元素特点"><a href="#脱离文档流后元素特点" class="headerlink" title="脱离文档流后元素特点"></a>脱离文档流后元素特点</h2><ol>
+<li>不再占据位置，不影响其他元素布局。</li>
+<li>行内元素变块元素，块元素宽高都由子元素撑开。</li>
+</ol>
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><h1 id="1-20"><a href="#1-20" class="headerlink" title="1.20"></a>1.20</h1><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="环形链表II"><a href="#环形链表II" class="headerlink" title="环形链表II"></a>环形链表II</h3><h3 id="链表相交"><a href="#链表相交" class="headerlink" title="链表相交"></a>链表相交</h3><h3 id="有效的字母异位词"><a href="#有效的字母异位词" class="headerlink" title="有效的字母异位词"></a>有效的字母异位词</h3><h3 id="找到字符串的所有异位词"><a href="#找到字符串的所有异位词" class="headerlink" title="找到字符串的所有异位词"></a>找到字符串的所有异位词</h3><ul>
+<li>用数组作为hash表</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">arrP[nums[i].<span class="hljs-title function_">charCodeAt</span>() - <span class="hljs-string">&quot;a&quot;</span>.<span class="hljs-title function_">charCodeAt</span>()]++; <br></code></pre></td></tr></table></figure>
+<h3 id="两个数组的交集"><a href="#两个数组的交集" class="headerlink" title="两个数组的交集"></a>两个数组的交集</h3><h3 id="两个数组的交集II"><a href="#两个数组的交集II" class="headerlink" title="两个数组的交集II"></a>两个数组的交集II</h3><h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><h3 id="css基础"><a href="#css基础" class="headerlink" title="css基础"></a>css基础</h3><h3 id="浮动、定位复习"><a href="#浮动、定位复习" class="headerlink" title="浮动、定位复习"></a>浮动、定位复习</h3><h3 id="外边距重叠"><a href="#外边距重叠" class="headerlink" title="外边距重叠"></a>外边距重叠</h3><ol>
+<li><strong>兄弟之间</strong>：都为正或都为负时候，取绝对值较大的值。一正一负时候用正减去负的绝对值。</li>
+<li>父子之间：子的外边距影响到父元素。</li>
+</ol>
+<h3 id="元素的层叠顺序"><a href="#元素的层叠顺序" class="headerlink" title="元素的层叠顺序"></a>元素的层叠顺序</h3><ul>
+<li>background、z-index负数、块级、浮动元素、inline、z-index为0、z-index为正。</li>
+</ul>
+<h3 id="层叠上下文"><a href="#层叠上下文" class="headerlink" title="层叠上下文"></a>层叠上下文</h3><ol>
+<li>根层叠上下文（html）</li>
+<li>定位属性的元素，设置了z-index可以设置层叠上下文</li>
+<li>css3新属性设置层叠上下文</li>
+</ol>
+<h3 id="比较两个元素谁在上谁在下？"><a href="#比较两个元素谁在上谁在下？" class="headerlink" title="比较两个元素谁在上谁在下？"></a>比较两个元素谁在上谁在下？</h3><ol>
+<li>先比较层叠上下文，层叠上下文高的在上。</li>
+<li>如果在同一个层叠上下文，才考虑元素的层叠顺序规则。</li>
+<li>都相等的情况下，后面的元素层叠更高。</li>
+</ol>
+<!-- 如果不在同一个层叠上下文，一个z-index为9999也不一定有另一个元素层叠级别高 -->
+
+<h3 id="z-index什么时候失效"><a href="#z-index什么时候失效" class="headerlink" title="z-index什么时候失效"></a>z-index什么时候失效</h3><ol>
+<li>父元素定位是relative</li>
+<li>当前元素定位是static</li>
+<li>当前元素开启了浮动</li>
+</ol>
+<h1 id="1-21"><a href="#1-21" class="headerlink" title="1.21"></a>1.21</h1><h2 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h2><h3 id="快乐数"><a href="#快乐数" class="headerlink" title="快乐数"></a>快乐数</h3><h3 id="四数相加II"><a href="#四数相加II" class="headerlink" title="四数相加II"></a>四数相加II</h3><h3 id="赎金信"><a href="#赎金信" class="headerlink" title="赎金信"></a>赎金信</h3><h3 id="三数之和"><a href="#三数之和" class="headerlink" title="三数之和"></a>三数之和</h3><h1 id="1-22"><a href="#1-22" class="headerlink" title="1.22"></a>1.22</h1><h2 id="八股"><a href="#八股" class="headerlink" title="八股"></a>八股</h2><h3 id="css单位"><a href="#css单位" class="headerlink" title="css单位"></a>css单位</h3><ol>
+<li>px</li>
+<li>em：相对于父元素的font-size；<br>rem：相对于根元素html的font-size;</li>
+</ol>
+<h3 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h3><ul>
+<li>父元素有什么属性，子元素有什么属性（flex、flex-grow、flex-shrink、flex-basis、order）。</li>
+</ul>
+<h3 id="flex-1"><a href="#flex-1" class="headerlink" title="flex:1"></a>flex:1</h3><ul>
+<li>默认是 0 1 auto</li>
+<li>flex：1是 1 1 auto，增加了grow属性。</li>
+</ul>
+<h3 id="两栏布局"><a href="#两栏布局" class="headerlink" title="两栏布局"></a>两栏布局</h3><ul>
+<li>flex</li>
+<li>float、BFC</li>
+<li>float、margin-left</li>
+<li>position、margin-left</li>
+<li>position、left</li>
+</ul>
+<h3 id="三栏布局"><a href="#三栏布局" class="headerlink" title="三栏布局"></a>三栏布局</h3><ul>
+<li>flex，flex:1</li>
+<li>float:left,float:right,overflow:hidden;</li>
+<li>float:left.float:right.margin-left margin-right.</li>
+<li>position:absolute, position:absolute, margin-left right.</li>
+</ul>
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><ul>
+<li>方法一三什么情况都能用，方法二只能在盒子有宽高情况下用，不然多余空间不会给margin。</li>
+</ul>
+<ol>
+<li>flex,justify-content,align-items。</li>
+<li>position:absolute,left、right、top、bottom,margin:auto.</li>
+<li>position:absolute;left:50%, top:50%,transform:translate(-50%,-50%).</li>
+</ol>
+<h3 id="视口"><a href="#视口" class="headerlink" title="视口"></a>视口</h3><ol>
+<li>布局视口：文档对象的逻辑尺寸，pc端和浏览器窗口大小差不多。移动端远大于手机尺寸。</li>
+<li>理想视口：是布局视口的理想尺寸，和设备宽度相同。</li>
+<li>视觉视口：用户在网页看到的区域。理想视口尺寸&#x2F;缩放比例。</li>
+</ol>
+<h3 id="移动端适配"><a href="#移动端适配" class="headerlink" title="移动端适配"></a>移动端适配</h3><ol>
+<li>布局视口等于设备视口，设备视口等于理想视口。</li>
+<li>媒体查询</li>
+<li>em、rem</li>
+<li>vant组件库</li>
+<li>flex布局</li>
+<li>设计稿大小</li>
+</ol>
+<h1 id="1-23"><a href="#1-23" class="headerlink" title="1.23"></a>1.23</h1><h2 id="算法-2"><a href="#算法-2" class="headerlink" title="算法"></a>算法</h2><h3 id="四树之和"><a href="#四树之和" class="headerlink" title="四树之和"></a>四树之和</h3><h3 id="分发饼干"><a href="#分发饼干" class="headerlink" title="分发饼干"></a>分发饼干</h3><h3 id="摆动序列"><a href="#摆动序列" class="headerlink" title="摆动序列"></a>摆动序列</h3><h3 id="最大子序列和"><a href="#最大子序列和" class="headerlink" title="最大子序列和"></a>最大子序列和</h3><h3 id="买卖股票最佳时机2"><a href="#买卖股票最佳时机2" class="headerlink" title="买卖股票最佳时机2"></a>买卖股票最佳时机2</h3><h3 id="跳跃游戏"><a href="#跳跃游戏" class="headerlink" title="跳跃游戏"></a>跳跃游戏</h3><h3 id="跳跃游戏II"><a href="#跳跃游戏II" class="headerlink" title="跳跃游戏II"></a>跳跃游戏II</h3><h2 id="八股-1"><a href="#八股-1" class="headerlink" title="八股"></a>八股</h2><h3 id="flex布局-1"><a href="#flex布局-1" class="headerlink" title="flex布局"></a>flex布局</h3><h3 id="两栏布局-1"><a href="#两栏布局-1" class="headerlink" title="两栏布局"></a>两栏布局</h3><h3 id="三栏布局-1"><a href="#三栏布局-1" class="headerlink" title="三栏布局"></a>三栏布局</h3><h3 id="垂直居中-1"><a href="#垂直居中-1" class="headerlink" title="垂直居中"></a>垂直居中</h3><h3 id="视口-1"><a href="#视口-1" class="headerlink" title="视口"></a>视口</h3><h3 id="移动端适配-1"><a href="#移动端适配-1" class="headerlink" title="移动端适配"></a>移动端适配</h3><h1 id="1-24"><a href="#1-24" class="headerlink" title="1.24"></a>1.24</h1><h2 id="算法-3"><a href="#算法-3" class="headerlink" title="算法"></a>算法</h2><h3 id="k次取反后的最大数组"><a href="#k次取反后的最大数组" class="headerlink" title="k次取反后的最大数组"></a>k次取反后的最大数组</h3><h3 id="加油站"><a href="#加油站" class="headerlink" title="加油站"></a>加油站</h3><h3 id="二叉树的递归遍历"><a href="#二叉树的递归遍历" class="headerlink" title="二叉树的递归遍历"></a>二叉树的递归遍历</h3><h3 id="二叉树层序遍历1、2"><a href="#二叉树层序遍历1、2" class="headerlink" title="二叉树层序遍历1、2"></a>二叉树层序遍历1、2</h3><h2 id="八股-2"><a href="#八股-2" class="headerlink" title="八股"></a>八股</h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><ul>
+<li>string、symbol、null、undefined、number、boolean、bigInt、object</li>
+</ul>
+<h3 id="栈堆内存"><a href="#栈堆内存" class="headerlink" title="栈堆内存"></a>栈堆内存</h3><ul>
+<li>栈：大小固定，内存小，基本数据类型</li>
+<li>堆：大小不固定，内存大，栈中存储堆起始位置</li>
+</ul>
+<h3 id="类型判断"><a href="#类型判断" class="headerlink" title="类型判断"></a>类型判断</h3><ul>
+<li>typeof：null返回object，函数返回function</li>
+<li>instanceof</li>
+<li>prototype</li>
+<li>constructor</li>
+<li>Object.prototype.toString.call()</li>
+</ul>
+<h3 id="数组判断"><a href="#数组判断" class="headerlink" title="数组判断"></a>数组判断</h3><ol>
+<li>Array.isArray</li>
+<li>prototype</li>
+<li>constructor</li>
+<li>Object.prototype.toString.call()</li>
+</ol>
+<h3 id="原型对象、原型链"><a href="#原型对象、原型链" class="headerlink" title="原型对象、原型链"></a>原型对象、原型链</h3><ol>
+<li><strong>prototype、constructor</strong>：构造函数有一个prototype属性指向原型对象，在原型对象上可以放公有属性和方法。constructor指回构造函数。</li>
+<li><strong>proto</strong>：创建的实例有proto属性指向原型对象。</li>
+<li>原型对象是Object构造函数创建出来的实例，他的proto指向Object的原型对象。</li>
+<li>Object的原型对象指向null，是原型链的尽头。</li>
+<li>构造函数也是由Function构造函数创建来的，构造函数的proto指向Function.proto。</li>
+<li>原型链搜索：先查看对象本身，没有就去proto中查找，直到为空返回报错。（如果中途搜到null也会返回值）。</li>
+</ol>
+<h3 id="鸡蛋问题"><a href="#鸡蛋问题" class="headerlink" title="鸡蛋问题"></a>鸡蛋问题</h3><ul>
+<li>Function.prototype &#x3D;&#x3D; Function.proto</li>
+<li>先创建Object的原型对象，Function.proto继承其创建出来，然后各个构造函数的proto指向Function.proto。</li>
+</ul>
+<h3 id="原型上的方法this指向-10024"><a href="#原型上的方法this指向-10024" class="headerlink" title="原型上的方法this指向 &#10024;"></a>原型上的方法this指向 &#10024;</h3><ul>
+<li>指向实例对象，不是原型对象！</li>
+</ul>
+<h3 id="null、undefined区别"><a href="#null、undefined区别" class="headerlink" title="null、undefined区别"></a>null、undefined区别</h3><ul>
+<li>空对象，初始化。</li>
+<li>未定义，未赋值时候的值。</li>
+</ul>
+<h3 id="typeof-null为object原因"><a href="#typeof-null为object原因" class="headerlink" title="typeof null为object原因"></a>typeof null为object原因</h3><ul>
+<li>js存储数据时候有三个二进制位表示类型。object是000，null是所有二进制位都为0，正好也是object。</li>
+</ul>
+<h3 id="instanceof实现原理"><a href="#instanceof实现原理" class="headerlink" title="instanceof实现原理"></a>instanceof实现原理</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">myInstanceOf</span>(<span class="hljs-params">left,right</span>)&#123;<br>    <span class="hljs-keyword">let</span> prototype = left.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>;<br>    <span class="hljs-keyword">let</span> proto = right.<span class="hljs-property">__proto__</span>;<br>    <span class="hljs-keyword">while</span>(proto)&#123;<br>        <span class="hljs-keyword">if</span>(proto == prototype) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        proto = proto.<span class="hljs-property">__proto__</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="为什么0-1-0-2-！-0-3"><a href="#为什么0-1-0-2-！-0-3" class="headerlink" title="为什么0.1 + 0.2 ！&#x3D;&#x3D; 0.3"></a>为什么0.1 + 0.2 ！&#x3D;&#x3D; 0.3</h3><h3 id="转换为布尔值"><a href="#转换为布尔值" class="headerlink" title="转换为布尔值"></a>转换为布尔值</h3><ul>
+<li>null、undefined、0、””。</li>
+</ul>
+<h3 id="和"><a href="#和" class="headerlink" title="||和&amp;&amp;"></a>||和&amp;&amp;</h3><ul>
+<li>短路运算。</li>
+</ul>
+<h3 id="Object-is和’-’区别"><a href="#Object-is和’-’区别" class="headerlink" title="Object.is和’&#x3D;&#x3D;&#x3D;’区别"></a>Object.is和’&#x3D;&#x3D;&#x3D;’区别</h3><ul>
+<li>NaN是相等的，0 和 +0相等。</li>
+</ul>
+<h3 id="包装类型、隐式转换"><a href="#包装类型、隐式转换" class="headerlink" title="包装类型、隐式转换"></a>包装类型、隐式转换</h3><h3 id="Object-assgin、扩展运算符"><a href="#Object-assgin、扩展运算符" class="headerlink" title="Object.assgin、扩展运算符"></a>Object.assgin、扩展运算符</h3><ul>
+<li>都是浅拷贝</li>
+</ul>
+<h3 id="let、const、var区别"><a href="#let、const、var区别" class="headerlink" title="let、const、var区别"></a>let、const、var区别</h3><ul>
+<li>const必须赋初始值</li>
+<li>var申明的变量会出现在window上。</li>
+</ul>
+<h3 id="new-操作符干什么？"><a href="#new-操作符干什么？" class="headerlink" title="new 操作符干什么？"></a>new 操作符干什么？</h3><ul>
+<li>创建一个空对象</li>
+<li>空对象原型指向构造函数的原型</li>
+<li>this指向空对象，执行函数</li>
+<li>返回空对象，或者函数原本返回一个对象</li>
+</ul>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><ol>
+<li>写法更简洁</li>
+<li>没有原型对象</li>
+<li>没有arguments</li>
+<li>没有this，this指向不会改变。</li>
+<li>不能作为构造函数</li>
+</ol>
+<h3 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h3><ol>
+<li>可以用${}</li>
+<li>换行空格都会保留</li>
+</ol>
+<h3 id="es6字符串新操作"><a href="#es6字符串新操作" class="headerlink" title="es6字符串新操作"></a>es6字符串新操作</h3><ul>
+<li>indexOf &#x3D;》 includes返回true或者false。</li>
+<li>repeat(3)</li>
+</ul>
+<h3 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h3><p>- </p>
+<h3 id><a href="#" class="headerlink" title></a></h3><h1 id="1-25"><a href="#1-25" class="headerlink" title="1.25"></a>1.25</h1><h2 id="算法-4"><a href="#算法-4" class="headerlink" title="算法"></a>算法</h2><h3 id="二叉树前中后非递归遍历"><a href="#二叉树前中后非递归遍历" class="headerlink" title="二叉树前中后非递归遍历"></a>二叉树前中后非递归遍历</h3><h3 id="二叉树的右视图"><a href="#二叉树的右视图" class="headerlink" title="二叉树的右视图"></a>二叉树的右视图</h3><h3 id="二叉树的层平均值"><a href="#二叉树的层平均值" class="headerlink" title="二叉树的层平均值"></a>二叉树的层平均值</h3><h3 id="翻转二叉树"><a href="#翻转二叉树" class="headerlink" title="翻转二叉树"></a>翻转二叉树</h3><h3 id="对称二叉树"><a href="#对称二叉树" class="headerlink" title="对称二叉树"></a>对称二叉树</h3><h3 id="二叉树的最大深度"><a href="#二叉树的最大深度" class="headerlink" title="二叉树的最大深度"></a>二叉树的最大深度</h3><h3 id="二叉树的最小深度"><a href="#二叉树的最小深度" class="headerlink" title="二叉树的最小深度"></a>二叉树的最小深度</h3><h3 id="N叉树的最大深度"><a href="#N叉树的最大深度" class="headerlink" title="N叉树的最大深度"></a>N叉树的最大深度</h3><h3 id="平衡二叉树-1"><a href="#平衡二叉树-1" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><h3 id="完全二叉树的节点个数"><a href="#完全二叉树的节点个数" class="headerlink" title="完全二叉树的节点个数"></a>完全二叉树的节点个数</h3><h3 id="柠檬水找零"><a href="#柠檬水找零" class="headerlink" title="柠檬水找零"></a>柠檬水找零</h3><h2 id="八股-3"><a href="#八股-3" class="headerlink" title="八股"></a>八股</h2><ul>
+<li>js基础、执行上下文作用域闭包</li>
+</ul>
+<h3 id="手写new操作符"><a href="#手写new操作符" class="headerlink" title="手写new操作符"></a>手写new操作符</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">myNew</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">let</span> args = [...<span class="hljs-variable language_">arguments</span>];<br>    <span class="hljs-keyword">let</span> constructor = args.<span class="hljs-title function_">shift</span>();<br>    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> constructor !== <span class="hljs-string">&#x27;function&#x27;</span>)&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>();<br>    &#125;<br>    <span class="hljs-keyword">let</span> newObj = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">create</span>(constructor.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>);<br>    <span class="hljs-keyword">let</span> result = constructor.<span class="hljs-title function_">apply</span>(newObj, args);<br>    <span class="hljs-keyword">if</span>(result &amp;&amp; <span class="hljs-keyword">typeof</span> result == <span class="hljs-string">&#x27;object&#x27;</span>) <span class="hljs-keyword">return</span> result;<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> newObj;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="map和object区别"><a href="#map和object区别" class="headerlink" title="map和object区别"></a>map和object区别</h3><ul>
+<li>map无多余属性、按顺序放、完整的键值对、size、有迭代器可以遍历</li>
+</ul>
+<h3 id="weakmap和map区别"><a href="#weakmap和map区别" class="headerlink" title="weakmap和map区别"></a>weakmap和map区别</h3><ul>
+<li>weakmap的键名只能是对象或者symbol值，垃圾回收机制不会考虑weakmap的引用，当内存中其他变量没有引用对象时候，垃圾回收机制会自动释放该对象内存。</li>
+</ul>
+<h3 id="json-stringify、json-parse"><a href="#json-stringify、json-parse" class="headerlink" title="json.stringify、json.parse"></a>json.stringify、json.parse</h3><ol>
+<li>function,symbol,undefined,不可枚举属性会消失,NaN&#x3D;&#x3D;&gt;null</li>
+<li>原型链 循环引用不会转换</li>
+</ol>
+<h3 id="js延迟加载"><a href="#js延迟加载" class="headerlink" title="js延迟加载"></a>js延迟加载</h3><ol>
+<li>async</li>
+<li>defer</li>
+<li>script标签写到文档后面</li>
+<li>动态创建script标签去加载</li>
+</ol>
+<h3 id="类数组"><a href="#类数组" class="headerlink" title="类数组"></a>类数组</h3><ul>
+<li>有length属性、若干索引属性。常见的DOM数组、arguments。和数组相似但没有数组方法。</li>
+<li>Array.from、[…arguments]。</li>
+</ul>
+<h3 id="常见的位运算符"><a href="#常见的位运算符" class="headerlink" title="常见的位运算符"></a>常见的位运算符</h3><ul>
+<li>&amp;  |  ^ &gt;&gt; &lt;&lt;</li>
+</ul>
+<h3 id="原码、反码、补码"><a href="#原码、反码、补码" class="headerlink" title="原码、反码、补码"></a>原码、反码、补码</h3><ul>
+<li>原码就是二进制的数。 反码是原码每一位取反。补码：正数就是本身，负数是反码+1.</li>
+<li>计算机内部存储都是补码，补码可以在做减法时候直接相加即可。</li>
+</ul>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs dns">计算 <span class="hljs-number">5</span>−<span class="hljs-number">3</span>=<span class="hljs-number">5</span>+(−<span class="hljs-number">3</span>)：<br><br>+<span class="hljs-number">5</span> 的补码：<span class="hljs-number">00000101</span><br>−<span class="hljs-number">3</span> 的补码：<span class="hljs-number">11111101</span><br>加法结果：<span class="hljs-number">00000101</span> + <span class="hljs-number">11111101</span> = <span class="hljs-number">00000010</span>（忽略最高位进位）<br>结果是 <br>+<span class="hljs-number">2</span>，与实际结果一致。<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="为什么会有类数组"><a href="#为什么会有类数组" class="headerlink" title="为什么会有类数组"></a>为什么会有类数组</h3><ol>
+<li>提供轻量数据结构，没有数组方法和原型，占据内存少。</li>
+<li>性能更好，创建速度更快，有的</li>
+</ol>
+<h1 id="1-26"><a href="#1-26" class="headerlink" title="1.26"></a>1.26</h1><h2 id="算法-5"><a href="#算法-5" class="headerlink" title="算法"></a>算法</h2><h3 id="二叉树的所有路径"><a href="#二叉树的所有路径" class="headerlink" title="二叉树的所有路径"></a>二叉树的所有路径</h3><h3 id="相同的树"><a href="#相同的树" class="headerlink" title="相同的树"></a>相同的树</h3><h3 id="另一颗树的子树"><a href="#另一颗树的子树" class="headerlink" title="另一颗树的子树"></a>另一颗树的子树</h3><h3 id="左叶子之和"><a href="#左叶子之和" class="headerlink" title="左叶子之和"></a>左叶子之和</h3><h3 id="找左下角的值"><a href="#找左下角的值" class="headerlink" title="找左下角的值"></a>找左下角的值</h3><h3 id="路径总和1"><a href="#路径总和1" class="headerlink" title="路径总和1"></a>路径总和1</h3><h3 id="路径总和2"><a href="#路径总和2" class="headerlink" title="路径总和2"></a>路径总和2</h3><h2 id="八股-4"><a href="#八股-4" class="headerlink" title="八股"></a>八股</h2><h3 id="类数组-1"><a href="#类数组-1" class="headerlink" title="类数组"></a>类数组</h3><ul>
+<li>本身是什么？有length属性、若干索引属性。常见的DOM数组、arguments。和数组相似但没有数组方法。</li>
+<li>优势是什么？提供轻量数据结构，没有数组方法和原型，占据内存少；性能更好，创建速度更快，有的</li>
+<li>如何进行转换？Array.from、[…arguments].</li>
+</ul>
+<h1 id="1-27"><a href="#1-27" class="headerlink" title="1.27"></a>1.27</h1><h2 id="算法-6"><a href="#算法-6" class="headerlink" title="算法"></a>算法</h2><h3 id="根据身高重建队列"><a href="#根据身高重建队列" class="headerlink" title="根据身高重建队列"></a>根据身高重建队列</h3><ul>
+<li>去尝试，要么按这个排序，要么按另一个排序，然后插入嘛。</li>
+</ul>
+<h1 id="1-28"><a href="#1-28" class="headerlink" title="1.28"></a>1.28</h1><h2 id="算法-7"><a href="#算法-7" class="headerlink" title="算法"></a>算法</h2><h3 id="从后序中序遍历构建二叉树"><a href="#从后序中序遍历构建二叉树" class="headerlink" title="从后序中序遍历构建二叉树"></a>从后序中序遍历构建二叉树</h3><h3 id="最大二叉树"><a href="#最大二叉树" class="headerlink" title="最大二叉树"></a>最大二叉树</h3><h1 id="1-29"><a href="#1-29" class="headerlink" title="1.29"></a>1.29</h1><h2 id="算法-8"><a href="#算法-8" class="headerlink" title="算法"></a>算法</h2><h3 id="二叉搜索树中的搜索"><a href="#二叉搜索树中的搜索" class="headerlink" title="二叉搜索树中的搜索"></a>二叉搜索树中的搜索</h3><h3 id="合并二叉树"><a href="#合并二叉树" class="headerlink" title="合并二叉树"></a>合并二叉树</h3><h1 id="1-30"><a href="#1-30" class="headerlink" title="1.30"></a>1.30</h1><h2 id="算法-9"><a href="#算法-9" class="headerlink" title="算法"></a>算法</h2><h3 id="验证二叉搜索树"><a href="#验证二叉搜索树" class="headerlink" title="验证二叉搜索树"></a>验证二叉搜索树</h3><h3 id="二叉搜索树的最小绝对差"><a href="#二叉搜索树的最小绝对差" class="headerlink" title="二叉搜索树的最小绝对差"></a>二叉搜索树的最小绝对差</h3><h1 id="1-31"><a href="#1-31" class="headerlink" title="1.31"></a>1.31</h1><h2 id="算法-10"><a href="#算法-10" class="headerlink" title="算法"></a>算法</h2><h3 id="二叉搜索树的众数"><a href="#二叉搜索树的众数" class="headerlink" title="二叉搜索树的众数"></a>二叉搜索树的众数</h3><h3 id="二叉树的最近公共祖先-1"><a href="#二叉树的最近公共祖先-1" class="headerlink" title="二叉树的最近公共祖先"></a>二叉树的最近公共祖先</h3><h3 id="二叉搜索树的最近公共祖先-1"><a href="#二叉搜索树的最近公共祖先-1" class="headerlink" title="二叉搜索树的最近公共祖先"></a>二叉搜索树的最近公共祖先</h3><h1 id="2-1"><a href="#2-1" class="headerlink" title="2.1"></a>2.1</h1><h2 id="算法-11"><a href="#算法-11" class="headerlink" title="算法"></a>算法</h2><h3 id="二叉搜索树的插入操作"><a href="#二叉搜索树的插入操作" class="headerlink" title="二叉搜索树的插入操作"></a>二叉搜索树的插入操作</h3><h3 id="删除二叉搜索树的节点"><a href="#删除二叉搜索树的节点" class="headerlink" title="删除二叉搜索树的节点"></a>删除二叉搜索树的节点</h3><h3 id="将有序数组转换为二叉平衡搜索树"><a href="#将有序数组转换为二叉平衡搜索树" class="headerlink" title="将有序数组转换为二叉平衡搜索树"></a>将有序数组转换为二叉平衡搜索树</h3><h3 id="把二叉搜索树转换为累加树"><a href="#把二叉搜索树转换为累加树" class="headerlink" title="把二叉搜索树转换为累加树"></a>把二叉搜索树转换为累加树</h3><h3 id="修剪二叉搜索树"><a href="#修剪二叉搜索树" class="headerlink" title="修剪二叉搜索树"></a>修剪二叉搜索树</h3><h3 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>确定三部曲第一部的返回值很重要。</li>
+</ul>
+<ol>
+<li>递归遍历：不用返回值，收集结果。单独写一个函数。</li>
+<li>迭代遍历：前后序遍历是用栈结构处理，根左右，右先进栈压在里面。然后左出栈处理，只有左边处理完右才出栈。</li>
+<li>层序遍历：队列，一层出队列后，遍历下一层。</li>
+<li>翻转二叉树</li>
+<li>对称二叉树：返回值是布尔值，递归参数是两个节点。</li>
+<li>最大深度、最小深度：返回值都要接受。</li>
+<li>完全二叉树节点个数：单独写一个函数，收集结果，不用返回值。</li>
+<li>判断平衡二叉树：返回值既要布尔值，但又需要数字去判断，就单独写一个获取最大深度的函数。</li>
+</ol>
+<h2 id="八股-5"><a href="#八股-5" class="headerlink" title="八股"></a>八股</h2><h3 id="new操作符干了什么？"><a href="#new操作符干了什么？" class="headerlink" title="new操作符干了什么？"></a>new操作符干了什么？</h3><ol>
+<li>创建一个空对象。</li>
+<li>对象的原型指向构造函数的原型对象。</li>
+<li>this指向这个空对象，带入构造函数执行。</li>
+<li>返回这个对象，或者构造函数原来就返回的对象。</li>
+</ol>
+<h3 id="map-Object区别？"><a href="#map-Object区别？" class="headerlink" title="map Object区别？"></a>map Object区别？</h3><ul>
+<li>没有额外的键值、有顺序、完整的键值对、size、可遍历。</li>
+</ul>
+<h3 id="map、weakmap区别"><a href="#map、weakmap区别" class="headerlink" title="map、weakmap区别"></a>map、weakmap区别</h3><ul>
+<li>弱引用</li>
+</ul>
+<h3 id="json-stringfy"><a href="#json-stringfy" class="headerlink" title="json.stringfy"></a>json.stringfy</h3><ul>
+<li>循环引用、原型链不会转换</li>
+<li>函数、symbol、undefined、不可遍历属性不会转换，NaN转换为null。</li>
+</ul>
+<h3 id="js脚本延迟加载"><a href="#js脚本延迟加载" class="headerlink" title="js脚本延迟加载"></a>js脚本延迟加载</h3><ul>
+<li>async、defer、后面插入script标签、script标签写后面。</li>
+</ul>
+<h3 id="类数组-2"><a href="#类数组-2" class="headerlink" title="类数组"></a>类数组</h3><ul>
+<li>数字索引、length。</li>
+<li>没有数组原型链上的属性和方法，性能更好，轻量占用内存少。</li>
+<li>Array.from、[…arguments].</li>
+</ul>
+<h3 id="encodeURI、encodeURIComponent"><a href="#encodeURI、encodeURIComponent" class="headerlink" title="encodeURI、encodeURIComponent"></a>encodeURI、encodeURIComponent</h3><ul>
+<li>encodeURI不会转义特殊字符，比如等于号、问号</li>
+<li>encodeURIComponent可以</li>
+<li>一般比如get请求，xx&#x3D;参数，如果参数里面有等于我们就用encodeURIComponent</li>
+</ul>
+<h1 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h1><h2 id="算法-12"><a href="#算法-12" class="headerlink" title="算法"></a>算法</h2><h3 id="用最少数量的箭引爆气球"><a href="#用最少数量的箭引爆气球" class="headerlink" title="用最少数量的箭引爆气球"></a>用最少数量的箭引爆气球</h3><h3 id="无重叠区间"><a href="#无重叠区间" class="headerlink" title="无重叠区间"></a>无重叠区间</h3><h3 id="划分字母区间"><a href="#划分字母区间" class="headerlink" title="划分字母区间"></a>划分字母区间</h3><h3 id="合并区间"><a href="#合并区间" class="headerlink" title="合并区间"></a>合并区间</h3><h3 id="单调递增的数字"><a href="#单调递增的数字" class="headerlink" title="单调递增的数字"></a>单调递增的数字</h3><h3 id="复习-1"><a href="#复习-1" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>二叉树所有路径：单独写一个函数，不需要返回值。</li>
+<li>相同的树：接受返回值。</li>
+<li>另一颗树的子树：接受返回值，两个函数遍历。</li>
+<li>左叶子之和：单独写一个函数，不需要返回值。</li>
+<li>找树最左下角的值：层序遍历</li>
+<li>路径总和1，2，3</li>
+</ul>
+<h1 id="2-3"><a href="#2-3" class="headerlink" title="2.3"></a>2.3</h1><h2 id="算法-13"><a href="#算法-13" class="headerlink" title="算法"></a>算法</h2><h3 id="路径总和3"><a href="#路径总和3" class="headerlink" title="路径总和3"></a>路径总和3</h3><h3 id="复习-2"><a href="#复习-2" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>路径总和1：单独写一个函数，收集结果。不需要返回值。</li>
+<li>路径总和2：单独写一个函数，收集结果。不需要返回值。</li>
+<li>路径总和3：接受返回值；每个节点调用。</li>
+<li>理解接受返回值，返回值如何处理。累加</li>
+</ul>
+<h3 id="回溯算法理论"><a href="#回溯算法理论" class="headerlink" title="回溯算法理论"></a>回溯算法理论</h3><h3 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h3><h3 id="组合总和3"><a href="#组合总和3" class="headerlink" title="组合总和3"></a>组合总和3</h3><h3 id="电话号码的字母组合"><a href="#电话号码的字母组合" class="headerlink" title="电话号码的字母组合"></a>电话号码的字母组合</h3><h3 id="递归、回溯思路"><a href="#递归、回溯思路" class="headerlink" title="递归、回溯思路"></a>递归、回溯思路</h3><ul>
+<li>递归和回溯的模拟思想都是从终止条件往回走一步，再走一步。</li>
+</ul>
+<h2 id="八股-6"><a href="#八股-6" class="headerlink" title="八股"></a>八股</h2><h3 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h3><ul>
+<li>new XMLHttpRequest,open,send,onreadystatechange,status,onerror,setRequestHeaders</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> xhr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br>xhr.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>, url, <span class="hljs-literal">true</span>);<br>xhr.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">readyState</span> !== <span class="hljs-number">4</span>) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">status</span> == <span class="hljs-number">200</span>)&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">response</span>;<br>    &#125;<br>&#125;<br>xhr.<span class="hljs-property">onerror</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(err);<br>&#125;<br>xhr.<span class="hljs-title function_">setRequestHeader</span>(<span class="hljs-string">&#x27;Accept&#x27;</span>,<span class="hljs-string">&#x27;application/json&#x27;</span>)<br><br>xhr.<span class="hljs-title function_">send</span>();<br></code></pre></td></tr></table></figure>
+<h3 id="尾调用"><a href="#尾调用" class="headerlink" title="尾调用"></a>尾调用</h3><ul>
+<li>执行上下文、执行上下文栈&#x3D;》结合闭包为什么不能弹出&#x3D;》为什么尾调用能弹出。</li>
+</ul>
+<ol>
+<li>每一个函数对应一个执行下上文，执行上下文栈。</li>
+<li>一般情况下，里层函数可以访问外层函数词法环境也就是变量，所以外层函数执行上下文不能弹出执行上下文栈。<br>但是如果没有用闭包，且是在外层函数的末尾调用的，则可以提前弹出外层函数的执行上下文，减少内存的占用。</li>
+</ol>
+<h3 id="es6模块和commonjs模块区别"><a href="#es6模块和commonjs模块区别" class="headerlink" title="es6模块和commonjs模块区别"></a>es6模块和commonjs模块区别</h3><ul>
+<li>加载的语句、同步异步、编译运行、值的处理。</li>
+</ul>
+<h3 id="dom节点的操作"><a href="#dom节点的操作" class="headerlink" title="dom节点的操作"></a>dom节点的操作</h3><ul>
+<li>getElementById、querySelector、createElement、removeChild、appendChild</li>
+</ul>
+<h3 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h3><ol>
+<li>禁止使用with</li>
+<li>对象属性不能重复</li>
+<li>this不再指向window，而是undefined<br>只读不可赋值、等等。</li>
+</ol>
+<h3 id="强、弱语言类型"><a href="#强、弱语言类型" class="headerlink" title="强、弱语言类型"></a>强、弱语言类型</h3><ul>
+<li>强类型语言中每个变量会有个固定类型，变量类型确定后不做强制转换不能改变。</li>
+</ul>
+<h3 id="for-in-、-for-of"><a href="#for-in-、-for-of" class="headerlink" title="for in 、 for of"></a>for in 、 for of</h3><ol>
+<li>for in是遍历对象属性，包括原型。</li>
+<li>for of一般是遍历有迭代器的对象。map、set、类数组。</li>
+<li>数组上：in是下标，of是值。</li>
+</ol>
+<h3 id="如何用for-of遍历对象"><a href="#如何用for-of遍历对象" class="headerlink" title="如何用for of遍历对象"></a>如何用for of遍历对象</h3><ul>
+<li>给对象写个遍历器属性[symbol.interator]</li>
+</ul>
+<h3 id="解释性语言（py，js）和编译性语言（c）"><a href="#解释性语言（py，js）和编译性语言（c）" class="headerlink" title="解释性语言（py，js）和编译性语言（c）"></a>解释性语言（py，js）和编译性语言（c）</h3><ol>
+<li>解释性是代码逐行解释执行，编译性语言是统一转换为机器码之后执行。</li>
+<li>解释性执行速度慢，编译性执行机器码快。</li>
+<li>解释性跨平台更好（解释器跨平台即可），编译性需要编译成不同的机器码。</li>
+</ol>
+<h3 id="axios比fetch、ajax的好处"><a href="#axios比fetch、ajax的好处" class="headerlink" title="axios比fetch、ajax的好处"></a>axios比fetch、ajax的好处</h3><ol>
+<li>json格式化处理</li>
+<li>兼容性：避免fetch不兼容</li>
+<li>api简洁：基于promise封装，避免xhr的回调</li>
+<li>超时配置、baseURL、拦截器功能</li>
+</ol>
+<h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><ul>
+<li>对代码执行环境的抽象概念</li>
+<li>全局执行上下文：只有一个，代码执行时候创建，浏览器关闭时候销毁。<br>函数执行上下文：函数执行时候创建。<br>eval执行上下文</li>
+<li>执行上下文栈：全局执行上下文栈压入栈中，函数被调用创建上下文压入栈，代码在栈顶的被执行，执行完毕后出栈。</li>
+<li>生命周期：<br>确定this指向；<br>创建词法环境：登记let、const、类，初始化函数声明；处理重复登记的变量、确定对外部词法环境的引用也就是作用域链。<br>创建变量环境：词法环境特殊的一种，登记var声明的变量并初始化为undefined。</li>
+</ul>
+<h3 id="块级作用域原理？"><a href="#块级作用域原理？" class="headerlink" title="块级作用域原理？"></a>块级作用域原理？</h3><ul>
+<li>当前块级的执行上下文中的词法环境会维护一个栈结构，块级变量会在栈顶部优先访问，块级执行完后弹出。</li>
+</ul>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><ul>
+<li>变量和函数可以被访问的区域。</li>
+<li>全局作用域、函数作用域、块级作用域</li>
+<li>静态作用域：函数、变量的作用域在定义时候就确定了，但是值在执行创建执行上下文时候才能确定。</li>
+</ul>
+<h3 id="作用域和执行上下文区别？"><a href="#作用域和执行上下文区别？" class="headerlink" title="作用域和执行上下文区别？"></a>作用域和执行上下文区别？</h3><ul>
+<li>作用域是变量、函数可以访问的区域；执行上下文是代码执行环境的一个抽象概念。</li>
+<li>静态的，动态的。</li>
+<li>执行上下文对外部环境的引用，一个变量作用域可能涉及多个执行上下文。</li>
+</ul>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><ul>
+<li>一个函数访问另一个函数中的变量，一个函数执行上下文词法环境与另一个函数执行上下文的词法环境进行了捆绑。</li>
+<li>函数在定义时候就确定了他的作用域，会预创建作用域链，等函数被执行时候会创建执行上下文推到作用域链最前端。闭包原理就是作用域链可以访问其他执行上下文的词法环境。</li>
+<li>延长变量生命周期、创建私有变量。响应式原理就用到闭包，set、get函数就是闭包，访问定义响应式函数中的dep类变量。</li>
+</ul>
+<h3 id="this对象"><a href="#this对象" class="headerlink" title="this对象"></a>this对象</h3><ul>
+<li>new &gt; call、apply、bind &gt; 对象调用 &gt; 全局调用</li>
+</ul>
+<h1 id="2-4"><a href="#2-4" class="headerlink" title="2.4"></a>2.4</h1><h2 id="算法-14"><a href="#算法-14" class="headerlink" title="算法"></a>算法</h2><h3 id="组合总和III"><a href="#组合总和III" class="headerlink" title="组合总和III"></a>组合总和III</h3><h1 id="2-5"><a href="#2-5" class="headerlink" title="2.5"></a>2.5</h1><h2 id="算法-15"><a href="#算法-15" class="headerlink" title="算法"></a>算法</h2><h3 id="组合总和II"><a href="#组合总和II" class="headerlink" title="组合总和II"></a>组合总和II</h3><h3 id="分割回文串"><a href="#分割回文串" class="headerlink" title="分割回文串"></a>分割回文串</h3><h3 id="复原ip"><a href="#复原ip" class="headerlink" title="复原ip"></a>复原ip</h3><h3 id="复习-3"><a href="#复习-3" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>组合问题：都需要startIndex。</li>
+<li>从中序后序构建二叉树：返回值为node，要接受。</li>
+<li>最大二叉树：返回值为node，要接受。</li>
+</ul>
+<h2 id="八股-7"><a href="#八股-7" class="headerlink" title="八股"></a>八股</h2><h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><ul>
+<li>两种特性；数据类型：configuable、enumerable、writeable、value；访问器属性：get、set、enumerable、configurable</li>
+<li>修改特性：Object.defineProperty</li>
+<li><strong>创建对象</strong>：工厂模式，构造函数模式，原型模式，构造函数＋原型模式。</li>
+<li><strong>对象继承</strong>：原型链继承，盗用构造函数继承，组合继承，原型式继承，寄生式继承，寄生式组合继承。</li>
+</ul>
+<h3 id="异步编程"><a href="#异步编程" class="headerlink" title="异步编程"></a>异步编程</h3><ul>
+<li>promise是什么</li>
+<li>Promise.resolve、Promise.reject、promise.then catch finally.</li>
+</ul>
+<h3 id="垃圾回收机制-10024"><a href="#垃圾回收机制-10024" class="headerlink" title="垃圾回收机制 &#10024;"></a>垃圾回收机制 &#10024;</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7280787122016059426">https://juejin.cn/post/7280787122016059426</a></li>
+</ul>
+<ol>
+<li><strong>是什么</strong>：js为对象、变量、函数<em><strong>分配内存</strong></em>，当不再使用这些值时候，垃圾回收机制：一个内存管理机制，会收回对应的内存。</li>
+<li><strong>什么时候启用</strong>：<em><strong>全局变量、局部变量</strong></em>，全局变量要等页面卸载才会回收，局部变量等函数执行完毕退出执行栈时候回收；特殊情况：闭包下不会回收函数执行上下文的词法环境。</li>
+<li><strong>引用计数</strong></li>
+<li><strong>标记清除</strong>：用到的标记，没标记的清除。</li>
+<li><strong>分代回收</strong>：根据生命周期分为新旧生代，旧生代就是上面所述的标记清除。新生代有from to两个空间，刚进来变量放在from里，from满之后进行标记清除，剩下的变量放到to中；然后to变成from，from变成to，重复上述过程。消除内存碎片、生命周期短的变量及时进行垃圾回收。</li>
+<li>闲时收集：CPU空闲时候才进行垃圾回收。</li>
+</ol>
+<h1 id="2-6"><a href="#2-6" class="headerlink" title="2.6"></a>2.6</h1><h2 id="算法-16"><a href="#算法-16" class="headerlink" title="算法"></a>算法</h2><h3 id="子集1"><a href="#子集1" class="headerlink" title="子集1"></a>子集1</h3><h3 id="子集2"><a href="#子集2" class="headerlink" title="子集2"></a>子集2</h3><h3 id="递增子序列"><a href="#递增子序列" class="headerlink" title="递增子序列"></a>递增子序列</h3><h1 id="2-7"><a href="#2-7" class="headerlink" title="2.7"></a>2.7</h1><h2 id="算法-17"><a href="#算法-17" class="headerlink" title="算法"></a>算法</h2><h3 id="全排列"><a href="#全排列" class="headerlink" title="全排列"></a>全排列</h3><h3 id="全排列2"><a href="#全排列2" class="headerlink" title="全排列2"></a>全排列2</h3><ul>
+<li>用数组作为hash更稳妥，在有相同值时候</li>
+</ul>
+<h3 id="N皇后"><a href="#N皇后" class="headerlink" title="N皇后"></a>N皇后</h3><h3 id="复习-4"><a href="#复习-4" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>合并二叉树：参数&#x3D;&gt;返回值&#x3D;&gt;是否要接受&#x3D;&gt;单层逻辑，调用函数</li>
+<li>另一颗树的子树：参数是两个节点，返回值是boolean，要接受返回值。</li>
+<li>验证二叉搜索树：参数：最高值，最低值。</li>
+</ul>
+<h2 id="八股-8"><a href="#八股-8" class="headerlink" title="八股"></a>八股</h2><h3 id="js基础"><a href="#js基础" class="headerlink" title="js基础"></a>js基础</h3><h3 id="es6"><a href="#es6" class="headerlink" title="es6"></a>es6</h3><h1 id="2-8"><a href="#2-8" class="headerlink" title="2.8"></a>2.8</h1><h2 id="算法-18"><a href="#算法-18" class="headerlink" title="算法"></a>算法</h2><h3 id="爬楼梯"><a href="#爬楼梯" class="headerlink" title="爬楼梯"></a>爬楼梯</h3><h3 id="斐波那契"><a href="#斐波那契" class="headerlink" title="斐波那契"></a>斐波那契</h3><h1 id="2-9"><a href="#2-9" class="headerlink" title="2.9"></a>2.9</h1><h1 id="2-10"><a href="#2-10" class="headerlink" title="2.10"></a>2.10</h1><h2 id="算法-19"><a href="#算法-19" class="headerlink" title="算法"></a>算法</h2><h3 id="整数拆分"><a href="#整数拆分" class="headerlink" title="整数拆分"></a>整数拆分</h3><h3 id="不同的二叉搜索树"><a href="#不同的二叉搜索树" class="headerlink" title="不同的二叉搜索树"></a>不同的二叉搜索树</h3><h3 id="01背包二维、一维理论"><a href="#01背包二维、一维理论" class="headerlink" title="01背包二维、一维理论"></a>01背包二维、一维理论</h3><h3 id="分割等和子集"><a href="#分割等和子集" class="headerlink" title="分割等和子集"></a>分割等和子集</h3><ul>
+<li>二维写法</li>
+<li>一维写法</li>
+</ul>
+<h3 id="最后一块石头的重量"><a href="#最后一块石头的重量" class="headerlink" title="最后一块石头的重量"></a>最后一块石头的重量</h3><h3 id="一和零"><a href="#一和零" class="headerlink" title="一和零"></a>一和零</h3><h2 id="八股-9"><a href="#八股-9" class="headerlink" title="八股"></a>八股</h2><h3 id="执行上下文-1"><a href="#执行上下文-1" class="headerlink" title="执行上下文"></a>执行上下文</h3><h3 id="作用域，闭包"><a href="#作用域，闭包" class="headerlink" title="作用域，闭包"></a>作用域，闭包</h3><h3 id="垃圾回收机制-10024-1"><a href="#垃圾回收机制-10024-1" class="headerlink" title="垃圾回收机制 &#10024;"></a>垃圾回收机制 &#10024;</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7280787122016059426">https://juejin.cn/post/7280787122016059426</a></li>
+</ul>
+<ol>
+<li><strong>是什么</strong>：js为对象、变量、函数<em><strong>分配内存</strong></em>，当不再使用这些值时候，垃圾回收机制：一个内存管理机制，会收回对应的内存。</li>
+<li><strong>什么时候启用</strong>：<em><strong>全局变量、局部变量</strong></em>，全局变量要等页面卸载才会回收，局部变量等函数执行完毕退出执行栈时候回收；特殊情况：闭包下不会回收函数执行上下文的词法环境。</li>
+<li><strong>引用计数</strong></li>
+<li><strong>标记清除</strong>：用到的标记，没标记的清除。</li>
+<li><strong>分代回收</strong>：根据生命周期分为新旧生代，旧生代就是上面所述的标记清除。新生代有from to两个空间，刚进来变量放在from里，from满之后进行标记清除，剩下的变量放到to中；然后to变成from，from变成to，重复上述过程。消除内存碎片、生命周期短的变量及时进行垃圾回收。</li>
+<li>闲时收集：CPU空闲时候才进行垃圾回收。</li>
+</ol>
+<h3 id="异步编程-1"><a href="#异步编程-1" class="headerlink" title="异步编程"></a>异步编程</h3><h1 id="2-11"><a href="#2-11" class="headerlink" title="2.11"></a>2.11</h1><h2 id="算法-20"><a href="#算法-20" class="headerlink" title="算法"></a>算法</h2><h3 id="目标和"><a href="#目标和" class="headerlink" title="目标和"></a>目标和</h3><h3 id="完全背包理论基础"><a href="#完全背包理论基础" class="headerlink" title="完全背包理论基础"></a>完全背包理论基础</h3><h3 id="零钱兑换"><a href="#零钱兑换" class="headerlink" title="零钱兑换"></a>零钱兑换</h3><h3 id="组合总和IV（未解决）"><a href="#组合总和IV（未解决）" class="headerlink" title="组合总和IV（未解决）"></a>组合总和IV（未解决）</h3><h3 id="复习-5"><a href="#复习-5" class="headerlink" title="复习"></a>复习</h3><ul>
+<li>二叉搜索树中的搜索：递归函数参数是节点＋val值，返回值是null或者节点。返回值要被接受。递归终止条件，单层递归逻辑。</li>
+<li>验证二叉搜索树：递归函数参数有low、high。</li>
+<li>二叉搜索树最小绝对差：中序遍历二叉搜索树得到一个有序结果。</li>
+<li>二叉搜索树中的众数：要按中序遍历，这样相同值才能在一起凑出最大值。</li>
+</ul>
+<h2 id="八股-10"><a href="#八股-10" class="headerlink" title="八股"></a>八股</h2><h2 id="异步编程-2"><a href="#异步编程-2" class="headerlink" title="异步编程"></a>异步编程</h2><h3 id="对象创建、继承"><a href="#对象创建、继承" class="headerlink" title="对象创建、继承"></a>对象创建、继承</h3><ul>
+<li>工厂模式，构造函数，原型模式，构造+原型模式</li>
+<li>原型链模式，盗用构造函数，组合，原型式，寄生式，寄生式组合。</li>
+</ul>
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><ul>
+<li>prototype，proto，constructor。</li>
+</ul>
+<!-- ### 移动端rem换算
+https://www.cnblogs.com/liangxuru/p/6970629.html -->
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="category-chain-item">学习记录</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>大四寒假学习记录</div>
+      <div>http://example.com/2025/04/05/学习记录/2.寒假学习记录/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Wayne Chen</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月5日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/04/05/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/3.%E6%98%A5%E6%8B%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="春招学习记录">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">春招学习记录</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/04/05/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/1.%E7%A7%8B%E6%8B%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="秋招学习记录">
+                        <span class="hidden-mobile">秋招学习记录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"ohWadpEWlT0Q54ERBAkcKH6S-MdYXbMMI","appKey":"vCuFIlABwAvv2H6Ambf1u5e4","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/custom.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

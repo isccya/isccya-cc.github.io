@@ -1,0 +1,821 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/batman4.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Wayne Chen">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Promise期约 期约本质是一个有状态的对象.里面保存一个未来才会结束的事件的结果,创建时候要传入执行器函数. 异步操作成功,期约状态变为resolved,有对应的值;异步操作失败,期约状态变为rejected,有对应失败的原因. 三种状态:pending,resolved(fulfilled),rejected.状态一但发生改变则不能再修改. 创建期约时候会传入一个执行器函数,执行器函数是用来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="promise.generator.async异步解决方案.md">
+<meta property="og:url" content="http://example.com/2025/04/05/JS/3.promise.generator.async%E5%BC%82%E6%AD%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+<meta property="og:site_name" content="谈沉潜">
+<meta property="og:description" content="Promise期约 期约本质是一个有状态的对象.里面保存一个未来才会结束的事件的结果,创建时候要传入执行器函数. 异步操作成功,期约状态变为resolved,有对应的值;异步操作失败,期约状态变为rejected,有对应失败的原因. 三种状态:pending,resolved(fulfilled),rejected.状态一但发生改变则不能再修改. 创建期约时候会传入一个执行器函数,执行器函数是用来">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-05T07:34:44.000Z">
+<meta property="article:modified_time" content="2025-04-05T07:39:03.288Z">
+<meta property="article:author" content="Wayne Chen">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>promise.generator.async异步解决方案.md - 谈沉潜</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":"ohWadpEWlT0Q54ERBAkcKH6S-MdYXbMMI","app_key":"vCuFIlABwAvv2H6Ambf1u5e4","server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>谈沉潜</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/batman3.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="promise.generator.async异步解决方案.md"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-05 15:34" pubdate>
+          2025年4月5日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          16 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">promise.generator.async异步解决方案.md</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><h2 id="期约"><a href="#期约" class="headerlink" title="期约"></a>期约</h2><ol>
+<li>期约本质是一个有状态的对象.<strong>里面保存一个未来才会结束的事件的结果</strong>,创建时候要传入执行器函数.</li>
+<li>异步操作成功,期约状态变为resolved,有对应的值;异步操作失败,期约状态变为rejected,有对应失败的原因.</li>
+<li>三种状态:pending,resolved(fulfilled),rejected.状态一但发生改变则不能再修改.</li>
+<li>创建期约时候会传入一个执行器函数,执行器函数是用来<strong>初始化异步操作</strong>和<strong>改变期约的状态</strong>,执行器函数里面的代码是同步执行.</li>
+<li>缺点:<strong>第一</strong>promise不能中断,<strong>第二</strong>状态处于pending时,无法得知执行的阶段.<strong>第三</strong>不设置回调时,promise内部的错误无法反馈到外部，就是只能被promise.catch捕获，不能被try catch捕获。</li>
+</ol>
+<h2 id="Promise-resolve"><a href="#Promise-resolve" class="headerlink" title="Promise.resolve()"></a>Promise.resolve()</h2><ol>
+<li>实例化一个成功的期约,期约的值为传入的第一个参数.</li>
+</ol>
+<ul>
+<li>传入的参数是一个期约,则幂等性保留传入期约的状态.</li>
+<li>其他情况都会封装为一个成功的期约,包括错误对象.</li>
+</ul>
+<h2 id="Promise-reject"><a href="#Promise-reject" class="headerlink" title="Promise.reject()"></a>Promise.reject()</h2><ol>
+<li>实例化一个拒绝的期约并抛出错误,该错误不能被try&#x2F;catch捕获,只能通过拒绝处理程序捕获.</li>
+</ol>
+<ul>
+<li>无论传入什么值都会是拒绝的期约.</li>
+</ul>
+<h2 id="Promise-prototype-then"><a href="#Promise-prototype-then" class="headerlink" title="Promise.prototype.then()"></a>Promise.prototype.then()</h2><ol>
+<li>添加处理程序,接受<strong>两个函数参数</strong>,onResolved和onRejected函数,分别在期约状态变为成功和失败后执行.</li>
+<li>then()会<strong>返回</strong>一个新的期约.</li>
+</ol>
+<ul>
+<li>无论是错误处理程序还是正确处理程序的返回值都会通过Promise.resolve()封装</li>
+<li>若没有返回值则是promise.resolve(undefined)</li>
+<li>若没有处理程序则包装上一个期约的值.</li>
+<li>处理程序抛出错误则返回错误的期约.</li>
+</ul>
+<h2 id="Promise-prototype-catch"><a href="#Promise-prototype-catch" class="headerlink" title="Promise.prototype.catch()"></a>Promise.prototype.catch()</h2><ol>
+<li>语法糖,等同于then(null,onRejected)</li>
+</ol>
+<h2 id="Promise-prototype-finally"><a href="#Promise-prototype-finally" class="headerlink" title="Promise.prototype.finally()"></a>Promise.prototype.finally()</h2><ol>
+<li>无论期约状态变成成功或是失败都会执行.</li>
+<li>也会返回一个期约,与then,catch不同,该方法返回父期约的值.</li>
+<li>只有处理程序返回的是抛出错误,错误的期约,pending状态的期约,该方法才会返回错误期约和pending的期约.</li>
+</ol>
+<h2 id="执行时期"><a href="#执行时期" class="headerlink" title="执行时期"></a>执行时期</h2><ol>
+<li>期约状态落定后,处理程序会进入微任务队列等待执行,不会立即执行.</li>
+<li>处理程序中抛出的错误不会阻塞同步代码,因为是在任务队列中抛出的</li>
+</ol>
+<h2 id="期约连锁"><a href="#期约连锁" class="headerlink" title="期约连锁"></a>期约连锁</h2><ol>
+<li>因为期约的实例方法then,catch,finally都会返回一个新的期约对象,新期约又有自己的实例方法.</li>
+<li>将异步任务串行化,解决<strong>回调地狱</strong>问题.</li>
+</ol>
+<h2 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all()"></a>Promise.all()</h2><ol>
+<li>将多个期约合成一个期约,传入参数是可迭代对象,<strong>返回一个新期约</strong>.</li>
+<li>有一个包含的期约状态为待定,则合成的期约状态为待定;有一个包含的期约状态为拒绝,则合成的期约为拒绝.第一个拒绝的期约会作为合成期约的拒绝值.</li>
+<li>如果所有包含的期约都解决,则合成的期约值就是包含期约值的数组.</li>
+<li>ps:期约值落定后不会影响其他期约正常的拒绝操作.</li>
+</ol>
+<h2 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race()"></a>Promise.race()</h2><ol>
+<li>是一组集合中最先解决或拒绝的期约的镜像,接受的参数为可迭代的对象,返回一个新期约.</li>
+<li>与all不同,不会区别对待pending和rejected状态的期约,只要是第一个落定的期约,race就会包装其解决值或拒绝理由并返回新期约.</li>
+<li>ps:期约值落定后不会影响其他期约正常的拒绝操作.</li>
+</ol>
+<h2 id="场景题-Promise-allSettled"><a href="#场景题-Promise-allSettled" class="headerlink" title="场景题,Promise.allSettled()"></a>场景题,Promise.allSettled()</h2><ul>
+<li>静态方法将一个 Promise 可迭代对象作为输入，并返回一个单独的 Promise。当所有输入的 Promise 都已敲定时（包括传入空的可迭代对象时），返回的 Promise 将被兑现，并带有描述每个 Promise 结果的对象数组。</li>
+</ul>
+<h1 id="async"><a href="#async" class="headerlink" title="async"></a>async</h1><h2 id="异步函数async"><a href="#异步函数async" class="headerlink" title="异步函数async"></a>异步函数async</h2><ol>
+<li>async声明异步函数(函数声明,函数表达式,箭头函数,方法),异步函数始终返回期约对象,返回值会经Promise.Resolve()封装.</li>
+<li>与期约处理程序一样,异步函数中抛出错误会返回拒绝的期约.</li>
+</ol>
+<h2 id="await"><a href="#await" class="headerlink" title="await"></a>await</h2><ol>
+<li>await暂定异步函数代码的执行,让出js执行线程.</li>
+<li>await后表达式如果是非期约的值,则经过Promise.resolve()封装,返回的值是期约的值.</li>
+<li>await值可用时,会把异步函数推到任务队列中等待执行.</li>
+</ol>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"> <span class="hljs-attribute">注意点</span><span class="hljs-punctuation">:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">不管await后面等什么,即使是非期约的值,也会将async部分推到微任务队列中</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">一个函数中,如果有异步操作,异步会将回调函数推到任务队列中,该函数同步执行完后就会</span><br>  销毁该函数的执行上下文栈.<br></code></pre></td></tr></table></figure>
+<h1 id="Generator基础"><a href="#Generator基础" class="headerlink" title="Generator基础"></a>Generator基础</h1><h2 id="状态机"><a href="#状态机" class="headerlink" title="状态机"></a>状态机</h2><p>函数名和function之间有一个*,它是一个状态机,内部封装了多个状态.内部有yield.</p>
+<h2 id="next执行"><a href="#next执行" class="headerlink" title="next执行"></a>next执行</h2><p>generator函数执行不会返回函数执行的结果,而是返_回一个<em><strong>指向内部的指针</strong></em>,也就是遍历器对象.调用遍历器对象的next方法,内部指针就从函数头部或者上次暂定的地方继续执行,直到下一个yeild或者return语句.</p>
+<h2 id="yeild"><a href="#yeild" class="headerlink" title="yeild"></a>yeild</h2><p>遇到yeild语句就会暂定操作,并返回yeild后面的表达式,作为返回对象的value值.</p>
+<h2 id="next传参"><a href="#next传参" class="headerlink" title="next传参"></a>next传参</h2><p>next方法可以带一个参数，该参数就会被当作<em><strong>上一个yield表达式</strong></em>的返回值。</p>
+<blockquote>
+<p>执行到一个yeild,yeild后的值就是这个next的值.下一个next传的值是给上一个yeild,自己往下执行到新的yeild,新yeild返回值给自己.</p>
+</blockquote>
+<h1 id="Generator函数的异步应用"><a href="#Generator函数的异步应用" class="headerlink" title="Generator函数的异步应用"></a>Generator函数的异步应用</h1><h2 id="协程和Generator"><a href="#协程和Generator" class="headerlink" title="协程和Generator"></a>协程和Generator</h2><ol>
+<li>协程是多个线程互相协作，完成异步任务。Generator函数是协程在es6中的实现,整个Generator函数就是一个异步任务,异步暂停的地方会用yield语句标明.</li>
+</ol>
+<h2 id="Generator函数的数据交换和错误处理"><a href="#Generator函数的数据交换和错误处理" class="headerlink" title="Generator函数的数据交换和错误处理"></a>Generator函数的数据交换和错误处理</h2><ol>
+<li>Generator 函数可以暂停执行和恢复执行，这是它能封装异步任务的根本原因。除此之外，它还有两个特性，使它可以作为异步编程的完整解决方案：函数体内外的数据交换和错误处理机制。</li>
+</ol>
+<h2 id="异步任务的封装-前两点是介绍基础-这点开始实操"><a href="#异步任务的封装-前两点是介绍基础-这点开始实操" class="headerlink" title="异步任务的封装(前两点是介绍基础,这点开始实操)"></a>异步任务的封装(前两点是介绍基础,这点开始实操)</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs kotlin">function* <span class="hljs-function"><span class="hljs-title">fun</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">const</span> url = <span class="hljs-string">&#x27;......&#x27;</span><br>    <span class="hljs-keyword">const</span> result = yield fetch(url)<br>    console.log(result)<br>&#125;<br><br><span class="hljs-keyword">const</span> f = <span class="hljs-function"><span class="hljs-title">fun</span><span class="hljs-params">()</span></span>;<br>f.next().value<br>.then(response =&gt; response.json())<br>.then(<span class="hljs-keyword">data</span> =&gt; f.next(<span class="hljs-keyword">data</span>))<br></code></pre></td></tr></table></figure>
+<ol>
+<li><code>ps</code>:异步操作简单,但流程管理不便.</li>
+</ol>
+<h2 id="面试题总结"><a href="#面试题总结" class="headerlink" title="面试题总结"></a>面试题总结</h2><h3 id="return-Promise-resolve-resolve-Promise-resolve-123"><a href="#return-Promise-resolve-resolve-Promise-resolve-123" class="headerlink" title="return Promise.resolve() &#x2F; resolve(Promise.resolve(123))"></a>return Promise.resolve() &#x2F; resolve(Promise.resolve(123))</h3><ul>
+<li>如果resolve的是一个promise对象(.then回调里返回一个promise对象),<br>&#x2F;&#x2F; 推迟原因：浏览器会创建一个 PromiseResolveThenableJob 去处理这个 Promise 实例，这是一个微任务。<br>&#x2F;&#x2F; 等到下次循环到来这个微任务会执行，也就是PromiseResolveThenableJob 执行中的时候，因为这个Promise 实例是fulfilled状态，所以又会注册一个它的.then()回调<br>&#x2F;&#x2F; 又等一次循环到这个Promise 实例它的.then()回调执行后，才会注册下面的这个.then(),于是就被推迟了两个时序</li>
+</ul>
+<h2 id="await-promise"><a href="#await-promise" class="headerlink" title="await promise"></a>await promise</h2><ul>
+<li>如果promise是pending状态(没有调用resolve或reject),reject状态未被捕获,则await后面的代码不会进入微任务队列中.</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JS/" class="category-chain-item">JS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>promise.generator.async异步解决方案.md</div>
+      <div>http://example.com/2025/04/05/JS/3.promise.generator.async异步解决方案/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Wayne Chen</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月5日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/04/05/JS/4.%E6%96%87%E4%BB%B6/" title="文件">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">文件</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/04/05/JS/2.%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/" title="执行上下文、作用域、闭包.md">
+                        <span class="hidden-mobile">执行上下文、作用域、闭包.md</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"ohWadpEWlT0Q54ERBAkcKH6S-MdYXbMMI","appKey":"vCuFIlABwAvv2H6Ambf1u5e4","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="/js/custom.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

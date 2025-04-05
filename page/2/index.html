@@ -244,15 +244,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/" target="_self">
-          浏览器进程
+        <a href="/2025/04/05/JS/%E4%BB%A3%E7%A0%81%E8%BE%93%E5%87%BA%E9%A2%98%E6%80%BB%E7%BB%93/" target="_self">
+          代码输出题总结
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BF%9B%E7%A8%8B/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/05/JS/%E4%BB%A3%E7%A0%81%E8%BE%93%E5%87%BA%E9%A2%98%E6%80%BB%E7%BB%93/" target="_self">
         <div>
-          浏览器进程四种进程 浏览器进程：管理窗口和用户界面，地址栏、书签、前进、后退等功能，协调其他进程。 渲染进程：负责页面渲染工作。包括渲染线程，js引擎线程，异步http请求线程（用户发送请求后会将该请求传递给网络进程处理）。 插件进程：处理插件的运行。 GPU进程：处理图形渲染。  浏览器为什么要限制请求并发数？ 对操作系统端口资源的考虑：操作系统开放了一半端口对外请求，一个http&#x2F;t
+          异步12341. promise状态最终没落定或者await后面的函数未落定，不会把微任务推到任务队列中。2. Promise.all、Promise.race结果确定后，不会影响其他promise的执行。   this 对象调用的函数this指向对象,其他指向window.尤其喜欢考对象调用的函数里面再调用函数,其实就是指向window.  箭头函数里的this看自己定义所在的全局&#x2F;函
         </div>
       </a>
 
@@ -260,8 +260,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2025-04-03 16:00" pubdate>
-              2025-04-03
+            <time datetime="2025-04-05 15:40" pubdate>
+              2025-04-05
             </time>
           </div>
         
@@ -276,455 +276,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="category-chain-item">进程管理</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E9%94%81/" target="_self">
-          锁
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E9%94%81/" target="_self">
-        <div>
-          锁 互斥锁和自旋锁是最基本的锁,读写锁可以基于这两个锁进行实现,前面这些锁都是悲观锁.  互斥锁 互斥锁加锁失败,当前进程进入阻塞队列,不占据CPU资源 适合等待时间长  自旋锁 自旋锁加锁失败会占据CPU资源,循环等待资源的释放. 适合等待时间短,减少上下文切换的成本  读写锁 读优先锁:尽可能多的读锁,挺高并发性,读锁会阻塞写锁.能继续加读锁. 写优先锁:如果有写锁,则不能继续加读锁.  悲观
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-04-03 16:00" pubdate>
-              2025-04-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="category-chain-item">进程管理</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%AD%BB%E9%94%81/" target="_self">
-          死锁
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E6%AD%BB%E9%94%81/" target="_self">
-        <div>
-          死锁基本概念 两个共有资源两把锁,两个线程各持有一个锁,都在等另一把锁释放,就造成了死锁.  四个条件 互斥条件:这个资源不能被多个线程同时访问. 持有并等待条件:线程在等待资源时候不会释放自己已有的资源. 不可剥夺条件:自己已有的资源不会被其他线程剥夺. 环路等待条件:两个线程获取资源顺序形成环路.  避免死锁问题 破坏其中一个条件,一般是资源有序分配 &#x3D;&gt; 破坏环路条件. A、
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-04-03 16:00" pubdate>
-              2025-04-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="category-chain-item">进程管理</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%9A%84%E9%80%9A%E4%BF%A1/" target="_self">
-          进程的通信
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%9A%84%E9%80%9A%E4%BF%A1/" target="_self">
-        <div>
-          管道 半双工,管道传输数据是单向的，双向进程通信需要两个管道 管道是内核中的一段缓存,写入后必须等被读完才能退出(写进程被空占据)  消息队列 进程把消息放到内核的消息队列中既可以退出.缺点是读取不及时,大小有限制.拷贝内核数据要从用户态切换为内核态.  共享内存 进程有自己的虚拟空间,映射到一个物理空间 两个进程的虚拟空间映射到同一个物理空间既可以实现通信  信号量 实现进程的互斥和异步,防止多
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-04-03 15:59" pubdate>
-              2025-04-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="category-chain-item">进程管理</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/" target="_self">
-          进程线程
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/" target="_self">
-        <div>
-          进程 运行中的程序就是进程,包括数据段,程序段,PCB(进程控制块:描述进程的信息,比如程序存放的位置); 资源分配的单位   cpu如果只执行一个进程，这个进程读硬盘时候就会很慢，cpu在傻等。所以有了cpu并发执行管理多个进程，提高cpul利用率。就有了进程状态、进程管理的概念。  进程状态 创建态,就绪态,运行态,阻塞态,结束态. 就绪挂起态,阻塞挂起态.大量阻塞态会占据有限的内存,可以将这
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-04-03 15:59" pubdate>
-              2025-04-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="category-chain-item">进程管理</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/" target="_self">
-          虚拟内存
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/" target="_self">
-        <div>
-          虚拟内存 程序使用的内存是虚拟内存，操作系统内部将其与物理内存映射。避免各个程序物理地址冲突。操作系统通过 内存分段、内存分页两种方式实现虚拟内存到物理内存的映射。   内存扩展：物理内存有限，虚拟内存可以先把程序部分数据暂存到硬盘中，需要时候再调度进来。 进程隔离：各个进程运行在自己的虚拟内存中，操作系统内实现虚拟内存到物理内存的映射，避免进程访问错误。 内存管理：通过分页分段管理内存，更加有效
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-04-03 13:00" pubdate>
-              2025-04-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="category-chain-item">内存管理</a>
-  
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/vite/" target="_self">
-          vite
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/vite/" target="_self">
-        <div>
-          vite 深入理解Vite核心原理: https://juejin.cn/post/7064853960636989454 vite为什么这么快：https://juejin.cn/post/7280747221510144054#heading-1  vite预构建 转换为esm模块。  vite核心原理&#x2F;vite构建流程 vite直接启动开发服务器，不用进行整个项目的打包编译。 vi
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-04-03 12:15" pubdate>
-              2025-04-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/" class="category-chain-item">打包工具</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/">#打包工具</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/" target="_self">
-          webpack
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/03/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/webpack/" target="_self">
-        <div>
-          https://vue3js.cn/interview/webpack/webpack.html#%E4%B8%80%E3%80%81%E8%83%8C%E6%99%AF https://juejin.cn/post/6844904094281236487?searchId=20241027155907A6653545D1F9EE98EE4D loader loader本质是一个函数，翻译官，对接
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-04-03 10:07" pubdate>
-              2025-04-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/" class="category-chain-item">打包工具</a>
+  <a href="/categories/JS/" class="category-chain-item">JS</a>
   
   
 
@@ -746,15 +298,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/" target="_self">
-          磁盘调度算法
+        <a href="/2025/04/05/JS/8.%E9%81%8D%E5%8E%86%E5%99%A8/" target="_self">
+          迭代器
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/%E7%A3%81%E7%9B%98%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/05/JS/8.%E9%81%8D%E5%8E%86%E5%99%A8/" target="_self">
         <div>
-          磁盘调度算法基础 磁盘调度算法的目的很简单，就是为了提高磁盘的访问性能，一般是通过优化磁盘的访问请求顺序来做到的。寻道的时间是磁盘访问最耗时的部分，如果请求顺序优化的得当，必然可以节省一些不必要的寻道时间，从而提高磁盘的访问性能。  先来先服务 先到来的请求先被服务。  最短寻道算法 优先选择从当前磁头位置所需寻道时间最短的请求。 饥饿：产生饥饿的原因是磁头在一小块区域来回移动。  扫描算法（电梯
+          Iterator基础 一个接口，为不同数据结构提供统一的遍历访问机制，一般是给for…of消费。 遍历过程：遍历器本身是一个指针对象，有一个next方法，调用一次返回数据结构{value:xxx，done:xxx}，done表示数据结构是否遍历完。  默认的Iterator 默认在数据结构的[Symbol.iterator]属性上，该属性本身是一个遍历器生成函数，调用该函数生成遍历器。 Array
         </div>
       </a>
 
@@ -762,8 +314,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2025-04-03 10:06" pubdate>
-              2025-04-03
+            <time datetime="2025-04-05 15:40" pubdate>
+              2025-04-05
             </time>
           </div>
         
@@ -778,15 +330,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  <a href="/categories/JS/" class="category-chain-item">JS</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/" class="category-chain-item">调度算法</a>
-  
-  
-
   
 
       </span>
@@ -807,15 +352,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/%E9%A1%B5%E9%9D%A2%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/" target="_self">
-          页面调度算法
+        <a href="/2025/04/05/JS/7.Set%E3%80%81Map/" target="_self">
+          Set、Map
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/%E9%A1%B5%E9%9D%A2%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/05/JS/7.Set%E3%80%81Map/" target="_self">
         <div>
-          内存页面置换算法基础 缺页中断：CPU访问的页面不在物理内存中的时候,便会产生缺页中断，会请求操作系统将所缺页调入到物理内存中。 具体流程：注意：有空闲页先调度到空闲页，没有空闲页则才需要使用页面置换算法。  最佳页面置换算法 置换未来最长时间不访问的页面。 理想算法，实际中无法预知每个页面下次被访问的时间。  先进先出置换算法 选择在内存中滞留时间很长的页面进行置换。  最近最久未使用LRU置换
+          Set基础 new Set(arr);传入一个数组或者其他有iterable接口的其他数据结构。他的成员都是唯一值，没有重复值。  1234let set = new Set([1,1,2,3]);let arr1 = [...set];let arr2 = []  属性和方法 size：个数，不是函数。 add(value)：返回set本身，可以链式调用。 delete(value)：返回布尔值
         </div>
       </a>
 
@@ -823,8 +368,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2025-04-03 10:05" pubdate>
-              2025-04-03
+            <time datetime="2025-04-05 15:40" pubdate>
+              2025-04-05
             </time>
           </div>
         
@@ -839,15 +384,386 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95/" class="category-chain-item">调度算法</a>
+  <a href="/categories/JS/" class="category-chain-item">JS</a>
   
   
 
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/04/05/JS/6.worker/" target="_self">
+          worker
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/05/JS/6.worker/" target="_self">
+        <div>
+          webWorker https://juejin.cn/post/7139718200177983524?searchId=20241014225402B164DD668FBB1DDDC2C5#heading-0  基础 在js主线程外开辟一个worker线程，让js有执行多线程的能力。在里面执行一段耗时的js代码，在worker线程执行完后将结果返回给主线程。主线程专注处理业务逻辑。 注意：we
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-04-05 15:40" pubdate>
+              2025-04-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JS/" class="category-chain-item">JS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/04/05/JS/5.settimeout/" target="_self">
+          settimeout
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/05/JS/5.settimeout/" target="_self">
+        <div>
+          setTimeout注意事项 setTimeout的回调相等于全局调用   setTimeout里面传入一个对象里面的函数,其实就相当于把函数直接写在里面,(函数从不属于某个对象)所以一般要用一个箭头函数包装起来setTimeout(obj.fun,2000) &#x2F;&#x2F; 两秒后执行setTimeout(obj.fun(),2000) &#x2F;&#x2F; 立即执行 不是箭头函数
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-04-05 15:38" pubdate>
+              2025-04-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JS/" class="category-chain-item">JS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/04/05/JS/4.%E6%96%87%E4%BB%B6/" target="_self">
+          文件
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/05/JS/4.%E6%96%87%E4%BB%B6/" target="_self">
+        <div>
+          https://mp.weixin.qq.com/s/IarZDzv9dLD5suL5zdZNcQ    blob可以转换成url blob转换成arrayBuffer可以读写操作。  Blob基础 一个专门的支持文件操作的二进制对象。 Blob对象无法修改，只能用FileReader读取。  作用URL.createObjectURL(blob)，将二进制对象转换为一个路径内置了slice方法
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-04-05 15:37" pubdate>
+              2025-04-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JS/" class="category-chain-item">JS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/04/05/JS/3.promise.generator.async%E5%BC%82%E6%AD%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" target="_self">
+          promise.generator.async异步解决方案.md
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/05/JS/3.promise.generator.async%E5%BC%82%E6%AD%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" target="_self">
+        <div>
+          Promise期约 期约本质是一个有状态的对象.里面保存一个未来才会结束的事件的结果,创建时候要传入执行器函数. 异步操作成功,期约状态变为resolved,有对应的值;异步操作失败,期约状态变为rejected,有对应失败的原因. 三种状态:pending,resolved(fulfilled),rejected.状态一但发生改变则不能再修改. 创建期约时候会传入一个执行器函数,执行器函数是用来
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-04-05 15:34" pubdate>
+              2025-04-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JS/" class="category-chain-item">JS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/04/05/JS/2.%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/" target="_self">
+          执行上下文、作用域、闭包.md
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/05/JS/2.%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E3%80%81%E9%97%AD%E5%8C%85/" target="_self">
+        <div>
+          执行上下文https://fe.ecool.fun/topic/c137050b-10f5-4a4f-9941-820ad7a9894d?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87  代码运行环境的抽象概念  分类 全局上下文:this的值指向windows
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-04-05 15:34" pubdate>
+              2025-04-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JS/" class="category-chain-item">JS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/04/05/JS/1.%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80%E3%80%81%E5%88%9B%E5%BB%BA%E3%80%81%E7%BB%A7%E6%89%BF/" target="_self">
+          对象基础、创建、继承
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/05/JS/1.%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80%E3%80%81%E5%88%9B%E5%BB%BA%E3%80%81%E7%BB%A7%E6%89%BF/" target="_self">
+        <div>
+          对象基础属性的类型 数据类型  123451. Configurable:该属性是否可被删除,特性是否可被修改2. Enumerable:该属性是否可被遍历3. writeable:该属性值是否可被修改4. value:属性的值.  访问器属性  12341. Configurable:该属性是否可被删除,特性是否可被修改2. Enumerable:该属性是否可被遍历3. Get获取函数,读取该属
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-04-05 15:33" pubdate>
+              2025-04-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JS/" class="category-chain-item">JS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/04/05/Git/gitSubmodule/" target="_self">
+          git submodule
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/04/05/Git/gitSubmodule/" target="_self">
+        <div>
+          .gitmodules 配置文件，存储子模块的相关信息。在git submodule add后自动生成。文件也像 .gitignore 文件一样受到（通过）git控制。  .git&#x2F;config .git&#x2F;config 文件是 Git 仓库的本地配置文件，存储了远程仓库、分支、子模块等信息。  git submodule（git 子模块） 将一个git仓库嵌入到另一个git仓库
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-04-05 15:31" pubdate>
+              2025-04-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Git/" class="category-chain-item">Git</a>
+  
   
 
       </span>
@@ -866,7 +782,7 @@
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/#board">6</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
@@ -1001,6 +917,10 @@
   <script  src="/js/local-search.js" ></script>
 
 
+
+
+  
+<script src="/js/custom.js"></script>
 
 
 
