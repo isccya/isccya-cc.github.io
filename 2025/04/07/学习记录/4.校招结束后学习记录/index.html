@@ -19,24 +19,21 @@
   <meta name="author" content="Wayne Chen">
   <meta name="keywords" content="">
   
-    <meta name="description" content="进程 运行中的程序就是进程,包括数据段,程序段,PCB(进程控制块:描述进程的信息,比如程序存放的位置); 资源分配的单位   cpu如果只执行一个进程，这个进程读硬盘时候就会很慢，cpu在傻等。所以有了cpu并发执行管理多个进程，提高cpul利用率。就有了进程状态、进程管理的概念。  进程状态 创建态,就绪态,运行态,阻塞态,结束态. 就绪挂起态,阻塞挂起态.大量阻塞态会占据有限的内存,可以将这">
+    <meta name="description" content="搭建自己的博客。&#9989; 每天都刷道算法。&#9989; 微前端除了qiankun，其他解决方案。 入职前完成。 vue3源码 node 后端学习 业务代码 低代码 组件库   3.30算法相等行列对从字符串中删除星号 栈：后进先出的特点。  小行星碰撞 栈：要思考特性。  反转链表3.31算法 复习栈 刷几道题  专注美团薪资怎么谈滴滴offer、两方、三方到哪一步毁约要钱准备HR面试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="进程线程">
-<meta property="og:url" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/1.%20%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/">
+<meta property="og:title" content="校招结束后学习记录.md">
+<meta property="og:url" content="http://example.com/2025/04/07/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/4.%E6%A0%A1%E6%8B%9B%E7%BB%93%E6%9D%9F%E5%90%8E%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
 <meta property="og:site_name" content="谈沉潜">
-<meta property="og:description" content="进程 运行中的程序就是进程,包括数据段,程序段,PCB(进程控制块:描述进程的信息,比如程序存放的位置); 资源分配的单位   cpu如果只执行一个进程，这个进程读硬盘时候就会很慢，cpu在傻等。所以有了cpu并发执行管理多个进程，提高cpul利用率。就有了进程状态、进程管理的概念。  进程状态 创建态,就绪态,运行态,阻塞态,结束态. 就绪挂起态,阻塞挂起态.大量阻塞态会占据有限的内存,可以将这">
+<meta property="og:description" content="搭建自己的博客。&#9989; 每天都刷道算法。&#9989; 微前端除了qiankun，其他解决方案。 入职前完成。 vue3源码 node 后端学习 业务代码 低代码 组件库   3.30算法相等行列对从字符串中删除星号 栈：后进先出的特点。  小行星碰撞 栈：要思考特性。  反转链表3.31算法 复习栈 刷几道题  专注美团薪资怎么谈滴滴offer、两方、三方到哪一步毁约要钱准备HR面试">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/1.%20%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/image-1.png">
-<meta property="article:published_time" content="2025-04-03T07:59:39.000Z">
-<meta property="article:modified_time" content="2025-04-03T08:02:45.236Z">
+<meta property="article:published_time" content="2025-04-07T12:19:13.000Z">
+<meta property="article:modified_time" content="2025-04-07T12:48:57.260Z">
 <meta property="article:author" content="Wayne Chen">
-<meta property="article:tag" content="操作系统">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/1.%20%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/image-1.png">
   
   
   
-  <title>进程线程 - 谈沉潜</title>
+  <title>校招结束后学习记录.md - 谈沉潜</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -219,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="进程线程"></span>
+            <span id="subtitle" data-typed-text="校招结束后学习记录.md"></span>
           
         </div>
 
@@ -230,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-04-03 15:59" pubdate>
-          2025年4月3日 下午
+        <time datetime="2025-04-07 20:19" pubdate>
+          2025年4月7日 晚上
         </time>
       </span>
     
@@ -242,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          786 字
+          414 字
         
       </span>
     
@@ -253,7 +250,7 @@
         
         
         
-          7 分钟
+          4 分钟
         
       </span>
     
@@ -299,48 +296,54 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">进程线程</h1>
+            <h1 id="seo-header">校招结束后学习记录.md</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ol>
-<li>运行中的程序就是进程,包括数据段,程序段,PCB(进程控制块:描述进程的信息,比如程序存放的位置);</li>
-<li>资源分配的单位</li>
-</ol>
-<ul>
-<li>cpu如果只执行一个进程，这个进程读硬盘时候就会很慢，cpu在傻等。所以有了cpu并发执行管理多个进程，提高cpul利用率。就有了<strong>进程状态、进程管理</strong>的概念。</li>
-</ul>
-<h2 id="进程状态"><a href="#进程状态" class="headerlink" title="进程状态"></a>进程状态</h2><ul>
-<li><strong>创建态,就绪态,运行态,阻塞态,结束态</strong>.</li>
-<li><strong>就绪挂起态,阻塞挂起态</strong>.大量阻塞态会占据有限的内存,可以将这些进程放到外存(磁盘中)<br><img src="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/1.%20%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B/image-1.png" srcset="/img/loading.gif" lazyload alt="alt text"></li>
-</ul>
-<h2 id="进程的控制和管理"><a href="#进程的控制和管理" class="headerlink" title="进程的控制和管理"></a>进程的控制和管理</h2><ol>
-<li>PCB(进程的唯一标识):进程的状态,进程的优先级,CPU上下文信息</li>
-<li><em><strong>链表存储</strong></em>：相同状态存放在一起,比如:就绪队列,阻塞队列.更适应进程<strong>创建、销毁多</strong>的场景.</li>
-</ol>
-<h2 id="线程-并发-共享资源"><a href="#线程-并发-共享资源" class="headerlink" title="线程:并发 共享资源"></a>线程:并发 共享资源</h2><ol>
-<li><strong>进程下的一条执行流程</strong></li>
-<li><strong>可以并发且共享资源的执行</strong></li>
-<li>CPU调度的基本单位</li>
-</ol>
-<h2 id="进程和线程的区别-10024"><a href="#进程和线程的区别-10024" class="headerlink" title="进程和线程的区别 &#10024;"></a>进程和线程的区别 &#10024;</h2><ol>
-<li>根本区别:进程是操作系统资源分配的基本单位,线程是CPU任务调度和执行的基本单位.</li>
-<li>关系:进程包含一个或多个线程</li>
-<li>资源开销:进程有独立的数据段和程序段,程序之间切换成本大;线程是轻量级的进程,同一进程下的线程共享程序段和数据段,线程有自己独立的PC(程序计数器:记录下一条指令的位置)和执行栈,创建速度快，销毁速度快，线程切换成本低速度快.适合并发执行。</li>
-</ol>
-<h2 id="进程调度算法"><a href="#进程调度算法" class="headerlink" title="进程调度算法"></a>进程调度算法</h2><ul>
-<li>进程状态改变时候比如：运行态到终止、运行到阻塞、就绪到运行，都会使用到调度算法。CPU更换新的进程来执行。</li>
-</ul>
+                <hr>
 <ol>
-<li>先来先服务算法：对短作业不利，要等长作业很久。</li>
-<li>短作业优先算法：对长作业不利，可能一直等。</li>
-<li>最高响应比算法：理想型算法，无法实现。<br>(等待时间 + 要求服务时间)&#x2F; 要求服务时间</li>
-<li>时间片轮转算法：每个进程分配一个时间片，允许进程在该时间片执行。</li>
-<li>最高优先级算法：CPU选择优先级最高的进程执行代码。静态优先级、动态优先级；抢占式、非抢占式。抢占式可能导致优先级低的永远无法执行。</li>
-<li>多级反馈队列算法：多个队列，每个队列优先级从高到低排列，同时优先级越高时间片越短。  先进入最高优先级队列，没执行完进入下一级优先队列。对于短作业来说，很可能在最高优先级队列的时间片就执行完毕；对于长作业来说，进入到后面优先级更低的队列，但是执行时间变长了。<strong>短作业优先级高，执行时间短；长作业优先级低，执行时间长。</strong></li>
+<li>搭建自己的博客。&#9989;</li>
+<li>每天都刷道算法。&#9989;</li>
+<li>微前端除了qiankun，其他解决方案。 入职前完成。</li>
+<li>vue3源码</li>
+<li>node 后端学习</li>
+<li>业务代码</li>
+<li>低代码</li>
+<li>组件库</li>
 </ol>
-<!-- 如果执行低优先级的长作业时候有短作业进入，则会先去执行短作业。 -->
+<hr>
+<h1 id="3-30"><a href="#3-30" class="headerlink" title="3.30"></a>3.30</h1><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="相等行列对"><a href="#相等行列对" class="headerlink" title="相等行列对"></a>相等行列对</h3><h3 id="从字符串中删除星号"><a href="#从字符串中删除星号" class="headerlink" title="从字符串中删除星号"></a>从字符串中删除星号</h3><ul>
+<li>栈：后进先出的特点。</li>
+</ul>
+<h3 id="小行星碰撞"><a href="#小行星碰撞" class="headerlink" title="小行星碰撞"></a>小行星碰撞</h3><ul>
+<li>栈：要思考特性。</li>
+</ul>
+<h3 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h3><h1 id="3-31"><a href="#3-31" class="headerlink" title="3.31"></a>3.31</h1><h2 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h2><ul>
+<li>复习栈</li>
+<li>刷几道题</li>
+</ul>
+<h2 id="专注"><a href="#专注" class="headerlink" title="专注"></a>专注</h2><h3 id="美团薪资怎么谈"><a href="#美团薪资怎么谈" class="headerlink" title="美团薪资怎么谈"></a>美团薪资怎么谈</h3><h3 id="滴滴offer、两方、三方到哪一步毁约要钱"><a href="#滴滴offer、两方、三方到哪一步毁约要钱" class="headerlink" title="滴滴offer、两方、三方到哪一步毁约要钱"></a>滴滴offer、两方、三方到哪一步毁约要钱</h3><h3 id="准备HR面试"><a href="#准备HR面试" class="headerlink" title="准备HR面试"></a>准备HR面试</h3><h1 id="4-1"><a href="#4-1" class="headerlink" title="4.1"></a>4.1</h1><h2 id="专注-1"><a href="#专注-1" class="headerlink" title="专注"></a>专注</h2><h3 id="上午美团HR面"><a href="#上午美团HR面" class="headerlink" title="上午美团HR面"></a>上午美团HR面</h3><h1 id="4-2"><a href="#4-2" class="headerlink" title="4.2"></a>4.2</h1><h2 id="算法-2"><a href="#算法-2" class="headerlink" title="算法"></a>算法</h2><h3 id="链表最大孪生和"><a href="#链表最大孪生和" class="headerlink" title="链表最大孪生和"></a>链表最大孪生和</h3><h3 id="Dota2参议院"><a href="#Dota2参议院" class="headerlink" title="Dota2参议院"></a>Dota2参议院</h3><ul>
+<li>队列的使用</li>
+</ul>
+<h2 id="专注-2"><a href="#专注-2" class="headerlink" title="专注"></a>专注</h2><h3 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h3><ul>
+<li>挂载到github上，可以访问；统计功能；</li>
+</ul>
+<h1 id="4-3"><a href="#4-3" class="headerlink" title="4.3"></a>4.3</h1><h2 id="专注-3"><a href="#专注-3" class="headerlink" title="专注"></a>专注</h2><h3 id="自动文件分类插件"><a href="#自动文件分类插件" class="headerlink" title="自动文件分类插件"></a>自动文件分类插件</h3><h3 id="解决图片"><a href="#解决图片" class="headerlink" title="解决图片"></a>解决图片</h3><h3 id="更换主题色，样式"><a href="#更换主题色，样式" class="headerlink" title="更换主题色，样式"></a>更换主题色，样式</h3><h3 id="迁移八股"><a href="#迁移八股" class="headerlink" title="迁移八股"></a>迁移八股</h3><h1 id="4-4"><a href="#4-4" class="headerlink" title="4.4"></a>4.4</h1><h2 id="算法-3"><a href="#算法-3" class="headerlink" title="算法"></a>算法</h2><h3 id="翻转字符串I"><a href="#翻转字符串I" class="headerlink" title="翻转字符串I"></a>翻转字符串I</h3><h3 id="翻转字符串II"><a href="#翻转字符串II" class="headerlink" title="翻转字符串II"></a>翻转字符串II</h3><h2 id="专注-4"><a href="#专注-4" class="headerlink" title="专注"></a>专注</h2><h3 id="博客解决了分类排序问题"><a href="#博客解决了分类排序问题" class="headerlink" title="博客解决了分类排序问题"></a>博客解决了分类排序问题</h3><ul>
+<li>编写一段js代码操作DOM元素。</li>
+</ul>
+<h3 id="劳动教育项目都可运行"><a href="#劳动教育项目都可运行" class="headerlink" title="劳动教育项目都可运行"></a>劳动教育项目都可运行</h3><ul>
+<li>正常功能：登录；学生信息；管理员信息；系统日志；公告管理；</li>
+<li>目前bug：<br>劳动记录发布无法查到；移动端无法获取到学期。<br>管理端：首页，审核，劳动计划；<br>移动端：劳动计划，劳动记录。</li>
+</ul>
+<h1 id="4-5"><a href="#4-5" class="headerlink" title="4.5"></a>4.5</h1><h2 id="算法-4"><a href="#算法-4" class="headerlink" title="算法"></a>算法</h2><h3 id="将所有数字用字符串替代"><a href="#将所有数字用字符串替代" class="headerlink" title="将所有数字用字符串替代"></a>将所有数字用字符串替代</h3><ol>
+<li>String.fromCharCode()：将数字转换为字符。</li>
+<li>str.charCodeAt(str字符串的下标)：将str第i个下标字符转换为数字。</li>
+</ol>
+<h3 id="重复的字符串"><a href="#重复的字符串" class="headerlink" title="重复的字符串"></a>重复的字符串</h3><ul>
+<li>暴力写的，KMP没学。</li>
+</ul>
+<h3 id="最长公共前缀"><a href="#最长公共前缀" class="headerlink" title="最长公共前缀"></a>最长公共前缀</h3><h2 id="专注-5"><a href="#专注-5" class="headerlink" title="专注"></a>专注</h2><h3 id="博客迁移完毕"><a href="#博客迁移完毕" class="headerlink" title="博客迁移完毕"></a>博客迁移完毕</h3><h1 id="4-6出去放松一天"><a href="#4-6出去放松一天" class="headerlink" title="4.6出去放松一天"></a>4.6出去放松一天</h1><h1 id="4-7"><a href="#4-7" class="headerlink" title="4.7"></a>4.7</h1><h2 id="算法-5"><a href="#算法-5" class="headerlink" title="算法"></a>算法</h2><h3 id="所有可能的路径"><a href="#所有可能的路径" class="headerlink" title="所有可能的路径"></a>所有可能的路径</h3><h3 id="岛屿数量：深搜、广搜。"><a href="#岛屿数量：深搜、广搜。" class="headerlink" title="岛屿数量：深搜、广搜。"></a>岛屿数量：深搜、广搜。</h3>
                 
               </div>
             
@@ -358,15 +361,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="category-chain-item">操作系统</a>
+  <a href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="category-chain-item">学习记录</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="category-chain-item">进程管理</a>
-  
-  
-
   
 
       </span>
@@ -377,13 +373,6 @@
     </div>
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="print-no-link">#操作系统</a>
-      
-    </div>
-  
 </div>
 
 
@@ -392,8 +381,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>进程线程</div>
-      <div>http://example.com/2025/04/03/操作系统/进程管理/1. 进程线程/</div>
+      <div>校招结束后学习记录.md</div>
+      <div>http://example.com/2025/04/07/学习记录/4.校招结束后学习记录/</div>
     </div>
     <div class="license-meta">
       
@@ -405,7 +394,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年4月3日</div>
+          <div>2025年4月7日</div>
         </div>
       
       
@@ -437,18 +426,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/2.%20%E8%BF%9B%E7%A8%8B%E7%9A%84%E9%80%9A%E4%BF%A1/" title="进程的通信">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">进程的通信</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/04/03/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/" title="虚拟内存">
-                        <span class="hidden-mobile">虚拟内存</span>
+                      <a href="/2025/04/05/%E5%85%B6%E5%AE%83%E7%9F%A5%E8%AF%86%E7%82%B9/%E4%BB%A3%E7%90%86/" title="代理">
+                        <span class="hidden-mobile">代理</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
